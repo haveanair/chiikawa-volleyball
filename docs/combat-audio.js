@@ -1,0 +1,8 @@
+const clips={ready:'super-ready',fire:'super-launch',impact:'super-impact',wall:'wall-smash',ground:'ground-slam',ceiling:'ceiling-hit',net:'net-crash',counter:'super-counter'};
+export function combatEvents(events){const list=[];for(const [bit,name] of [[512,'fire'],[1024,'impact'],[2048,'wall'],[4096,'ground'],[8192,'ceiling'],[16384,'net'],[256,'counter']])if(events&bit)list.push(name);if(!list.length&&(events&32||events&64))list.push('ready');return list;}
+export function createCombatAudio(){
+ const files=new Map(Object.entries(clips).map(([name,file])=>[name,fetch(`audio/combat/${file}.wav`).then(r=>{if(!r.ok)throw Error(file);return r.arrayBuffer()}).catch(()=>null)])),contexts=new WeakMap();
+ function graph(ctx){let g=contexts.get(ctx);if(!g){const compressor=ctx.createDynamicsCompressor();compressor.threshold.value=-7;compressor.knee.value=6;compressor.ratio.value=8;compressor.attack.value=.002;compressor.release.value=.12;compressor.connect(ctx.destination);g={output:compressor,buffers:new Map()};contexts.set(ctx,g)}return g}
+ async function play(ctx,events){if(!ctx||ctx.state!=='running')return;const names=combatEvents(events);if(!names.length)return;const g=graph(ctx);for(const name of names){if(!g.buffers.has(name))g.buffers.set(name,files.get(name).then(bytes=>bytes?ctx.decodeAudioData(bytes.slice(0)):null));const buffer=await g.buffers.get(name);if(!buffer||ctx.state!=='running')continue;const source=ctx.createBufferSource(),gain=ctx.createGain();source.buffer=buffer;gain.gain.value=name==='ready'?.30:.54;source.connect(gain);gain.connect(g.output);source.start();}}
+ return {play};
+}

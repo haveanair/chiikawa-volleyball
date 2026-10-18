@@ -1,0 +1,217 @@
+{
+  "chiikawa": {
+    "attack": [
+      "audio/voices/vo_ch1001_attack_001.wav",
+      "audio/voices/vo_ch1001_attack_002.wav",
+      "audio/voices/vo_ch1001_attack_003.wav"
+    ],
+    "skill": [
+      "audio/voices/vo_ch1001_skill_001.wav",
+      "audio/voices/vo_ch1001_skill_002.wav"
+    ],
+    "huntcutin": [
+      "audio/voices/vo_ch1001_huntcutin_012.wav"
+    ],
+    "win": [
+      "audio/voices/vo_ch1001_win_002.wav",
+      "audio/voices/vo_ch1001_win_003.wav"
+    ],
+    "lose": [
+      "audio/voices/vo_ch1001_lose_001.wav",
+      "audio/voices/vo_ch1001_lose_002.wav",
+      "audio/voices/vo_ch1001_lose_003.wav"
+    ],
+    "titlecall": [
+      "audio/voices/vo_ch1001_titlecall_001.wav",
+      "audio/voices/vo_ch1001_titlecall_002.wav"
+    ]
+  },
+  "hachiware": {
+    "attack": [
+      "audio/voices/vo_ch1002_attack_001.wav",
+      "audio/voices/vo_ch1002_attack_002.wav",
+      "audio/voices/vo_ch1002_attack_003.wav"
+    ],
+    "skill": [
+      "audio/voices/vo_ch1002_skill_001.wav",
+      "audio/voices/vo_ch1002_skill_002.wav",
+      "audio/voices/vo_ch1002_skill_003.wav"
+    ],
+    "huntcutin": [
+      "audio/voices/vo_ch1002_huntcutin_001.wav",
+      "audio/voices/vo_ch1002_huntcutin_002.wav",
+      "audio/voices/vo_ch1002_huntcutin_003.wav"
+    ],
+    "win": [
+      "audio/voices/vo_ch1002_win_001.wav",
+      "audio/voices/vo_ch1002_win_002.wav",
+      "audio/voices/vo_ch1002_win_003.wav"
+    ],
+    "lose": [
+      "audio/voices/vo_ch1002_lose_001.wav",
+      "audio/voices/vo_ch1002_lose_002.wav",
+      "audio/voices/vo_ch1002_lose_003.wav"
+    ],
+    "titlecall": [
+      "audio/voices/vo_ch1002_titlecall_001.wav",
+      "audio/voices/vo_ch1002_titlecall_002.wav"
+    ]
+  },
+  "usagi": {
+    "attack": [
+      "audio/voices/vo_ch1003_attack_001.wav",
+      "audio/voices/vo_ch1003_attack_002.wav",
+      "audio/voices/vo_ch1003_attack_003.wav"
+    ],
+    "skill": [
+      "audio/voices/vo_ch1003_skill_001.wav",
+      "audio/voices/vo_ch1003_skill_002.wav",
+      "audio/voices/vo_ch1003_skill_003.wav"
+    ],
+    "huntcutin": [
+      "audio/voices/vo_ch1003_huntcutin_001.wav",
+      "audio/voices/vo_ch1003_huntcutin_002.wav",
+      "audio/voices/vo_ch1003_huntcutin_003.wav"
+    ],
+    "win": [
+      "audio/voices/vo_ch1003_win_001.wav",
+      "audio/voices/vo_ch1003_win_002.wav",
+      "audio/voices/vo_ch1003_win_003.wav"
+    ],
+    "lose": [
+      "audio/voices/vo_ch1003_lose_001.wav",
+      "audio/voices/vo_ch1003_lose_002.wav",
+      "audio/voices/vo_ch1003_lose_003.wav"
+    ],
+    "titlecall": [
+      "audio/voices/vo_ch1003_titlecall_001.wav",
+      "audio/voices/vo_ch1003_titlecall_002.wav"
+    ]
+  },
+  "kurimanju": {
+    "attack": [
+      "audio/voices/vo_ch1004_attack_001.wav",
+      "audio/voices/vo_ch1004_attack_002.wav"
+    ],
+    "skill": [
+      "audio/voices/vo_ch1004_skill_001.wav",
+      "audio/voices/vo_ch1004_skill_002.wav",
+      "audio/voices/vo_ch1004_skill_003.wav"
+    ],
+    "huntcutin": [
+      "audio/voices/vo_ch1004_huntcutin_011.wav"
+    ],
+    "win": [
+      "audio/voices/vo_ch1004_win_001.wav",
+      "audio/voices/vo_ch1004_win_002.wav",
+      "audio/voices/vo_ch1004_win_003.wav"
+    ],
+    "lose": [
+      "audio/voices/vo_ch1004_lose_001.wav",
+      "audio/voices/vo_ch1004_lose_002.wav"
+    ],
+    "titlecall": [
+      "audio/voices/vo_ch1004_titlecall_001.wav",
+      "audio/voices/vo_ch1004_titlecall_002.wav"
+    ]
+  },
+  "momonga": {
+    "attack": [
+      "audio/voices/vo_ch1005_attack_001.wav",
+      "audio/voices/vo_ch1005_attack_002.wav",
+      "audio/voices/vo_ch1005_attack_003.wav"
+    ],
+    "skill": [
+      "audio/voices/vo_ch1005_skill_001.wav",
+      "audio/voices/vo_ch1005_skill_002.wav",
+      "audio/voices/vo_ch1005_skill_003.wav"
+    ],
+    "huntcutin": [
+      "audio/voices/vo_ch1005_huntcutin_011.wav",
+      "audio/voices/vo_ch1005_huntcutin_012.wav",
+      "audio/voices/vo_ch1005_huntcutin_013.wav"
+    ],
+    "win": [
+      "audio/voices/vo_ch1005_win_001.wav",
+      "audio/voices/vo_ch1005_win_002.wav",
+      "audio/voices/vo_ch1005_win_003.wav"
+    ],
+    "lose": [
+      "audio/voices/vo_ch1005_lose_001.wav",
+      "audio/voices/vo_ch1005_lose_002.wav",
+      "audio/voices/vo_ch1005_lose_003.wav"
+    ],
+    "titlecall": [
+      "audio/voices/vo_ch1005_titlecall_001.wav",
+      "audio/voices/vo_ch1005_titlecall_002.wav"
+    ]
+  },
+  "rakko": {
+    "attack": [
+      "audio/voices/vo_ch1006_attack_001.wav",
+      "audio/voices/vo_ch1006_attack_002.wav"
+    ],
+    "skill": [
+      "audio/voices/vo_ch1006_skill_001.wav",
+      "audio/voices/vo_ch1006_skill_002.wav"
+    ],
+    "huntcutin": [
+      "audio/voices/vo_ch1006_huntcutin_001.wav",
+      "audio/voices/vo_ch1006_huntcutin_002.wav",
+      "audio/voices/vo_ch1006_huntcutin_003.wav"
+    ],
+    "win": [
+      "audio/voices/vo_ch1006_win_001.wav",
+      "audio/voices/vo_ch1006_win_002.wav",
+      "audio/voices/vo_ch1006_win_003.wav"
+    ],
+    "lose": [
+      "audio/voices/vo_ch1006_lose_001.wav",
+      "audio/voices/vo_ch1006_lose_002.wav",
+      "audio/voices/vo_ch1006_lose_003.wav"
+    ],
+    "titlecall": [
+      "audio/voices/vo_ch1006_titlecall_001.wav",
+      "audio/voices/vo_ch1006_titlecall_002.wav"
+    ]
+  },
+  "shisa": {
+    "attack": [
+      "audio/voices/vo_ch1007_attack_001.wav",
+      "audio/voices/vo_ch1007_attack_002.wav"
+    ],
+    "skill": [
+      "audio/voices/vo_ch1007_skill_001.wav",
+      "audio/voices/vo_ch1007_skill_002.wav"
+    ],
+    "huntcutin": [
+      "audio/voices/vo_ch1007_huntcutin_011.wav",
+      "audio/voices/vo_ch1007_huntcutin_012.wav",
+      "audio/voices/vo_ch1007_huntcutin_013.wav"
+    ],
+    "win": [
+      "audio/voices/vo_ch1007_win_001.wav",
+      "audio/voices/vo_ch1007_win_002.wav",
+      "audio/voices/vo_ch1007_win_003.wav"
+    ],
+    "lose": [
+      "audio/voices/vo_ch1007_lose_001.wav",
+      "audio/voices/vo_ch1007_lose_002.wav"
+    ],
+    "titlecall": [
+      "audio/voices/vo_ch1007_titlecall_001.wav",
+      "audio/voices/vo_ch1007_titlecall_002.wav"
+    ]
+  },
+  "_unavailable": [
+    "kani",
+    "pajamas",
+    "armor",
+    "hitoha",
+    "futaha",
+    "siren",
+    "roach",
+    "boss",
+    "duo"
+  ]
+}

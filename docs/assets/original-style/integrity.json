@@ -1,0 +1,267 @@
+[
+  {
+    "file": "assets/original-style/characters/armor-cutin.png",
+    "bytes": 159587,
+    "sha256": "49BA0C19EB6AF521CC86987AD73F0948441D2564B98014EF99AEC9FDD287205F"
+  },
+  {
+    "file": "assets/original-style/characters/armor.png",
+    "bytes": 1075456,
+    "sha256": "F2693CB6616B9D483272776942C860A638769A22527A2E894D6F4B5C01D943F7"
+  },
+  {
+    "file": "assets/original-style/characters/boss-cutin-clean.png",
+    "bytes": 468075,
+    "sha256": "D40E6472A81523491601C3BD3B75A71B31CA36E14289503B2BBE1EAFE7E6D0F0"
+  },
+  {
+    "file": "assets/original-style/characters/boss-cutin.png",
+    "bytes": 80960,
+    "sha256": "60EF98695440DD9C953AD8074C14F96F0E9116E9E6A1975971C8F568E4D495E9"
+  },
+  {
+    "file": "assets/original-style/characters/boss.png",
+    "bytes": 555190,
+    "sha256": "28F0DCD506F5AB421FB6AEC4342A4FE3E3871CB6C78A7BDA5472B15873F91E6B"
+  },
+  {
+    "file": "assets/original-style/characters/chiikawa-cutin-clean.png",
+    "bytes": 256594,
+    "sha256": "C5CD7B2C2ED4A506FA1163150A1697D0B909C252E280E4C0D7DC212FDF186CAB"
+  },
+  {
+    "file": "assets/original-style/characters/chiikawa-cutin.png",
+    "bytes": 60249,
+    "sha256": "EB4A8F5FFC004EA8438F5ED9C04E7561E95B01060A869131A6DB633AE620736D"
+  },
+  {
+    "file": "assets/original-style/characters/chiikawa.png",
+    "bytes": 473253,
+    "sha256": "BDDB326C723EB9D8A93DBDB268166251DA15BD9BF39C22670D979F692D56057D"
+  },
+  {
+    "file": "assets/original-style/characters/futaha-reference-v2.png",
+    "bytes": 784869,
+    "sha256": "57512555CCF9B96E7C7DDE962C1CF11B5DA691220785347D118928076633FFE4"
+  },
+  {
+    "file": "assets/original-style/characters/futaha-static.png",
+    "bytes": 572893,
+    "sha256": "A02AC8F6496B2232A92F545C9CDCEE908D968FBA6C58BBB250F1349E4FA260FD"
+  },
+  {
+    "file": "assets/original-style/characters/hachiware-cutin-clean.png",
+    "bytes": 381020,
+    "sha256": "B20E43F0E131CE64D6366919146F26C88F6298535A3A90043616ABC224A397EA"
+  },
+  {
+    "file": "assets/original-style/characters/hachiware-cutin.png",
+    "bytes": 68197,
+    "sha256": "8C6ABEEDE7956A198F4A1D5FD1EE66D472A825DA9D7CB74BB6151BD2EF699644"
+  },
+  {
+    "file": "assets/original-style/characters/hachiware.png",
+    "bytes": 598907,
+    "sha256": "478B7830805FB7B0BF9576AA81227EC844DAD76498D8717C8571E5A620C534C4"
+  },
+  {
+    "file": "assets/original-style/characters/hitoha-reference-v2.png",
+    "bytes": 631243,
+    "sha256": "0264D3C929AB0E074DD8A82D1E10B0A4730350C9A1061CCA209A974A86EA7F00"
+  },
+  {
+    "file": "assets/original-style/characters/hitoha-static.png",
+    "bytes": 473750,
+    "sha256": "F563F83DED29F14C148F5CDC57CEB6DDDE0CE5C552720BB4E373E377FBAC2EFB"
+  },
+  {
+    "file": "assets/original-style/characters/kani-static.png",
+    "bytes": 749937,
+    "sha256": "5D4441C763E514EC7179F866EFAB5B1FB85E3BDC4FB0A3005DEC278F68016448"
+  },
+  {
+    "file": "assets/original-style/characters/kurimanju-cutin-clean.png",
+    "bytes": 273731,
+    "sha256": "A76D84F63C4BDAB23BAB060FF3ECD3864187A16164324EE32AB11B82A3323522"
+  },
+  {
+    "file": "assets/original-style/characters/kurimanju-cutin.png",
+    "bytes": 63758,
+    "sha256": "44DF6975B734447DA01CD50EB165328BCC155956B4BBF5A538B27C50CF36300C"
+  },
+  {
+    "file": "assets/original-style/characters/kurimanju-kya.png",
+    "bytes": 156517,
+    "sha256": "F46D41DFECD41D7C5F20BA5772A1591F7202D4C22C971F56E4F44DA756D348F3"
+  },
+  {
+    "file": "assets/original-style/characters/kurimanju-selection-clean-v10.png",
+    "bytes": 577657,
+    "sha256": "692A04DE292FFFFFEE8D80E09AB0CAC94A4CF633A6C11AB20991270BF5D134CB"
+  },
+  {
+    "file": "assets/original-style/characters/kurimanju-selection.png",
+    "bytes": 59758,
+    "sha256": "903578482878172E05AFC6F70872B05F3FA502F17C3C21A7C3B4C4BEFC1F9411"
+  },
+  {
+    "file": "assets/original-style/characters/kurimanju.png",
+    "bytes": 516218,
+    "sha256": "2390BDA8DF3E684DB4942732B0560B5F65A258AAC3A57EFBE77F910F0AC16B3F"
+  },
+  {
+    "file": "assets/original-style/characters/momonga-cutin-clean.png",
+    "bytes": 377940,
+    "sha256": "B08A7421905E2BF4B5F36313C305780505D16DF2BE5045AA2B227B70CD861ADE"
+  },
+  {
+    "file": "assets/original-style/characters/momonga-cutin.png",
+    "bytes": 99429,
+    "sha256": "7DAB04B304F8A8942A3B584B5BA39F802C3F48AE773749B0178906F6EFDD3332"
+  },
+  {
+    "file": "assets/original-style/characters/momonga.png",
+    "bytes": 886482,
+    "sha256": "B68413B240DF21B70A8D43C9A1C1F28176F88ADBB50CFF80C1BB79385A237E4E"
+  },
+  {
+    "file": "assets/original-style/characters/motion-main-v1.png",
+    "bytes": 1590569,
+    "sha256": "E68E1E54747E8C10F854BB8D71E6BF58F61BFF57B365CEF5F0344195DFB68CA7"
+  },
+  {
+    "file": "assets/original-style/characters/motion-pajamas-v1.png",
+    "bytes": 1728813,
+    "sha256": "A16C06C9980DE758E84CEE30B2B4ADCB4BF237D454F103D77627E56E8306D354"
+  },
+  {
+    "file": "assets/original-style/characters/pajama-green.png",
+    "bytes": 795488,
+    "sha256": "48D409E814342E3475825455983A5D0AA5461AF663450296CF1DCAD03F36E0F6"
+  },
+  {
+    "file": "assets/original-style/characters/pajama-pink.png",
+    "bytes": 823005,
+    "sha256": "8A3C2F35023C3F24E2FF94542BC44D9FA6329EFA9EB586DA03E739B3DDA58237"
+  },
+  {
+    "file": "assets/original-style/characters/pajama-purple.png",
+    "bytes": 869063,
+    "sha256": "F6277772632EF3C134F9363F0B9F0146232D3A0FA933F6E4EFFC1C98B44D3DA1"
+  },
+  {
+    "file": "assets/original-style/characters/pajama-white.png",
+    "bytes": 887739,
+    "sha256": "026907C1989766C71CA3A0F33EF7318A15846F78DA9CD306D6D0DB2520B5FE03"
+  },
+  {
+    "file": "assets/original-style/characters/pajamas-corrected.png",
+    "bytes": 1322243,
+    "sha256": "A62586D7A9A77A6807582461229116EED7DE7C87FBFBE035EC41EC1F668A646E"
+  },
+  {
+    "file": "assets/original-style/characters/pajamas-static.png",
+    "bytes": 1259768,
+    "sha256": "E0D146A035EEA524E0D07A368D05324A364191664E04CA94B2E2005B5DB7A414"
+  },
+  {
+    "file": "assets/original-style/characters/rakko-cutin-clean.png",
+    "bytes": 291573,
+    "sha256": "4B980E538B7CED23645793F9BF57059123CFED6B6EE83F40B539BD1F0E9E0BE9"
+  },
+  {
+    "file": "assets/original-style/characters/rakko-cutin.png",
+    "bytes": 70810,
+    "sha256": "81145368C25CCA9AFA5DBEA88613B62A9E1B78EEC6D9CCC62D852BBD9ED1851B"
+  },
+  {
+    "file": "assets/original-style/characters/rakko.png",
+    "bytes": 703677,
+    "sha256": "15CE7C1AF2EC64A385C61546E03E4633203474F8FE5CE4D8E079AA4F1A98B15B"
+  },
+  {
+    "file": "assets/original-style/characters/roach-cutin.png",
+    "bytes": 51839,
+    "sha256": "C5E5D10B1F6E6A7EA1E42BF1902E3B39658813A8FD27FF14C5DADF78EABBC741"
+  },
+  {
+    "file": "assets/original-style/characters/roach.png",
+    "bytes": 358938,
+    "sha256": "C24C8CFAF7A8F97BF2968EB349CCF2294DB0832A09776129D32DC7B9C00226B6"
+  },
+  {
+    "file": "assets/original-style/characters/shisa-cutin-clean.png",
+    "bytes": 314355,
+    "sha256": "E776D33D5B963B011933D171F36B6A511C43FCE109563B79119E4F4F1CFF67D0"
+  },
+  {
+    "file": "assets/original-style/characters/shisa-cutin.png",
+    "bytes": 88789,
+    "sha256": "2C5C91C4F750554EABB36491FC0C05C3BA475B3169CF96CD971F5ED10CD6FF23"
+  },
+  {
+    "file": "assets/original-style/characters/shisa.png",
+    "bytes": 857198,
+    "sha256": "2A58A8D547D039D295C58FFC2E39836FBB1C5CFE58CC4A875BE39B22496E20CC"
+  },
+  {
+    "file": "assets/original-style/characters/siren-gaze-left.png",
+    "bytes": 986625,
+    "sha256": "38387712AF86F7CA9D99E3BD3ACB852E28B0ECDBCDADF8224A099A87EDD287F1"
+  },
+  {
+    "file": "assets/original-style/characters/siren-static.png",
+    "bytes": 983979,
+    "sha256": "7A0DEF407C38CDBE9AE3E1708434A4BEEAF7BD1DD0DC25E0B9BCF3EE70396BAA"
+  },
+  {
+    "file": "assets/original-style/characters/usagi-cutin-clean.png",
+    "bytes": 285064,
+    "sha256": "BEE1A7DCC0901809CC8932F5CFF3AEABB93D601DF9310DFD3D67B5D8C8A2C398"
+  },
+  {
+    "file": "assets/original-style/characters/usagi-cutin.png",
+    "bytes": 74823,
+    "sha256": "2B27C4AE3A1F4FCBE59376EFF23798D2F77F1D827850AE38ECA3810139B82B93"
+  },
+  {
+    "file": "assets/original-style/characters/usagi.png",
+    "bytes": 702428,
+    "sha256": "8F8DC530A952F733601A42CBDF75963C86D0D10552F36AA1A3C638D471427CBF"
+  },
+  {
+    "file": "assets/original-style/courts/stage-1.png",
+    "bytes": 1490722,
+    "sha256": "45417407F31CE6D2D0CB59146E868856001BB41CA7AA348C089798A6F45A3989"
+  },
+  {
+    "file": "assets/original-style/courts/stage-2.png",
+    "bytes": 1638832,
+    "sha256": "C6FC572E5324B722C3E8E7EE86856A22B11D74A02F9B2EB7F0194DF0D2C4D571"
+  },
+  {
+    "file": "assets/original-style/courts/stage-3.png",
+    "bytes": 1605536,
+    "sha256": "95586BA699E28D2387CC7B2C7C4A9C28905609244DE0FE4DA40B0B50484B93F2"
+  },
+  {
+    "file": "assets/original-style/courts/stage-4.png",
+    "bytes": 1446633,
+    "sha256": "42E2073E43FBF62BD594342613422005C93E60B6860D06FAD82D477207A59E66"
+  },
+  {
+    "file": "assets/original-style/courts/stage-5.png",
+    "bytes": 1484417,
+    "sha256": "A31F1BCB57AF2291A4A73FFE8863ECEA9E0859EE8A746F0D3AF16FFAEB4674D8"
+  },
+  {
+    "file": "assets/original-style/title-logo-en-v10.png",
+    "bytes": 1502203,
+    "sha256": "3C9E1A4875287274E4B37B5B1812220079D8D4832180D8C1B1D828121B6255EF"
+  },
+  {
+    "file": "assets/original-style/title-logo-v07.png",
+    "bytes": 1469351,
+    "sha256": "2179036EA8B0C6324B1FE3C150C7525A919305F823FD70CDA8D4FB1F4C60303C"
+  }
+]

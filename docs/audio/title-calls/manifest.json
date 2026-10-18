@@ -1,0 +1,86 @@
+[
+  {
+    "id": "chiikawa",
+    "file": "audio/title-calls/chiikawa-chiikawa.wav",
+    "source": "audio/voices/vo_ch1001_titlecall_001.wav",
+    "sourceStart": 1.02,
+    "sourceEnd": 1.78,
+    "duration": 0.8,
+    "sourceSha256": "6779702eece78502b91bcf654a9015e6979f8d897ef83e5593418d8dabaab4ed",
+    "sha256": "9ff5153b6f5531f88f4ded9ef4c069d66e56777923932056358bbfef95879977",
+    "type": "character-cry",
+    "method": "Native nonverbal cry trimmed at silence"
+  },
+  {
+    "id": "hachiware",
+    "file": "audio/title-calls/hachiware-chiikawa.wav",
+    "source": "audio/voices/vo_ch1002_titlecall_001.wav",
+    "sourceStart": 1.02,
+    "sourceEnd": 1.515,
+    "duration": 0.535,
+    "sourceSha256": "3b4abb6d05d252701438b424f96250c485f95dd86b5d7da44bc109e3e0ce7ba6",
+    "sha256": "30d15c5ce19d4fe7de46768789b7769ff31fe5878d3ff1bf0aab0b532a0447c2",
+    "type": "chiikawa-word",
+    "method": "Japanese word alignment plus quiet gap; 8ms edge fades; 40ms trailing silence"
+  },
+  {
+    "id": "usagi",
+    "file": "audio/title-calls/usagi-chiikawa.wav",
+    "source": "audio/voices/vo_ch1003_titlecall_001.wav",
+    "sourceStart": 1.02,
+    "sourceEnd": 2.28,
+    "duration": 1.3,
+    "sourceSha256": "cde746ed61e535cdfde9b68487b389444f66c073cf0ed9c74bcb855c99d9ac85",
+    "sha256": "6c26e06c774485bd7dff844f904aab9fb5c6beee6303692ff58a72b2c0fb98f6",
+    "type": "character-cry",
+    "method": "Native nonverbal cry trimmed at silence"
+  },
+  {
+    "id": "rakko",
+    "file": "audio/title-calls/rakko-chiikawa.wav",
+    "source": "audio/voices/vo_ch1006_titlecall_001.wav",
+    "sourceStart": 1.02,
+    "sourceEnd": 1.6,
+    "duration": 0.62,
+    "sourceSha256": "f2a6a71c6cc229b7ead03b2a0feb17e6fb7707c74d325b5ed3ecd561a7be5373",
+    "sha256": "febd8faaf24296f3102c177cd064c9cf259585f2e2c68eef8d5c9b016b9e1a45",
+    "type": "chiikawa-word",
+    "method": "Japanese word alignment plus quiet gap; 8ms edge fades; 40ms trailing silence"
+  },
+  {
+    "id": "momonga",
+    "file": "audio/title-calls/momonga-chiikawa.wav",
+    "source": "audio/voices/vo_ch1005_titlecall_001.wav",
+    "sourceStart": 1.02,
+    "sourceEnd": 1.8,
+    "duration": 0.82,
+    "sourceSha256": "cedb3f11d9e01a7cf0a6f54a25cab0e3bf0120925a21ce58abc2d49777594021",
+    "sha256": "29e543d02575737e175e4014d9b44f2ebbd7a12b7578d63dcd1b0d15620eab86",
+    "type": "chiikawa-word",
+    "method": "Japanese word alignment plus quiet gap; 8ms edge fades; 40ms trailing silence"
+  },
+  {
+    "id": "kurimanju",
+    "file": "audio/title-calls/kurimanju-chiikawa.wav",
+    "source": "audio/voices/vo_ch1004_titlecall_001.wav",
+    "sourceStart": 1.02,
+    "sourceEnd": 2.53,
+    "duration": 1.55,
+    "sourceSha256": "ce4cee54a3d6b2bde9a133fda813fae03bc2aac449914ea2dea2a4d1a6bafbe2",
+    "sha256": "1565566e80a1415580c7a8521297e25a3cf737ccf7de3f42e9951cd3e2aa7c26",
+    "type": "character-cry",
+    "method": "Native nonverbal cry trimmed at silence"
+  },
+  {
+    "id": "shisa",
+    "file": "audio/title-calls/shisa-chiikawa.wav",
+    "source": "audio/voices/vo_ch1007_titlecall_001.wav",
+    "sourceStart": 1.02,
+    "sourceEnd": 1.77,
+    "duration": 0.79,
+    "sourceSha256": "1bd68392f873cc0a838194af9856ae856e96af9d596a8e07f731e1f05806b6bf",
+    "sha256": "4da7f8797b085ed21b2d5caf65d60cd1afec30babe78e3f69195896391fd08c8",
+    "type": "chiikawa-word",
+    "method": "Japanese word alignment plus quiet gap; 8ms edge fades; 40ms trailing silence"
+  }
+]

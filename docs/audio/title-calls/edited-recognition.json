@@ -1,0 +1,18 @@
+[
+  {
+    "file": "hachiware-chiikawa.wav",
+    "recognized": "チーカー!"
+  },
+  {
+    "file": "momonga-chiikawa.wav",
+    "recognized": "ピーカー"
+  },
+  {
+    "file": "rakko-chiikawa.wav",
+    "recognized": "チーカーを"
+  },
+  {
+    "file": "shisa-chiikawa.wav",
+    "recognized": "シーカワ!"
+  }
+]

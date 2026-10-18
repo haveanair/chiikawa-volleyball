@@ -1,0 +1,850 @@
+[
+  {
+    "character": "chiikawa",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1001_attack_001.wav",
+    "output": "audio/voices/vo_ch1001_attack_001.wav",
+    "seconds": 0.811375,
+    "sha256": "affd2d9eb559965d20cd844abdc3e77b34151d092ccb84cf937490b270b733b3"
+  },
+  {
+    "character": "chiikawa",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1001_attack_002.wav",
+    "output": "audio/voices/vo_ch1001_attack_002.wav",
+    "seconds": 0.8960416666666666,
+    "sha256": "afa6f5edb0b81b5b596fa83afd90bd18c5f39bccbd93866c6e1be45570f573a3"
+  },
+  {
+    "character": "chiikawa",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1001_attack_003.wav",
+    "output": "audio/voices/vo_ch1001_attack_003.wav",
+    "seconds": 0.383875,
+    "sha256": "abf37ead679ff7382e285b08685d8a8592ebacc83a876a30786cfdf3af67542a"
+  },
+  {
+    "character": "chiikawa",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1001_skill_001.wav",
+    "output": "audio/voices/vo_ch1001_skill_001.wav",
+    "seconds": 0.747375,
+    "sha256": "5023d4dea756b7acb333058d5146d5888995b3e1988e86193e66fe16aa6ea666"
+  },
+  {
+    "character": "chiikawa",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1001_skill_002.wav",
+    "output": "audio/voices/vo_ch1001_skill_002.wav",
+    "seconds": 1.3840416666666666,
+    "sha256": "5f27d71885cab34a7813995d61c6094cea2e6ba6fca7b717b6463a1a5ab47781"
+  },
+  {
+    "character": "chiikawa",
+    "category": "huntcutin",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1001_huntcutin_012.wav",
+    "output": "audio/voices/vo_ch1001_huntcutin_012.wav",
+    "seconds": 0.726375,
+    "sha256": "2d5026331fb82c5f4909b4ebb0064b2791e3f21596f802d0114bdccd7662b555"
+  },
+  {
+    "character": "chiikawa",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1001_win_002.wav",
+    "output": "audio/voices/vo_ch1001_win_002.wav",
+    "seconds": 0.8680416666666667,
+    "sha256": "38b4787f832a8a56c1dc950c7c645c14bf236b755adbdfa89736642c2970979d"
+  },
+  {
+    "character": "chiikawa",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1001_win_003.wav",
+    "output": "audio/voices/vo_ch1001_win_003.wav",
+    "seconds": 0.8050416666666667,
+    "sha256": "6e177da757197f62003481bae439c14f0b973cc280ffd1270f4f975fcf48744c"
+  },
+  {
+    "character": "chiikawa",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1001_lose_001.wav",
+    "output": "audio/voices/vo_ch1001_lose_001.wav",
+    "seconds": 2.1350416666666665,
+    "sha256": "d1ba855939cf950dc1aff32624f4c99ff624c87b1fff9a21f77108f6cb486bc6"
+  },
+  {
+    "character": "chiikawa",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1001_lose_002.wav",
+    "output": "audio/voices/vo_ch1001_lose_002.wav",
+    "seconds": 1.5436666666666667,
+    "sha256": "d723ba86d97631cdab691054b10f33074576476dd52df5b0b99bd7f18a7a1a75"
+  },
+  {
+    "character": "chiikawa",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1001_lose_003.wav",
+    "output": "audio/voices/vo_ch1001_lose_003.wav",
+    "seconds": 1.4740416666666667,
+    "sha256": "1f1e4fd6f886c11870a3562b8551ba39c0576b5d54a04014e137bc294d1e5bb6"
+  },
+  {
+    "character": "chiikawa",
+    "category": "titlecall",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1001_titlecall_001.wav",
+    "output": "audio/voices/vo_ch1001_titlecall_001.wav",
+    "seconds": 1.908375,
+    "sha256": "6779702eece78502b91bcf654a9015e6979f8d897ef83e5593418d8dabaab4ed"
+  },
+  {
+    "character": "chiikawa",
+    "category": "titlecall",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1001_titlecall_002.wav",
+    "output": "audio/voices/vo_ch1001_titlecall_002.wav",
+    "seconds": 1.6957083333333334,
+    "sha256": "ff759e5e389427b1848b954cf3b1f2e3bac3406b1526ce11668f7858d056d54a"
+  },
+  {
+    "character": "hachiware",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1002_attack_001.wav",
+    "output": "audio/voices/vo_ch1002_attack_001.wav",
+    "seconds": 1.2089583333333334,
+    "sha256": "8bde75417a433f14d3f260c38088f427f513f0296f45759ebe5aa1699bfed3a9"
+  },
+  {
+    "character": "hachiware",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1002_attack_002.wav",
+    "output": "audio/voices/vo_ch1002_attack_002.wav",
+    "seconds": 0.6240416666666667,
+    "sha256": "daafcca74810a556f58aa85c1b4d85da9e812817fe434e61a9b7d3bf4e2a45b1"
+  },
+  {
+    "character": "hachiware",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1002_attack_003.wav",
+    "output": "audio/voices/vo_ch1002_attack_003.wav",
+    "seconds": 0.3940625,
+    "sha256": "b5fbf73e42c8eb0521c727dccf19454d251566acf325228169e861d42a688b02"
+  },
+  {
+    "character": "hachiware",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1002_skill_001.wav",
+    "output": "audio/voices/vo_ch1002_skill_001.wav",
+    "seconds": 0.8780833333333333,
+    "sha256": "8f0b90e81a54321855850ced3f1b609d7d0776360fec1c57013e99f00515ef0d"
+  },
+  {
+    "character": "hachiware",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1002_skill_002.wav",
+    "output": "audio/voices/vo_ch1002_skill_002.wav",
+    "seconds": 1.3417708333333334,
+    "sha256": "bdd3bc49a8e3f9be88600aac0773b51277308016901270804bc1ced0f5924d07"
+  },
+  {
+    "character": "hachiware",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1002_skill_003.wav",
+    "output": "audio/voices/vo_ch1002_skill_003.wav",
+    "seconds": 0.6742916666666666,
+    "sha256": "61479264c1eaddddb56616f310e1847d120a9bb23a2d30efaa1e30e1438f3a73"
+  },
+  {
+    "character": "hachiware",
+    "category": "huntcutin",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1002_huntcutin_001.wav",
+    "output": "audio/voices/vo_ch1002_huntcutin_001.wav",
+    "seconds": 0.4926875,
+    "sha256": "48d6d0bb907762eaa2ce0eb359080aeb01a0ed4f0ff98abbc533d6b9d8ecc2a7"
+  },
+  {
+    "character": "hachiware",
+    "category": "huntcutin",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1002_huntcutin_002.wav",
+    "output": "audio/voices/vo_ch1002_huntcutin_002.wav",
+    "seconds": 0.6796041666666667,
+    "sha256": "500d51e8a5e6a86c8d0f27b842f0ff204286c437d98b977c5f5c1f1d50b47cbb"
+  },
+  {
+    "character": "hachiware",
+    "category": "huntcutin",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1002_huntcutin_003.wav",
+    "output": "audio/voices/vo_ch1002_huntcutin_003.wav",
+    "seconds": 0.8136458333333333,
+    "sha256": "48426ff12c2f4ebf83d28a63cc9fd9a04c83117ffe2f68c105c6a42f2640266b"
+  },
+  {
+    "character": "hachiware",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1002_win_001.wav",
+    "output": "audio/voices/vo_ch1002_win_001.wav",
+    "seconds": 0.736125,
+    "sha256": "26c3805e5dcb1278a7dda0934310ad7145786d564ae35d924d97c0ee86a2620a"
+  },
+  {
+    "character": "hachiware",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1002_win_002.wav",
+    "output": "audio/voices/vo_ch1002_win_002.wav",
+    "seconds": 0.9629375,
+    "sha256": "e8937c8b50dfdeb82e3f2625974214ff8df6bfd89214358931d55fdec23510c4"
+  },
+  {
+    "character": "hachiware",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1002_win_003.wav",
+    "output": "audio/voices/vo_ch1002_win_003.wav",
+    "seconds": 1.5301875,
+    "sha256": "d7a88defb6ba7550b4e71290cb860db2343a7034ff8c0530a4b094af0e30626e"
+  },
+  {
+    "character": "hachiware",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1002_lose_001.wav",
+    "output": "audio/voices/vo_ch1002_lose_001.wav",
+    "seconds": 0.926625,
+    "sha256": "5e13c826fd3c0dbb20b845068f182b8ad5e53fa2b17c53e061ee657c8e2debbb"
+  },
+  {
+    "character": "hachiware",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1002_lose_002.wav",
+    "output": "audio/voices/vo_ch1002_lose_002.wav",
+    "seconds": 1.3352083333333333,
+    "sha256": "236a9d538c4921856b149779bb097f7b0343a08ac1937c5a9e2e50bdaa0124e2"
+  },
+  {
+    "character": "hachiware",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1002_lose_003.wav",
+    "output": "audio/voices/vo_ch1002_lose_003.wav",
+    "seconds": 1.2819583333333333,
+    "sha256": "526de4e1c64654ab1298c06249a01ca14495c5083f4befa4f9f841a2ec00acbe"
+  },
+  {
+    "character": "hachiware",
+    "category": "titlecall",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1002_titlecall_001.wav",
+    "output": "audio/voices/vo_ch1002_titlecall_001.wav",
+    "seconds": 2.0900416666666666,
+    "sha256": "3b4abb6d05d252701438b424f96250c485f95dd86b5d7da44bc109e3e0ce7ba6"
+  },
+  {
+    "character": "hachiware",
+    "category": "titlecall",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1002_titlecall_002.wav",
+    "output": "audio/voices/vo_ch1002_titlecall_002.wav",
+    "seconds": 1.7507291666666667,
+    "sha256": "eeba41c05ddb322ba1200cfdfdd6f378d056f5b2e10bfe7f2b84837202ddfb37"
+  },
+  {
+    "character": "usagi",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1003_attack_001.wav",
+    "output": "audio/voices/vo_ch1003_attack_001.wav",
+    "seconds": 0.586375,
+    "sha256": "44ec6363bfac2ddd60d0e7371e9cf8157b1f160297b7603e7c5fcc8fe12308ba"
+  },
+  {
+    "character": "usagi",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1003_attack_002.wav",
+    "output": "audio/voices/vo_ch1003_attack_002.wav",
+    "seconds": 0.6547083333333333,
+    "sha256": "9dc0c00460fd8958f582ab9ecc24547d7fc53e35c3dc45299bdabf36e83f9e00"
+  },
+  {
+    "character": "usagi",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1003_attack_003.wav",
+    "output": "audio/voices/vo_ch1003_attack_003.wav",
+    "seconds": 0.6250416666666667,
+    "sha256": "3a766bf2c708c13d9d128593a45e35b3f12fd32eb87f4c06d61c3c1db7cde39c"
+  },
+  {
+    "character": "usagi",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1003_skill_001.wav",
+    "output": "audio/voices/vo_ch1003_skill_001.wav",
+    "seconds": 0.680375,
+    "sha256": "9395b3334cd5b951d0281cd5d040f4a0575cbf3093144be60c35a26e06f6b9f1"
+  },
+  {
+    "character": "usagi",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1003_skill_002.wav",
+    "output": "audio/voices/vo_ch1003_skill_002.wav",
+    "seconds": 0.5325,
+    "sha256": "4d5ac3e570fdddbcd3926968ea3a13dcfb05cd6b17f4cfa842c47b7c10638d40"
+  },
+  {
+    "character": "usagi",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1003_skill_003.wav",
+    "output": "audio/voices/vo_ch1003_skill_003.wav",
+    "seconds": 0.9157083333333333,
+    "sha256": "a9cf8abd6eb173e426b4e583b2f3f1bb7454a3b06b0ce3469e2417d40a96b0e5"
+  },
+  {
+    "character": "usagi",
+    "category": "huntcutin",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1003_huntcutin_001.wav",
+    "output": "audio/voices/vo_ch1003_huntcutin_001.wav",
+    "seconds": 1.5117083333333334,
+    "sha256": "014ca640e98a37852a21697ac5bbc4fe6bbda992f7955c8145b73703cc03d60a"
+  },
+  {
+    "character": "usagi",
+    "category": "huntcutin",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1003_huntcutin_002.wav",
+    "output": "audio/voices/vo_ch1003_huntcutin_002.wav",
+    "seconds": 2.1025416666666668,
+    "sha256": "93791695b6ed559def38747ae613439b0b8f65d954b6a943719f71c49e46cf3a"
+  },
+  {
+    "character": "usagi",
+    "category": "huntcutin",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1003_huntcutin_003.wav",
+    "output": "audio/voices/vo_ch1003_huntcutin_003.wav",
+    "seconds": 0.818375,
+    "sha256": "6ad4c0968fc56e3875ac3ecba31292122fafafc36106312d4930e8fd0a554320"
+  },
+  {
+    "character": "usagi",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1003_win_001.wav",
+    "output": "audio/voices/vo_ch1003_win_001.wav",
+    "seconds": 1.9227083333333332,
+    "sha256": "91700c51cd7b39d3748389c5170c07c73e189b81017d94f8a556d53fe72505ee"
+  },
+  {
+    "character": "usagi",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1003_win_002.wav",
+    "output": "audio/voices/vo_ch1003_win_002.wav",
+    "seconds": 2.215708333333333,
+    "sha256": "12fd9ff0c1cc5f9984b3d86a5ca582cfc5ab72abeefdc2bf2914318f6affe6d3"
+  },
+  {
+    "character": "usagi",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1003_win_003.wav",
+    "output": "audio/voices/vo_ch1003_win_003.wav",
+    "seconds": 1.3217083333333333,
+    "sha256": "078e3441f828429d38ffa872ca1f8e4316d81f43a8ddb3b84c432ab90ca3599c"
+  },
+  {
+    "character": "usagi",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1003_lose_001.wav",
+    "output": "audio/voices/vo_ch1003_lose_001.wav",
+    "seconds": 0.7390416666666667,
+    "sha256": "6788633b6838ff68fffa9aa340ff9aec294a31b579429992c4948b24251c3f77"
+  },
+  {
+    "character": "usagi",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1003_lose_002.wav",
+    "output": "audio/voices/vo_ch1003_lose_002.wav",
+    "seconds": 0.9350416666666667,
+    "sha256": "fd6ee6ed494474dfb3b4d9ac8d60d6cadb42fa99826b0d54dc79225a2a823ebc"
+  },
+  {
+    "character": "usagi",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1003_lose_003.wav",
+    "output": "audio/voices/vo_ch1003_lose_003.wav",
+    "seconds": 1.4610416666666666,
+    "sha256": "9350aee89dbb414e4dd452007886daf84e188d60b833c61519af585806c2cf91"
+  },
+  {
+    "character": "usagi",
+    "category": "titlecall",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1003_titlecall_001.wav",
+    "output": "audio/voices/vo_ch1003_titlecall_001.wav",
+    "seconds": 2.4270416666666668,
+    "sha256": "cde746ed61e535cdfde9b68487b389444f66c073cf0ed9c74bcb855c99d9ac85"
+  },
+  {
+    "character": "usagi",
+    "category": "titlecall",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1003_titlecall_002.wav",
+    "output": "audio/voices/vo_ch1003_titlecall_002.wav",
+    "seconds": 1.7280416666666667,
+    "sha256": "84c089dcb8a0893ed72ff29800508af83a5026c44a7b08fcbd843cd78bb7feb0"
+  },
+  {
+    "character": "kurimanju",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1004_attack_001.wav",
+    "output": "audio/voices/vo_ch1004_attack_001.wav",
+    "seconds": 1.652375,
+    "sha256": "06baa09988288e762e16d70929a05247012c4e740ca2f4cafb20360dd0db59b4"
+  },
+  {
+    "character": "kurimanju",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1004_attack_002.wav",
+    "output": "audio/voices/vo_ch1004_attack_002.wav",
+    "seconds": 1.300375,
+    "sha256": "8b80946964dbccee10092d06b9fc46675fd18d4643156917ebd7939b57207c98"
+  },
+  {
+    "character": "kurimanju",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1004_skill_001.wav",
+    "output": "audio/voices/vo_ch1004_skill_001.wav",
+    "seconds": 1.7123333333333333,
+    "sha256": "5223975968ddaf53b8f18fec004de9951cc9a66db57c119ac75861476a2a6d6c"
+  },
+  {
+    "character": "kurimanju",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1004_skill_002.wav",
+    "output": "audio/voices/vo_ch1004_skill_002.wav",
+    "seconds": 1.730375,
+    "sha256": "0693837cdafa4fdb7a7707ad8a410ba1c1a5dc8f57265af8bb8151412d7995b4"
+  },
+  {
+    "character": "kurimanju",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1004_skill_003.wav",
+    "output": "audio/voices/vo_ch1004_skill_003.wav",
+    "seconds": 1.183125,
+    "sha256": "8aebdfe007f70302f591f2c71b9a9062a2b53d04267e7344212dd6bb0334657c"
+  },
+  {
+    "character": "kurimanju",
+    "category": "huntcutin",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1004_huntcutin_011.wav",
+    "output": "audio/voices/vo_ch1004_huntcutin_011.wav",
+    "seconds": 1.2230416666666666,
+    "sha256": "d71751b19642a089d4e429b017e7ea1ea22b12e36e72bad14be64cb514570c0b"
+  },
+  {
+    "character": "kurimanju",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1004_win_001.wav",
+    "output": "audio/voices/vo_ch1004_win_001.wav",
+    "seconds": 3.043041666666667,
+    "sha256": "6128527142ad483b1e8805be256d4d6f35a32ae077c4c56ff89f8f3518171dc6"
+  },
+  {
+    "character": "kurimanju",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1004_win_002.wav",
+    "output": "audio/voices/vo_ch1004_win_002.wav",
+    "seconds": 1.7380416666666667,
+    "sha256": "0d26b4bf774429fd0c40baf64a96a5567f94191f76a86c0860a31bb3a84f28bd"
+  },
+  {
+    "character": "kurimanju",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1004_win_003.wav",
+    "output": "audio/voices/vo_ch1004_win_003.wav",
+    "seconds": 1.198375,
+    "sha256": "d6a844742e69848e91458d79bfcc96f743f317f04d314d50d0fa9d5ebd656645"
+  },
+  {
+    "character": "kurimanju",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1004_lose_001.wav",
+    "output": "audio/voices/vo_ch1004_lose_001.wav",
+    "seconds": 1.3047083333333334,
+    "sha256": "69e55925b622cc10c1b5fd1abbe982465f90bdad14dc1c4c11cb682cd22e1d4c"
+  },
+  {
+    "character": "kurimanju",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1004_lose_002.wav",
+    "output": "audio/voices/vo_ch1004_lose_002.wav",
+    "seconds": 1.0833333333333333,
+    "sha256": "6cb591e9a6d51bf415138fbcbfa7c30a7983796c7c060c37e660f102d457a682"
+  },
+  {
+    "character": "kurimanju",
+    "category": "titlecall",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1004_titlecall_001.wav",
+    "output": "audio/voices/vo_ch1004_titlecall_001.wav",
+    "seconds": 2.7380416666666667,
+    "sha256": "ce4cee54a3d6b2bde9a133fda813fae03bc2aac449914ea2dea2a4d1a6bafbe2"
+  },
+  {
+    "character": "kurimanju",
+    "category": "titlecall",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1004_titlecall_002.wav",
+    "output": "audio/voices/vo_ch1004_titlecall_002.wav",
+    "seconds": 2.652375,
+    "sha256": "2f3e396d2693e7f12921ca27554ddb04d5656701e0b0a6e2073e0452b01a37de"
+  },
+  {
+    "character": "momonga",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1005_attack_001.wav",
+    "output": "audio/voices/vo_ch1005_attack_001.wav",
+    "seconds": 0.8517083333333333,
+    "sha256": "fe586f46cb77030ad6e37508cb7f61cd70fd33035613fad96f9b2f9fcf68ea42"
+  },
+  {
+    "character": "momonga",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1005_attack_002.wav",
+    "output": "audio/voices/vo_ch1005_attack_002.wav",
+    "seconds": 1.2873333333333334,
+    "sha256": "749d7bbcd4bdda4f0eb970e3a14704a29b5061da79ae187b0fbc4b2fe54e03ca"
+  },
+  {
+    "character": "momonga",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1005_attack_003.wav",
+    "output": "audio/voices/vo_ch1005_attack_003.wav",
+    "seconds": 1.194375,
+    "sha256": "bf01018f75f3061bd9d593548fca2ed8f6422ea335aec47ed6a21555199264ac"
+  },
+  {
+    "character": "momonga",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1005_skill_001.wav",
+    "output": "audio/voices/vo_ch1005_skill_001.wav",
+    "seconds": 1.3777083333333333,
+    "sha256": "dccc8b9e7e6a6f8010b1cec5254dbf61e81244e0538852f277aa2bfcf4b33399"
+  },
+  {
+    "character": "momonga",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1005_skill_002.wav",
+    "output": "audio/voices/vo_ch1005_skill_002.wav",
+    "seconds": 1.7237083333333334,
+    "sha256": "42d4485820a7ff91b2ec6e577b4bcf2b1a9ee30d91c275d7e67c333c61c816c6"
+  },
+  {
+    "character": "momonga",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1005_skill_003.wav",
+    "output": "audio/voices/vo_ch1005_skill_003.wav",
+    "seconds": 4.316208333333333,
+    "sha256": "7f8ce2a0b0978388123e447ed8b6f1aaa9e33b612f649024035309e46aea7620"
+  },
+  {
+    "character": "momonga",
+    "category": "huntcutin",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1005_huntcutin_011.wav",
+    "output": "audio/voices/vo_ch1005_huntcutin_011.wav",
+    "seconds": 1.8662083333333332,
+    "sha256": "5f7e7a14ed77f1c879188dd3ea99288a8139bdb3e047f1713aa508dd84c8bdf6"
+  },
+  {
+    "character": "momonga",
+    "category": "huntcutin",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1005_huntcutin_012.wav",
+    "output": "audio/voices/vo_ch1005_huntcutin_012.wav",
+    "seconds": 1.884,
+    "sha256": "aad46625dfd988b2224ab0a0bcdda4c0e477fd3b0eec1218f617a44dec0f1030"
+  },
+  {
+    "character": "momonga",
+    "category": "huntcutin",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1005_huntcutin_013.wav",
+    "output": "audio/voices/vo_ch1005_huntcutin_013.wav",
+    "seconds": 1.594375,
+    "sha256": "d46f77a9b716b37e571c4d30d750d9fe3a22d10d99c6e525f37c623a077e7712"
+  },
+  {
+    "character": "momonga",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1005_win_001.wav",
+    "output": "audio/voices/vo_ch1005_win_001.wav",
+    "seconds": 1.4197083333333333,
+    "sha256": "bbb27cacdeb07237d1337da9282c4984e0ff2b52c81bda0f0eec794b8f790c47"
+  },
+  {
+    "character": "momonga",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1005_win_002.wav",
+    "output": "audio/voices/vo_ch1005_win_002.wav",
+    "seconds": 2.8217083333333335,
+    "sha256": "60d3d2fd4e4492d1882c5215a721f3fbfed3732cfc2e240a9d41ad77195beecc"
+  },
+  {
+    "character": "momonga",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1005_win_003.wav",
+    "output": "audio/voices/vo_ch1005_win_003.wav",
+    "seconds": 0.794375,
+    "sha256": "f9860df2ed21ebbc37ab142bd21620c848050f5a7319a76314d0d4d815fc0452"
+  },
+  {
+    "character": "momonga",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1005_lose_001.wav",
+    "output": "audio/voices/vo_ch1005_lose_001.wav",
+    "seconds": 2.9037083333333333,
+    "sha256": "c499d9e6186c642a534a64b71fb33b012f1e9ea49f84bbd543a3a548ff3d1335"
+  },
+  {
+    "character": "momonga",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1005_lose_002.wav",
+    "output": "audio/voices/vo_ch1005_lose_002.wav",
+    "seconds": 3.0797083333333335,
+    "sha256": "724ef8ad12719788f1e7eb4b9709e0df9336d3022d8514bd767285800e368d6f"
+  },
+  {
+    "character": "momonga",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1005_lose_003.wav",
+    "output": "audio/voices/vo_ch1005_lose_003.wav",
+    "seconds": 4.139708333333333,
+    "sha256": "b6c4af43b96bc21b6ea85664834c08ec81846622de91659798019ac15a41fe4f"
+  },
+  {
+    "character": "momonga",
+    "category": "titlecall",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1005_titlecall_001.wav",
+    "output": "audio/voices/vo_ch1005_titlecall_001.wav",
+    "seconds": 2.743375,
+    "sha256": "cedb3f11d9e01a7cf0a6f54a25cab0e3bf0120925a21ce58abc2d49777594021"
+  },
+  {
+    "character": "momonga",
+    "category": "titlecall",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1005_titlecall_002.wav",
+    "output": "audio/voices/vo_ch1005_titlecall_002.wav",
+    "seconds": 2.0902083333333334,
+    "sha256": "eeaabc13f3d14ba62aa55275e0a92c5bb10d732b5f741091f3c857835573ff95"
+  },
+  {
+    "character": "rakko",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1006_attack_001.wav",
+    "output": "audio/voices/vo_ch1006_attack_001.wav",
+    "seconds": 0.318375,
+    "sha256": "a2b9f20eaa805bfb56bea93082a2f1dc60ba1e921e83d79249a273b3f1c742c1"
+  },
+  {
+    "character": "rakko",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1006_attack_002.wav",
+    "output": "audio/voices/vo_ch1006_attack_002.wav",
+    "seconds": 0.35770833333333335,
+    "sha256": "4b86746cbe105bcaf509e6e8d7f89db885d6c02c713c2a12a28f095ebaab7f24"
+  },
+  {
+    "character": "rakko",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1006_skill_001.wav",
+    "output": "audio/voices/vo_ch1006_skill_001.wav",
+    "seconds": 0.47370833333333334,
+    "sha256": "2368d190b86be6a5fe6d3f203b62bf21594c6d13ee6ffc69bca6dfc597378057"
+  },
+  {
+    "character": "rakko",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1006_skill_002.wav",
+    "output": "audio/voices/vo_ch1006_skill_002.wav",
+    "seconds": 0.8007083333333334,
+    "sha256": "f88f24961855ab22b53d8c06bc1bf0d621954f620c39824cd6da91e778f06a25"
+  },
+  {
+    "character": "rakko",
+    "category": "huntcutin",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1006_huntcutin_001.wav",
+    "output": "audio/voices/vo_ch1006_huntcutin_001.wav",
+    "seconds": 0.7920416666666666,
+    "sha256": "0b5211b8b8273d0b01de563ab76bb7400340e62535bebb53afc092baa992c385"
+  },
+  {
+    "character": "rakko",
+    "category": "huntcutin",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1006_huntcutin_002.wav",
+    "output": "audio/voices/vo_ch1006_huntcutin_002.wav",
+    "seconds": 0.5790416666666667,
+    "sha256": "0663ebb2c89f056a3c7ecbc3ac0aed21e2f7bb8eb37a258b20395462edea925b"
+  },
+  {
+    "character": "rakko",
+    "category": "huntcutin",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1006_huntcutin_003.wav",
+    "output": "audio/voices/vo_ch1006_huntcutin_003.wav",
+    "seconds": 0.580375,
+    "sha256": "c06e5d7f7ef6cba1d6385d8795e7df2e85246ef73519a550c164ac92049cd680"
+  },
+  {
+    "character": "rakko",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1006_win_001.wav",
+    "output": "audio/voices/vo_ch1006_win_001.wav",
+    "seconds": 0.5270416666666666,
+    "sha256": "a72ce4899aab7f8aaba153bb894c26d509d4726dba950770a2819d7cba6b3583"
+  },
+  {
+    "character": "rakko",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1006_win_002.wav",
+    "output": "audio/voices/vo_ch1006_win_002.wav",
+    "seconds": 1.0017083333333334,
+    "sha256": "c4dc327ac4a51fd35d9aefccc6816388f1eb1ac289c6c7dfb1ccaf6d71d4eec4"
+  },
+  {
+    "character": "rakko",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1006_win_003.wav",
+    "output": "audio/voices/vo_ch1006_win_003.wav",
+    "seconds": 0.41504166666666664,
+    "sha256": "c4921e43069cb412ded204dc861665b842b69a0c99638be076d8b4f67852a463"
+  },
+  {
+    "character": "rakko",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1006_lose_001.wav",
+    "output": "audio/voices/vo_ch1006_lose_001.wav",
+    "seconds": 0.514375,
+    "sha256": "9e17f5e6f12ae67312b1d64976641014f771361c2963c9a49cd4fd673f9f143f"
+  },
+  {
+    "character": "rakko",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1006_lose_002.wav",
+    "output": "audio/voices/vo_ch1006_lose_002.wav",
+    "seconds": 0.7450416666666667,
+    "sha256": "ad88ecf584d2cd219eee9d44aaf2f8c5a69f44999db99431b5e3a13dab1ba5c9"
+  },
+  {
+    "character": "rakko",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1006_lose_003.wav",
+    "output": "audio/voices/vo_ch1006_lose_003.wav",
+    "seconds": 2.330375,
+    "sha256": "761f93a8297fdcdcb889fcddda7c5c16e771f2fe6822aeee6c213b54ad629467"
+  },
+  {
+    "character": "rakko",
+    "category": "titlecall",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1006_titlecall_001.wav",
+    "output": "audio/voices/vo_ch1006_titlecall_001.wav",
+    "seconds": 2.207708333333333,
+    "sha256": "f2a6a71c6cc229b7ead03b2a0feb17e6fb7707c74d325b5ed3ecd561a7be5373"
+  },
+  {
+    "character": "rakko",
+    "category": "titlecall",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1006_titlecall_002.wav",
+    "output": "audio/voices/vo_ch1006_titlecall_002.wav",
+    "seconds": 1.6672083333333334,
+    "sha256": "b536215b7922c9b5c214a1744e13ebf8ba5fec63d17ea671fd3fe5112903019a"
+  },
+  {
+    "character": "shisa",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1007_attack_001.wav",
+    "output": "audio/voices/vo_ch1007_attack_001.wav",
+    "seconds": 1.8937083333333333,
+    "sha256": "f19f6f2037b01d52d25ef3edf2b00dda5e575bd4bb94845452b1339a4ec82ccc"
+  },
+  {
+    "character": "shisa",
+    "category": "attack",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1007_attack_002.wav",
+    "output": "audio/voices/vo_ch1007_attack_002.wav",
+    "seconds": 1.955375,
+    "sha256": "25b31e07e28ef044f14c2e3ee55f2fb691d4da9d5b03787d1046ba6cca86ee99"
+  },
+  {
+    "character": "shisa",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1007_skill_001.wav",
+    "output": "audio/voices/vo_ch1007_skill_001.wav",
+    "seconds": 2.184625,
+    "sha256": "1e7ca001bedb024984dfb7650fa0992557bec629ca61ec99d66c11bb12c06582"
+  },
+  {
+    "character": "shisa",
+    "category": "skill",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1007_skill_002.wav",
+    "output": "audio/voices/vo_ch1007_skill_002.wav",
+    "seconds": 0.3,
+    "sha256": "40ae516b9d83b7b3aa7bb90751508641a947005a20f5b04a7af7118ac3698f45"
+  },
+  {
+    "character": "shisa",
+    "category": "huntcutin",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1007_huntcutin_011.wav",
+    "output": "audio/voices/vo_ch1007_huntcutin_011.wav",
+    "seconds": 0.41970833333333335,
+    "sha256": "442c2c0fae654ee0a36c12d66f51505ca72cbf52d83f33b24f11a924dcfb5165"
+  },
+  {
+    "character": "shisa",
+    "category": "huntcutin",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1007_huntcutin_012.wav",
+    "output": "audio/voices/vo_ch1007_huntcutin_012.wav",
+    "seconds": 0.3777083333333333,
+    "sha256": "bdb9bbb6c9e098f78e6aaa35a5fc5b3cc158a7d72c14c75f22979aec84082adc"
+  },
+  {
+    "character": "shisa",
+    "category": "huntcutin",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1007_huntcutin_013.wav",
+    "output": "audio/voices/vo_ch1007_huntcutin_013.wav",
+    "seconds": 2.1367083333333334,
+    "sha256": "43ce7c8991c820dfb8c15898b88f89f17d096169f9e6ed15ed4b463511bec555"
+  },
+  {
+    "character": "shisa",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1007_win_001.wav",
+    "output": "audio/voices/vo_ch1007_win_001.wav",
+    "seconds": 1.7650416666666666,
+    "sha256": "da242efc2548a888d1991f82057727ee854faee69facdce9eae0e274fbad0a26"
+  },
+  {
+    "character": "shisa",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1007_win_002.wav",
+    "output": "audio/voices/vo_ch1007_win_002.wav",
+    "seconds": 2.3800416666666666,
+    "sha256": "144051c5d2f6c33bc1732dae9930ec875708d4e4ae830d1b4102eaf42c5f180f"
+  },
+  {
+    "character": "shisa",
+    "category": "win",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1007_win_003.wav",
+    "output": "audio/voices/vo_ch1007_win_003.wav",
+    "seconds": 1.4177083333333333,
+    "sha256": "0547cc64f8adbfd2eaaaaf90f514fb3e43d3971094889ea1f502031f600b2004"
+  },
+  {
+    "character": "shisa",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1007_lose_001.wav",
+    "output": "audio/voices/vo_ch1007_lose_001.wav",
+    "seconds": 1.1210416666666667,
+    "sha256": "5adeda384910bd591f3c5f86182a00007262c46046eae1779be48cf299003c96"
+  },
+  {
+    "character": "shisa",
+    "category": "lose",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1007_lose_002.wav",
+    "output": "audio/voices/vo_ch1007_lose_002.wav",
+    "seconds": 1.046375,
+    "sha256": "dffe128daeabdd925bb1177d8475e3d1a80d06431577236eda0159111a031c9b"
+  },
+  {
+    "character": "shisa",
+    "category": "titlecall",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1007_titlecall_001.wav",
+    "output": "audio/voices/vo_ch1007_titlecall_001.wav",
+    "seconds": 2.643375,
+    "sha256": "1bd68392f873cc0a838194af9856ae856e96af9d596a8e07f731e1f05806b6bf"
+  },
+  {
+    "character": "shisa",
+    "category": "titlecall",
+    "source": "치이카와포켓_리소스작업\\03_추출리소스\\오디오_정리\\효과음_기타\\vo_ch1007_titlecall_002.wav",
+    "output": "audio/voices/vo_ch1007_titlecall_002.wav",
+    "seconds": 1.9782083333333333,
+    "sha256": "b6882b500e4fd4f168fad320e7300c0fcd6bf67f6b9e1f791eeb524eca6b78a7"
+  }
+]

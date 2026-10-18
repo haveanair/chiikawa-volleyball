@@ -1,0 +1,2313 @@
+{
+  "version": 1,
+  "cell": 320,
+  "anchor": {
+    "x": 160,
+    "y": 220
+  },
+  "pixelScale": 2,
+  "frames": 8,
+  "characters": {
+    "chiikawa": {
+      "file": "chiikawa.png",
+      "portrait": "chiikawa-cutin-clean.png",
+      "source": "ch1001001",
+      "package": "Spine_바로사용/ch1001001__db2260af47",
+      "headBounds": {
+        "x": -307,
+        "y": 208,
+        "width": 617,
+        "height": 511
+      },
+      "bodyBounds": {
+        "x": -307,
+        "y": -15,
+        "width": 617,
+        "height": 734
+      },
+      "scale": 0.08914100486223663,
+      "origin": {
+        "x": 1.5,
+        "y": 321.54545454545456
+      },
+      "animations": [
+        "01001_01_02",
+        "01003_01_02",
+        "01011_01_01",
+        "01013_01_02",
+        "01014_01_01",
+        "01014_01_02",
+        "01015_01_01",
+        "thm_pose"
+      ],
+      "portraitBounds": {
+        "x": 420,
+        "y": 591,
+        "w": 413,
+        "h": 499
+      },
+      "portraitWidth": 55,
+      "portraitProcess": "Original raster reference, built-in imagegen seam cleanup",
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1,
+        "frames": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "hachiware": {
+      "file": "hachiware.png",
+      "portrait": "hachiware-cutin-clean.png",
+      "source": "ch1002001",
+      "package": "Spine_바로사용/ch1002001__1d2e69b352",
+      "headBounds": {
+        "x": -307,
+        "y": 208,
+        "width": 617,
+        "height": 542
+      },
+      "bodyBounds": {
+        "x": -307,
+        "y": -15,
+        "width": 617,
+        "height": 765
+      },
+      "scale": 0.08914100486223663,
+      "origin": {
+        "x": 1.5,
+        "y": 321.54545454545456
+      },
+      "animations": [
+        "01001_01_02",
+        "01003_01_02",
+        "01011_01_01",
+        "01013_01_02",
+        "01014_01_01",
+        "01014_01_02",
+        "01015_01_01",
+        "thm_pose"
+      ],
+      "portraitBounds": {
+        "x": 369,
+        "y": 454,
+        "w": 543,
+        "h": 671
+      },
+      "portraitWidth": 55,
+      "portraitProcess": "Original raster reference, built-in imagegen seam cleanup",
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1,
+        "frames": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "usagi": {
+      "file": "usagi.png",
+      "portrait": "usagi-cutin-clean.png",
+      "source": "ch1003001",
+      "package": "Spine_바로사용/ch1003001__8b8c86a053",
+      "headBounds": {
+        "x": -271,
+        "y": 210,
+        "width": 640,
+        "height": 703
+      },
+      "bodyBounds": {
+        "x": -289,
+        "y": -15,
+        "width": 658,
+        "height": 928
+      },
+      "scale": 0.0859375,
+      "origin": {
+        "x": 49,
+        "y": 334.09090909090907
+      },
+      "animations": [
+        "01001_01_02",
+        "01003_01_02",
+        "01011_01_01",
+        "01013_01_02",
+        "01014_01_02",
+        "01015_01_01",
+        "thm_pose"
+      ],
+      "portraitBounds": {
+        "x": 393,
+        "y": 457,
+        "w": 412,
+        "h": 646
+      },
+      "portraitWidth": 56.546875,
+      "portraitProcess": "Original raster reference, built-in imagegen seam cleanup",
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1,
+        "frames": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "kurimanju": {
+      "file": "kurimanju.png",
+      "portrait": "kurimanju-cutin-clean.png",
+      "source": "ch1004001",
+      "package": "Spine_바로사용/ch1004001__a933db900e",
+      "headBounds": {
+        "x": -278,
+        "y": 183,
+        "width": 620,
+        "height": 524
+      },
+      "bodyBounds": {
+        "x": -278,
+        "y": -15,
+        "width": 620,
+        "height": 722
+      },
+      "scale": 0.08870967741935484,
+      "origin": {
+        "x": 32,
+        "y": 323.1818181818182
+      },
+      "animations": [
+        "01001_01_02",
+        "01003_01_02",
+        "01011_01_01",
+        "01013_01_01",
+        "01013_01_02",
+        "01014_01_01",
+        "01014_01_02",
+        "01015_01_01",
+        "thm_pose"
+      ],
+      "portraitBounds": {
+        "x": 402,
+        "y": 603,
+        "w": 424,
+        "h": 487
+      },
+      "portraitWidth": 55,
+      "portraitProcess": "Original raster reference, built-in imagegen seam cleanup",
+      "kya": "kurimanju-kya.png",
+      "selectionPortrait": "kurimanju-selection-clean-v10.png",
+      "selectionWidth": 65,
+      "selectionBounds": {
+        "x": 275,
+        "y": 264,
+        "w": 709,
+        "h": 793
+      },
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1,
+        "frames": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "momonga": {
+      "file": "momonga.png",
+      "portrait": "momonga-cutin-clean.png",
+      "source": "ch1005001",
+      "package": "Spine_바로사용/ch1005001__0670477059",
+      "headBounds": {
+        "x": -581,
+        "y": 77,
+        "width": 926,
+        "height": 777
+      },
+      "bodyBounds": {
+        "x": -581,
+        "y": -5,
+        "width": 926,
+        "height": 859
+      },
+      "scale": 0.0859375,
+      "origin": {
+        "x": 0,
+        "y": 344.09090909090907
+      },
+      "animations": [
+        "01001_01_02",
+        "01003_01_02",
+        "01011_01_01",
+        "01013_01_02",
+        "01014_01_02",
+        "01015_01_01",
+        "thm_pose"
+      ],
+      "portraitBounds": {
+        "x": 256,
+        "y": 532,
+        "w": 604,
+        "h": 567
+      },
+      "portraitWidth": 79.578125,
+      "portraitProcess": "Original raster reference, built-in imagegen seam cleanup",
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1,
+        "frames": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "rakko": {
+      "file": "rakko.png",
+      "portrait": "rakko-cutin-clean.png",
+      "source": "ch1006001",
+      "package": "Spine_바로사용/ch1006001__07d930b3c9",
+      "headBounds": {
+        "x": -328,
+        "y": 226,
+        "width": 666,
+        "height": 549
+      },
+      "bodyBounds": {
+        "x": -360,
+        "y": -45,
+        "width": 698,
+        "height": 820
+      },
+      "scale": 0.08258258258258258,
+      "origin": {
+        "x": 5,
+        "y": 318.27272727272725
+      },
+      "animations": [
+        "01001_01_02",
+        "01003_01_02",
+        "01011_01_01",
+        "01013_01_02",
+        "01014_01_02",
+        "01015_01_01",
+        "thm_pose"
+      ],
+      "portraitBounds": {
+        "x": 411,
+        "y": 562,
+        "w": 417,
+        "h": 499
+      },
+      "portraitWidth": 57.64264264264264,
+      "portraitProcess": "Original raster reference, built-in imagegen seam cleanup",
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1,
+        "frames": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "shisa": {
+      "file": "shisa.png",
+      "portrait": "shisa-cutin-clean.png",
+      "source": "ch1007001",
+      "package": "Spine_바로사용/ch1007001__bf71dc2a9a",
+      "headBounds": {
+        "x": -322,
+        "y": 226,
+        "width": 638,
+        "height": 525
+      },
+      "bodyBounds": {
+        "x": -405,
+        "y": 15,
+        "width": 775,
+        "height": 736
+      },
+      "scale": 0.08620689655172414,
+      "origin": {
+        "x": -3,
+        "y": 363
+      },
+      "animations": [
+        "01001_01_02",
+        "01003_01_02",
+        "01011_01_01",
+        "01013_01_02",
+        "01014_01_02",
+        "01015_01_01",
+        "thm_pose"
+      ],
+      "portraitBounds": {
+        "x": 364,
+        "y": 608,
+        "w": 506,
+        "h": 506
+      },
+      "portraitWidth": 66.8103448275862,
+      "portraitProcess": "Original raster reference, built-in imagegen seam cleanup",
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1,
+        "frames": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "roach": {
+      "file": "roach.png",
+      "portrait": "roach-cutin.png",
+      "source": "en1001001",
+      "package": "Spine_바로사용/en1001001__47b3c8b030",
+      "headBounds": {
+        "x": -169,
+        "y": 233,
+        "width": 338,
+        "height": 335
+      },
+      "bodyBounds": {
+        "x": -203,
+        "y": 2,
+        "width": 447,
+        "height": 651
+      },
+      "scale": 0.09395973154362416,
+      "origin": {
+        "x": 0,
+        "y": 321.2857142857143
+      },
+      "animations": [
+        "01001_01_02",
+        "01003_01_02",
+        "01011_01_01",
+        "01014_01_02"
+      ],
+      "portraitBounds": {
+        "x": 367,
+        "y": 477,
+        "w": 260,
+        "h": 366
+      },
+      "portraitWidth": 42,
+      "portraitProcess": "Native raster",
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1,
+        "frames": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "boss": {
+      "file": "boss.png",
+      "portrait": "boss-cutin-clean.png",
+      "source": "ch3017001",
+      "package": "Spine_바로사용/ch3017001__27c2509168",
+      "headBounds": {
+        "x": 308,
+        "y": 440,
+        "width": 1452,
+        "height": 1040
+      },
+      "bodyBounds": {
+        "x": -1508,
+        "y": 8,
+        "width": 3584,
+        "height": 2292
+      },
+      "scale": 0.027901785714285716,
+      "origin": {
+        "x": 284,
+        "y": 1083.2
+      },
+      "animations": [
+        "01015_01_02"
+      ],
+      "portraitBounds": {
+        "x": 100,
+        "y": 509,
+        "w": 771,
+        "h": 499
+      },
+      "portraitWidth": 100,
+      "portraitProcess": "Native raster with built-in seam cleanup",
+      "gait": {
+        "groundY": 0,
+        "cycleFrames": 8,
+        "feet": [
+          {
+            "frame": 0,
+            "feet": [
+              {
+                "group": "right010",
+                "y": 0.03216025233268738,
+                "targetY": 0
+              },
+              {
+                "group": "left020",
+                "y": 3.2114024861584767e-07,
+                "targetY": 1.469576158976824e-14
+              },
+              {
+                "group": "right020",
+                "y": 2.3407060325553175e-06,
+                "targetY": 0
+              },
+              {
+                "group": "right030",
+                "y": 1.3922260999679565,
+                "targetY": 1.469576158976824e-14
+              }
+            ]
+          },
+          {
+            "frame": 1,
+            "feet": [
+              {
+                "group": "right010",
+                "y": 84.85281372070312,
+                "targetY": 84.85281374238569
+              },
+              {
+                "group": "left020",
+                "y": 3.034024238586426,
+                "targetY": 0
+              },
+              {
+                "group": "right020",
+                "y": 84.85282897949219,
+                "targetY": 84.85281374238569
+              },
+              {
+                "group": "right030",
+                "y": -0.0005076403613202274,
+                "targetY": 0
+              }
+            ]
+          },
+          {
+            "frame": 2,
+            "feet": [
+              {
+                "group": "right010",
+                "y": 120,
+                "targetY": 120
+              },
+              {
+                "group": "left020",
+                "y": 3.929102376787341e-09,
+                "targetY": 0
+              },
+              {
+                "group": "right020",
+                "y": 119.99259185791016,
+                "targetY": 120
+              },
+              {
+                "group": "right030",
+                "y": 0.002268529264256358,
+                "targetY": 0
+              }
+            ]
+          },
+          {
+            "frame": 3,
+            "feet": [
+              {
+                "group": "right010",
+                "y": 84.85291290283203,
+                "targetY": 84.8528137423857
+              },
+              {
+                "group": "left020",
+                "y": 1.595594767422881e-10,
+                "targetY": 0
+              },
+              {
+                "group": "right020",
+                "y": 84.85281372070312,
+                "targetY": 84.8528137423857
+              },
+              {
+                "group": "right030",
+                "y": 8.394948736167862e-09,
+                "targetY": 0
+              }
+            ]
+          },
+          {
+            "frame": 4,
+            "feet": [
+              {
+                "group": "right010",
+                "y": -2.5579538487363607e-13,
+                "targetY": 1.469576158976824e-14
+              },
+              {
+                "group": "left020",
+                "y": -7.763617304590298e-09,
+                "targetY": 0
+              },
+              {
+                "group": "right020",
+                "y": -9.760015018400736e-11,
+                "targetY": 1.469576158976824e-14
+              },
+              {
+                "group": "right030",
+                "y": -2.2311498923954787e-06,
+                "targetY": 0
+              }
+            ]
+          },
+          {
+            "frame": 5,
+            "feet": [
+              {
+                "group": "right010",
+                "y": 0.0004061827203258872,
+                "targetY": 0
+              },
+              {
+                "group": "left020",
+                "y": 86.62378692626953,
+                "targetY": 84.85281374238568
+              },
+              {
+                "group": "right020",
+                "y": 4.547473508864641e-13,
+                "targetY": 0
+              },
+              {
+                "group": "right030",
+                "y": 84.85348510742188,
+                "targetY": 84.85281374238568
+              }
+            ]
+          },
+          {
+            "frame": 6,
+            "feet": [
+              {
+                "group": "right010",
+                "y": -7.625544640177395e-11,
+                "targetY": 0
+              },
+              {
+                "group": "left020",
+                "y": 120,
+                "targetY": 120
+              },
+              {
+                "group": "right020",
+                "y": 2.775098266738496e-07,
+                "targetY": 0
+              },
+              {
+                "group": "right030",
+                "y": 120,
+                "targetY": 120
+              }
+            ]
+          },
+          {
+            "frame": 7,
+            "feet": [
+              {
+                "group": "right010",
+                "y": 2.2737367544323206e-13,
+                "targetY": 0
+              },
+              {
+                "group": "left020",
+                "y": 84.85281372070312,
+                "targetY": 84.8528137423858
+              },
+              {
+                "group": "right020",
+                "y": 1.123055426432984e-09,
+                "targetY": 0
+              },
+              {
+                "group": "right030",
+                "y": 84.85281372070312,
+                "targetY": 84.8528137423858
+              }
+            ]
+          }
+        ]
+      },
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1,
+        "frames": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "armor": {
+      "file": "armor.png",
+      "portrait": "armor-cutin.png",
+      "source": "ch3006001",
+      "package": "Spine_바로사용/ch3006001__64fa5ea879",
+      "headBounds": {
+        "x": 69,
+        "y": 1430,
+        "width": 451,
+        "height": 171
+      },
+      "bodyBounds": {
+        "x": -512,
+        "y": -43,
+        "width": 1100,
+        "height": 1644
+      },
+      "scale": 0.05778588807785888,
+      "origin": {
+        "x": 38,
+        "y": 476.1578947368421
+      },
+      "animations": [
+        "01015_01_02"
+      ],
+      "portraitBounds": {
+        "x": 279,
+        "y": 108,
+        "w": 438,
+        "h": 727
+      },
+      "portraitWidth": 63.564476885644766,
+      "portraitProcess": "Native Pocket Pochette armor with bear pouch and strap retained",
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1,
+        "frames": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "kani": {
+      "kind": "static",
+      "file": "kani-static.png",
+      "bounds": {
+        "x": 228,
+        "y": 134,
+        "w": 810,
+        "h": 995
+      },
+      "logicalWidth": 55,
+      "source": "Official-reference-guided image generation",
+      "note": "Single original-style pose; independent limb animations pending",
+      "motion": {
+        "file": "motion-main-v1.png",
+        "frames": [
+          {
+            "x": 39,
+            "y": 48,
+            "w": 176,
+            "h": 209,
+            "pixels": 27106
+          },
+          {
+            "x": 250,
+            "y": 52,
+            "w": 176,
+            "h": 205,
+            "pixels": 26519
+          },
+          {
+            "x": 475,
+            "y": 56,
+            "w": 179,
+            "h": 205,
+            "pixels": 25114
+          },
+          {
+            "x": 694,
+            "y": 53,
+            "w": 162,
+            "h": 204,
+            "pixels": 23697
+          },
+          {
+            "x": 901,
+            "y": 32,
+            "w": 185,
+            "h": 203,
+            "pixels": 25193
+          },
+          {
+            "x": 1117,
+            "y": 37,
+            "w": 180,
+            "h": 218,
+            "pixels": 26129
+          },
+          {
+            "x": 1321,
+            "y": 106,
+            "w": 211,
+            "h": 156,
+            "pixels": 23361
+          },
+          {
+            "x": 1565,
+            "y": 78,
+            "w": 170,
+            "h": 183,
+            "pixels": 22614
+          }
+        ],
+        "poses": [
+          "idle",
+          "idle-alt",
+          "move-a",
+          "move-b",
+          "jump",
+          "spike",
+          "dive",
+          "recovery"
+        ],
+        "source": "Reference-preserving imagegen pose atlas; originals retained",
+        "sha256": "e68e1e54747e8c10f854bb8d71e6bf58f61bff57b365cef5f0344195dfb68ca7",
+        "sourceFacing": [
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          -1
+        ]
+      },
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1
+      }
+    },
+    "siren": {
+      "kind": "static",
+      "file": "siren-gaze-left.png",
+      "bounds": {
+        "x": 97,
+        "y": 70,
+        "w": 1160,
+        "h": 1095
+      },
+      "logicalWidth": 65,
+      "source": "Official-reference-guided image generation",
+      "note": "Base art faces/looks left; mirrored per court side. 2x game presentation with grounded foot anchor.",
+      "motion": {
+        "file": "motion-main-v1.png",
+        "frames": [
+          {
+            "x": 37,
+            "y": 694,
+            "w": 196,
+            "h": 171,
+            "pixels": 22107
+          },
+          {
+            "x": 252,
+            "y": 698,
+            "w": 192,
+            "h": 170,
+            "pixels": 21257
+          },
+          {
+            "x": 456,
+            "y": 702,
+            "w": 198,
+            "h": 159,
+            "pixels": 20316
+          },
+          {
+            "x": 686,
+            "y": 708,
+            "w": 208,
+            "h": 159,
+            "pixels": 21020
+          },
+          {
+            "x": 907,
+            "y": 686,
+            "w": 183,
+            "h": 168,
+            "pixels": 20800
+          },
+          {
+            "x": 1114,
+            "y": 695,
+            "w": 193,
+            "h": 171,
+            "pixels": 21111
+          },
+          {
+            "x": 1321,
+            "y": 736,
+            "w": 217,
+            "h": 130,
+            "pixels": 18759
+          },
+          {
+            "x": 1576,
+            "y": 709,
+            "w": 171,
+            "h": 155,
+            "pixels": 18726
+          }
+        ],
+        "poses": [
+          "idle",
+          "idle-alt",
+          "move-a",
+          "move-b",
+          "jump",
+          "spike",
+          "dive",
+          "recovery"
+        ],
+        "source": "Reference-preserving imagegen pose atlas; originals retained",
+        "sha256": "e68e1e54747e8c10f854bb8d71e6bf58f61bff57b365cef5f0344195dfb68ca7",
+        "sourceFacing": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ]
+      },
+      "facing": {
+        "base": -1,
+        "portrait": -1,
+        "selection": -1
+      }
+    },
+    "hitoha": {
+      "kind": "static",
+      "file": "hitoha-reference-v2.png",
+      "bounds": {
+        "x": 299,
+        "y": 109,
+        "w": 713,
+        "h": 996
+      },
+      "logicalWidth": 55,
+      "source": "Official-reference-guided image generation",
+      "note": "Official reference silhouette revision: no separate feet or collar; lowered short arms; Hitoha one leaf/cheek marks, Futaha two leaves/blank face. Single static pose.",
+      "motion": {
+        "file": "motion-main-v1.png",
+        "frames": [
+          {
+            "x": 52,
+            "y": 272,
+            "w": 144,
+            "h": 195,
+            "pixels": 19108
+          },
+          {
+            "x": 264,
+            "y": 272,
+            "w": 146,
+            "h": 198,
+            "pixels": 19596
+          },
+          {
+            "x": 476,
+            "y": 277,
+            "w": 163,
+            "h": 195,
+            "pixels": 19809
+          },
+          {
+            "x": 698,
+            "y": 287,
+            "w": 161,
+            "h": 188,
+            "pixels": 19687
+          },
+          {
+            "x": 907,
+            "y": 259,
+            "w": 160,
+            "h": 202,
+            "pixels": 20402
+          },
+          {
+            "x": 1119,
+            "y": 272,
+            "w": 166,
+            "h": 203,
+            "pixels": 20881
+          },
+          {
+            "x": 1331,
+            "y": 336,
+            "w": 209,
+            "h": 144,
+            "pixels": 19106
+          },
+          {
+            "x": 1579,
+            "y": 298,
+            "w": 154,
+            "h": 183,
+            "pixels": 17701
+          }
+        ],
+        "poses": [
+          "idle",
+          "idle-alt",
+          "move-a",
+          "move-b",
+          "jump",
+          "spike",
+          "dive",
+          "recovery"
+        ],
+        "source": "Reference-preserving imagegen pose atlas; originals retained",
+        "sha256": "e68e1e54747e8c10f854bb8d71e6bf58f61bff57b365cef5f0344195dfb68ca7",
+        "sourceFacing": [
+          1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ]
+      },
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1
+      }
+    },
+    "futaha": {
+      "kind": "static",
+      "file": "futaha-reference-v2.png",
+      "bounds": {
+        "x": 261,
+        "y": 53,
+        "w": 774,
+        "h": 1091
+      },
+      "logicalWidth": 55,
+      "source": "Official-reference-guided image generation",
+      "note": "Official reference silhouette revision: no separate feet or collar; lowered short arms; Hitoha one leaf/cheek marks, Futaha two leaves/blank face. Single static pose.",
+      "motion": {
+        "file": "motion-main-v1.png",
+        "frames": [
+          {
+            "x": 45,
+            "y": 491,
+            "w": 149,
+            "h": 190,
+            "pixels": 20714
+          },
+          {
+            "x": 264,
+            "y": 495,
+            "w": 145,
+            "h": 188,
+            "pixels": 20594
+          },
+          {
+            "x": 476,
+            "y": 490,
+            "w": 163,
+            "h": 200,
+            "pixels": 21197
+          },
+          {
+            "x": 698,
+            "y": 494,
+            "w": 158,
+            "h": 192,
+            "pixels": 20755
+          },
+          {
+            "x": 902,
+            "y": 475,
+            "w": 165,
+            "h": 201,
+            "pixels": 22115
+          },
+          {
+            "x": 1124,
+            "y": 481,
+            "w": 159,
+            "h": 202,
+            "pixels": 21814
+          },
+          {
+            "x": 1330,
+            "y": 552,
+            "w": 203,
+            "h": 140,
+            "pixels": 17811
+          },
+          {
+            "x": 1579,
+            "y": 525,
+            "w": 155,
+            "h": 168,
+            "pixels": 17334
+          }
+        ],
+        "poses": [
+          "idle",
+          "idle-alt",
+          "move-a",
+          "move-b",
+          "jump",
+          "spike",
+          "dive",
+          "recovery"
+        ],
+        "source": "Reference-preserving imagegen pose atlas; originals retained",
+        "sha256": "e68e1e54747e8c10f854bb8d71e6bf58f61bff57b365cef5f0344195dfb68ca7",
+        "sourceFacing": [
+          1,
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          1,
+          -1
+        ]
+      },
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1
+      }
+    },
+    "pajamas": {
+      "kind": "static",
+      "file": "pajamas-corrected.png",
+      "bounds": {
+        "x": 40,
+        "y": 267,
+        "w": 1455,
+        "h": 507
+      },
+      "logicalWidth": 65,
+      "source": "Official-reference-guided image generation",
+      "note": "Green two pointed spikes between round ears; pink ears slant outward. Exterior halo not fully removed.",
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1
+      }
+    },
+    "pajama-purple": {
+      "kind": "static",
+      "file": "pajama-purple.png",
+      "bounds": {
+        "x": 175,
+        "y": 87,
+        "w": 886,
+        "h": 1068
+      },
+      "logicalWidth": 55,
+      "source": "Reference-guided individual Pajama Parties raster; built-in imagegen",
+      "note": "Single pose; team substitution in C core",
+      "motion": {
+        "file": "motion-pajamas-v1.png",
+        "frames": [
+          {
+            "x": 31,
+            "y": 25,
+            "w": 168,
+            "h": 193,
+            "pixels": 24911
+          },
+          {
+            "x": 247,
+            "y": 30,
+            "w": 182,
+            "h": 188,
+            "pixels": 24149
+          },
+          {
+            "x": 484,
+            "y": 26,
+            "w": 160,
+            "h": 192,
+            "pixels": 22241
+          },
+          {
+            "x": 685,
+            "y": 27,
+            "w": 162,
+            "h": 191,
+            "pixels": 22466
+          },
+          {
+            "x": 919,
+            "y": 14,
+            "w": 163,
+            "h": 195,
+            "pixels": 23173
+          },
+          {
+            "x": 1141,
+            "y": 14,
+            "w": 178,
+            "h": 204,
+            "pixels": 23377
+          },
+          {
+            "x": 1354,
+            "y": 67,
+            "w": 212,
+            "h": 148,
+            "pixels": 20807
+          },
+          {
+            "x": 1600,
+            "y": 58,
+            "w": 156,
+            "h": 153,
+            "pixels": 19101
+          }
+        ],
+        "poses": [
+          "idle",
+          "idle-alt",
+          "move-a",
+          "move-b",
+          "jump",
+          "spike",
+          "dive",
+          "recovery"
+        ],
+        "source": "Reference-preserving imagegen pose atlas; originals retained",
+        "sha256": "a16c06c9980de758e84cee30b2b4adcb4bf237d454f103d77627e56e8306d354",
+        "sourceFacing": [
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1
+        ]
+      },
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1
+      }
+    },
+    "pajama-green": {
+      "kind": "static",
+      "file": "pajama-green.png",
+      "bounds": {
+        "x": 207,
+        "y": 122,
+        "w": 839,
+        "h": 1021
+      },
+      "logicalWidth": 55,
+      "source": "Reference-guided individual Pajama Parties raster; built-in imagegen",
+      "note": "Single pose; team substitution in C core",
+      "motion": {
+        "file": "motion-pajamas-v1.png",
+        "frames": [
+          {
+            "x": 27,
+            "y": 239,
+            "w": 175,
+            "h": 198,
+            "pixels": 27028
+          },
+          {
+            "x": 240,
+            "y": 238,
+            "w": 197,
+            "h": 199,
+            "pixels": 27487
+          },
+          {
+            "x": 476,
+            "y": 235,
+            "w": 165,
+            "h": 202,
+            "pixels": 23571
+          },
+          {
+            "x": 687,
+            "y": 237,
+            "w": 177,
+            "h": 200,
+            "pixels": 25837
+          },
+          {
+            "x": 916,
+            "y": 226,
+            "w": 171,
+            "h": 198,
+            "pixels": 25271
+          },
+          {
+            "x": 1131,
+            "y": 231,
+            "w": 186,
+            "h": 206,
+            "pixels": 24882
+          },
+          {
+            "x": 1348,
+            "y": 289,
+            "w": 218,
+            "h": 150,
+            "pixels": 22762
+          },
+          {
+            "x": 1594,
+            "y": 267,
+            "w": 163,
+            "h": 163,
+            "pixels": 21230
+          }
+        ],
+        "poses": [
+          "idle",
+          "idle-alt",
+          "move-a",
+          "move-b",
+          "jump",
+          "spike",
+          "dive",
+          "recovery"
+        ],
+        "source": "Reference-preserving imagegen pose atlas; originals retained",
+        "sha256": "a16c06c9980de758e84cee30b2b4adcb4bf237d454f103d77627e56e8306d354",
+        "sourceFacing": [
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1
+        ]
+      },
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1
+      }
+    },
+    "pajama-pink": {
+      "kind": "static",
+      "file": "pajama-pink.png",
+      "bounds": {
+        "x": 186,
+        "y": 127,
+        "w": 873,
+        "h": 1010
+      },
+      "logicalWidth": 55,
+      "source": "Reference-guided individual Pajama Parties raster; built-in imagegen",
+      "note": "Single pose; team substitution in C core",
+      "motion": {
+        "file": "motion-pajamas-v1.png",
+        "frames": [
+          {
+            "x": 29,
+            "y": 455,
+            "w": 173,
+            "h": 196,
+            "pixels": 26852
+          },
+          {
+            "x": 243,
+            "y": 458,
+            "w": 193,
+            "h": 193,
+            "pixels": 26999
+          },
+          {
+            "x": 478,
+            "y": 450,
+            "w": 166,
+            "h": 201,
+            "pixels": 23413
+          },
+          {
+            "x": 690,
+            "y": 449,
+            "w": 169,
+            "h": 201,
+            "pixels": 24628
+          },
+          {
+            "x": 918,
+            "y": 442,
+            "w": 168,
+            "h": 191,
+            "pixels": 24019
+          },
+          {
+            "x": 1136,
+            "y": 442,
+            "w": 181,
+            "h": 204,
+            "pixels": 24944
+          },
+          {
+            "x": 1355,
+            "y": 497,
+            "w": 215,
+            "h": 149,
+            "pixels": 21576
+          },
+          {
+            "x": 1593,
+            "y": 497,
+            "w": 166,
+            "h": 149,
+            "pixels": 19578
+          }
+        ],
+        "poses": [
+          "idle",
+          "idle-alt",
+          "move-a",
+          "move-b",
+          "jump",
+          "spike",
+          "dive",
+          "recovery"
+        ],
+        "source": "Reference-preserving imagegen pose atlas; originals retained",
+        "sha256": "a16c06c9980de758e84cee30b2b4adcb4bf237d454f103d77627e56e8306d354",
+        "sourceFacing": [
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1
+        ]
+      },
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1
+      }
+    },
+    "pajama-white": {
+      "kind": "static",
+      "file": "pajama-white.png",
+      "bounds": {
+        "x": 173,
+        "y": 63,
+        "w": 910,
+        "h": 1124
+      },
+      "logicalWidth": 55,
+      "source": "Reference-guided individual Pajama Parties raster; built-in imagegen",
+      "note": "Single pose; team substitution in C core",
+      "motion": {
+        "file": "motion-pajamas-v1.png",
+        "frames": [
+          {
+            "x": 31,
+            "y": 666,
+            "w": 169,
+            "h": 207,
+            "pixels": 24792
+          },
+          {
+            "x": 243,
+            "y": 667,
+            "w": 193,
+            "h": 206,
+            "pixels": 25427
+          },
+          {
+            "x": 484,
+            "y": 663,
+            "w": 163,
+            "h": 210,
+            "pixels": 22276
+          },
+          {
+            "x": 687,
+            "y": 668,
+            "w": 169,
+            "h": 205,
+            "pixels": 22812
+          },
+          {
+            "x": 919,
+            "y": 654,
+            "w": 165,
+            "h": 203,
+            "pixels": 22896
+          },
+          {
+            "x": 1135,
+            "y": 657,
+            "w": 167,
+            "h": 215,
+            "pixels": 22905
+          },
+          {
+            "x": 1353,
+            "y": 715,
+            "w": 216,
+            "h": 152,
+            "pixels": 20466
+          },
+          {
+            "x": 1600,
+            "y": 695,
+            "w": 154,
+            "h": 171,
+            "pixels": 18592
+          }
+        ],
+        "poses": [
+          "idle",
+          "idle-alt",
+          "move-a",
+          "move-b",
+          "jump",
+          "spike",
+          "dive",
+          "recovery"
+        ],
+        "source": "Reference-preserving imagegen pose atlas; originals retained",
+        "sha256": "a16c06c9980de758e84cee30b2b4adcb4bf237d454f103d77627e56e8306d354",
+        "sourceFacing": [
+          1,
+          1,
+          1,
+          -1,
+          -1,
+          -1,
+          1,
+          -1
+        ]
+      },
+      "facing": {
+        "base": 1,
+        "portrait": 1,
+        "selection": 1
+      }
+    }
+  },
+  "note": "Original Spine face/outline/colour textures retained; equipment removed and arm bones reposed for volleyball. Native source assets remain unchanged."
+}
