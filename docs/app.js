@@ -1,7 +1,7 @@
 import {installTouchControls} from './touch-controls.js?v=0.23';
 import {createCombatAudio,combatEvents} from './combat-audio.js?v=0.20';
 import {installScoreNameFit} from './score-name-fit.js?v=0.20';
-import {TEST_BUILD} from './build-config.mjs?v=0.20';
+import {TEST_BUILD} from './build-config.mjs?v=0.26';
 import {installLanguageUI,translate} from './i18n.js?v=0.20';
 import {drawNet} from './net-art.js?v=0.20';
 import {createBallRenderer} from './ball-effects.js?v=0.20';
@@ -13,7 +13,7 @@ import {drawPlayer} from './player-render.js?v=0.20';
 import {STATE_FIELDS,cueCategory,cameraOffset,drawGroggy,drawSuper} from './super-effects.js?v=0.20';
 import {CharacterVoices} from './voices.js?v=0.20';
 import {PeerMatch} from './peer.js?v=0.20';
-import {roster,stages,fresh,goals,unlocked,recordWin,loadProgress} from './progress.mjs?v=0.20';
+import {roster,stages,fresh,goals,unlocked,recordWin,loadProgress} from './progress.mjs?v=0.26';
 import {actor,background} from './art.js?v=0.20';
 installLanguageUI();
 installScoreNameFit();
