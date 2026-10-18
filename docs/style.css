@@ -54,3 +54,32 @@ body.title-open{background:#c7e6df}body.title-open>header,body.title-open>#game-
 
 /* Left directional pad and one right attack button, including the live arena. */
 .touch-left{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,auto);gap:8px}.touch-left .touch-jump{grid-column:1 / -1;grid-row:1;justify-self:center}.touch-left .touch-move-left{grid-column:1;grid-row:2}.touch-left .touch-move-right{grid-column:2;grid-row:2}.touch-right .touch-spike{min-height:82px;min-width:82px;border-radius:50%;font-size:20px}
+
+/* Rotation-safe mobile arena: explicit grid tracks and one authoritative touch rule. */
+@media(any-pointer:coarse) and (orientation:landscape){
+ body.mobile-match #arena{height:var(--play-height,100dvh);width:var(--play-width,100vw);inset:0 auto auto 0;grid-template-columns:clamp(88px,15vw,132px) minmax(0,1fr) clamp(82px,14vw,124px);grid-template-rows:64px minmax(0,1fr) 28px;padding:4px max(8px,env(safe-area-inset-right)) max(4px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));gap:4px;overflow:hidden}
+ #game-main #arena:not([hidden]) #touch{display:contents!important}
+ body.mobile-match #court{width:100%;height:100%;min-width:0;min-height:0;max-width:100%;max-height:100%;object-fit:contain;background:transparent;border-radius:0}
+ body.mobile-match .scoreboard{min-width:0;min-height:0;overflow:hidden;align-self:stretch}
+ body.mobile-match .scoreboard>div>.meter{margin-top:0}
+ body.mobile-match .touch-side{min-width:0;min-height:0;width:100%;margin:0}
+ body.mobile-match .touch-left{gap:6px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,auto)}
+ body.mobile-match #touch button{min-width:0;width:100%;min-height:42px;height:clamp(42px,14dvh,60px);padding:6px;font-size:20px}
+ body.mobile-match #touch .touch-jump{width:48%;grid-column:1/-1}
+ body.mobile-match #touch .touch-spike{width:min(82px,100%);height:76px;min-height:56px}
+ body.mobile-match .arena-foot{min-width:0;min-height:0;flex-wrap:nowrap;padding:0;gap:5px;overflow:hidden}
+ body.mobile-match #stage-label{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+ body.mobile-match .match-actions{flex-shrink:0;display:flex;gap:4px}
+ body.mobile-match .match-actions button{padding:4px 6px;white-space:nowrap}
+}
+@media(any-pointer:coarse) and (orientation:portrait){
+ body.mobile-match #arena{width:100%;max-width:100%;overflow:hidden}
+ body.mobile-match .touch-left{width:136px}
+ body.mobile-match .touch-right{width:90px}
+}
+@media(any-pointer:coarse) and (orientation:landscape) and (max-height:420px){
+ body:not(.mobile-match) #game-main{padding:8px 12px}
+ body:not(.mobile-match) .game-header{height:48px}
+ #selection .versus-portraits{min-height:0}
+ #selection .fighter canvas{height:120px}
+}
