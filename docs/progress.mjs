@@ -8,7 +8,7 @@ export const roster=[
  ['kurimanju','쿠리만쥬','#bb9873','#f2e8da'],['kani','카니','#f4a5bb','#fbe8ee'],['armor','포셰트 갑옷씨','#b6c5cb','#e7edef'],
  ['siren','세이렌','#b8b1de','#ece9fb']
 ].map(([id,name,color,wash])=>({id,name,color,wash}));
-export const stages=[['하치와레의 집','곤충몬스터','roach',2],['숲속','데카츠요','boss',3],['마을','파자마 브라더즈','pajamas',1],['인어섬','한잎이 · 두잎이','duo',4],['세이렌의 동굴','세이렌','siren',5]];
+export const stages=[['하치와레의 집','곤충몬스터','roach',2],['숲속','데카츠요','boss',3],['마을','파자마파티즈','pajamas',1],['인어섬','한잎이 · 두잎이','duo',4],['세이렌의 동굴','세이렌','siren',5]];
 export const fresh=()=>({version:1,upper:0,contacts:0,supers:0,wins:0,margins:[0,0,0,0,0],ending:false});
 export const goals=[
  {id:'roach',name:'첫 코트의 새 친구',text:'1스테이지 클리어',value:p=>p.margins[0]>0?1:0,target:1},
