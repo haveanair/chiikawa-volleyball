@@ -92,3 +92,31 @@ body.title-open{background:#c7e6df}body.title-open>header,body.title-open>#game-
  body.mobile-match #arena:fullscreen #touch button{touch-action:none}
  body.mobile-match #arena:fullscreen .arena-foot{flex-wrap:wrap;gap:12px;padding-bottom:12px}
 }
+
+.court-stage{display:contents}.fullscreen-toggle{font-size:12px;padding:7px 12px;white-space:nowrap}.title-fullscreen{position:absolute;top:12px;left:12px;z-index:5;background:#fffdf0eb;border-color:#95ad93}.selection-banner{gap:10px;flex-wrap:wrap}
+:root:fullscreen{overflow:auto;background:#faf8ee}
+@media(any-pointer:coarse) and (orientation:landscape){
+ body.mobile-match #arena{grid-template-rows:minmax(0,1fr) 28px}
+ body.mobile-match .court-stage{display:block;position:relative;grid-column:2;grid-row:1;align-self:center;justify-self:center;width:min(100%,calc((var(--play-height,100dvh) - 44px)*1.42105));aspect-ratio:864/608;min-width:0;min-height:0;max-height:100%;overflow:hidden;border-radius:10px}
+ body.mobile-match .court-stage #court{display:block;width:100%;height:100%;object-fit:contain}
+ body.mobile-match .court-stage .scoreboard{position:absolute;inset:0 0 auto;z-index:2;padding:5px 9px 7px;max-height:74px;background:linear-gradient(#fff9e9e8,#fff9e999,transparent);pointer-events:none}
+ body.mobile-match .court-stage .scoreboard>div>b{--name-font-max:15;font-size:15px;text-shadow:0 1px 2px #fff}
+ body.mobile-match .touch-left,body.mobile-match .touch-right{grid-row:1}
+ body.mobile-match .arena-foot{grid-row:2}
+}
+@media(any-pointer:coarse) and (orientation:portrait){
+ :root:fullscreen body.mobile-match{overflow:auto;touch-action:pan-y}
+ :root:fullscreen body.mobile-match #arena{overflow:visible;height:auto;max-height:none}
+ :root:fullscreen body.mobile-match #court{touch-action:pan-y}
+ :root:fullscreen body.mobile-match #touch{touch-action:pan-y}
+ :root:fullscreen body.mobile-match #touch button{touch-action:none}
+}
+@media(orientation:landscape) and (max-height:600px){
+ body.title-open{overflow:auto}
+ #title-screen{width:min(100%,calc(var(--play-height,100dvh)*1.65));height:var(--play-height,100dvh);min-height:0;max-height:none;aspect-ratio:auto;margin:0 auto;padding-bottom:78px;border-width:0;border-radius:0}
+ #title-art{height:calc(100% - 78px);object-fit:contain}
+ .title-copy{top:0;height:37%}.title-copy h1{width:52%}
+ .title-actions{bottom:26px;height:48px;gap:2px}.title-actions button{font-size:15px;padding:5px 24px}.title-actions button span{font-size:8px}.title-actions p{font-size:9px;margin:0}.title-actions .title-music{font-size:9px;padding:0 8px}
+ .title-credits{bottom:13px}.title-credits small{font-size:8px}.title-fan-note{bottom:1px;font-size:8px}
+ .language-picker{top:8px;right:8px}.title-fullscreen{top:8px;left:8px;padding:5px 9px;font-size:11px}
+}
