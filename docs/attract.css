@@ -1,0 +1,15 @@
+body.demo-open{overflow:hidden;background:#dce9df}
+body.demo-open .game-header,body.demo-open #game-nav,body.demo-open #achievements,body.demo-open #controls-help,body.demo-open #live,body.demo-open footer{display:none!important}
+body.demo-open #game-main #arena{position:fixed;inset:0;z-index:1000;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);width:var(--play-width,100vw);height:var(--play-height,100dvh);max-width:none;max-height:none;margin:0;padding:4px;border:0;border-radius:0;background:#dce9df;overflow:hidden}
+body.demo-open #arena .court-stage{display:block;position:relative;grid-column:1;grid-row:1;align-self:center;justify-self:center;width:min(100%,calc((var(--play-height,100dvh) - 8px)*864/608));height:auto;aspect-ratio:864/608;margin:0;min-height:0;max-height:100%;overflow:hidden;border-radius:10px}
+body.demo-open #arena #court{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;outline:none}
+body.demo-open #game-main #arena:not([hidden]) #touch,body.demo-open #rotate-hint,body.demo-open .match-actions,body.demo-open #result{display:none!important}
+body.demo-open #arena .arena-foot{position:absolute;inset:auto 8px 4px;display:block;text-align:center;padding:0;font-size:11px;pointer-events:none;z-index:3}
+#demo-title{position:absolute;top:max(72px,18%);left:50%;transform:translateX(-50%);width:32%;min-width:110px;max-width:250px;z-index:3;pointer-events:none;text-align:center;animation:demo-title-blink 1.4s steps(1,end) infinite}
+#demo-title img{display:block;width:100%;height:auto;filter:drop-shadow(0 2px 2px #fff9e9)}
+#demo-title .demo-logo-en{display:none}
+html[lang=en] #demo-title .demo-logo-ko{display:none}
+html[lang=en] #demo-title .demo-logo-en{display:block}
+#demo-title span{display:block;font-size:11px;font-weight:bold;letter-spacing:3px;color:#345d51;text-shadow:0 1px #fff}
+@keyframes demo-title-blink{0%,64%{opacity:1}65%,100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){#demo-title{animation:none}}

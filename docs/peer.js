@@ -27,9 +27,15 @@ export class PeerMatch{
   });return this.code;
  }
  push(event,payload,ref=String(++this.ref),topic=this.topic){if(this.ws?.readyState===1)this.ws.send(JSON.stringify({topic,event,payload,ref,join_ref:topic===this.topic?'1':null}));}
- broadcast(payload){if(this.subscribed&&this.ws?.bufferedAmount<128000)this.push('broadcast',{type:'broadcast',event:'game',payload:{role:this.role,...payload}});}
+ broadcast(payload){if(!this.subscribed||this.ws?.readyState!==1||this.ws.bufferedAmount>=128000)return false;this.push('broadcast',{type:'broadcast',event:'game',payload:{role:this.role,...payload}});return true;}
  hello(){this.broadcast({kind:'hi'});}
- send(message){if(!this.connected)return;if(message.type==='input'){const now=Date.now();if(message.bits===this.lastInput&&now-this.lastInputAt<160)return;this.lastInput=message.bits;this.lastInputAt=now;}this.broadcast({kind:'message',message});}
+ flushState(){clearTimeout(this.stateTimer);this.stateTimer=null;if(!this.connected||!this.pendingState)return;if(this.ws?.readyState!==1)return;if(this.ws.bufferedAmount>8192){this.stateTimer=setTimeout(()=>this.flushState(),16);return}const message=this.pendingState;this.pendingState=null;this.broadcast({kind:'message',message});}
+ send(message){if(!this.connected)return false;
+  // Replace snapshots while congested instead of queuing stale simulation frames.
+  if(message.type==='state'){this.pendingState=message;this.flushState();return true}
+  if(message.type==='input'){const now=Date.now();if(message.bits===this.lastInput&&now-this.lastInputAt<160)return false;if(!this.broadcast({kind:'message',message}))return false;this.lastInput=message.bits;this.lastInputAt=now;return true}
+  return this.broadcast({kind:'message',message});
+ }
  fail(){if(this.closed)return;this.close();this.onMessage({type:'disconnect'});}
- close(){if(this.closed)return;this.broadcast({kind:'bye'});this.closed=true;this.connected=false;clearInterval(this.timer);this.ws?.close();if(this.room)this.roomRequest('leave',this.room.code).catch(()=>{});}
+ close(){if(this.closed)return;this.broadcast({kind:'bye'});this.closed=true;this.connected=false;clearInterval(this.timer);clearTimeout(this.stateTimer);this.pendingState=null;this.ws?.close();if(this.room)this.roomRequest('leave',this.room.code).catch(()=>{});}
 }

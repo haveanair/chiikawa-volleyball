@@ -1,4 +1,8 @@
-# 치이카와 배구 · Chiikawa Volley
+# 치이카와 배구 (Chiikawa Volley) · 무료 웹 배구 게임
+
+**[치이카와 배구 / Play Chiikawa Volley — 웹에서 바로 플레이](https://haveanair.github.io/chiikawa-volleyball/)**
+
+PC·모바일 브라우저에서 무료로 즐기는 치이카와 배구 팬게임입니다. / A free Chiikawa Volley fan game for desktop and mobile browsers.
 
 **작은 친구들의 큰 승부! 치이카와 친구들과 함께하는 비영리 2차 창작 배구 팬게임입니다.**
 
@@ -6,9 +10,11 @@
 
 - **스토리 모드:** 하치와레의 집에서 세이렌의 동굴까지 이어지는 5개 스테이지
 - **다양한 캐릭터:** 주인공 친구들부터 파자마파티즈, 한잎이·두잎이, 곤충몬스터, 데카츠요, 세이렌까지
-- **대전:** 같은 컴퓨터에서 즐기는 2인 대전과 숫자 4자리 방 번호로 연결하는 온라인 친구 대전
+- **대전:** 같은 PC 또는 한 대의 스마트폰에서 즐기는 2인 대전, 숫자 4자리 방 번호로 연결하는 온라인 친구 대전
 - **초필살기:** 공을 10번 튕겨 게이지를 채운 뒤 상단 스파이크를 맞히면 발동
-- **모바일 조작:** 가로 화면에서 왼쪽 좌·우·점프 버튼, 오른쪽 공격 버튼 사용
+- **모바일 조작:** 스토리·온라인은 왼쪽 이동·점프와 오른쪽 공격. 로컬 2인 대전은 양쪽에 각각 이동·점프·공격 패드 제공
+- **원작 장면:** 스토리 경기 전에 캐릭터와 관련된 짧은 원작 요약을 표시하며, 계속·스킵·Esc로 진행 가능
+- **타이틀 데모:** 타이틀 20초와 CPU 자동 경기 20초가 번갈아 재생되고, 1~5스테이지를 순환
 - **한국어 / 영어:** 타이틀 화면에서 언어 변경
 
 현재 개발 중인 **웹 버전**이며 처음에는 치이카와·하치와레·우사기를 선택할 수 있습니다. 나머지 캐릭터는 도전과제로 해금됩니다. GBA 이식을 고려해 C 언어 경기 코어를 사용하며, GBA 버전은 별도 개발 대상입니다.
@@ -23,8 +29,28 @@
 |---|---|---|---|
 | 좌우 이동 | A / D | ← / → | 왼쪽 ◀ / ▶ |
 | 점프 | W | ↑ | 왼쪽 ▲ |
-| 공격 | F | K | 오른쪽 공격 |
-| 상단 스파이크 | W + F | ↑ + K | ▲ + 공격 |
+| 공격 | F | Enter | 공격 |
+| 상단 스파이크 | W + F | ↑ + Enter | ▲ + 공격 |
+
+스마트폰 한 대로 둘이 하려면 **게임 시작 → 2인 대전 → 1P 결정 → 2P 결정** 순서로 진행하세요. 가로로 놓으면 1P는 화면 왼쪽, 2P는 오른쪽의 패드로 각각 이동·점프·공격할 수 있습니다. 두 패드는 여러 손가락 입력을 독립적으로 처리합니다. 전체 화면은 선택 사항입니다. 2인 대전에서는 5개 배경을 자유롭게 고를 수 있습니다.
+
+온라인에서는 **각자 자신의 기기에서 1P 조작(A/D/W/F 또는 1인용 터치 패드)**을 사용합니다. 한 명이 방 만들기, 다른 한 명이 4자리 번호로 참가한 뒤 방장이 대전 시작을 누르세요. 로컬 PC의 2P Enter 조작과 구별됩니다. 서로 같은 최신 버전으로 새로고침해 주세요.
+
+온라인 입력은 변경 즉시 보내며, 전송이 밀릴 때 경기 상태는 최신 한 장만 남겨 오래된 화면이 계속 쌓이지 않도록 했습니다. 서버 중계·통신망 왕복 시간 자체는 남으므로 먼 거리나 불안정한 연결에서 모든 지연이 사라지는 것은 아닙니다. 가능하면 안정적인 Wi-Fi를 사용하고, 같은 장소라면 한 기기의 로컬 2인 대전으로 즐길 수 있습니다.
+
+도전과제는 현재 브라우저에 저장됩니다. **도전과제·친구 해금 → 기록 백업 저장**으로 기록을 파일에 보관할 수 있습니다. **도전과제 초기화**는 확인 창에서 승인한 경우에만 기록과 캐릭터 해금을 지우며, 취소하면 유지합니다. 기기·브라우저를 바꾸면 자동으로 이전되지 않습니다.
+
+타이틀 데모는 **타이틀 → 1스테이지 → 타이틀 → 2스테이지 → … → 5스테이지 → 타이틀 → 1스테이지** 순서입니다. 각 구간은 20초이며 데모 상단 중앙에 게임 로고가 깜빡입니다. 화면을 누르거나 키를 입력하면 타이틀로 돌아갑니다. 데모는 도전과제 기록에 반영되지 않습니다.
+
+원작 장면은 치이카와 포켓의 실제 장면·대사, 사용자가 제공한 위키 본문, 공식 소개를 대조해 요약했습니다. 배구를 하며 친구가 된다는 새 사건이나 팬 추측을 원작 사실로 넣지 않습니다. [장면별 확인 자료](docs/story-sources.md)를 참고하세요.
+
+### QR로 공유하기
+
+게임을 소개할 때 아래 이미지를 저장하거나 링크해 사용할 수 있습니다. QR은 위 게임 주소로 바로 연결되며 별도 설치가 필요 없습니다.
+
+[홍보 포스터 PNG · 1080×1600](docs/promo/chiikawa-volley-promo.png) · [QR 단독 PNG · 984×984](docs/promo/chiikawa-volley-qr.png) · [인쇄용 QR SVG](docs/promo/chiikawa-volley-qr.svg)
+
+<a href="https://haveanair.github.io/chiikawa-volleyball/"><img src="docs/promo/chiikawa-volley-promo.png" alt="치이카와 배구 Chiikawa Volley — QR을 찍고 바로 플레이" width="480"></a>
 
 ---
 
@@ -36,7 +62,9 @@ Choose Chiikawa, Hachiware, Usagi, and more for lively volleyball matches. Inspi
 - **Character roster:** Familiar friends, Pajama Parties, Hitohā and Futabā, the insect monster, Dekatsuyo, Siren, and more
 - **Versus play:** Local two-player matches and online friend matches using a four-digit room code
 - **Special shots:** Fill the gauge with 10 ball hits, then land an upward spike to unleash a special move
-- **Mobile controls:** Landscape play with movement and jump on the left, and one attack button on the right
+- **Mobile controls:** Solo/online: movement and jump on the left, attack on the right. Local versus: a complete independent pad for each player on one phone
+- **Story interludes:** Brief summaries of original scenes, with Continue and Skip buttons
+- **Attract loop:** 20-second title and CPU demo segments, cycling through stages 1–5 without changing saved progress
 - **Languages:** Korean and English, selectable on the title screen
 
 This is a **web build in active development**. Chiikawa, Hachiware, and Usagi are available initially; additional characters unlock through achievements. The game uses a shared C gameplay core with a future GBA port in mind. A playable GBA release is not included.
@@ -51,8 +79,12 @@ For online play, create a room, share its four-digit code with a friend, and sta
 |---|---|---|---|
 | Move | A / D | Left / Right | Left-side ◀ / ▶ |
 | Jump | W | Up | Left-side ▲ |
-| Attack | F | K | Right-side Attack |
-| Upward spike | W + F | Up + K | ▲ + Attack |
+| Attack | F | Enter | Attack |
+| Upward spike | W + F | Up + Enter | ▲ + Attack |
+
+For local play on one phone, select Local Versus, confirm both characters, and use the full 1P/2P touch pads on the left/right. In online play, both players use the Player 1 controls on their own devices. Changed inputs are sent immediately; congested state snapshots are replaced by the latest state. Internet round-trip latency still applies.
+
+Achievements are stored in the current browser. Export a backup before resetting them; reset requires a confirmation dialog. The title demos never modify achievement progress. Use the shareable [promo poster](docs/promo/chiikawa-volley-promo.png), [QR PNG](docs/promo/chiikawa-volley-qr.png), or [printable QR SVG](docs/promo/chiikawa-volley-qr.svg) to bring friends directly to the game.
 
 ### Credits / 제작 및 원작
 

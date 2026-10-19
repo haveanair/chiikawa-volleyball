@@ -1,3 +1,5 @@
+import {installStoryDialog} from './story-scenes.js?v=0.42';
+import {AttractLoop} from './attract-loop.js?v=0.42';
 import {installViewportLayout} from './viewport-layout.js?v=0.40';
 installViewportLayout();
 import {createHaptics,HAPTIC_CURSOR,HAPTIC_CONFIRM,HAPTIC_MAX} from './haptics.js?v=0.31';
@@ -5,7 +7,7 @@ import {installTouchControls} from './touch-controls.js?v=0.23';
 import {createCombatAudio,combatEvents} from './combat-audio.js?v=0.20';
 import {installScoreNameFit} from './score-name-fit.js?v=0.20';
 import {TEST_BUILD} from './build-config.mjs?v=0.38';
-import {installLanguageUI,translate} from './i18n.js?v=0.41';
+import {installLanguageUI,translate} from './i18n.js?v=0.42';
 import {drawNet} from './net-art.js?v=0.20';
 import {createBallRenderer} from './ball-effects.js?v=0.20';
 import {updateChargeMeter,chargeTone} from './charge-meter.js?v=0.20';
@@ -15,7 +17,7 @@ import {drawEnding} from './ending-art.js?v=0.20';
 import {drawPlayer} from './player-render.js?v=0.20';
 import {STATE_FIELDS,cueCategory,cameraOffset,drawGroggy,drawSuper} from './super-effects.js?v=0.20';
 import {CharacterVoices} from './voices.js?v=0.40';
-import {PeerMatch} from './peer.js?v=0.20';
+import {PeerMatch} from './peer.js?v=0.42';
 import {roster,stages,fresh,goals,unlocked,recordWin,loadProgress} from './progress.mjs?v=0.28';
 import {actor,background} from './art.js?v=0.20';
 const haptics=createHaptics();
@@ -31,16 +33,16 @@ if(TEST_BUILD){document.querySelector('#selection .section-title span').textCont
 const $=id=>document.getElementById(id),canvas=$('court'),c=canvas.getContext('2d'),music=$('music');
 let p=loadProgress(localStorage),chosen=['chiikawa','hachiware'],mode=0,stage=0,selectSide=0,running=false,paused=false,handled=false,muted=false,last=0,acc=0,t=0,tracked=[0,0,0],net=null;
 const voices=new CharacterVoices(music);let voiceSeen=[0,0];
-let core;
+let core,demoCore,attract=null;
 let soundContext;const combatAudio=createCombatAudio();
 const ballRenderer=createBallRenderer();let chargeSeen=[0,0];
 document.addEventListener('pointerdown',()=>{try{soundContext??=new AudioContext();soundContext.resume().catch(()=>{})}catch{}});
-function effects(events){haptics.play(events,{impactBeat:get(27)});if(!events||muted)return;try{soundContext??=new AudioContext();if(soundContext.state!=='running')return;combatAudio.play(soundContext,events).catch(console.error);if(combatEvents(events).length)return;const osc=soundContext.createOscillator(),gain=soundContext.createGain(),now=soundContext.currentTime;osc.type=(events&8)?'triangle':'sine';osc.frequency.setValueAtTime((events&8)?740:(events&16)?130:430,now);osc.frequency.exponentialRampToValueAtTime((events&8)?180:220,now+.09);gain.gain.setValueAtTime(.035,now);gain.gain.exponentialRampToValueAtTime(.001,now+.11);osc.connect(gain);gain.connect(soundContext.destination);osc.start(now);osc.stop(now+.12)}catch{}}
-try{const response=await fetch('./public/game.wasm?v=0.20',{cache:'no-store'});if(!response.ok)throw Error('game.wasm HTTP '+response.status);core=(await WebAssembly.instantiate(await response.arrayBuffer())).instance.exports}catch(e){$('select-title').textContent='경기 코어를 불러오지 못했습니다. 실행하기.cmd로 실행해 주세요.';console.error(e);throw e}
-const get=(f,s=0)=>(net?.connected&&!net.host&&netState)?netState[f*2+(s&1)]:core.get(f,s),keys=new Set(),edges=new Set(),touchKeys=new Set();
+function effects(events){if(!attract?.showingDemo)haptics.play(events,{impactBeat:get(27)});if(!events||muted)return;try{soundContext??=new AudioContext();if(soundContext.state!=='running')return;combatAudio.play(soundContext,events).catch(console.error);if(combatEvents(events).length)return;const osc=soundContext.createOscillator(),gain=soundContext.createGain(),now=soundContext.currentTime;osc.type=(events&8)?'triangle':'sine';osc.frequency.setValueAtTime((events&8)?740:(events&16)?130:430,now);osc.frequency.exponentialRampToValueAtTime((events&8)?180:220,now+.09);gain.gain.setValueAtTime(.035,now);gain.gain.exponentialRampToValueAtTime(.001,now+.11);osc.connect(gain);gain.connect(soundContext.destination);osc.start(now);osc.stop(now+.12)}catch{}}
+try{const response=await fetch('./public/game.wasm?v=0.20',{cache:'no-store'});if(!response.ok)throw Error('game.wasm HTTP '+response.status);const wasm=await WebAssembly.instantiate(await response.arrayBuffer());core=wasm.instance.exports;demoCore=new WebAssembly.Instance(wasm.module).exports}catch(e){$('select-title').textContent='경기 코어를 불러오지 못했습니다. 실행하기.cmd로 실행해 주세요.';console.error(e);throw e}
+const get=(f,s=0)=>attract?.showingDemo?demoCore.get(f,s):(net?.connected&&!net.host&&netState)?netState[f*2+(s&1)]:core.get(f,s),keys=new Set(),edges=new Set(),touchKeys=new Set();
 function save(){try{localStorage.setItem('chiivolley.progress.v1',JSON.stringify(p))}catch{$('save-note').textContent='저장 공간을 사용할 수 없어 이번 실행에서만 기록됩니다.'}}
 function play(n){const url=new URL(`audio/${String(n).padStart(2,'0')}.mp3`,location.href).href;if(music.src!==url){music.src=url;music.currentTime=0}music.muted=muted;music.volume=.45;music.play().then(()=>{$('title-music').hidden=true}).catch(()=>{if(document.body.classList.contains('title-open'))$('title-music').hidden=false});}
-function stop(){voices.stop();running=false;paused=false;keys.clear();edges.clear();$('pause').textContent='일시정지'}
+function stop(){voices.stop();running=false;paused=false;keys.clear();edges.clear();touchKeys.clear();$('pause').textContent='일시정지'}
 function portraits(preview=chosen[selectSide]){
  const ids=[chosen[0],mode===1?chosen[1]:stages[stage][2]];ids[selectSide]=preview;
  for(let side=0;side<2;side++){const suffix=side?'two':'one',id=ids[side],r=roster.find(r=>r.id===id),locked=!!r&&!unlocked(p,id);drawSelectionPortrait($('portrait-'+suffix),id,side?-1:1,locked);$('portrait-name-'+suffix).textContent=r?.name||stages[stage][1];$('portrait-status-'+suffix).textContent=locked?'미해금 · 도전과제를 확인하세요':side===1&&mode===0?'STAGE BOSS':mode===1&&selectSide===1&&side===0?'선택 완료':'READY';}
@@ -64,42 +66,67 @@ function cards(){const grid=$('roster');grid.replaceChildren();$('select-title')
  const inspect=()=>{if(cursorCharacter!==r.id){cursorCharacter=r.id;haptics.play(HAPTIC_CURSOR)}portraits(r.id);$('selection-note').textContent=open?`${selectSide+1}P · ${r.name}\n선택 후 결정 버튼을 눌러주세요.`:`${r.name}\n해금 조건: ${sub.textContent}`};b.onpointerenter=inspect;b.onfocus=inspect;b.onclick=()=>{if(!open){inspect();return}chosen[selectSide]=r.id;voices.play(r.id,'select',selectSide);cards();$('start').focus({preventScroll:true});$('selection-note').textContent=`${selectSide+1}P · ${r.name} 선택`};grid.append(b)}
  $('start').textContent=mode===1&&selectSide===0?'1P 결정 · 2P 선택 →':'선택 결정 · 경기 시작 →';$('stage-picker').hidden=false;$('stage-picker-label').textContent=mode===1?'대전 배경':'다시 도전할 코트';portraits();$('selection-note').textContent=TEST_BUILD?'테스트판 · 모든 캐릭터와 5개 스테이지를 자유롭게 선택할 수 있어요.':'처음에는 치이카와 · 하치와레 · 우사기를 선택할 수 있어요.';
 }
-function showTitle(){if(net){const old=net;net=null;old.close()}stop();document.body.classList.add('title-open');$('title-screen').hidden=false;drawTitle($('title-art'));$('title-start').disabled=false;play(1);$('title-start').focus()}
-function enterGame(){document.body.classList.remove('title-open');$('title-screen').hidden=true;mode=0;selection(true);$('start').focus({preventScroll:true});voices.playStart()}
-function selection(reset=false){chosen=chosen.map((id,i)=>unlocked(p,id)?id:i?'hachiware':'chiikawa');if(net){const old=net;net=null;old.close()}$('network').hidden=true;stop();$('arena').hidden=true;$('ending').hidden=true;$('selection').hidden=false;if(reset)stage=0;$('stage-select').value=String(stage);for(const option of $('stage-select').options)option.disabled=mode===0&&!TEST_BUILD&&Number(option.value)>0&&p.margins[Number(option.value)-1]===0;selectSide=0;$('score').disabled=false;cards();drawGoals();play(1)}
-function start(){if(mode===1&&selectSide===0){selectSide=1;cards();return}if(!net&&(!unlocked(p,chosen[0])||!unlocked(p,chosen[1])))return;core.init(mode,stage+1,Number($('score').value));configureTeams(core,characterIds());tracked=[0,0,0];voiceSeen=[0,0];chargeSeen=[0,0];ballRenderer.reset();voices.stop();handled=false;running=true;paused=false;acc=0;last=performance.now();$('selection').hidden=true;$('arena').hidden=false;$('result').hidden=true;$('name1').textContent=(teamLabel(chosen[0])||roster.find(r=>r.id===chosen[0]).name);$('name2').textContent=mode===1?(teamLabel(chosen[1])||roster.find(r=>r.id===chosen[1]).name):stages[stage][1];$('stage-label').textContent=(net?'온라인 친구 대전 · ':mode===1?'2인 대전 · ':`${stage+1} / 5 · `)+stages[stage][0];play(stages[stage][3]);canvas.focus();render()}
+function showTitle(restartLoop=true){if(net){const old=net;net=null;old.close()}stop();document.body.classList.remove('demo-open');$('demo-title').hidden=true;$('arena').hidden=true;if(restartLoop)attract?.start(performance.now());document.body.classList.add('title-open');$('title-screen').hidden=false;drawTitle($('title-art'));$('title-start').disabled=false;play(1);$('title-start').focus()}
+function enterGame(){attract?.stop();document.body.classList.remove('demo-open');$('demo-title').hidden=true;document.body.classList.remove('title-open');$('title-screen').hidden=true;mode=0;selection(true);$('start').focus({preventScroll:true});voices.playStart()}
+function selection(reset=false){attract?.stop();document.body.classList.remove('demo-open');$('demo-title').hidden=true;chosen=chosen.map((id,i)=>unlocked(p,id)?id:i?'hachiware':'chiikawa');if(net){const old=net;net=null;old.close()}$('network').hidden=true;stop();$('arena').hidden=true;$('ending').hidden=true;$('selection').hidden=false;if(reset)stage=0;$('stage-select').value=String(stage);for(const option of $('stage-select').options)option.disabled=mode===0&&!TEST_BUILD&&Number(option.value)>0&&p.margins[Number(option.value)-1]===0;selectSide=0;$('score').disabled=false;cards();drawGoals();play(1)}
+function start(){if(mode===0&&!net){storyFlow.show();return}startMatch()}
+function startMatch(){if(mode===1&&selectSide===0){selectSide=1;cards();return}if(!net&&(!unlocked(p,chosen[0])||!unlocked(p,chosen[1])))return;core.init(mode,stage+1,Number($('score').value));configureTeams(core,characterIds());tracked=[0,0,0];voiceSeen=[0,0];chargeSeen=[0,0];ballRenderer.reset();voices.stop();handled=false;running=true;paused=false;acc=0;last=performance.now();$('selection').hidden=true;$('arena').hidden=false;$('result').hidden=true;$('name1').textContent=(teamLabel(chosen[0])||roster.find(r=>r.id===chosen[0]).name);$('name2').textContent=mode===1?(teamLabel(chosen[1])||roster.find(r=>r.id===chosen[1]).name):stages[stage][1];$('stage-label').textContent=(net?'온라인 친구 대전 · ':mode===1?'2인 대전 · ':`${stage+1} / 5 · `)+stages[stage][0];play(stages[stage][3]);canvas.focus();render()}
 function drawGoals(){const box=$('goals');box.replaceChildren();for(const g of [...goals].sort((a,b)=>roster.findIndex(r=>r.id===a.id)-roster.findIndex(r=>r.id===b.id))){const done=g.value(p)>=g.target,item=document.createElement('div');item.className='goal'+(done?' complete':'');const title=document.createElement('b');title.textContent=(done?'✓ ':'○ ')+g.name;const text=document.createElement('p');text.textContent=`${roster.find(r=>r.id===g.id).name} · ${g.text}`;const meter=document.createElement('progress');meter.max=g.target;meter.value=Math.min(g.value(p),g.target);const count=document.createElement('small');count.textContent=done?'해금 완료':`${g.value(p)} / ${g.target}`;item.append(title,text,meter,count);box.append(item)}}
 function record(){if(mode!==0)return;const before=goals.filter(g=>unlocked(p,g.id)).map(g=>g.id);let changed=false;for(const [i,field,key] of [[0,14,'contacts'],[1,15,'upper'],[2,16,'supers']]){const n=get(field);if(n!==tracked[i])changed=true;p[key]+=n-tracked[i];tracked[i]=n}if(changed)save();const newNames=goals.filter(g=>!before.includes(g.id)&&unlocked(p,g.id)).map(g=>roster.find(r=>r.id===g.id).name);if(newNames.length)toast('새 친구 해금! '+newNames.join(' · '));}
 let toastUntil=0,toastText='';function toast(s){toastText=s;toastUntil=performance.now()+4000;$('live').textContent=s}
 function finish(){if(handled)return;handled=true;record();const win=get(10)===0,before=roster.filter(r=>unlocked(p,r.id)).map(r=>r.id);if(mode===0){recordWin(p,stage,get(5,0),get(5,1));save();}const names=roster.filter(r=>!before.includes(r.id)&&unlocked(p,r.id)).map(r=>r.name);$('result-title').textContent=mode===1?`${get(10)+1}P 승리!`:win?'승리! 다음 코트로 가볼까요?':'아쉬워요! 다시 도전해 봐요.';$('result-detail').textContent=`${get(5,0)} : ${get(5,1)}`+(names.length?` · 새 친구: ${names.join(', ')}`:'');$('next').textContent=mode===0&&win?(stage===4?'엔딩 보기 →':'다음 스테이지 선택 →'):'다시 캐릭터 선택 →';$('result').hidden=false;drawGoals();}
-function bits(side){const m=side?['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','KeyK']:['KeyA','KeyD','KeyW','KeyS','KeyF'];let b=0;for(let i=0;i<4;i++)if(keys.has(m[i])||touchKeys.has(m[i]))b|=1<<i;for(let i=4;i<5;i++)if(edges.has(m[i]))b|=1<<i;return b}
-function characterIds(){return [chosen[0],mode===1?chosen[1]:stages[stage][2]]}
+function bits(side){const m=side?['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Enter']:['KeyA','KeyD','KeyW','KeyS','KeyF'];let b=0;for(let i=0;i<4;i++)if(keys.has(m[i])||touchKeys.has(m[i]))b|=1<<i;for(let i=4;i<5;i++)if(edges.has(m[i]))b|=1<<i;return b}
+const demoHeroes=['chiikawa','hachiware','usagi','rakko','momonga'];
+function characterIds(){return attract?.showingDemo?[demoHeroes[attract.stage],stages[attract.stage][2]]:[chosen[0],mode===1?chosen[1]:stages[stage][2]]}
 function observeVoices(){const ids=characterIds();for(let side=0;side<2;side++){const serial=get(24,side);if(serial!==voiceSeen[side]){voiceSeen[side]=serial;const cue=get(25,side),category=cue===4?'hit':cueCategory[cue];if(category)voices.play(ids[side],category,side)}}}
-function tick(){if(net?.connected&&!net.host){net.send({type:'input',bits:bits(0)});edges.clear();return}core.step(bits(0),net?.connected?remoteBits:bits(1));remoteBits&=15;edges.clear();if(net?.connected){const state=[];for(let f=0;f<STATE_FIELDS;f++)for(let s=0;s<2;s++)state.push(core.get(f,s));net.send({type:'state',state})}record();observeVoices();const events=core.sounds();effects(events);if(net?.connected&&events)net.send({type:'sfx',events});if(get(6)===3)finish();t++;}
-function render(){c.setTransform(2,0,0,2,0,0);t=get(32);c.fillStyle='#32434b';c.fillRect(0,0,432,304);c.save();const shake=cameraOffset(get);c.translate(...shake);background(c,stage,t);for(let side=0;side<2;side++)drawPlayer(c,get,characterIds(),side);
+function sendGuestInput(){if(!running||paused||!net?.connected||net.host)return;if(net.send({type:'input',bits:bits(0)}))edges.delete('KeyF')}
+function tick(){if(net?.connected&&!net.host){sendGuestInput();edges.clear();return}core.step(bits(0),net?.connected?remoteBits:bits(1));remoteBits&=15;edges.clear();if(net?.connected){const state=[];for(let f=0;f<STATE_FIELDS;f++)for(let s=0;s<2;s++)state.push(core.get(f,s));net.send({type:'state',state})}record();observeVoices();const events=core.sounds();effects(events);if(net?.connected&&events)net.send({type:'sfx',events});if(get(6)===3)finish();t++;}
+function render(){c.setTransform(2,0,0,2,0,0);t=get(32);c.fillStyle='#32434b';c.fillRect(0,0,432,304);c.save();const shake=cameraOffset(get);c.translate(...shake);background(c,attract?.showingDemo?attract.stage:stage,t);for(let side=0;side<2;side++)drawPlayer(c,get,characterIds(),side);
  drawNet(c);
  ballRenderer.draw(c,get);drawSuper(c,get,characterIds(),[$('name1').textContent,$('name2').textContent]);c.restore();
- $('points').textContent=`${get(5,0)} : ${get(5,1)}`;for(let side=0;side<2;side++){const charge=get(7,side);updateChargeMeter($('meter'+(side+1)),charge,get(8,side),side);if(charge===10&&chargeSeen[side]<10)haptics.play(HAPTIC_MAX);if(charge>chargeSeen[side]&&!muted)chargeTone(soundContext,charge===10);chargeSeen[side]=charge;}
+ $('points').textContent=`${get(5,0)} : ${get(5,1)}`;for(let side=0;side<2;side++){const charge=get(7,side);updateChargeMeter($('meter'+(side+1)),charge,get(8,side),side);if(!attract?.showingDemo&&charge===10&&chargeSeen[side]<10)haptics.play(HAPTIC_MAX);if(!attract?.showingDemo&&charge>chargeSeen[side]&&!muted)chargeTone(soundContext,charge===10);chargeSeen[side]=charge;}
 
  let msg=paused?'일시정지':get(6)===4?'READY?':get(6)===2?'다음 서브!':get(17)===8?'':performance.now()<toastUntil?toastText:'';if(msg){c.font='bold 20px "PocketKO"';c.textAlign='center';c.lineWidth=5;c.strokeStyle='#fffdf1';c.strokeText(translate(msg),216,110);c.fillStyle='#405c54';c.fillText(translate(msg),216,110)}}
 const titleMotion=matchMedia('(prefers-reduced-motion: reduce)');let titleFrameAt=0,endingFrameAt=0;
-function frame(now){if(!$('ending').hidden&&!document.hidden&&now-endingFrameAt>=40){drawEnding($('ending-art').getContext('2d'),titleMotion.matches?0:now/120);endingFrameAt=now;}if(document.body.classList.contains('title-open')&&!document.hidden&&now-titleFrameAt>=40){drawTitle($('title-art'),titleMotion.matches?0:now);titleFrameAt=now}if(running){acc+=Math.min(now-last,150);if(!paused){let count=0;while(acc>=1000/25&&count++<5){tick();acc-=1000/25}}else acc=0;render()}last=now;requestAnimationFrame(frame)}
+function frame(now){attract?.update(now,!document.hidden);if(!$('ending').hidden&&!document.hidden&&now-endingFrameAt>=40){drawEnding($('ending-art').getContext('2d'),titleMotion.matches?0:now/120);endingFrameAt=now;}if(document.body.classList.contains('title-open')&&!document.hidden&&now-titleFrameAt>=40){drawTitle($('title-art'),titleMotion.matches?0:now);titleFrameAt=now}if(running){acc+=Math.min(now-last,150);if(!paused){let count=0;while(acc>=1000/25&&count++<5){tick();acc-=1000/25}}else acc=0;render()}if(attract?.showingDemo){acc+=Math.min(now-last,150);let steps=0;while(acc>=1000/25&&steps++<5){demoCore.step(0,0);observeVoices();effects(demoCore.sounds());acc-=1000/25}render()}last=now;requestAnimationFrame(frame)}
+function beginDemo(level){
+ stop();document.body.classList.remove('title-open');document.body.classList.add('demo-open');
+ for(const id of ['title-screen','selection','network','ending','result'])$(id).hidden=true;
+ $('arena').hidden=false;$('arena').dataset.demoStage=String(level+1);$('demo-title').hidden=false;
+ demoCore.init(2,level+1,15);configureTeams(demoCore,characterIds());
+ const ids=characterIds();$('name1').textContent=roster.find(r=>r.id===ids[0]).name;$('name2').textContent=stages[level][1];
+ $('stage-label').textContent=`DEMO · ${level+1} / 5 · ${stages[level][0]}`;
+ voiceSeen=[0,0];chargeSeen=[0,0];ballRenderer.reset();acc=0;last=performance.now();play(stages[level][3]);render();
+}
+attract=new AttractLoop({onTitle:()=>showTitle(false),onDemo:beginDemo});
+let demoExitUntil=0;
+function attractInput(event){
+ const now=performance.now();
+ if(now<demoExitUntil){event.preventDefault();event.stopImmediatePropagation();return}
+ if(attract.showingDemo){event.preventDefault();event.stopImmediatePropagation();demoExitUntil=now+450;showTitle();return}
+ if(attract.active&&document.body.classList.contains('title-open'))attract.rewind(now);
+}
+window.addEventListener('pointerdown',attractInput,true);
+window.addEventListener('keydown',attractInput,true);
+window.addEventListener('click',event=>{if(performance.now()<demoExitUntil){event.preventDefault();event.stopImmediatePropagation()}},true);
+document.addEventListener('visibilitychange',()=>attract.rebase(performance.now()));
 window.addEventListener('keydown',e=>{
- if(document.querySelector('.info-dialog[open]'))return;
+ if(document.querySelector('.info-dialog[open],#story-dialog[open]'))return;
  if(document.body.classList.contains('title-open')){if(!(e.target instanceof HTMLSelectElement)&&(e.code==='Enter'||e.code==='Space')){e.preventDefault();$('title-start').click()}return}
  if(!$('selection').hidden&&!(e.target instanceof HTMLSelectElement)){
   const moves={ArrowLeft:-1,KeyA:-1,ArrowRight:1,KeyD:1,ArrowUp:-1,KeyW:-1,ArrowDown:1,KeyS:1};
   if(e.code in moves){e.preventDefault();const buttons=[...$('roster').children],columns=getComputedStyle($('roster')).gridTemplateColumns.split(' ').length,current=buttons.findIndex(b=>b===document.activeElement),base=current<0?roster.findIndex(r=>r.id===chosen[selectSide]):current,vertical=['ArrowUp','ArrowDown','KeyW','KeyS'].includes(e.code),next=(base+moves[e.code]*(vertical?columns:1)+buttons.length)%buttons.length;buttons[next].focus();return}
   if((e.code==='Enter'||e.code==='Space')&&!e.repeat&&e.target===$('start')){e.preventDefault();start();return}
  }
-if(e.target instanceof HTMLInputElement||e.target instanceof HTMLTextAreaElement||e.target instanceof HTMLSelectElement)return;if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Space'].includes(e.code))e.preventDefault();if(!keys.has(e.code))edges.add(e.code);keys.add(e.code);if(e.code==='Escape'&&running)$('pause').click()});window.addEventListener('keyup',e=>keys.delete(e.code));window.addEventListener('blur',()=>{keys.clear();edges.clear();if(running&&!paused)$('pause').click()});
+if(e.target instanceof HTMLInputElement||e.target instanceof HTMLTextAreaElement||e.target instanceof HTMLSelectElement)return;if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Space',...(running?['Enter']:[])].includes(e.code))e.preventDefault();if(!keys.has(e.code))edges.add(e.code);keys.add(e.code);sendGuestInput();if(e.code==='Escape'&&running)$('pause').click()});window.addEventListener('keyup',e=>{keys.delete(e.code);sendGuestInput()});window.addEventListener('blur',()=>{keys.clear();edges.clear();if(running&&!paused)$('pause').click()});
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&running&&!paused)$('pause').click()});
-const touchControls=installTouchControls(key=>{touchKeys.add(key);edges.add(key)},key=>touchKeys.delete(key));
+const touchControls=installTouchControls(key=>{touchKeys.add(key);edges.add(key);sendGuestInput()},key=>{touchKeys.delete(key);sendGuestInput()});
 const fullscreenButtons=['mobile-fullscreen','title-fullscreen','selection-fullscreen'].map($);
 for(const button of fullscreenButtons){button.hidden=!document.fullscreenEnabled;button.onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch(error){console.warn('Fullscreen unavailable',error)}}}
 document.addEventListener('fullscreenchange',()=>{for(const button of fullscreenButtons)button.textContent=document.fullscreenElement?'전체 화면 해제':'전체 화면';updateMobileView()});
-const touchScreen=matchMedia('(any-pointer:coarse)');function updateMobileView(){document.documentElement.style.setProperty('--play-height',(window.visualViewport?.height||innerHeight)+'px');document.documentElement.style.setProperty('--play-width',(window.visualViewport?.width||innerWidth)+'px');document.body.classList.toggle('mobile-match',(navigator.maxTouchPoints>0||touchScreen.matches)&&!$('arena').hidden);if($('arena').hidden)touchControls.reset();}touchScreen.addEventListener('change',updateMobileView);window.addEventListener('resize',updateMobileView);window.addEventListener('orientationchange',()=>{touchControls.reset();updateMobileView();});window.visualViewport?.addEventListener('resize',updateMobileView);new MutationObserver(updateMobileView).observe($('arena'),{attributes:true,attributeFilter:['hidden']});updateMobileView();
-for(const [id,fn] of Object.entries({story:()=>{mode=0;selection(true)},versus:()=>{mode=1;selection()},home:()=>selection(),start, pause:()=>{paused=!paused;$('pause').textContent=paused?'계속하기':'일시정지';keys.clear();edges.clear()},sound:()=>{muted=!muted;music.muted=muted;$('sound').textContent=muted?'♫ 음악 꺼짐':'♫ 음악 켜짐';if(!muted)music.play().catch(()=>{})},next:()=>{if(net){$('online').click();return}if(mode===0&&get(10)===0){if(stage===4){p.ending=true;save();drawGoals();drawEnding($('ending-art').getContext('2d'));stop();$('arena').hidden=true;$('ending').hidden=false;play(6);return}stage++}selection()},again:()=>{mode=0;selection(true)}}))$(id).onclick=fn;
+const touchScreen=matchMedia('(any-pointer:coarse)');function updateMobileView(){const dual=mode===1&&!net&&!attract?.showingDemo;document.body.classList.toggle('local-versus',dual);document.documentElement.style.setProperty('--play-height',(window.visualViewport?.height||innerHeight)+'px');document.documentElement.style.setProperty('--play-width',(window.visualViewport?.width||innerWidth)+'px');document.body.classList.toggle('mobile-match',(navigator.maxTouchPoints>0||touchScreen.matches)&&!$('arena').hidden);if($('arena').hidden)touchControls.reset();}touchScreen.addEventListener('change',updateMobileView);window.addEventListener('resize',updateMobileView);window.addEventListener('orientationchange',()=>{touchControls.reset();updateMobileView();});window.visualViewport?.addEventListener('resize',updateMobileView);new MutationObserver(updateMobileView).observe($('arena'),{attributes:true,attributeFilter:['hidden']});updateMobileView();
+const storyFlow=installStoryDialog({stage:()=>stage,draw:(pic,id)=>drawSelectionPortrait(pic,id,1,false),onStart:()=>{keys.clear();edges.clear();touchControls.reset();startMatch()}});
+for(const [id,fn] of Object.entries({story:()=>{mode=0;selection(true)},versus:()=>{mode=1;selection()},home:()=>selection(),start, pause:()=>{paused=!paused;touchControls.reset();$('pause').textContent=paused?'계속하기':'일시정지';keys.clear();edges.clear()},sound:()=>{muted=!muted;music.muted=muted;$('sound').textContent=muted?'♫ 음악 꺼짐':'♫ 음악 켜짐';if(!muted)music.play().catch(()=>{})},next:()=>{if(net){$('online').click();return}if(mode===0&&get(10)===0){if(stage===4){p.ending=true;save();drawGoals();drawEnding($('ending-art').getContext('2d'));stop();$('arena').hidden=true;$('ending').hidden=false;play(6);return}stage++}selection()},again:()=>{mode=0;selection(true)}}))$(id).onclick=fn;
 let netState=null,remoteBits=0,remoteCharacter='hachiware';
 function netMessage(m){
  if(!net)return;
@@ -134,7 +161,7 @@ $('reset-progress').onclick=()=>{
  p=clean;tracked=[0,0,0];selection(true);
  $('save-note').textContent='도전과제를 초기화했습니다.';
 };
-$('title-music').onclick=()=>play(1);document.addEventListener('pointerdown',()=>{if(document.body.classList.contains('title-open'))play(1)});document.addEventListener('keydown',()=>{if(document.body.classList.contains('title-open'))play(1)});$('title-start').onclick=enterGame;$('title-home').onclick=showTitle;core.init(0,1,15);drawGoals();showTitle();requestAnimationFrame(frame);
+$('title-music').onclick=()=>play(1);document.addEventListener('pointerdown',()=>{if(document.body.classList.contains('title-open'))play(1)});document.addEventListener('keydown',()=>{if(document.body.classList.contains('title-open'))play(1)});$('title-start').onclick=enterGame;$('title-home').onclick=()=>showTitle();core.init(0,1,15);drawGoals();showTitle();requestAnimationFrame(frame);
 
 
 

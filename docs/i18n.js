@@ -23,7 +23,7 @@ export const translations={
 '점프':'Jump','타격':'Hit','✦ 도전과제 · 친구 해금':'✦ Achievements · Unlock Friends','스토리 모드의 기록을 저장합니다. 상단 공튕기기는 위 방향을 입력하며 공중 스파이크를 공에 맞혔을 때 집계됩니다.':'Progress is saved in Story Mode. Upward hits count when an airborne upward spike connects with the ball.','기록 백업 저장':'Export Save','이 브라우저에 자동 저장됩니다.':'Progress is saved automatically in this browser.',
 '새 캐릭터 동작 시험장 →':'Character Motion Preview →','상단 슛·충전 게이지 시험장 →':'Spike & Power Gauge Preview →','캐릭터·동작·배경 미리보기 →':'Art Preview →','초필살기 연출 시험장 열기 →':'Super Move Preview →','팀 교대·파트너 구출 시험장 →':'Team & Partner Preview →','1·2스테이지 빌런 보기 →':'Stage 1 & 2 Villains →','조작 안내':'Controls',
 '1P: A / D 좌우 이동 · W 점프 · W + F 상단 스파이크 · 방향 입력으로 좌우 리시브':'1P: A / D Move · W Jump · W + F Upward Spike · Receive toward your movement direction',
-'2P: ← / → 좌우 이동 · ↑ 점프 · ↑ + K 상단 스파이크 · 방향 입력으로 좌우 리시브':'2P: ← / → Move · ↑ Jump · ↑ + K Upward Spike · Receive toward your movement direction',
+'2P: ← / → 좌우 이동 · ↑ 점프 · ↑ + Enter 상단 스파이크 · 방향 입력으로 좌우 리시브':'2P: ← / → Move · ↑ Jump · ↑ + Enter Upward Spike · Receive toward your movement direction',
 '공을 10번 튕겨 MAXIMUM이 되면 다음 상단 스파이크를 맞힐 때 초필살기가 자동 발동합니다.':'Reach MAXIMUM with 10 hits, then connect an upward spike to activate your super automatically.',
 '팬 게임 개발용 로컬 프로토타입 · 원본 음원 사용 · GBA 공용 C 경기 코어':'Local fan-game prototype · Original soundtrack · Shared C core for GBA',
 '음성 켜짐':'Voices On','음성 꺼짐':'Voices Off','♫ 음악 켜짐':'♫ Music On','♫ 음악 꺼짐':'♫ Music Off',
