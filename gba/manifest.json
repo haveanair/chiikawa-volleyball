@@ -1,9 +1,9 @@
 {
   "unlocked": {
-    "rom": "chiikawa-volleyball-v0.5.2-unlocked.gba",
+    "rom": "chiikawa-volleyball-v0.5.5-unlocked.gba",
     "size": 33554432,
-    "payload_bytes": 32897384,
-    "sha256": "b13f3be806dbb64e713d830d172a98c4b1fe4625a902fc1278a13fc8e358a4be",
+    "payload_bytes": 33094544,
+    "sha256": "4efc2c387d171e6fe2cd43bb157294e125907ebc2315deb6d41f769dfe9fc1b2",
     "header_title": "CHIIVOLLEY  ",
     "game_code": "V49E",
     "header_checksum_valid": true,
@@ -11,10 +11,10 @@
     "unlock_mode": "all_unlocked"
   },
   "locked": {
-    "rom": "chiikawa-volleyball-v0.5.2-locked.gba",
+    "rom": "chiikawa-volleyball-v0.5.5-locked.gba",
     "size": 33554432,
-    "payload_bytes": 32897664,
-    "sha256": "2d72392c82b8c02bf0c703e68f41cf1eef49f901a51967e16e6c342cd60d2165",
+    "payload_bytes": 33094824,
+    "sha256": "16a779365bdd9d7004e03fadd8a48fe850d3d2407742eb0637838c6192ee84fc",
     "header_title": "CHIIVOLLEY  ",
     "game_code": "V49E",
     "header_checksum_valid": true,

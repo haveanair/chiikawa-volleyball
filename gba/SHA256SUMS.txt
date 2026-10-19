@@ -1,3 +1,3 @@
-f22e57fe69522c34726db9ff1dd29d046daead29af49bb7003a2afa602e58edf  chiikawa-volleyball-gba-v0.5.2.zip
-2d72392c82b8c02bf0c703e68f41cf1eef49f901a51967e16e6c342cd60d2165  chiikawa-volleyball-v0.5.2-locked.gba
-b13f3be806dbb64e713d830d172a98c4b1fe4625a902fc1278a13fc8e358a4be  chiikawa-volleyball-v0.5.2-unlocked.gba
+3aa8de09d4ef28024a20ad7969559acee33238d2d2b8124cafa92839e55d46d7  chiikawa-volleyball-gba-v0.5.5.zip
+815d4487f1bc453aba741c3134eccd5807c531a4b5b617a9c713eebea0f84401  chiikawa-volleyball-v0.5.5-locked.gba
+4efc2c387d171e6fe2cd43bb157294e125907ebc2315deb6d41f769dfe9fc1b2  chiikawa-volleyball-v0.5.5-unlocked.gba
