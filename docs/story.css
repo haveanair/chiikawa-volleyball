@@ -1,8 +1,0 @@
-.story-dialog{position:fixed;inset:0;margin:auto;width:min(560px,calc(100vw - 28px));max-height:calc(100dvh - 24px);overflow:auto;border:3px solid #e3cb8e;border-radius:22px;background:#fffaf0;color:#344b43;padding:22px;text-align:center;box-shadow:0 14px 60px #20362c40}
-.story-dialog::backdrop{background:#1c2c36b8}
-.story-dialog #story-heading{font-size:21px;font-weight:bold;margin:0 0 8px}
-.story-dialog canvas{display:block;width:160px;height:150px;object-fit:contain;margin:0 auto}
-.story-dialog .story-copy{font-size:19px;line-height:1.6;min-height:92px;word-break:keep-all;margin:12px 0 20px}
-.story-actions{display:flex;justify-content:space-between;gap:16px}
-.story-actions button{min-height:44px;min-width:92px}
-@media(orientation:landscape) and (max-height:500px){.story-dialog{width:min(640px,calc(100vw - 24px));padding:12px 20px}.story-dialog canvas{float:left;width:112px;height:105px;margin-right:16px}.story-dialog .story-copy{text-align:left;min-height:90px;font-size:16px;margin:10px 0}.story-actions{clear:both}.story-dialog #story-heading{font-size:18px}}

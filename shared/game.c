@@ -309,25 +309,6 @@ static uint8_t x_in_player_half(const Player* player, int x)
     return (uint8_t)(x > 0 && x < WORLD_HALF_WIDTH);
 }
 
-static void demo_align_receiver(Game* game)
-{
-    Player* receiver;
-    int x;
-
-    if(game->mode != GAME_MODE_CPU_DEMO) return;
-    if(game->rally_state != RALLY_ACTIVE) return;
-    if(game->ball.y_velocity <= 0) return;
-
-    receiver = game->ball.x < WORLD_HALF_WIDTH ? &game->players[0] : &game->players[1];
-    if(game->ball.y < 160) return;
-
-    x = clamp_int(game->ball.x,
-                  receiver->is_right ? WORLD_HALF_WIDTH + PLAYER_HALF_LENGTH : PLAYER_HALF_LENGTH,
-                  receiver->is_right ? WORLD_WIDTH - PLAYER_HALF_LENGTH : WORLD_HALF_WIDTH - PLAYER_HALF_LENGTH);
-    receiver->x = (int16_t)x;
-    receiver->ai_target_x = (int16_t)x;
-}
-
 static uint8_t demo_save_before_ground(Game* game)
 {
     Player* receiver;
@@ -352,11 +333,13 @@ static uint8_t demo_save_before_ground(Game* game)
 
     game->ball.y = BALL_GROUND_Y - 18;
     game->ball.x = (int16_t)x;
-    game->ball.x_velocity = receiver->is_right ? -7 : 7;
+    game->ball.x_velocity = (int16_t)(((receiver->is_right ? 108 : 324) - x) / 30);
     game->ball.y_velocity = -17;
     game->ball.expected_landing_x = (int16_t)calculate_expected_landing_x(&game->ball);
     game->ball.power_effect_ticks = 8;
     game->sound_events |= GAME_SOUND_POWER_HIT;
+    ++game->contacts[receiver->is_right ? 1 : 0];
+    cue(game,receiver->is_right ? 1 : 0,2);
     return 1;
 }
 
@@ -372,6 +355,13 @@ static PlayerInput computer_input(Game* game, Player* player, const Player* othe
     int abs_dx = iabs(ball_dx);
     int abs_landing_dx = iabs(landing_dx);
     uint8_t landing_on_side = x_in_player_half(player, landing);
+
+    if(game->mode == GAME_MODE_CPU_DEMO) {
+        int target = landing_on_side ? landing : (player->is_right ? 324 : 108);
+        target = clamp_int(target, left_boundary + PLAYER_HALF_LENGTH, right_boundary - PLAYER_HALF_LENGTH);
+        input.x_direction = (int8_t)(target > player->x + 4 ? 1 : target < player->x - 4 ? -1 : 0);
+        return input;
+    }
 
     if(player->ai_dive_cooldown > 0u) --player->ai_dive_cooldown;
 
@@ -582,6 +572,18 @@ static void collide_ball_with_player(Game* game, Player* player, PlayerInput inp
     uint8_t upper_shot = (uint8_t)(player->state == PLAYER_POWER_HIT && input.y_direction == -1);
     uint8_t super_hit = (uint8_t)(upper_shot && game->charge[side] == 10);
     ++game->contacts[side];
+    if(game->mode == GAME_MODE_CPU_DEMO) {
+        /* Every demo receive sends a readable arc to the other court. */
+        int speed = ((side ? 108 : 324) - ball->x) / 30;
+        ball->x_velocity = (int16_t)(side ? clamp_int(speed,-10,-3) : clamp_int(speed,3,10));
+        ball->y_velocity = -16;
+        ball->power_effect_ticks = 0;
+        if(game->charge[side] < 9) ++game->charge[side];
+        cue(game,side,2);
+        game->sound_events |= GAME_SOUND_POWER_HIT;
+        ball->expected_landing_x = (int16_t)calculate_expected_landing_x(ball);
+        return;
+    }
     if(upper_shot && !super_hit)
         ++game->upper_hits[side];
 
@@ -815,7 +817,6 @@ void game_tick(Game* game, PlayerInput player_one_input, PlayerInput player_two_
         game->ball.y=(int16_t)(game->ball.y+clamp_int(target->y-game->ball.y,-18,18));
         game->ball.power_effect_ticks=24;
     } else {
-    demo_align_receiver(game);
     if(partner_save(game)||demo_save_before_ground(game)) {
         ++game->ball.rotation;
     } else if(move_ball_against_world(&game->ball)) {

@@ -13,7 +13,7 @@ PC·모바일 브라우저에서 무료로 즐기는 치이카와 배구 팬게�
 - **대전:** 같은 PC 또는 한 대의 스마트폰에서 즐기는 2인 대전, 숫자 4자리 방 번호로 연결하는 온라인 친구 대전
 - **초필살기:** 공을 10번 튕겨 게이지를 채운 뒤 상단 스파이크를 맞히면 발동
 - **모바일 조작:** 스토리·온라인은 왼쪽 이동·점프와 오른쪽 공격. 로컬 2인 대전은 양쪽에 각각 이동·점프·공격 패드 제공
-- **원작 장면:** 스토리 경기 전에 캐릭터와 관련된 짧은 원작 요약을 표시하며, 계속·스킵·Esc로 진행 가능
+- **경기 전 대화:** 선택한 주인공과 상대가 코트에 등장하고 하단에서 대화를 주고받습니다. 마지막 대사 뒤 준비 연출을 거쳐 경기가 시작되며 스킵·Esc도 지원합니다. 원작의 관계·말투에 기반한 게임용 각색입니다.
 - **타이틀 데모:** 타이틀 20초와 CPU 자동 경기 20초가 번갈아 재생되고, 1~5스테이지를 순환
 - **한국어 / 영어:** 타이틀 화면에서 언어 변경
 
@@ -42,9 +42,9 @@ PC·모바일 브라우저에서 무료로 즐기는 치이카와 배구 팬게�
 
 도전과제는 현재 브라우저에 저장됩니다. **도전과제·친구 해금 → 기록 백업 저장**으로 기록을 파일에 보관할 수 있습니다. **도전과제 초기화**는 확인 창에서 승인한 경우에만 기록과 캐릭터 해금을 지우며, 취소하면 유지합니다. 기기·브라우저를 바꾸면 자동으로 이전되지 않습니다.
 
-타이틀 데모는 **타이틀 → 1스테이지 → 타이틀 → 2스테이지 → … → 5스테이지 → 타이틀 → 1스테이지** 순서입니다. 각 구간은 20초이며 데모 상단 중앙에 게임 로고가 깜빡입니다. 화면을 누르거나 키를 입력하면 타이틀로 돌아갑니다. 데모는 도전과제 기록에 반영되지 않습니다.
+타이틀 데모는 **타이틀 → 1스테이지 → 타이틀 → 2스테이지 → … → 5스테이지 → 타이틀 → 1스테이지** 순서입니다. 각 구간은 20초이며 데모 상단 중앙에 게임 로고가 깜빡입니다. 화면을 누르거나 키를 입력하면 타이틀로 돌아갑니다. 데모는 도전과제 기록에 반영되지 않습니다. 데모 리시브는 상대 코트로 보내는 포물선을 사용해 양쪽이 번갈아 공을 주고받습니다.
 
-원작 장면은 치이카와 포켓의 실제 장면·대사, 사용자가 제공한 위키 본문, 공식 소개를 대조해 요약했습니다. 배구를 하며 친구가 된다는 새 사건이나 팬 추측을 원작 사실로 넣지 않습니다. [장면별 확인 자료](docs/story-sources.md)를 참고하세요.
+경기 전 대화는 치이카와 포켓의 실제 장면·대사, 사용자가 제공한 위키 본문, 공식 소개를 참고해 원작의 관계와 말투를 유지한 **게임용 각색**입니다. 선택한 캐릭터에 따라 대사·외침·몸짓이 달라지며, 원작에서 실제로 배구 대화를 나눴다고 주장하지 않습니다. 원작에서 길게 말하지 않는 캐릭터에게 긴 대사를 붙이지 않고, 팬 추측을 확정 설정으로 쓰지 않습니다. [장면별 확인 자료](docs/story-sources.md)를 참고하세요.
 
 ### QR로 공유하기
 
@@ -65,7 +65,7 @@ Choose Chiikawa, Hachiware, Usagi, and more for lively volleyball matches. Inspi
 - **Versus play:** Local two-player matches and online friend matches using a four-digit room code
 - **Special shots:** Fill the gauge with 10 ball hits, then land an upward spike to unleash a special move
 - **Mobile controls:** Solo/online: movement and jump on the left, attack on the right. Local versus: a complete independent pad for each player on one phone
-- **Story interludes:** Brief summaries of original scenes, with Continue and Skip buttons
+- **Pre-match encounters:** Your chosen hero and opponent appear on the court, exchanging dialogue in a lower panel before a ready sequence starts the match. These are game adaptations based on the original personalities, with Continue and Skip buttons.
 - **Attract loop:** 20-second title and CPU demo segments, cycling through stages 1–5 without changing saved progress
 - **Languages:** Korean and English, selectable on the title screen
 
