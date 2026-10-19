@@ -11,7 +11,9 @@
 - **모바일 조작:** 가로 화면에서 왼쪽 좌·우·점프 버튼, 오른쪽 공격 버튼 사용
 - **한국어 / 영어:** 타이틀 화면에서 언어 변경
 
-현재 개발 중인 **웹 버전**이며 처음에는 치이카와·하치와레·우사기를 선택할 수 있습니다. 나머지 캐릭터는 도전과제로 해금됩니다. GBA 이식을 고려해 C 언어 경기 코어를 사용하며, GBA 버전은 별도 개발 대상입니다.
+현재 개발 중인 **웹 버전**이며 처음에는 치이카와·하치와레·우사기를 선택할 수 있습니다. 나머지 캐릭터는 도전과제로 해금됩니다. 웹과 GBA는 C 언어 경기 코어를 공유합니다. **[GBA v0.5 다운로드 / 배포 안내](https://github.com/haveanair/chiikawa-volleyball/tree/main/gba)**에서 잠금판과 전체 해금판을 받을 수 있습니다.
+
+**[GBA판 다운로드 / GBA downloads](https://github.com/haveanair/chiikawa-volleyball/releases/tag/gba-v0.5) · [GBA 전용 안내 / GBA guide](https://github.com/haveanair/chiikawa-volleyball/tree/main/gba)**
 
 ### 플레이 및 조작
 
@@ -39,7 +41,7 @@ Choose Chiikawa, Hachiware, Usagi, and more for lively volleyball matches. Inspi
 - **Mobile controls:** Landscape play with movement and jump on the left, and one attack button on the right
 - **Languages:** Korean and English, selectable on the title screen
 
-This is a **web build in active development**. Chiikawa, Hachiware, and Usagi are available initially; additional characters unlock through achievements. The game uses a shared C gameplay core with a future GBA port in mind. A playable GBA release is not included.
+This is a **web build in active development**. Chiikawa, Hachiware, and Usagi are available initially; additional characters unlock through achievements. The web and GBA builds share a C gameplay core. **[GBA v0.5 downloads and guide](https://github.com/haveanair/chiikawa-volleyball/tree/main/gba)** include locked and all-unlocked development ROMs.
 
 ### How to play
 
