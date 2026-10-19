@@ -1,3 +1,4 @@
+import {createHaptics} from './haptics.js?v=0.29';
 import {installTouchControls} from './touch-controls.js?v=0.23';
 import {createCombatAudio,combatEvents} from './combat-audio.js?v=0.20';
 import {installScoreNameFit} from './score-name-fit.js?v=0.20';
@@ -15,6 +16,11 @@ import {CharacterVoices} from './voices.js?v=0.20';
 import {PeerMatch} from './peer.js?v=0.20';
 import {roster,stages,fresh,goals,unlocked,recordWin,loadProgress} from './progress.mjs?v=0.28';
 import {actor,background} from './art.js?v=0.20';
+const haptics=createHaptics();
+const vibrationButton=document.querySelector('#vibration-toggle');
+function showVibration(){vibrationButton.textContent=haptics.supported?(haptics.enabled?'진동 켜짐':'진동 꺼짐'):'진동 미지원';vibrationButton.disabled=!haptics.supported}
+vibrationButton.onclick=()=>{haptics.setEnabled(!haptics.enabled);showVibration();if(haptics.enabled)haptics.play(8)};showVibration();
+window.addEventListener('blur',()=>haptics.stop());document.addEventListener('visibilitychange',()=>{if(document.hidden)haptics.stop()});
 installLanguageUI();
 installScoreNameFit();
 if(TEST_BUILD){document.querySelector('#selection .section-title span').textContent='테스트판 · 모든 캐릭터 개방';document.querySelector('.selection-keys').textContent='방향키 / W A S D: 이동 · Enter: 결정';}
@@ -25,7 +31,7 @@ let core;
 let soundContext;const combatAudio=createCombatAudio();
 const ballRenderer=createBallRenderer();let chargeSeen=[0,0];
 document.addEventListener('pointerdown',()=>{try{soundContext??=new AudioContext();soundContext.resume().catch(()=>{})}catch{}});
-function effects(events){if(!events||muted)return;try{soundContext??=new AudioContext();if(soundContext.state!=='running')return;combatAudio.play(soundContext,events).catch(console.error);if(combatEvents(events).length)return;const osc=soundContext.createOscillator(),gain=soundContext.createGain(),now=soundContext.currentTime;osc.type=(events&8)?'triangle':'sine';osc.frequency.setValueAtTime((events&8)?740:(events&16)?130:430,now);osc.frequency.exponentialRampToValueAtTime((events&8)?180:220,now+.09);gain.gain.setValueAtTime(.035,now);gain.gain.exponentialRampToValueAtTime(.001,now+.11);osc.connect(gain);gain.connect(soundContext.destination);osc.start(now);osc.stop(now+.12)}catch{}}
+function effects(events){haptics.play(events);if(!events||muted)return;try{soundContext??=new AudioContext();if(soundContext.state!=='running')return;combatAudio.play(soundContext,events).catch(console.error);if(combatEvents(events).length)return;const osc=soundContext.createOscillator(),gain=soundContext.createGain(),now=soundContext.currentTime;osc.type=(events&8)?'triangle':'sine';osc.frequency.setValueAtTime((events&8)?740:(events&16)?130:430,now);osc.frequency.exponentialRampToValueAtTime((events&8)?180:220,now+.09);gain.gain.setValueAtTime(.035,now);gain.gain.exponentialRampToValueAtTime(.001,now+.11);osc.connect(gain);gain.connect(soundContext.destination);osc.start(now);osc.stop(now+.12)}catch{}}
 try{const response=await fetch('./public/game.wasm?v=0.20',{cache:'no-store'});if(!response.ok)throw Error('game.wasm HTTP '+response.status);core=(await WebAssembly.instantiate(await response.arrayBuffer())).instance.exports}catch(e){$('select-title').textContent='경기 코어를 불러오지 못했습니다. 실행하기.cmd로 실행해 주세요.';console.error(e);throw e}
 const get=(f,s=0)=>(net?.connected&&!net.host&&netState)?netState[f*2+(s&1)]:core.get(f,s),keys=new Set(),edges=new Set(),touchKeys=new Set();
 function save(){try{localStorage.setItem('chiivolley.progress.v1',JSON.stringify(p))}catch{$('save-note').textContent='저장 공간을 사용할 수 없어 이번 실행에서만 기록됩니다.'}}

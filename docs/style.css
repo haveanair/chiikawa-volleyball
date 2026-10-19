@@ -120,3 +120,11 @@ body.title-open{background:#c7e6df}body.title-open>header,body.title-open>#game-
  .title-credits{bottom:13px}.title-credits small{font-size:8px}.title-fan-note{bottom:1px;font-size:8px}
  .language-picker{top:8px;right:8px}.title-fullscreen{top:8px;left:8px;padding:5px 9px;font-size:11px}
 }
+
+/* Keep the portrait logo below the two top controls. */
+@media(orientation:portrait){
+ #title-screen .title-copy{top:64px;height:calc(40% - 40px)}
+ #title-screen .title-fullscreen{top:12px;left:12px}
+ #title-screen .language-picker{top:12px;right:12px}
+}
+@media(max-width:420px){.audio-settings{flex-wrap:wrap;justify-content:flex-end}.audio-settings button{font-size:9px;padding:5px}.game-header{gap:5px}}
