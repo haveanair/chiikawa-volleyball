@@ -44,7 +44,7 @@ GBA 에뮬레이터에서 `.gba` 파일을 여세요. Windows용 ZIP의 실행 �
 - 스토리와 CPU 자유 대전의 난이도 3단계. 캐릭터 선택에서 승리 점수 10·15·20점 선택.
 - v0.4의 부드러운 글꼴·점수 표현 복귀. 타이틀·선택 화면 전용 고밀도 원본 변환과 전용 팔레트, 18캐릭터 3줄 애니메이션 엔딩.
 - 잠금 캐릭터는 목록과 미리보기에서 어두운 회색으로 표시하고, 해금하면 원래 색으로 복원.
-- 무입력 시 타이틀 20초와 CPU 데모 20초를 번갈아 표시. 데모는 1~5스테이지 반복, 중앙 상단 로고 점멸, 버튼 입력으로 타이틀 복귀. 데모 결과는 진행 기록에 합산하지 않습니다.
+- 무입력 시 타이틀 20초와 CPU 데모 20초를 번갈아 표시. 데모는 1~5스테이지 반복, 중앙 상단에 타이틀 화면과 동일한 한국어·영어 실제 로고 이미지 점멸, 버튼 입력으로 타이틀 복귀. 데모 결과는 진행 기록에 합산하지 않습니다.
 - 5개 스테이지, 캐릭터별 목소리 또는 전용 효과음, MAX 게이지·완료음·진동, 파란 공 잔상, 초필살기 컷인·불꽃·화면 떨림.
 - 한잎이·두잎이는 한 슬롯에서 함께 등장하고 득점 후 역할을 교대합니다.
 
@@ -55,6 +55,12 @@ GBA 에뮬레이터에서 `.gba` 파일을 여세요. Windows용 ZIP의 실행 �
 ![잠금 캐릭터 회색 표시](https://github.com/haveanair/chiikawa-volleyball/raw/main/gba/images/locked-roster.png)
 
 ![18캐릭터 엔딩 실제 실행](https://github.com/haveanair/chiikawa-volleyball/raw/main/gba/images/ending-animation.gif)
+
+## 데모의 실제 타이틀 로고
+
+![한국어 실제 타이틀 로고 데모](https://github.com/haveanair/chiikawa-volleyball/raw/main/gba/images/demo-ko.png)
+
+![English title-logo demo](https://github.com/haveanair/chiikawa-volleyball/raw/main/gba/images/demo-en.png)
 
 ## 잠금판 해금 조건
 
