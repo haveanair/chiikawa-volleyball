@@ -1,4 +1,4 @@
-import {installStoryDialog} from './story-encounters.js?v=0.43';
+import {installStoryDialog} from './story-encounters.js?v=0.44';
 import {AttractLoop} from './attract-loop.js?v=0.42';
 import {installViewportLayout} from './viewport-layout.js?v=0.40';
 installViewportLayout();
@@ -125,7 +125,7 @@ const fullscreenButtons=['mobile-fullscreen','title-fullscreen','selection-fulls
 for(const button of fullscreenButtons){button.hidden=!document.fullscreenEnabled;button.onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch(error){console.warn('Fullscreen unavailable',error)}}}
 document.addEventListener('fullscreenchange',()=>{for(const button of fullscreenButtons)button.textContent=document.fullscreenElement?'전체 화면 해제':'전체 화면';updateMobileView()});
 const touchScreen=matchMedia('(any-pointer:coarse)');function updateMobileView(){const dual=mode===1&&!net&&!attract?.showingDemo;document.body.classList.toggle('local-versus',dual);document.documentElement.style.setProperty('--play-height',(window.visualViewport?.height||innerHeight)+'px');document.documentElement.style.setProperty('--play-width',(window.visualViewport?.width||innerWidth)+'px');document.body.classList.toggle('mobile-match',(navigator.maxTouchPoints>0||touchScreen.matches)&&!$('arena').hidden);if($('arena').hidden)touchControls.reset();}touchScreen.addEventListener('change',updateMobileView);window.addEventListener('resize',updateMobileView);window.addEventListener('orientationchange',()=>{touchControls.reset();updateMobileView();});window.visualViewport?.addEventListener('resize',updateMobileView);new MutationObserver(updateMobileView).observe($('arena'),{attributes:true,attributeFilter:['hidden']});updateMobileView();
-const storyFlow=installStoryDialog({stage:()=>stage,hero:()=>chosen[0],onStart:()=>{keys.clear();edges.clear();touchControls.reset();startMatch()}});
+const storyFlow=installStoryDialog({stage:()=>stage,hero:()=>chosen[0],onSpeak:(id,side)=>{voices.stop();voices.play(id,'select',side)},onSilence:()=>voices.stop(),onStart:()=>{keys.clear();edges.clear();touchControls.reset();startMatch()}});
 for(const [id,fn] of Object.entries({story:()=>{mode=0;selection(true)},versus:()=>{mode=1;selection()},home:()=>selection(),start, pause:()=>{paused=!paused;touchControls.reset();$('pause').textContent=paused?'계속하기':'일시정지';keys.clear();edges.clear()},sound:()=>{muted=!muted;music.muted=muted;$('sound').textContent=muted?'♫ 음악 꺼짐':'♫ 음악 켜짐';if(!muted)music.play().catch(()=>{})},next:()=>{if(net){$('online').click();return}if(mode===0&&get(10)===0){if(stage===4){p.ending=true;save();drawGoals();drawEnding($('ending-art').getContext('2d'));stop();$('arena').hidden=true;$('ending').hidden=false;play(6);return}stage++}selection()},again:()=>{mode=0;selection(true)}}))$(id).onclick=fn;
 let netState=null,remoteBits=0,remoteCharacter='hachiware';
 function netMessage(m){

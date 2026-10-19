@@ -57,22 +57,23 @@ export function buildEncounter(hero,level){
  const reply=hero==='momonga'&&level===1?['돌려줘…! 돌려줘!','Give it back…! Give it back!']:opponents[level][0];
  return [{side:1,text:reply},{side:0,text:variations[`${hero}:${level}`]||heroes[hero][0]},{side:1,text:opponents[level][1]},{side:0,text:heroes[hero][1]}];
 }
-export function installStoryDialog({stage,hero,onStart}){
+export function installStoryDialog({stage,hero,onStart,onSpeak=()=>{},onSilence=()=>{}}){
  const dialog=document.createElement('dialog');dialog.id='story-dialog';dialog.className='story-dialog';dialog.setAttribute('aria-labelledby','story-heading');dialog.setAttribute('data-no-translate','');
  dialog.innerHTML='<div class="story-stage"><canvas width="864" height="608" aria-hidden="true"></canvas><div class="story-top"><p id="story-heading"></p><span class="story-adaptation"></span></div><div class="story-dialogue"><b class="story-speaker"></b><p class="story-copy" aria-live="polite"></p><div class="story-actions"><button type="button" class="story-skip"></button><span class="story-page" aria-hidden="true"></span><button type="button" class="primary story-next"></button></div></div><div class="story-countdown" hidden aria-live="polite"></div></div>';
  document.body.append(dialog);const next=dialog.querySelector('.story-next'),skip=dialog.querySelector('.story-skip'),canvas=dialog.querySelector('canvas'),c=canvas.getContext('2d'),count=dialog.querySelector('.story-countdown');
  let page=0,script=[],selected,level,startTime=0,transitionAt=null,raf=0;
  const en=()=>document.documentElement.lang==='en';
  function render(){const entry=script[page];dialog.dataset.hero=selected;dialog.dataset.enemy=stages[level][2];dialog.dataset.speaker=String(entry.side);dialog.dataset.phase=transitionAt===null?'dialogue':'ready';dialog.querySelector('#story-heading').textContent=`${level+1} / 5 · ${en()?['Hachiware’s Home','The Forest','The Village','Mermaid Island','Siren’s Cave'][level]:stages[level][0]}`;dialog.querySelector('.story-adaptation').textContent=en()?'Game adaptation':'게임용 각색';const id=entry.side?stages[level][2]:selected;dialog.querySelector('.story-speaker').textContent=translate(roster.find(r=>r.id===id).name);dialog.querySelector('.story-copy').textContent=entry.text[en()?1:0];dialog.querySelector('.story-page').textContent=`${page+1} / ${script.length}`;skip.textContent=en()?'Skip':'스킵';next.textContent=page===script.length-1?(en()?'To the Court':'코트로'):(en()?'Continue':'계속');}
- function finish(){if(!dialog.open)return;cancelAnimationFrame(raf);dialog.close();count.hidden=true;next.disabled=false;onStart()}
+ function speak(){const side=script[page].side;onSpeak(side?stages[level][2]:selected,side)}
+ function finish(){if(!dialog.open)return;onSilence();cancelAnimationFrame(raf);dialog.close();count.hidden=true;next.disabled=false;onStart()}
  function draw(now){if(!dialog.open)return;const entrance=Math.min(1,(now-startTime)/650),speaker=script[page].side;c.setTransform(2,0,0,2,0,0);background(c,level);c.fillStyle='#14232920';c.fillRect(0,0,432,304);
   for(const [side,id] of [selected,stages[level][2]].entries()){const x=side?324+65*(1-entrance):108-65*(1-entrance),active=side===speaker,size=id==='siren'?1.7:id==='boss'?1.55:1.45;c.save();c.globalAlpha=transitionAt!==null||active?1:.68;c.fillStyle='#263b3925';c.beginPath();c.ellipse(x,206,35,5,0,0,7);c.fill();const bob=active?Math.sin(now/220)*1.4:0;actor(c,id,x,206-30*size+bob,size,transitionAt!==null?2:0,now/90,{portrait:true,selection:true,facing:side?-1:1});c.restore();}
   if(transitionAt!==null){const remaining=1400-(now-transitionAt);count.textContent=remaining>650?'READY?':en()?'LET’S PLAY!':'경기 시작!';if(remaining<=0){finish();return}}
   raf=requestAnimationFrame(draw);
  }
- function advance(){if(transitionAt!==null)return;if(page<script.length-1){page++;render()}else{transitionAt=performance.now();count.hidden=false;next.disabled=true;render()}}
+ function advance(){if(transitionAt!==null)return;if(page<script.length-1){page++;render();speak()}else{onSilence();transitionAt=performance.now();count.hidden=false;next.disabled=true;render()}}
  next.onclick=advance;skip.onclick=finish;dialog.querySelector('.story-copy').onclick=advance;dialog.addEventListener('cancel',e=>{e.preventDefault();finish()});
  dialog.addEventListener('keydown',e=>{if(e.code==='Enter'||e.code==='Space'){e.preventDefault();if(!e.repeat){if(e.target===skip)finish();else advance()}}});
  document.addEventListener('languagechange',()=>{if(dialog.open)render()});
- return{show(){selected=hero();level=stage();page=0;script=buildEncounter(selected,level);transitionAt=null;next.disabled=false;count.hidden=true;startTime=performance.now();render();dialog.showModal();next.focus();raf=requestAnimationFrame(draw)}};
+ return{show(){selected=hero();level=stage();page=0;script=buildEncounter(selected,level);transitionAt=null;next.disabled=false;count.hidden=true;startTime=performance.now();render();dialog.showModal();next.focus();speak();raf=requestAnimationFrame(draw)}};
 }
