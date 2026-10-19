@@ -16,3 +16,8 @@
 @media(orientation:portrait){.story-dialog{width:calc(100vw - 12px);border-radius:14px}.story-stage{aspect-ratio:auto;min-height:min(620px,calc(100dvh - 20px));display:flex;flex-direction:column}.story-stage>canvas{width:100%;height:auto;aspect-ratio:864/608;object-fit:contain}.story-dialogue{position:relative;inset:auto;margin:0 7px 7px;flex:1;display:flex;flex-direction:column}.story-copy{flex:1;font-size:18px;min-height:4.5em}.story-actions button{min-height:44px}.story-speaker{font-size:19px}.story-top p{font-size:16px}.story-countdown{top:22%}}
 @media(orientation:landscape) and (max-height:500px){.story-dialog{width:min(calc(100vw - 12px),calc((100dvh - 12px)*1.85));max-height:calc(100dvh - 12px);border-radius:12px}.story-stage{aspect-ratio:1.85}.story-stage>canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom}.story-top{padding:5px 10px}.story-top p{font-size:14px}.story-dialogue{inset:auto 7px 7px;padding:6px 10px}.story-speaker{font-size:15px}.story-copy{font-size:14px;min-height:1.5em;margin:3px 0 5px}.story-actions button{min-height:36px;padding:4px 12px;font-size:12px}}
 @media(prefers-reduced-motion:reduce){.story-countdown{animation:none}}
+.story-dialog[data-memory=true] .story-stage>canvas{filter:sepia(.3) saturate(.75);transition:filter .2s}
+.story-dialog[data-phase=waiting] .story-countdown{font-size:clamp(16px,3vw,28px);padding:8px;background:#172b42dc}
+#versus-options{display:flex;flex-direction:column;gap:6px;font-size:inherit}
+#versus-options[hidden]{display:none}
+#versus-options select{max-width:100%;font-size:inherit}

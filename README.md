@@ -10,7 +10,7 @@ PC·모바일 브라우저에서 무료로 즐기는 치이카와 배구 팬게�
 
 - **스토리 모드:** 하치와레의 집에서 세이렌의 동굴까지 이어지는 5개 스테이지
 - **다양한 캐릭터:** 주인공 친구들부터 파자마파티즈, 한잎이·두잎이, 곤충몬스터, 데카츠요, 세이렌까지
-- **대전:** 같은 PC 또는 한 대의 스마트폰에서 즐기는 2인 대전, 숫자 4자리 방 번호로 연결하는 온라인 친구 대전
+- **대전:** 친구와 로컬 2인 대전, 자유롭게 상대를 고르는 컴퓨터 대전, 숫자 4자리 방 번호로 연결하는 온라인 친구 대전
 - **초필살기:** 공을 10번 튕겨 게이지를 채운 뒤 상단 스파이크를 맞히면 발동
 - **모바일 조작:** 스토리·온라인은 왼쪽 이동·점프와 오른쪽 공격. 로컬 2인 대전은 양쪽에 각각 이동·점프·공격 패드 제공
 - **경기 전 대화:** 선택한 주인공과 상대가 코트에 등장하고 하단에서 대화를 주고받습니다. 마지막 대사 뒤 준비 연출을 거쳐 경기가 시작되며 스킵·Esc도 지원합니다. 원작의 관계·말투에 기반한 게임용 각색입니다.
@@ -46,7 +46,13 @@ PC·모바일 브라우저에서 무료로 즐기는 치이카와 배구 팬게�
 
 경기 전 대화는 치이카와 포켓의 실제 장면·대사, 사용자가 제공한 위키 본문, 공식 소개를 참고해 원작의 관계와 말투를 유지한 **게임용 각색**입니다. 선택한 캐릭터에 따라 대사·외침·몸짓이 달라지며, 원작에서 실제로 배구 대화를 나눴다고 주장하지 않습니다. 원작에서 길게 말하지 않는 캐릭터에게 긴 대사를 붙이지 않고, 팬 추측을 확정 설정으로 쓰지 않습니다. [장면별 확인 자료](docs/story-sources.md)를 참고하세요.
 
+모든 14개 선택 캐릭터는 1~5스테이지마다 서로 다른 첫 반응과 마무리 대사를 가집니다. 기본 스테이지 대화는 4·5·6·7·8차례로 달라지고, 먼저 반응하는 쪽과 대화 순서도 바뀝니다. 쿠리만쥬는 자신의 음성이 실제 재생되는 동안 전용 「캬」 표정으로 바뀌며, 재생 종료·다음 화자·스킵에서는 기본 표정으로 돌아옵니다.
+
 경기 전 대사가 바뀔 때 현재 화자의 캐릭터 음성 클립을 재생합니다. 기존 음성이 없는 캐릭터는 GBA판의 캐릭터별 소리를 사용합니다. 문장 전체를 읽는 합성 더빙은 아닙니다. 다음 대사·준비 연출·스킵·Esc에서 이전 소리를 멈추며, 음성 켜짐/꺼짐 설정을 따릅니다.
+
+**컴퓨터 대전:** 게임 시작 → 2인 대전 → 대전 상대를 **컴퓨터**로 변경 → 난이도 1~5와 배경 선택 → 내 캐릭터 결정 → 컴퓨터 캐릭터 결정 순서로 진행합니다. 컴퓨터는 2P를 자동 조작하고, 스마트폰에는 1인용 패드를 표시합니다. 친구로 되돌리면 양쪽 패드가 나타납니다. 자유 대전 기록은 스토리 도전과제에 반영되지 않습니다.
+
+스토리뿐 아니라 친구·컴퓨터·온라인 대전에서도 **실제 캐릭터 매칭에 따른 상호작용**을 재생합니다. 치이카와/하치와레의 라멘, 치이카와/우사기의 피자만두, 하치와레/우사기의 파자마 에피소드와 인어섬 관련 조합 등은 전용 장면을 사용합니다. 전용 장면의 길이는 기본 스테이지 패턴과 다를 수 있습니다. 온라인은 양쪽이 대화 또는 스킵을 끝낼 때까지 기다린 뒤 함께 시작합니다. 통신 규약이 변경되었으므로 두 사람 모두 최신 페이지로 새로고침해 주세요.
 
 ### QR로 공유하기
 
@@ -64,7 +70,7 @@ Choose Chiikawa, Hachiware, Usagi, and more for lively volleyball matches. Inspi
 
 - **Story mode:** Five courts, from Hachiware’s home to Siren’s cave
 - **Character roster:** Familiar friends, Pajama Parties, Hitohā and Futabā, the insect monster, Dekatsuyo, Siren, and more
-- **Versus play:** Local two-player matches and online friend matches using a four-digit room code
+- **Versus play:** Local friends, selectable CPU opponents with five difficulty levels, and online friend matches using a four-digit room code
 - **Special shots:** Fill the gauge with 10 ball hits, then land an upward spike to unleash a special move
 - **Mobile controls:** Solo/online: movement and jump on the left, attack on the right. Local versus: a complete independent pad for each player on one phone
 - **Pre-match encounters:** Your chosen hero and opponent appear on the court, exchanging dialogue in a lower panel before a ready sequence starts the match. These are game adaptations based on the original personalities, with Continue and Skip buttons.
@@ -89,6 +95,8 @@ For online play, create a room, share its four-digit code with a friend, and sta
 For local play on one phone, select Local Versus, confirm both characters, and use the full 1P/2P touch pads on the left/right. In online play, both players use the Player 1 controls on their own devices. Changed inputs are sent immediately; congested state snapshots are replaced by the latest state. Internet round-trip latency still applies.
 
 Achievements are stored in the current browser. Export a backup before resetting them; reset requires a confirmation dialog. The title demos never modify achievement progress. Use the shareable [promo poster](docs/promo/chiikawa-volley-promo.png), [QR PNG](docs/promo/chiikawa-volley-qr.png), or [printable QR SVG](docs/promo/chiikawa-volley-qr.svg) to bring friends directly to the game.
+
+For CPU play, open Local Versus, set Opponent to Computer, choose difficulty (1–5), court and both characters. The CPU controls Player 2; mobile uses the solo touch pad. Switch back to Friend for dual pads. Free versus matches do not change story achievements. Matchup-based encounters also play in local, CPU and online matches; online play waits until both players finish or skip their encounter. Both players should refresh to the latest version.
 
 ### Credits / 제작 및 원작
 

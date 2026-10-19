@@ -1,5 +1,6 @@
 // UI text only: artwork and original voices remain unchanged.
 export const translations={
+'대전 상대':'Opponent','친구':'Friend','컴퓨터':'CPU','컴퓨터 난이도':'CPU Difficulty','1 · 쉬움':'1 · Easy','3 · 보통':'3 · Normal','5 · 어려움':'5 · Hard','컴퓨터 · 캐릭터를 선택하세요':'CPU · Choose a Character','1P 결정 · 상대 선택 →':'Confirm 1P · Choose Opponent →','컴퓨터 승리!':'CPU Wins!','컴퓨터 대전 · ':'CPU Versus · ',
 '도전과제 초기화':'Reset Achievements',
 '도전과제 진행도와 캐릭터 해금을 초기화할까요?\n필요한 기록은 먼저 백업해 주세요.':'Reset all achievement progress and character unlocks?\nBack up any records you want to keep first.',
 '기록을 저장하지 못해 초기화하지 않았습니다.':'Could not save. Your progress has not been reset.',
