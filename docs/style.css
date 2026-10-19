@@ -128,3 +128,191 @@ body.title-open{background:#c7e6df}body.title-open>header,body.title-open>#game-
  #title-screen .language-picker{top:12px;right:12px}
 }
 @media(max-width:420px){.audio-settings{flex-wrap:wrap;justify-content:flex-end}.audio-settings button{font-size:9px;padding:5px}.game-header{gap:5px}}
+
+/* Move the portrait composition together, leaving a dedicated control strip. */
+@media(orientation:portrait){
+ #title-screen{--title-top:64px; height:auto;aspect-ratio:auto;padding-top:var(--title-top);padding-bottom:122px}
+ #title-screen #title-art{position:relative;inset:auto;display:block;width:100%;height:auto;aspect-ratio:864/608;object-fit:contain}
+ #title-screen .title-copy{top:var(--title-top);height:auto;aspect-ratio:864/243}
+ #title-screen .title-copy h1{height:100%;width:77%}
+}
+
+/* Desktop layouts use the available height in either window orientation. */
+@media(any-pointer:fine){
+ .game-header{height:52px}
+ #game-main{padding:4px 20px 8px}
+ #game-nav{margin-bottom:10px}
+ #game-nav .mode-button{padding:9px 8px}
+ #selection{margin-inline:auto;transform-origin:top center;padding:16px 22px}
+ #selection .versus-portraits{margin:8px 0;gap:8px}
+ #selection .fighter canvas{height:clamp(60px,14dvh,160px)}
+ #selection .fighter{padding-bottom:6px}
+ #selection .fighter strong{font-size:20px}
+ #selection .character canvas{max-width:78px;height:clamp(30px,6dvh,65px);max-height:65px;object-fit:contain}
+ #selection .section-title{margin-bottom:6px}
+ #selection .selection-banner{padding:6px 0}
+ #selection .fullscreen-toggle{font-size:11px;padding:4px 9px}
+ #selection #selection-note{margin:8px 0;padding:7px 10px;min-height:0}
+ #selection .selection-keys{margin:8px 0}
+ #selection .match-settings{margin-top:8px;padding-top:8px;flex-direction:row;align-items:center}
+ #selection #start{padding:10px 16px}
+ #achievements>summary,#controls-help>summary{padding:9px 14px}
+ #achievements,#controls-help{margin-top:8px}
+ footer{padding:10px 0 4px}
+ body:has(#arena:not([hidden])) #game-nav,
+ body:has(#arena:not([hidden])) #achievements,
+ body:has(#arena:not([hidden])) #controls-help,
+ body:has(#arena:not([hidden])) #live,
+ body:has(#arena:not([hidden])) #game-main>footer{display:none}
+ #arena{position:relative;padding:8px;border-radius:16px}
+ #arena .court-stage{display:block;position:relative;width:min(100%,calc((var(--play-height,100dvh) - 132px)*864/608));aspect-ratio:864/608;margin:auto;overflow:hidden;border-radius:10px}
+ #arena .court-stage #court{width:100%;height:100%;object-fit:contain}
+ #arena .court-stage .scoreboard{position:absolute;inset:0 0 auto;z-index:2;margin:0;padding:6px 12px 10px;gap:10px;background:linear-gradient(#fff9e9e8,#fff9e999,transparent);pointer-events:none}
+ #arena .scoreboard>div>b{--name-font-max:18;font-size:18px;height:26px;min-height:26px;max-height:26px;line-height:26px;padding:0;text-shadow:0 1px 2px #fff}
+ #arena .scoreboard strong{font-size:36px;line-height:1.2;padding:0;letter-spacing:0;-webkit-text-stroke:1px #805a4e}
+ #arena .scoreboard>div>.meter{margin-top:0}
+ #arena .charge-meter{min-height:30px;padding:0}
+ #arena .charge-caption,#arena .charge-count{font-size:9px}
+ #arena .charge-track{height:10px;margin-top:3px}
+ #arena .charge-state{display:none}
+ #arena .arena-foot{padding:6px 4px 0;flex-wrap:nowrap}
+ #arena #rotate-hint{display:none}
+ #arena #result{position:absolute;z-index:3;left:15%;right:15%;top:25%;background:#fffdf1f5;border-radius:20px;box-shadow:0 8px 32px #405b4530}
+}
+
+/* Desktop selection gives the portraits and roster the full viewport height. */
+@media(any-pointer:fine) and (orientation:landscape){
+ body:not(.title-open):has(#arena[hidden]) #game-main{display:grid;grid-template-columns:170px minmax(0,1fr);gap:16px;width:100%;max-width:1540px;height:var(--play-height,100dvh);padding:16px;margin:auto;align-items:stretch}
+ .selection-sidebar{min-width:0;display:flex;flex-direction:column;gap:12px;overflow:auto}
+ .selection-sidebar .game-header{display:flex;flex-direction:column;align-items:stretch;justify-content:start;gap:10px;width:100%;height:auto;padding:8px 0;margin:0}
+ .selection-sidebar .game-brand{text-align:center;font-size:18px}
+ .selection-sidebar .audio-settings{display:flex;flex-direction:column;margin:0;gap:7px}
+ .selection-sidebar #game-nav{display:flex;flex-direction:column;margin:0;padding:5px;gap:5px}
+ .selection-sidebar #game-nav .mode-button{font-size:16px;padding:12px 8px}
+ .selection-sidebar #achievements,.selection-sidebar #controls-help{margin:0}
+ .selection-sidebar footer{margin-top:auto;font-size:10px}
+ .selection-sidebar #goals{grid-template-columns:1fr}
+ #selection{display:grid;grid-template-columns:minmax(0,1fr) 180px;grid-template-rows:auto auto minmax(0,1fr) auto;column-gap:18px;row-gap:10px;width:100%;height:100%;min-height:0;padding:18px;margin:0}
+ #selection .section-title{grid-column:1/-1;margin:0}
+ #selection .selection-banner{grid-column:1;grid-row:2;margin:0;padding:6px 0}
+ #selection .versus-portraits{grid-column:1;grid-row:3;min-height:0;margin:0;grid-template-columns:1fr 70px 1fr;align-items:stretch}
+ #selection .fighter{display:flex;flex-direction:column;justify-content:flex-end;min-height:0;padding-bottom:10px}
+ #selection .fighter canvas{flex:1;min-height:0;height:0;max-height:360px;width:100%;object-fit:contain}
+ #selection .fighter strong{font-size:24px;flex-shrink:0}
+ #selection .versus-center{align-self:center}
+ #selection .versus-center>b{font-size:46px}
+ #selection #roster{grid-column:1;grid-row:4;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;min-height:0}
+ #selection .character{padding:4px 2px 8px}
+ #selection .character canvas{width:100%;max-width:120px;height:clamp(56px,11dvh,112px);max-height:none;object-fit:contain}
+ #selection .character b,html[lang=en] #selection .character b{font-size:12px;white-space:normal;line-height:1.2;min-height:15px}
+ .selection-settings-side{grid-column:2;grid-row:2/5;display:flex;flex-direction:column;gap:16px;min-width:0;border-left:1px solid #718099;padding-left:16px;overflow:auto}
+ #selection #stage-picker{font-size:13px;line-height:1.7}
+ #selection #stage-picker select{display:block;width:100%;margin:8px 0 0;padding:8px}
+ #selection #selection-note{font-size:13px;line-height:1.7;margin:0;padding:10px;min-height:0}
+ #selection .selection-keys{font-size:12px;line-height:1.8;margin:0}
+ #selection .match-settings{flex-direction:column;align-items:stretch;margin-top:auto;padding-top:16px;gap:16px;font-size:14px}
+ #selection .match-settings select{margin-left:8px}
+ #selection #start{font-size:15px;line-height:1.5;padding:12px 8px;white-space:normal}
+ body:has(#arena:not([hidden])) .selection-sidebar{display:contents}
+ body:has(#arena:not([hidden])) .selection-sidebar .game-header{height:52px;flex-direction:row;align-items:center;padding:0 10px;gap:14px}
+ body:has(#arena:not([hidden])) .selection-sidebar .audio-settings{flex-direction:row;margin-left:auto}
+ body:has(#arena:not([hidden])) #game-main{padding-top:0}
+ #arena .court-stage{width:min(100%,calc((var(--play-height,100dvh) - 132px)*864/608))}
+ #arena .scoreboard>div>b{--name-font-max:26;font-size:26px;height:36px;min-height:36px;max-height:36px;line-height:36px}
+ #arena .scoreboard strong{font-size:52px;line-height:1.15;-webkit-text-stroke:1.5px #805a4e}
+ #arena .charge-caption,#arena .charge-count{font-size:12px}
+ #arena .charge-track{height:18px;margin-top:5px}
+ #arena .court-stage .scoreboard{padding:8px 14px 14px;gap:14px}
+}
+@media(any-pointer:fine) and (orientation:landscape) and (max-width:1050px){
+ body:not(.title-open):has(#arena[hidden]) #game-main{grid-template-columns:132px minmax(0,1fr);gap:10px;padding:10px}
+ #selection{grid-template-columns:minmax(0,1fr) 145px;gap:10px;padding:12px}
+ #selection .versus-portraits{grid-template-columns:1fr 44px 1fr;gap:4px}
+ #selection .versus-center>b{font-size:32px}
+ #selection .fighter strong{font-size:20px}
+ #selection #roster{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+ #selection .character canvas{height:clamp(48px,8dvh,82px)}
+ .selection-settings-side{padding-left:10px;gap:12px}
+ .selection-sidebar .game-brand{font-size:15px}
+}
+@media(any-pointer:fine) and (orientation:landscape){body:has(#arena:not([hidden])) .selection-sidebar footer{display:none}}
+@media(any-pointer:fine) and (orientation:landscape){
+ #network,#ending{grid-column:2;min-width:0;min-height:0;overflow:auto;margin:0}
+}
+
+/* Portrait keeps full-width artwork and a vertical flow; never side columns. */
+@media(any-pointer:fine) and (orientation:portrait){
+ body:not(.title-open):has(#selection:not([hidden])) #game-main{display:flex;flex-direction:column;height:calc(var(--play-height,100dvh) - 52px);padding:4px 12px 8px;gap:6px}
+ #game-main>#game-nav{flex-shrink:0;margin:0;padding:4px}
+ #selection{display:grid;grid-template-columns:1fr;grid-template-rows:auto auto minmax(120px,1fr) auto auto auto auto auto;gap:6px;flex:1;min-height:0;margin:0;padding:12px;width:100%;overflow:visible}
+ #selection .section-title{margin:0;gap:8px;flex-wrap:wrap}
+ #selection .section-title h2{font-size:17px}
+ #selection .section-title span{font-size:10px;max-width:none}
+ #selection .selection-banner{padding:4px 0;gap:5px;flex-wrap:nowrap}
+ #selection .versus-portraits{min-height:0;align-items:stretch;grid-template-columns:1fr 58px 1fr;margin:0;gap:5px}
+ #selection .fighter{display:flex;flex-direction:column;min-height:0;padding-bottom:4px}
+ #selection .fighter canvas{flex:1;min-height:0;height:0;width:100%;object-fit:contain}
+ #selection .fighter strong{font-size:20px;flex-shrink:0}
+ #selection .fighter small{font-size:9px;flex-shrink:0;margin-top:2px}
+ #selection .versus-center{align-self:center}
+ #selection .versus-center>b{font-size:36px}
+ #selection #stage-picker{font-size:12px}
+ #selection #stage-picker select{padding:4px 8px}
+ #selection #selection-note{font-size:12px;min-height:0;margin:0;padding:5px 8px;line-height:1.4}
+ #selection #roster{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
+ #selection .character{padding:2px 2px 5px}
+ #selection .character canvas{height:clamp(42px,5.7dvh,66px);max-height:none;max-width:100px;width:100%;object-fit:contain}
+ #selection .character b,html[lang=en] #selection .character b{font-size:12px;line-height:1.2;white-space:normal}
+ #selection .selection-keys{font-size:10px;line-height:1.4;margin:0}
+ #selection .match-settings{flex-direction:row;align-items:center;justify-content:space-between;gap:8px;margin:0;padding-top:5px}
+ #selection .match-settings select{padding:4px 8px}
+ #selection #start{padding:8px 12px;font-size:13px}
+ #game-main>#achievements,#game-main>#controls-help{flex-shrink:0;margin:0}
+ #achievements>summary,#controls-help>summary{padding:7px 12px}
+ #game-main>footer{flex-shrink:0;padding:0;font-size:10px}
+}
+@media(any-pointer:fine){
+ #arena .scoreboard>div>b{--name-font-max:26;font-size:26px;height:36px;min-height:36px;max-height:36px;line-height:36px}
+ #arena .scoreboard strong{font-size:52px;line-height:1.15;-webkit-text-stroke:1.5px #805a4e}
+ #arena .charge-caption,#arena .charge-count{font-size:12px}
+ #arena .charge-track{height:18px;margin-top:5px}
+ #arena .court-stage .scoreboard{padding:8px 14px 14px;gap:14px}
+}
+/* Intentional breaks separate the character, action and key instructions. */
+#selection #selection-note,#selection .selection-keys{white-space:pre-line;word-break:keep-all;overflow-wrap:break-word}
+
+/* Keep the whole start button inside the artwork, above its lower edge. */
+.title-actions{transform:none}
+#title-start{position:absolute;top:auto;bottom:calc(100% + 12px);left:0;right:0;width:max-content;max-width:calc(100% - 24px);margin-inline:auto}
+
+@media(orientation:landscape) and (max-height:340px){#title-start{font-size:13px;padding:4px 24px}}
+/* Bring all lower copy closer while keeping the start button anchored in the art. */
+#title-screen{--footer-lift:-16px}
+.title-actions>p,.title-actions>.title-music{position:relative;top:var(--footer-lift)}
+.title-credits,.title-fan-note{transform:translateY(var(--footer-lift))}
+@media(orientation:landscape) and (max-height:600px){#title-screen{--footer-lift:-8px}}
+
+/* Help and unlock progress open in the center, independent of sidebar width. */
+.info-dialog{width:min(900px,calc(100% - 32px));max-width:none;max-height:calc(100dvh - 40px);margin:auto;padding:22px;border:1px solid #c5d3bf;border-radius:22px;background:#fffdf6;color:#3c3b4b;box-shadow:0 20px 80px #21382c44}
+.info-dialog[open]{display:flex;flex-direction:column;gap:16px}
+.info-dialog::backdrop{background:#182b35a6}
+.info-dialog-header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-shrink:0;padding-bottom:12px;border-bottom:1px solid #dde4d6}
+.info-dialog-header h2{font-size:21px;color:#456958;line-height:1.4}
+.info-dialog-header button{font-size:14px;padding:8px 18px;flex-shrink:0}
+.info-dialog-content{min-height:0;overflow:auto;overscroll-behavior:contain;padding:0 4px 4px;line-height:1.8;font-size:14px}
+.info-dialog-content>p{color:#6e7868;margin:0 0 16px}
+.info-dialog-content #goals{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0}
+.info-dialog-content .goal b{font-size:15px}
+.info-dialog-content .goal p,.info-dialog-content .goal small{font-size:13px}
+.info-dialog-content .controls-body{margin:0;font-size:15px;color:#58694f;line-height:1.9}
+body:has(.info-dialog[open]){overflow:hidden}
+@media(max-width:600px){
+ .info-dialog{width:calc(100% - 24px);max-height:calc(100dvh - 24px);padding:16px;border-radius:16px}
+ .info-dialog-header h2{font-size:18px}
+ .info-dialog-content #goals{grid-template-columns:1fr}
+ .info-dialog-content .controls-body{font-size:14px}
+}
+
+/* Both super meters fill from the outer edge toward the center score. */
+#meter1 .charge-fill{left:0;right:auto}
+#meter2 .charge-fill{left:auto;right:0}

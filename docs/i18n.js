@@ -1,5 +1,10 @@
 // UI text only: artwork and original voices remain unchanged.
 export const translations={
+'닫기':'Close',
+'대전 배경':'Versus Background',
+'다시 도전할 코트':'Replay Court',
+'방향키 / W A S D: 이동\nEnter: 결정':'Arrows / W A S D: Navigate\nEnter: Confirm',
+'방향키 / W A S D: 이동\nEnter: 결정\n자물쇠: 도전과제로 해금':'Arrows / W A S D: Navigate\nEnter: Confirm\nLocked: Unlock through achievements',
 '전체 캐릭터 방향 검사 →':'All Character Facing Audit →','방향키 / W A S D: 이동 · Enter: 결정':'Arrows / W A S D: Navigate · Enter: Confirm','스토리':'Story','2인 대전':'Local Versus','온라인 대전':'Online Versus','캐릭터 선택':'Choose Character','비영리 2차 창작 팬게임':'Non-commercial derivative fan game','© 나가노 · 치이카와':'© Nagano · Chiikawa','첫 코트의 새 친구':'A New Friend on the First Court','거대한 친구와 한 팀':'Teaming Up with a Giant','1스테이지 클리어':'Clear Stage 1','2스테이지 클리어':'Clear Stage 2','제작':'Created by','앞줄 주인공 8명과 뒷줄 친구들 10명의 움직이는 엔딩':'Animated ending with 8 heroes in front and 10 friends behind','테스트판 · 모든 캐릭터 개방':'Test Build · All Characters Available','테스트판 · 모든 캐릭터 / 스테이지 개방':'Test Build · All Characters / Stages Available','테스트판 · 모든 캐릭터와 5개 스테이지를 자유롭게 선택할 수 있어요.':'Test Build · Choose any character and all five stages.','치이카와 배구 • 작은 친구들의 큰 승부':'Chiikawa Volley • Little Friends, Big Match',
 '작은 친구들의 큰 승부':'Little Friends, Big Match','오늘은 다 함께, 배구하는 날!':"Let’s play volleyball together!",'오늘은, 배구하는 날!':"It’s volleyball day!",'게임 시작 ':'Start Game ',
 '스토리 · 친구와 2인 대전 · 온라인 대전':'Story · Local Versus · Online Versus','♫ 타이틀 음악 켜기':'♫ Play title music','나가노 / 치이카와 · 팬 게임':'Nagano / Chiikawa · Fan Game',

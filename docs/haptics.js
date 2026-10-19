@@ -1,12 +1,13 @@
-// Uses the same event bits and timing as shared/haptics.h (milliseconds).
+// Uses the same event bits as shared/haptics.h (milliseconds).
 export const HAPTIC_CURSOR=1<<20,HAPTIC_CONFIRM=1<<21,HAPTIC_MAX=1<<22;
-// Hamo Ayo v46: 4/8/16/60 frames at approximately 60 Hz.
+// Gameplay follows Hamo Ayo v46; menus use brief, gentle taps.
 export function vibrationPattern(events,{impactBeat=0}={}){
  if(events&(512|32))return [1000];
  if((events&4096)&&impactBeat>=6)return [267];
  if(events&(1024|256|2048|4096|8192|16384|8))return [133];
- if(events&(64|HAPTIC_CONFIRM|HAPTIC_MAX))return [267];
- if(events&HAPTIC_CURSOR)return [67];
+ if(events&(64|HAPTIC_MAX))return [267];
+ if(events&HAPTIC_CONFIRM)return [20];
+ if(events&HAPTIC_CURSOR)return [8];
  return [];
 }
 export function createHaptics(nav=globalThis.navigator,storage=globalThis.localStorage){

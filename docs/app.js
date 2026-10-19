@@ -1,9 +1,11 @@
-import {createHaptics,HAPTIC_CURSOR,HAPTIC_CONFIRM,HAPTIC_MAX} from './haptics.js?v=0.30';
+import {installViewportLayout} from './viewport-layout.js?v=0.37';
+installViewportLayout();
+import {createHaptics,HAPTIC_CURSOR,HAPTIC_CONFIRM,HAPTIC_MAX} from './haptics.js?v=0.31';
 import {installTouchControls} from './touch-controls.js?v=0.23';
 import {createCombatAudio,combatEvents} from './combat-audio.js?v=0.20';
 import {installScoreNameFit} from './score-name-fit.js?v=0.20';
-import {TEST_BUILD} from './build-config.mjs?v=0.26';
-import {installLanguageUI,translate} from './i18n.js?v=0.28';
+import {TEST_BUILD} from './build-config.mjs?v=0.38';
+import {installLanguageUI,translate} from './i18n.js?v=0.37';
 import {drawNet} from './net-art.js?v=0.20';
 import {createBallRenderer} from './ball-effects.js?v=0.20';
 import {updateChargeMeter,chargeTone} from './charge-meter.js?v=0.20';
@@ -25,7 +27,7 @@ vibrationButton.onclick=()=>{haptics.setEnabled(!haptics.enabled);showVibration(
 window.addEventListener('blur',()=>haptics.stop());document.addEventListener('visibilitychange',()=>{if(document.hidden)haptics.stop()});
 installLanguageUI();
 installScoreNameFit();
-if(TEST_BUILD){document.querySelector('#selection .section-title span').textContent='테스트판 · 모든 캐릭터 개방';document.querySelector('.selection-keys').textContent='방향키 / W A S D: 이동 · Enter: 결정';}
+if(TEST_BUILD){document.querySelector('#selection .section-title span').textContent='테스트판 · 모든 캐릭터 개방';document.querySelector('.selection-keys').textContent='방향키 / W A S D: 이동\nEnter: 결정';}
 const $=id=>document.getElementById(id),canvas=$('court'),c=canvas.getContext('2d'),music=$('music');
 let p=loadProgress(localStorage),chosen=['chiikawa','hachiware'],mode=0,stage=0,selectSide=0,running=false,paused=false,handled=false,muted=false,last=0,acc=0,t=0,tracked=[0,0,0],net=null;
 const voices=new CharacterVoices(music);let voiceSeen=[0,0];
@@ -43,7 +45,7 @@ function portraits(preview=chosen[selectSide]){
  const ids=[chosen[0],mode===1?chosen[1]:stages[stage][2]];ids[selectSide]=preview;
  for(let side=0;side<2;side++){const suffix=side?'two':'one',id=ids[side],r=roster.find(r=>r.id===id),locked=!!r&&!unlocked(p,id);drawSelectionPortrait($('portrait-'+suffix),id,side?-1:1,locked);$('portrait-name-'+suffix).textContent=r?.name||stages[stage][1];$('portrait-status-'+suffix).textContent=locked?'미해금 · 도전과제를 확인하세요':side===1&&mode===0?'STAGE BOSS':mode===1&&selectSide===1&&side===0?'선택 완료':'READY';}
  $('right-tag').textContent=mode===1?'2P':'CPU';$('select-turn').textContent=`${selectSide+1}P SELECT`;
- $('versus-context').textContent=mode===1?'친구와 2인 대전':`${stage+1} STAGE\n${stages[stage][0]}`;
+ $('versus-context').textContent=mode===1?`친구와 2인 대전\n${stages[stage][0]}`:`${stage+1} STAGE\n${stages[stage][0]}`;
  $('selection').dataset.turn=String(selectSide+1);
 }
 let cursorCharacter=null;
@@ -51,12 +53,12 @@ function cards(){const grid=$('roster');grid.replaceChildren();$('select-title')
  for(const r of roster){const open=unlocked(p,r.id),b=document.createElement('button');b.className='character'+(chosen[selectSide]===r.id?' selected':'');b.dataset.id=r.id;b.style.setProperty('--wash',r.wash);b.setAttribute('aria-pressed',String(chosen[selectSide]===r.id));b.setAttribute('aria-disabled',String(!open));b.setAttribute('aria-label',r.name+(open?' 선택':' · '+(goals.find(g=>g.id===r.id)?.text||'')));
  const pic=document.createElement('canvas');pic.width=180;pic.height=150;actor(pic.getContext('2d'),r.id,90,r.id==='armor'?80:r.id==='siren'?72:r.id==='pajamas'?78:90,r.id==='armor'?1.85:r.id==='siren'?1.8:1.5,0,0,{portrait:true,selection:true,upperBody:r.id==='armor'});if(!open)pic.style.opacity='.35';const label=document.createElement('b');label.textContent=r.name;const sub=document.createElement('small');sub.textContent=open?'선택 가능':goals.find(g=>g.id===r.id)?.text||'';b.append(pic,label,sub);
  const flags=[];if(chosen[0]===r.id)flags.push('1P');if(mode===1&&chosen[1]===r.id)flags.push('2P');if(!open||flags.length){const flag=document.createElement('span');flag.className='cursor-tag';flag.textContent=open?flags.join(' / '):'🔒';b.append(flag)}
- const inspect=()=>{if(cursorCharacter!==r.id){cursorCharacter=r.id;haptics.play(HAPTIC_CURSOR)}portraits(r.id);$('selection-note').textContent=open?`${selectSide+1}P · ${r.name} — 선택 후 결정 버튼을 눌러주세요.`:`${r.name} 해금 조건: ${sub.textContent}`};b.onpointerenter=inspect;b.onfocus=inspect;b.onclick=()=>{if(!open){inspect();return}chosen[selectSide]=r.id;voices.play(r.id,'select',selectSide);cards();$('start').focus({preventScroll:true});$('selection-note').textContent=`${selectSide+1}P · ${r.name} 선택`};grid.append(b)}
- $('start').textContent=mode===1&&selectSide===0?'1P 결정 · 2P 선택 →':'선택 결정 · 경기 시작 →';$('stage-picker').hidden=mode===1;portraits();$('selection-note').textContent=TEST_BUILD?'테스트판 · 모든 캐릭터와 5개 스테이지를 자유롭게 선택할 수 있어요.':'처음에는 치이카와 · 하치와레 · 우사기를 선택할 수 있어요.';
+ const inspect=()=>{if(cursorCharacter!==r.id){cursorCharacter=r.id;haptics.play(HAPTIC_CURSOR)}portraits(r.id);$('selection-note').textContent=open?`${selectSide+1}P · ${r.name}\n선택 후 결정 버튼을 눌러주세요.`:`${r.name}\n해금 조건: ${sub.textContent}`};b.onpointerenter=inspect;b.onfocus=inspect;b.onclick=()=>{if(!open){inspect();return}chosen[selectSide]=r.id;voices.play(r.id,'select',selectSide);cards();$('start').focus({preventScroll:true});$('selection-note').textContent=`${selectSide+1}P · ${r.name} 선택`};grid.append(b)}
+ $('start').textContent=mode===1&&selectSide===0?'1P 결정 · 2P 선택 →':'선택 결정 · 경기 시작 →';$('stage-picker').hidden=false;$('stage-picker-label').textContent=mode===1?'대전 배경':'다시 도전할 코트';portraits();$('selection-note').textContent=TEST_BUILD?'테스트판 · 모든 캐릭터와 5개 스테이지를 자유롭게 선택할 수 있어요.':'처음에는 치이카와 · 하치와레 · 우사기를 선택할 수 있어요.';
 }
 function showTitle(){if(net){const old=net;net=null;old.close()}stop();document.body.classList.add('title-open');$('title-screen').hidden=false;drawTitle($('title-art'));$('title-start').disabled=false;play(1);$('title-start').focus()}
 function enterGame(){document.body.classList.remove('title-open');$('title-screen').hidden=true;mode=0;selection(true);$('start').focus({preventScroll:true});voices.playStart()}
-function selection(reset=false){chosen=chosen.map((id,i)=>unlocked(p,id)?id:i?'hachiware':'chiikawa');if(net){const old=net;net=null;old.close()}$('network').hidden=true;stop();$('arena').hidden=true;$('ending').hidden=true;$('selection').hidden=false;if(reset)stage=0;$('stage-select').value=String(stage);for(const option of $('stage-select').options)option.disabled=!TEST_BUILD&&Number(option.value)>0&&p.margins[Number(option.value)-1]===0;selectSide=0;$('score').disabled=false;cards();drawGoals();play(1)}
+function selection(reset=false){chosen=chosen.map((id,i)=>unlocked(p,id)?id:i?'hachiware':'chiikawa');if(net){const old=net;net=null;old.close()}$('network').hidden=true;stop();$('arena').hidden=true;$('ending').hidden=true;$('selection').hidden=false;if(reset)stage=0;$('stage-select').value=String(stage);for(const option of $('stage-select').options)option.disabled=mode===0&&!TEST_BUILD&&Number(option.value)>0&&p.margins[Number(option.value)-1]===0;selectSide=0;$('score').disabled=false;cards();drawGoals();play(1)}
 function start(){if(mode===1&&selectSide===0){selectSide=1;cards();return}if(!net&&(!unlocked(p,chosen[0])||!unlocked(p,chosen[1])))return;core.init(mode,stage+1,Number($('score').value));configureTeams(core,characterIds());tracked=[0,0,0];voiceSeen=[0,0];chargeSeen=[0,0];ballRenderer.reset();voices.stop();handled=false;running=true;paused=false;acc=0;last=performance.now();$('selection').hidden=true;$('arena').hidden=false;$('result').hidden=true;$('name1').textContent=(teamLabel(chosen[0])||roster.find(r=>r.id===chosen[0]).name);$('name2').textContent=mode===1?(teamLabel(chosen[1])||roster.find(r=>r.id===chosen[1]).name):stages[stage][1];$('stage-label').textContent=(net?'온라인 친구 대전 · ':mode===1?'2인 대전 · ':`${stage+1} / 5 · `)+stages[stage][0];play(stages[stage][3]);canvas.focus();render()}
 function drawGoals(){const box=$('goals');box.replaceChildren();for(const g of [...goals].sort((a,b)=>roster.findIndex(r=>r.id===a.id)-roster.findIndex(r=>r.id===b.id))){const done=g.value(p)>=g.target,item=document.createElement('div');item.className='goal'+(done?' complete':'');const title=document.createElement('b');title.textContent=(done?'✓ ':'○ ')+g.name;const text=document.createElement('p');text.textContent=`${roster.find(r=>r.id===g.id).name} · ${g.text}`;const meter=document.createElement('progress');meter.max=g.target;meter.value=Math.min(g.value(p),g.target);const count=document.createElement('small');count.textContent=done?'해금 완료':`${g.value(p)} / ${g.target}`;item.append(title,text,meter,count);box.append(item)}}
 function record(){if(mode!==0)return;const before=goals.filter(g=>unlocked(p,g.id)).map(g=>g.id);let changed=false;for(const [i,field,key] of [[0,14,'contacts'],[1,15,'upper'],[2,16,'supers']]){const n=get(field);if(n!==tracked[i])changed=true;p[key]+=n-tracked[i];tracked[i]=n}if(changed)save();const newNames=goals.filter(g=>!before.includes(g.id)&&unlocked(p,g.id)).map(g=>roster.find(r=>r.id===g.id).name);if(newNames.length)toast('새 친구 해금! '+newNames.join(' · '));}
@@ -75,6 +77,7 @@ function render(){c.setTransform(2,0,0,2,0,0);t=get(32);c.fillStyle='#32434b';c.
 const titleMotion=matchMedia('(prefers-reduced-motion: reduce)');let titleFrameAt=0,endingFrameAt=0;
 function frame(now){if(!$('ending').hidden&&!document.hidden&&now-endingFrameAt>=40){drawEnding($('ending-art').getContext('2d'),titleMotion.matches?0:now/120);endingFrameAt=now;}if(document.body.classList.contains('title-open')&&!document.hidden&&now-titleFrameAt>=40){drawTitle($('title-art'),titleMotion.matches?0:now);titleFrameAt=now}if(running){acc+=Math.min(now-last,150);if(!paused){let count=0;while(acc>=1000/25&&count++<5){tick();acc-=1000/25}}else acc=0;render()}last=now;requestAnimationFrame(frame)}
 window.addEventListener('keydown',e=>{
+ if(document.querySelector('.info-dialog[open]'))return;
  if(document.body.classList.contains('title-open')){if(!(e.target instanceof HTMLSelectElement)&&(e.code==='Enter'||e.code==='Space')){e.preventDefault();$('title-start').click()}return}
  if(!$('selection').hidden&&!(e.target instanceof HTMLSelectElement)){
   const moves={ArrowLeft:-1,KeyA:-1,ArrowRight:1,KeyD:1,ArrowUp:-1,KeyW:-1,ArrowDown:1,KeyS:1};
