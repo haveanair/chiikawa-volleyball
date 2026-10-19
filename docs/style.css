@@ -267,3 +267,8 @@ body:has(.info-dialog[open]){overflow:hidden}
 /* Both super meters fill from the outer edge toward the center score. */
 #meter1 .charge-fill{left:0;right:auto}
 #meter2 .charge-fill{left:auto;right:0}
+
+.info-dialog-content .save-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 12px}
+.info-dialog-content .save-actions button{font-size:14px;padding:9px 14px}
+.info-dialog-content .reset-progress{color:#9b453f;border-color:#d9aaa3;background:#fff5ef}
+.info-dialog-content #save-note{font-size:12px;line-height:1.6}

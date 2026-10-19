@@ -5,7 +5,7 @@ import {installTouchControls} from './touch-controls.js?v=0.23';
 import {createCombatAudio,combatEvents} from './combat-audio.js?v=0.20';
 import {installScoreNameFit} from './score-name-fit.js?v=0.20';
 import {TEST_BUILD} from './build-config.mjs?v=0.38';
-import {installLanguageUI,translate} from './i18n.js?v=0.37';
+import {installLanguageUI,translate} from './i18n.js?v=0.41';
 import {drawNet} from './net-art.js?v=0.20';
 import {createBallRenderer} from './ball-effects.js?v=0.20';
 import {updateChargeMeter,chargeTone} from './charge-meter.js?v=0.20';
@@ -125,6 +125,15 @@ const localPause=$('pause').onclick;$('pause').onclick=()=>{localPause();if(net?
 $('voice-toggle').onclick=()=>{voices.setEnabled(!voices.enabled);$('voice-toggle').textContent=voices.enabled?'음성 켜짐':'음성 꺼짐'};
 $('stage-select').onchange=e=>{stage=Number(e.target.value);cards()};
 $('export-save').onclick=()=>{const a=document.createElement('a');const u=URL.createObjectURL(new Blob([JSON.stringify(p,null,2)],{type:'application/json'}));a.href=u;a.download='chiivolley-progress.json';a.click();URL.revokeObjectURL(u)};
+$('reset-progress').onclick=()=>{
+ if(!window.confirm(translate('도전과제 진행도와 캐릭터 해금을 초기화할까요?\n필요한 기록은 먼저 백업해 주세요.')))return;
+ const clean=fresh();
+ try{localStorage.setItem('chiivolley.progress.v1',JSON.stringify(clean))}catch{
+  $('save-note').textContent='기록을 저장하지 못해 초기화하지 않았습니다.';return;
+ }
+ p=clean;tracked=[0,0,0];selection(true);
+ $('save-note').textContent='도전과제를 초기화했습니다.';
+};
 $('title-music').onclick=()=>play(1);document.addEventListener('pointerdown',()=>{if(document.body.classList.contains('title-open'))play(1)});document.addEventListener('keydown',()=>{if(document.body.classList.contains('title-open'))play(1)});$('title-start').onclick=enterGame;$('title-home').onclick=showTitle;core.init(0,1,15);drawGoals();showTitle();requestAnimationFrame(frame);
 
 

@@ -1,5 +1,9 @@
 // UI text only: artwork and original voices remain unchanged.
 export const translations={
+'도전과제 초기화':'Reset Achievements',
+'도전과제 진행도와 캐릭터 해금을 초기화할까요?\n필요한 기록은 먼저 백업해 주세요.':'Reset all achievement progress and character unlocks?\nBack up any records you want to keep first.',
+'기록을 저장하지 못해 초기화하지 않았습니다.':'Could not save. Your progress has not been reset.',
+'도전과제를 초기화했습니다.':'Achievements have been reset.',
 '닫기':'Close',
 '대전 배경':'Versus Background',
 '다시 도전할 코트':'Replay Court',
