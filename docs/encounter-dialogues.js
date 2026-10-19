@@ -1,5 +1,5 @@
 // Fan-game adaptations: every playable character has five distinct encounters.
-import {relationshipScene} from './relationship-scenes.js?v=0.47';
+import {relationshipScene} from './relationship-scenes.js?v=0.48';
 const open={
  chiikawa:[['와…! (낯선 벌레 앞에서 공을 꼭 쥔다.)','Wa…! (Clutches the ball before the strange insect.)'],['으…! (커다란 그림자에 몸이 굳는다.)','Uu…! (Freezes before the huge shadow.)'],['와아…♪ (익숙한 노래에 고개를 든다.)','Waa…♪ (Looks up at the familiar song.)'],['아…? (두 친구를 번갈아 바라본다.)','Ah…? (Looks from one friend to the other.)'],['우…! (노랫소리에 떨면서도 멈추지 않는다.)','Uu…! (Trembles at the song, but keeps going.)']],
  hachiware:[['집 앞 첫 승부네. 갑자기 달려들면 깜짝 놀라잖아!','Our first match outside home. Don’t startle me like that!'],['크다…! 공까지 가려지겠어. 그래도 물러서진 않을게!','So big…! You could hide the ball. But I won’t back down!'],['그 노래, 우리도 알고 있어! 박자에 맞춰 볼까?','We know that song! Shall we follow the beat?'],['둘이 함께 움직이네. 어느 쪽으로 보낼지 잘 봐야겠어.','You move together. I must watch where you send it.'],['여기까지 왔어. 그 노래에도, 이제 눈을 돌리지 않을게!','We made it this far. Your song won’t make me look away!']],

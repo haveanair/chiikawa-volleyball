@@ -1,5 +1,5 @@
-import {EncounterGate} from './encounter-gate.js?v=0.47';
-import {installStoryDialog} from './story-encounters.js?v=0.47';
+import {EncounterGate} from './encounter-gate.js?v=0.48';
+import {installStoryDialog} from './story-encounters.js?v=0.48';
 import {AttractLoop} from './attract-loop.js?v=0.42';
 import {installViewportLayout} from './viewport-layout.js?v=0.40';
 installViewportLayout();
@@ -8,7 +8,7 @@ import {installTouchControls} from './touch-controls.js?v=0.23';
 import {createCombatAudio,combatEvents} from './combat-audio.js?v=0.20';
 import {installScoreNameFit} from './score-name-fit.js?v=0.20';
 import {TEST_BUILD} from './build-config.mjs?v=0.38';
-import {installLanguageUI,translate} from './i18n.js?v=0.47';
+import {installLanguageUI,translate} from './i18n.js?v=0.48';
 import {drawNet} from './net-art.js?v=0.20';
 import {createBallRenderer} from './ball-effects.js?v=0.20';
 import {updateChargeMeter,chargeTone} from './charge-meter.js?v=0.20';
@@ -56,7 +56,7 @@ function restoreChosenPreview(){
  cursorCharacter=null;
  portraits();
  const selected=roster.find(r=>r.id===chosen[selectSide]);
- $('selection-note').textContent=`${selectSide+1}P · ${selected.name} 선택`;
+ $('selection-note').textContent=`${selectSide+1}P · ${selected.name}\n선택 후 결정 버튼을 눌러주세요.`;
 }
 $('roster').addEventListener('pointerleave',restoreChosenPreview);
 $('roster').addEventListener('focusout',event=>{if(!$('roster').contains(event.relatedTarget))restoreChosenPreview()});
@@ -65,7 +65,7 @@ function cards(){$('versus-options').hidden=mode!==1;const grid=$('roster');grid
  for(const r of roster){const open=unlocked(p,r.id),b=document.createElement('button');b.className='character'+(chosen[selectSide]===r.id?' selected':'');b.dataset.id=r.id;b.style.setProperty('--wash',r.wash);b.setAttribute('aria-pressed',String(chosen[selectSide]===r.id));b.setAttribute('aria-disabled',String(!open));b.setAttribute('aria-label',r.name+(open?' 선택':' · '+(goals.find(g=>g.id===r.id)?.text||'')));
  const pic=document.createElement('canvas');pic.width=180;pic.height=150;actor(pic.getContext('2d'),r.id,90,r.id==='armor'?80:r.id==='siren'?72:r.id==='pajamas'?78:90,r.id==='armor'?1.85:r.id==='siren'?1.8:1.5,0,0,{portrait:true,selection:true,upperBody:r.id==='armor'});if(!open)pic.style.opacity='.35';const label=document.createElement('b');label.textContent=r.name;const sub=document.createElement('small');sub.textContent=open?'선택 가능':goals.find(g=>g.id===r.id)?.text||'';b.append(pic,label,sub);
  const flags=[];if(chosen[0]===r.id)flags.push('1P');if(mode===1&&chosen[1]===r.id)flags.push('2P');if(!open||flags.length){const flag=document.createElement('span');flag.className='cursor-tag';flag.textContent=open?flags.join(' / '):'🔒';b.append(flag)}
- const inspect=()=>{if(cursorCharacter!==r.id){cursorCharacter=r.id;haptics.play(HAPTIC_CURSOR)}portraits(r.id);$('selection-note').textContent=open?`${selectSide+1}P · ${r.name}\n선택 후 결정 버튼을 눌러주세요.`:`${r.name}\n해금 조건: ${sub.textContent}`};b.onpointerenter=inspect;b.onfocus=inspect;b.onclick=()=>{if(!open){inspect();return}chosen[selectSide]=r.id;voices.play(r.id,'select',selectSide);cards();$('start').focus({preventScroll:true});$('selection-note').textContent=`${selectSide+1}P · ${r.name} 선택`};grid.append(b)}
+ const inspect=()=>{if(cursorCharacter!==r.id){cursorCharacter=r.id;haptics.play(HAPTIC_CURSOR)}portraits(r.id);$('selection-note').textContent=open?`${selectSide+1}P · ${r.name}\n선택 후 결정 버튼을 눌러주세요.`:`${r.name}\n해금 조건: ${sub.textContent}`};b.onpointerenter=inspect;b.onfocus=inspect;b.onclick=()=>{if(!open){inspect();return}chosen[selectSide]=r.id;voices.play(r.id,'select',selectSide);cards();$('start').focus({preventScroll:true});$('selection-note').textContent=`${selectSide+1}P · ${r.name}\n선택 후 결정 버튼을 눌러주세요.`};grid.append(b)}
  $('start').textContent=mode===1&&selectSide===0?(localCPU()?'1P 결정 · 상대 선택 →':'1P 결정 · 2P 선택 →'):'선택 결정 · 경기 시작 →';$('stage-picker').hidden=false;$('stage-picker-label').textContent=mode===1?'대전 배경':'다시 도전할 코트';portraits();$('selection-note').textContent=TEST_BUILD?'테스트판 · 모든 캐릭터와 5개 스테이지를 자유롭게 선택할 수 있어요.':'처음에는 치이카와 · 하치와레 · 우사기를 선택할 수 있어요.';
 }
 function showTitle(restartLoop=true){if(net){const old=net;net=null;old.close()}stop();document.body.classList.remove('demo-open');$('demo-title').hidden=true;$('arena').hidden=true;if(restartLoop)attract?.start(performance.now());document.body.classList.add('title-open');$('title-screen').hidden=false;drawTitle($('title-art'));$('title-start').disabled=false;play(1);$('title-start').focus()}
