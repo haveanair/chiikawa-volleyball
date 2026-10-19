@@ -1,4 +1,4 @@
-import {installViewportLayout} from './viewport-layout.js?v=0.37';
+import {installViewportLayout} from './viewport-layout.js?v=0.40';
 installViewportLayout();
 import {createHaptics,HAPTIC_CURSOR,HAPTIC_CONFIRM,HAPTIC_MAX} from './haptics.js?v=0.31';
 import {installTouchControls} from './touch-controls.js?v=0.23';
@@ -14,7 +14,7 @@ import {configureTeams,teamLabel} from './teams.js?v=0.20';
 import {drawEnding} from './ending-art.js?v=0.20';
 import {drawPlayer} from './player-render.js?v=0.20';
 import {STATE_FIELDS,cueCategory,cameraOffset,drawGroggy,drawSuper} from './super-effects.js?v=0.20';
-import {CharacterVoices} from './voices.js?v=0.20';
+import {CharacterVoices} from './voices.js?v=0.40';
 import {PeerMatch} from './peer.js?v=0.20';
 import {roster,stages,fresh,goals,unlocked,recordWin,loadProgress} from './progress.mjs?v=0.28';
 import {actor,background} from './art.js?v=0.20';
@@ -74,7 +74,7 @@ let toastUntil=0,toastText='';function toast(s){toastText=s;toastUntil=performan
 function finish(){if(handled)return;handled=true;record();const win=get(10)===0,before=roster.filter(r=>unlocked(p,r.id)).map(r=>r.id);if(mode===0){recordWin(p,stage,get(5,0),get(5,1));save();}const names=roster.filter(r=>!before.includes(r.id)&&unlocked(p,r.id)).map(r=>r.name);$('result-title').textContent=mode===1?`${get(10)+1}P 승리!`:win?'승리! 다음 코트로 가볼까요?':'아쉬워요! 다시 도전해 봐요.';$('result-detail').textContent=`${get(5,0)} : ${get(5,1)}`+(names.length?` · 새 친구: ${names.join(', ')}`:'');$('next').textContent=mode===0&&win?(stage===4?'엔딩 보기 →':'다음 스테이지 선택 →'):'다시 캐릭터 선택 →';$('result').hidden=false;drawGoals();}
 function bits(side){const m=side?['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','KeyK']:['KeyA','KeyD','KeyW','KeyS','KeyF'];let b=0;for(let i=0;i<4;i++)if(keys.has(m[i])||touchKeys.has(m[i]))b|=1<<i;for(let i=4;i<5;i++)if(edges.has(m[i]))b|=1<<i;return b}
 function characterIds(){return [chosen[0],mode===1?chosen[1]:stages[stage][2]]}
-function observeVoices(){const ids=characterIds();for(let side=0;side<2;side++){const serial=get(24,side);if(serial!==voiceSeen[side]){voiceSeen[side]=serial;const category=cueCategory[get(25,side)];if(category)voices.play(ids[side],category,side)}}}
+function observeVoices(){const ids=characterIds();for(let side=0;side<2;side++){const serial=get(24,side);if(serial!==voiceSeen[side]){voiceSeen[side]=serial;const cue=get(25,side),category=cue===4?'hit':cueCategory[cue];if(category)voices.play(ids[side],category,side)}}}
 function tick(){if(net?.connected&&!net.host){net.send({type:'input',bits:bits(0)});edges.clear();return}core.step(bits(0),net?.connected?remoteBits:bits(1));remoteBits&=15;edges.clear();if(net?.connected){const state=[];for(let f=0;f<STATE_FIELDS;f++)for(let s=0;s<2;s++)state.push(core.get(f,s));net.send({type:'state',state})}record();observeVoices();const events=core.sounds();effects(events);if(net?.connected&&events)net.send({type:'sfx',events});if(get(6)===3)finish();t++;}
 function render(){c.setTransform(2,0,0,2,0,0);t=get(32);c.fillStyle='#32434b';c.fillRect(0,0,432,304);c.save();const shake=cameraOffset(get);c.translate(...shake);background(c,stage,t);for(let side=0;side<2;side++)drawPlayer(c,get,characterIds(),side);
  drawNet(c);
@@ -98,7 +98,7 @@ const touchControls=installTouchControls(key=>{touchKeys.add(key);edges.add(key)
 const fullscreenButtons=['mobile-fullscreen','title-fullscreen','selection-fullscreen'].map($);
 for(const button of fullscreenButtons){button.hidden=!document.fullscreenEnabled;button.onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch(error){console.warn('Fullscreen unavailable',error)}}}
 document.addEventListener('fullscreenchange',()=>{for(const button of fullscreenButtons)button.textContent=document.fullscreenElement?'전체 화면 해제':'전체 화면';updateMobileView()});
-const touchScreen=matchMedia('(any-pointer:coarse)');function updateMobileView(){document.documentElement.style.setProperty('--play-height',(window.visualViewport?.height||innerHeight)+'px');document.documentElement.style.setProperty('--play-width',(window.visualViewport?.width||innerWidth)+'px');document.body.classList.toggle('mobile-match',touchScreen.matches&&!$('arena').hidden);if($('arena').hidden)touchControls.reset();}touchScreen.addEventListener('change',updateMobileView);window.addEventListener('resize',updateMobileView);window.addEventListener('orientationchange',()=>{touchControls.reset();updateMobileView();});window.visualViewport?.addEventListener('resize',updateMobileView);new MutationObserver(updateMobileView).observe($('arena'),{attributes:true,attributeFilter:['hidden']});updateMobileView();
+const touchScreen=matchMedia('(any-pointer:coarse)');function updateMobileView(){document.documentElement.style.setProperty('--play-height',(window.visualViewport?.height||innerHeight)+'px');document.documentElement.style.setProperty('--play-width',(window.visualViewport?.width||innerWidth)+'px');document.body.classList.toggle('mobile-match',(navigator.maxTouchPoints>0||touchScreen.matches)&&!$('arena').hidden);if($('arena').hidden)touchControls.reset();}touchScreen.addEventListener('change',updateMobileView);window.addEventListener('resize',updateMobileView);window.addEventListener('orientationchange',()=>{touchControls.reset();updateMobileView();});window.visualViewport?.addEventListener('resize',updateMobileView);new MutationObserver(updateMobileView).observe($('arena'),{attributes:true,attributeFilter:['hidden']});updateMobileView();
 for(const [id,fn] of Object.entries({story:()=>{mode=0;selection(true)},versus:()=>{mode=1;selection()},home:()=>selection(),start, pause:()=>{paused=!paused;$('pause').textContent=paused?'계속하기':'일시정지';keys.clear();edges.clear()},sound:()=>{muted=!muted;music.muted=muted;$('sound').textContent=muted?'♫ 음악 꺼짐':'♫ 음악 켜짐';if(!muted)music.play().catch(()=>{})},next:()=>{if(net){$('online').click();return}if(mode===0&&get(10)===0){if(stage===4){p.ending=true;save();drawGoals();drawEnding($('ending-art').getContext('2d'));stop();$('arena').hidden=true;$('ending').hidden=false;play(6);return}stage++}selection()},again:()=>{mode=0;selection(true)}}))$(id).onclick=fn;
 let netState=null,remoteBits=0,remoteCharacter='hachiware';
 function netMessage(m){

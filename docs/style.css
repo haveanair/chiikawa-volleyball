@@ -47,70 +47,21 @@ body.title-open{background:#c7e6df}body.title-open>header,body.title-open>#game-
 #ending .credits{height:300px}#ending .credits>div{animation:ending-staff-roll 45s linear forwards}@keyframes ending-staff-roll{from{transform:translateY(300px)}to{transform:translateY(calc(150px - 100%))}}
 /* Four-digit rooms. */
 .room-options{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:24px 0}.room-options>span{font-size:12px;color:#9b9b87}#room-join-form{display:flex;gap:8px;align-items:center;flex-wrap:wrap}#room-code{width:124px;text-align:center;font:700 27px PocketRound,PocketKO,sans-serif;letter-spacing:7px;border:1px solid #c5d9c9;border-radius:12px;padding:11px;background:#fffdf6;color:#456957}#room-display{padding:20px;border-radius:18px;background:#f1f6e6;text-align:center;display:flex;flex-direction:column;gap:8px}#room-number{font:700 48px PocketRound,PocketKO,sans-serif;letter-spacing:10px;color:#3a7558}#room-display small,#room-display span,.online-help{font-size:12px;color:#7c8973}#net-status{min-height:28px;font-size:14px;color:#5d7c69}#net-start:disabled{opacity:.5;cursor:default}
-/* Controllers sit outside the court; no game area is covered. */
-#touch,#rotate-hint,#mobile-fullscreen{display:none}.touch-side{display:flex;gap:10px;align-items:center;justify-content:center}.touch-side button{touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;min-width:64px;min-height:64px;font-size:20px;border:2px solid #b9cdb1;background:#f2f7e8;border-radius:22px;color:#52734f;box-shadow:0 4px #a6b6a1}.touch-side button.held{transform:translateY(3px);box-shadow:0 1px #a6b6a1;background:#d4e7c7}.touch-side .touch-spike{background:#fff0c4;border-color:#e5c78c;color:#97704c;font-size:15px}.touch-side .touch-jump{font-size:16px}
-@media(any-pointer:coarse){#arena:not([hidden]) #touch{display:flex!important;justify-content:space-between;gap:20px;margin:15px 0;touch-action:none}#mobile-fullscreen:not([hidden]){display:inline-block}#court{touch-action:none}#rotate-hint{display:block;font-size:12px;color:#849077}.touch-side button{min-width:56px;min-height:56px;padding:10px} }
-@media(any-pointer:coarse) and (orientation:landscape){body.mobile-match{overflow:hidden;overscroll-behavior:none}body.mobile-match #arena{position:fixed;inset:0;z-index:1000;height:100dvh;width:100%;max-width:none;border-radius:0;border:0;padding:6px max(10px,env(safe-area-inset-right)) 4px max(10px,env(safe-area-inset-left));display:grid;grid-template-columns:clamp(108px,16vw,156px) minmax(0,1fr) clamp(108px,16vw,156px);grid-template-rows:auto minmax(0,1fr) auto;column-gap:8px;row-gap:3px;background:#faf8ee}body.mobile-match .scoreboard{grid-column:2;grid-row:1;width:100%;margin:0;padding:0;gap:8px;align-self:end}body.mobile-match .scoreboard>div>b{--name-font-max:16;height:22px;min-height:22px;max-height:22px;line-height:22px;padding:0;font-size:16px}body.mobile-match .scoreboard strong{font-size:30px;padding-top:0;line-height:1.2;letter-spacing:0;-webkit-text-stroke:1px #805a4e}body.mobile-match .charge-meter{min-height:30px;padding:0;margin-top:0}body.mobile-match .charge-caption{font-size:8px}body.mobile-match .charge-count{font-size:8px}body.mobile-match .charge-track{height:10px;margin-top:3px}body.mobile-match .charge-state{display:none}body.mobile-match #court{grid-column:2;grid-row:2;justify-self:center;align-self:center;width:min(100%,calc((100dvh - 95px)*1.42105));height:auto;max-height:calc(100dvh - 95px);border-radius:10px}body.mobile-match #touch{display:contents!important}body.mobile-match .touch-left{grid-column:1;grid-row:2;align-self:center;gap:6px}body.mobile-match .touch-right{grid-column:3;grid-row:2;align-self:center;flex-direction:column;gap:12px}body.mobile-match .touch-side button{min-width:48px;min-height:58px;padding:9px}.mobile-match .touch-right button{width:94px}body.mobile-match .arena-foot{grid-column:1/-1;grid-row:3;padding-top:1px;font-size:10px}body.mobile-match .match-actions button{font-size:10px;padding:5px 10px}body.mobile-match #rotate-hint{display:none}body.mobile-match #result{position:absolute;left:20%;right:20%;top:25%;background:#fffdf1f5;z-index:3;border-radius:20px;box-shadow:0 8px 32px #405b4530}}
-
-/* Left directional pad and one right attack button, including the live arena. */
-.touch-left{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,auto);gap:8px}.touch-left .touch-jump{grid-column:1 / -1;grid-row:1;justify-self:center}.touch-left .touch-move-left{grid-column:1;grid-row:2}.touch-left .touch-move-right{grid-column:2;grid-row:2}.touch-right .touch-spike{min-height:82px;min-width:82px;border-radius:50%;font-size:20px}
-
-/* Rotation-safe mobile arena: explicit grid tracks and one authoritative touch rule. */
-@media(any-pointer:coarse) and (orientation:landscape){
- body.mobile-match #arena{height:var(--play-height,100dvh);width:var(--play-width,100vw);inset:0 auto auto 0;grid-template-columns:clamp(88px,15vw,132px) minmax(0,1fr) clamp(82px,14vw,124px);grid-template-rows:64px minmax(0,1fr) 28px;padding:4px max(8px,env(safe-area-inset-right)) max(4px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));gap:4px;overflow:hidden}
- #game-main #arena:not([hidden]) #touch{display:contents!important}
- body.mobile-match #court{width:100%;height:100%;min-width:0;min-height:0;max-width:100%;max-height:100%;object-fit:contain;background:transparent;border-radius:0}
- body.mobile-match .scoreboard{min-width:0;min-height:0;overflow:hidden;align-self:stretch}
- body.mobile-match .scoreboard>div>.meter{margin-top:0}
- body.mobile-match .touch-side{min-width:0;min-height:0;width:100%;margin:0}
- body.mobile-match .touch-left{gap:6px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,auto)}
- body.mobile-match #touch button{min-width:0;width:100%;min-height:42px;height:clamp(42px,14dvh,60px);padding:6px;font-size:20px}
- body.mobile-match #touch .touch-jump{width:48%;grid-column:1/-1}
- body.mobile-match #touch .touch-spike{width:min(82px,100%);height:76px;min-height:56px}
- body.mobile-match .arena-foot{min-width:0;min-height:0;flex-wrap:nowrap;padding:0;gap:5px;overflow:hidden}
- body.mobile-match #stage-label{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
- body.mobile-match .match-actions{flex-shrink:0;display:flex;gap:4px}
- body.mobile-match .match-actions button{padding:4px 6px;white-space:nowrap}
-}
-@media(any-pointer:coarse) and (orientation:portrait){
- body.mobile-match #arena{width:100%;max-width:100%;overflow:hidden}
- body.mobile-match .touch-left{width:136px}
- body.mobile-match .touch-right{width:90px}
-}
-@media(any-pointer:coarse) and (orientation:landscape) and (max-height:420px){
- body:not(.mobile-match) #game-main{padding:8px 12px}
- body:not(.mobile-match) .game-header{height:48px}
- #selection .versus-portraits{min-height:0}
- #selection .fighter canvas{height:120px}
-}
-
-/* A fullscreen element is its own scroll container in portrait orientation. */
-@media(any-pointer:coarse) and (orientation:portrait){
- body.mobile-match #arena:fullscreen{display:block;position:fixed;inset:0;width:100%;height:100dvh;max-height:100dvh;max-width:none;overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y;padding:16px max(14px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left));border:0;border-radius:0;background:#faf8ee}
- body.mobile-match #arena:fullscreen #court{width:100%;height:auto;max-height:none;touch-action:pan-y}
- body.mobile-match #arena:fullscreen #touch{touch-action:pan-y}
- body.mobile-match #arena:fullscreen #touch button{touch-action:none}
- body.mobile-match #arena:fullscreen .arena-foot{flex-wrap:wrap;gap:12px;padding-bottom:12px}
-}
-
-.court-stage{display:contents}.fullscreen-toggle{font-size:12px;padding:7px 12px;white-space:nowrap}.title-fullscreen{position:absolute;top:12px;left:12px;z-index:5;background:#fffdf0eb;border-color:#95ad93}.selection-banner{gap:10px;flex-wrap:wrap}
+/* Shared controller appearance; touch layout is defined in mobile-layout.css. */
+#touch,#rotate-hint,#mobile-fullscreen{display:none}
+.court-stage{display:contents}
+.fullscreen-toggle{font-size:12px;padding:7px 12px;white-space:nowrap}
+.title-fullscreen{position:absolute;top:12px;left:12px;z-index:5;background:#fffdf0eb;border-color:#95ad93}
+.selection-banner{gap:10px;flex-wrap:wrap}
 :root:fullscreen{overflow:auto;background:#faf8ee}
-@media(any-pointer:coarse) and (orientation:landscape){
- body.mobile-match #arena{grid-template-rows:minmax(0,1fr) 28px}
- body.mobile-match .court-stage{display:block;position:relative;grid-column:2;grid-row:1;align-self:center;justify-self:center;width:min(100%,calc((var(--play-height,100dvh) - 44px)*1.42105));aspect-ratio:864/608;min-width:0;min-height:0;max-height:100%;overflow:hidden;border-radius:10px}
- body.mobile-match .court-stage #court{display:block;width:100%;height:100%;object-fit:contain}
- body.mobile-match .court-stage .scoreboard{position:absolute;inset:0 0 auto;z-index:2;padding:5px 9px 7px;max-height:74px;background:linear-gradient(#fff9e9e8,#fff9e999,transparent);pointer-events:none}
- body.mobile-match .court-stage .scoreboard>div>b{--name-font-max:15;font-size:15px;text-shadow:0 1px 2px #fff}
- body.mobile-match .touch-left,body.mobile-match .touch-right{grid-row:1}
- body.mobile-match .arena-foot{grid-row:2}
-}
-@media(any-pointer:coarse) and (orientation:portrait){
- :root:fullscreen body.mobile-match{overflow:auto;touch-action:pan-y}
- :root:fullscreen body.mobile-match #arena{overflow:visible;height:auto;max-height:none}
- :root:fullscreen body.mobile-match #court{touch-action:pan-y}
- :root:fullscreen body.mobile-match #touch{touch-action:pan-y}
- :root:fullscreen body.mobile-match #touch button{touch-action:none}
-}
+.touch-side{display:flex;gap:10px;align-items:center;justify-content:center}
+.touch-side button{touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;min-width:56px;min-height:56px;font-size:20px;border:2px solid #b9cdb1;background:#f2f7e8;border-radius:18px;color:#52734f;box-shadow:0 4px #a6b6a1}
+.touch-side button.held{transform:translateY(3px);box-shadow:0 1px #a6b6a1;background:#d4e7c7}
+.touch-side .touch-spike{background:#fff0c4;border-color:#e5c78c;color:#97704c;border-radius:50%}
+.touch-left{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,auto);gap:6px}
+.touch-left .touch-jump{grid-column:1/-1;grid-row:1;justify-self:center}
+.touch-left .touch-move-left{grid-column:1;grid-row:2}
+.touch-left .touch-move-right{grid-column:2;grid-row:2}
 @media(orientation:landscape) and (max-height:600px){
  body.title-open{overflow:auto}
  #title-screen{width:min(100%,calc(var(--play-height,100dvh)*1.65));height:var(--play-height,100dvh);min-height:0;max-height:none;aspect-ratio:auto;margin:0 auto;padding-bottom:78px;border-width:0;border-radius:0}
@@ -138,7 +89,7 @@ body.title-open{background:#c7e6df}body.title-open>header,body.title-open>#game-
 }
 
 /* Desktop layouts use the available height in either window orientation. */
-@media(any-pointer:fine){
+@media(hover:hover) and (pointer:fine) and (not (any-pointer:coarse)){
  .game-header{height:52px}
  #game-main{padding:4px 20px 8px}
  #game-nav{margin-bottom:10px}
@@ -181,7 +132,7 @@ body.title-open{background:#c7e6df}body.title-open>header,body.title-open>#game-
 }
 
 /* Desktop selection gives the portraits and roster the full viewport height. */
-@media(any-pointer:fine) and (orientation:landscape){
+@media(hover:hover) and (pointer:fine) and (not (any-pointer:coarse)) and (orientation:landscape){
  body:not(.title-open):has(#arena[hidden]) #game-main{display:grid;grid-template-columns:170px minmax(0,1fr);gap:16px;width:100%;max-width:1540px;height:var(--play-height,100dvh);padding:16px;margin:auto;align-items:stretch}
  .selection-sidebar{min-width:0;display:flex;flex-direction:column;gap:12px;overflow:auto}
  .selection-sidebar .game-header{display:flex;flex-direction:column;align-items:stretch;justify-content:start;gap:10px;width:100%;height:auto;padding:8px 0;margin:0}
@@ -224,7 +175,7 @@ body.title-open{background:#c7e6df}body.title-open>header,body.title-open>#game-
  #arena .charge-track{height:18px;margin-top:5px}
  #arena .court-stage .scoreboard{padding:8px 14px 14px;gap:14px}
 }
-@media(any-pointer:fine) and (orientation:landscape) and (max-width:1050px){
+@media(hover:hover) and (pointer:fine) and (not (any-pointer:coarse)) and (orientation:landscape) and (max-width:1050px){
  body:not(.title-open):has(#arena[hidden]) #game-main{grid-template-columns:132px minmax(0,1fr);gap:10px;padding:10px}
  #selection{grid-template-columns:minmax(0,1fr) 145px;gap:10px;padding:12px}
  #selection .versus-portraits{grid-template-columns:1fr 44px 1fr;gap:4px}
@@ -235,13 +186,13 @@ body.title-open{background:#c7e6df}body.title-open>header,body.title-open>#game-
  .selection-settings-side{padding-left:10px;gap:12px}
  .selection-sidebar .game-brand{font-size:15px}
 }
-@media(any-pointer:fine) and (orientation:landscape){body:has(#arena:not([hidden])) .selection-sidebar footer{display:none}}
-@media(any-pointer:fine) and (orientation:landscape){
+@media(hover:hover) and (pointer:fine) and (not (any-pointer:coarse)) and (orientation:landscape){body:has(#arena:not([hidden])) .selection-sidebar footer{display:none}}
+@media(hover:hover) and (pointer:fine) and (not (any-pointer:coarse)) and (orientation:landscape){
  #network,#ending{grid-column:2;min-width:0;min-height:0;overflow:auto;margin:0}
 }
 
 /* Portrait keeps full-width artwork and a vertical flow; never side columns. */
-@media(any-pointer:fine) and (orientation:portrait){
+@media(hover:hover) and (pointer:fine) and (not (any-pointer:coarse)) and (orientation:portrait){
  body:not(.title-open):has(#selection:not([hidden])) #game-main{display:flex;flex-direction:column;height:calc(var(--play-height,100dvh) - 52px);padding:4px 12px 8px;gap:6px}
  #game-main>#game-nav{flex-shrink:0;margin:0;padding:4px}
  #selection{display:grid;grid-template-columns:1fr;grid-template-rows:auto auto minmax(120px,1fr) auto auto auto auto auto;gap:6px;flex:1;min-height:0;margin:0;padding:12px;width:100%;overflow:visible}
@@ -271,7 +222,7 @@ body.title-open{background:#c7e6df}body.title-open>header,body.title-open>#game-
  #achievements>summary,#controls-help>summary{padding:7px 12px}
  #game-main>footer{flex-shrink:0;padding:0;font-size:10px}
 }
-@media(any-pointer:fine){
+@media(hover:hover) and (pointer:fine) and (not (any-pointer:coarse)){
  #arena .scoreboard>div>b{--name-font-max:26;font-size:26px;height:36px;min-height:36px;max-height:36px;line-height:36px}
  #arena .scoreboard strong{font-size:52px;line-height:1.15;-webkit-text-stroke:1.5px #805a4e}
  #arena .charge-caption,#arena .charge-count{font-size:12px}

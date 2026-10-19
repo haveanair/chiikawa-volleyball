@@ -1,10 +1,18 @@
-// Only vo_* assets with verified character codes are mapped. Never borrow another character's voice.
+// Keep verified character voices; unvoiced cast use their own existing GBA effects.
 const allowedVoice=file=>typeof file==='string'&&!/_titlecall_/i.test(file);
 export class CharacterVoices {
- constructor(music,onStatus=()=>{}){this.onStatus=onStatus;this.epoch=0;this.music=music;this.manifest={};this.enabled=true;this.pool=new Map();this.clock=new Map();this.indices=new Map();this.active=new Map();this.ready=fetch('audio/voices/manifest.json').then(r=>{if(!r.ok)throw Error('voice manifest');return r.json()}).then(m=>{for(const entry of Object.values(m))for(const key of Object.keys(entry))if(Array.isArray(entry[key]))entry[key]=entry[key].filter(allowedVoice);this.manifest=m}).catch(()=>{});}
+ constructor(music,onStatus=()=>{}){this.onStatus=onStatus;this.epoch=0;this.music=music;this.manifest={};this.enabled=true;this.pool=new Map();this.clock=new Map();this.indices=new Map();this.active=new Map();
+  const load=url=>fetch(url).then(r=>{if(!r.ok)throw Error('voice manifest');return r.json()});
+  this.ready=Promise.all([load('audio/voices/manifest.json'),load('audio/character-fx/manifest.json?v=0.40').catch(()=>({}))]).then(([m,fx])=>{
+   for(const [id,entry] of Object.entries(fx))for(const [category,files] of Object.entries(entry))if(Array.isArray(files)&&!m[id]?.[category]?.length)(m[id]??={})[category]=files;
+   for(const entry of Object.values(m))for(const key of Object.keys(entry))if(Array.isArray(entry[key]))entry[key]=entry[key].filter(allowedVoice);
+   this.manifest=m;
+  }).catch(()=>{});
+ }
  async play(id,category,side=0){
   if(!this.enabled)return;const epoch=this.epoch;await this.ready;if(!this.enabled||epoch!==this.epoch)return;
-  const files=category==='huntcutin'&&id==='chiikawa'?[this.activationFile(id)]:this.manifest[id]?.[category==='select'?'attack':category];if(!files?.length||!files[0])return;
+  const entry=this.manifest[id];
+  const files=category==='huntcutin'&&id==='chiikawa'?[this.activationFile(id)]:category==='select'?(entry?.select||entry?.attack):category==='hit'?(entry?.hit||entry?.lose):entry?.[category];if(!files?.length||!files[0])return;
   const now=performance.now(),key=id+':'+category;
   if(category==='attack'&&now-(this.clock.get(key)||-1000)<700)return;
   this.clock.set(key,now);const index=this.indices.get(key)||0;this.indices.set(key,index+1);

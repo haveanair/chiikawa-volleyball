@@ -1,0 +1,492 @@
+[
+  {
+    "character": "roach",
+    "category": "select",
+    "source": "gba-game/assets/audio/character-fx/insect-select.raw",
+    "source_sha256": "c344289d6a7fc24229c1a8f04a75ac1777826f89bacae5cbf82c98d1fd1bb041",
+    "file": "insect-select.wav",
+    "samples": 4358,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "roach",
+    "category": "attack",
+    "source": "gba-game/assets/audio/character-fx/insect-attack.raw",
+    "source_sha256": "249302c29878a0c805fae071076b4b9f98778a6c22052d756b6f003cc65417c7",
+    "file": "insect-attack.wav",
+    "samples": 3132,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "roach",
+    "category": "skill",
+    "source": "gba-game/assets/audio/character-fx/insect-skill.raw",
+    "source_sha256": "d6efca0144b5ae4fc46143279e3346fb8b23efb0dc535bc36bd79361287feee0",
+    "file": "insect-skill.wav",
+    "samples": 5447,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "roach",
+    "category": "huntcutin",
+    "source": "gba-game/assets/audio/character-fx/insect-super.raw",
+    "source_sha256": "2e1ff4e4b49ba14d315a4070de443a3cca8dd95a3fa10288778fa8463afaa99b",
+    "file": "insect-super.wav",
+    "samples": 7490,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "roach",
+    "category": "hit",
+    "source": "gba-game/assets/audio/character-fx/insect-hit.raw",
+    "source_sha256": "2a65cbb1f63a9d6fa64205da3ac58c6e27a5c8bdbea387b4c86cc5e2ad917fdb",
+    "file": "insect-hit.wav",
+    "samples": 2724,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "roach",
+    "category": "win",
+    "source": "gba-game/assets/audio/character-fx/insect-win.raw",
+    "source_sha256": "725447fbd868068bb194840db96d70fdd8e11babd99aa5911875230dd9796a26",
+    "file": "insect-win.wav",
+    "samples": 6264,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "roach",
+    "category": "lose",
+    "source": "gba-game/assets/audio/character-fx/insect-lose.raw",
+    "source_sha256": "e1b2cb1b626c49e035f29cd6872595ef351a6853e44f3987692064428704bde5",
+    "file": "insect-lose.wav",
+    "samples": 4358,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "boss",
+    "category": "select",
+    "source": "gba-game/assets/audio/character-fx/dekatsuyo-select.raw",
+    "source_sha256": "b42effc585d76402790314cb112b0a2ebabb7a3e4a86554779acebd84a5dd686",
+    "file": "dekatsuyo-select.wav",
+    "samples": 4358,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "boss",
+    "category": "attack",
+    "source": "gba-game/assets/audio/character-fx/dekatsuyo-attack.raw",
+    "source_sha256": "2783f55f44aee6404fce5faac099b25ba7f8d47ae4d2744aed33b1d44ae4aac9",
+    "file": "dekatsuyo-attack.wav",
+    "samples": 3132,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "boss",
+    "category": "skill",
+    "source": "gba-game/assets/audio/character-fx/dekatsuyo-skill.raw",
+    "source_sha256": "d7243a6bde7f669abe7c63567d1644453cb921f98c201f2ced932574318e2b39",
+    "file": "dekatsuyo-skill.wav",
+    "samples": 5447,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "boss",
+    "category": "huntcutin",
+    "source": "gba-game/assets/audio/character-fx/dekatsuyo-super.raw",
+    "source_sha256": "f88e84d50dbb0cd9bed3e49069fbd3b1573c487f2e71a26352492345454c79da",
+    "file": "dekatsuyo-super.wav",
+    "samples": 7490,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "boss",
+    "category": "hit",
+    "source": "gba-game/assets/audio/character-fx/dekatsuyo-hit.raw",
+    "source_sha256": "f4b102de6f2aa70790f427cde3a604989e014654cfcab6fb2ea2aa8367423515",
+    "file": "dekatsuyo-hit.wav",
+    "samples": 2724,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "boss",
+    "category": "win",
+    "source": "gba-game/assets/audio/character-fx/dekatsuyo-win.raw",
+    "source_sha256": "5c5801a00d91ba0dd26a0a6f22dddab32ad702482fee30d6a0c7dc7077c5128c",
+    "file": "dekatsuyo-win.wav",
+    "samples": 6264,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "boss",
+    "category": "lose",
+    "source": "gba-game/assets/audio/character-fx/dekatsuyo-lose.raw",
+    "source_sha256": "5109b2079369db5db6a126da1e47399d0ff5a684068c39f430de312583874590",
+    "file": "dekatsuyo-lose.wav",
+    "samples": 4358,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "pajamas",
+    "category": "select",
+    "source": "gba-game/assets/audio/character-fx/pajamas-select.raw",
+    "source_sha256": "4b638e4aa8ef7190c872f1f883d365a349a9c3c6837fe6a8ed017d3dd963c33f",
+    "file": "pajamas-select.wav",
+    "samples": 4358,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "pajamas",
+    "category": "attack",
+    "source": "gba-game/assets/audio/character-fx/pajamas-attack.raw",
+    "source_sha256": "e64b3cbd3a7d1482f6e16c00d9ee27d98aa3a7d5e76060d20bc4cd48389d4ebd",
+    "file": "pajamas-attack.wav",
+    "samples": 3132,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "pajamas",
+    "category": "skill",
+    "source": "gba-game/assets/audio/character-fx/pajamas-skill.raw",
+    "source_sha256": "936c649e3b17b43e80a3f6ac5a00454fa8081ec79e28a2abfeba37598203aac9",
+    "file": "pajamas-skill.wav",
+    "samples": 5447,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "pajamas",
+    "category": "huntcutin",
+    "source": "gba-game/assets/audio/character-fx/pajamas-super.raw",
+    "source_sha256": "eb96a3fff19f9df6573ab482776915c4a8359b799a9d188e96bf0a25a41e62e1",
+    "file": "pajamas-super.wav",
+    "samples": 7490,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "pajamas",
+    "category": "hit",
+    "source": "gba-game/assets/audio/character-fx/pajamas-hit.raw",
+    "source_sha256": "8ea0bbae3573cbfa12605f8aeae15ef1f4069150b491e69772e6907506140223",
+    "file": "pajamas-hit.wav",
+    "samples": 2724,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "pajamas",
+    "category": "win",
+    "source": "gba-game/assets/audio/character-fx/pajamas-win.raw",
+    "source_sha256": "5e3a8a88729c875931aac2d1170207aa9ec4f6bf35b5cb9b48d5dc4881bec81a",
+    "file": "pajamas-win.wav",
+    "samples": 6264,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "pajamas",
+    "category": "lose",
+    "source": "gba-game/assets/audio/character-fx/pajamas-lose.raw",
+    "source_sha256": "e316a9bc86462bf0c23128512431673ba444b587abe352adb92e7617fc6cde4c",
+    "file": "pajamas-lose.wav",
+    "samples": 4358,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "duo",
+    "category": "select",
+    "source": "gba-game/assets/audio/character-fx/leaves-select.raw",
+    "source_sha256": "28680ee83b71208caebde3677cd33998da956d57c0c5240a6674b83495587441",
+    "file": "leaves-select.wav",
+    "samples": 4358,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "duo",
+    "category": "attack",
+    "source": "gba-game/assets/audio/character-fx/leaves-attack.raw",
+    "source_sha256": "e3592fa0e802c5549b727b84091c477b6defebc2cc721e56068b49842060db7f",
+    "file": "leaves-attack.wav",
+    "samples": 3132,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "duo",
+    "category": "skill",
+    "source": "gba-game/assets/audio/character-fx/leaves-skill.raw",
+    "source_sha256": "e3a914df20f9d8787d9ef2a7750f9de89be455f83f4f4c22a848fab5ccb89080",
+    "file": "leaves-skill.wav",
+    "samples": 5447,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "duo",
+    "category": "huntcutin",
+    "source": "gba-game/assets/audio/character-fx/leaves-super.raw",
+    "source_sha256": "1233e07788b3ed3145a428cee4aa57f3245d73d3a734020273f2da61aa714338",
+    "file": "leaves-super.wav",
+    "samples": 7490,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "duo",
+    "category": "hit",
+    "source": "gba-game/assets/audio/character-fx/leaves-hit.raw",
+    "source_sha256": "1c9cb2b1042ddeb31fc55e423754f6db91deca325d5b20124cb8fb8910a61eb7",
+    "file": "leaves-hit.wav",
+    "samples": 2724,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "duo",
+    "category": "win",
+    "source": "gba-game/assets/audio/character-fx/leaves-win.raw",
+    "source_sha256": "c736657233c8806db4b07b783c0fa1930830839cf69223593a4479e9c0363a68",
+    "file": "leaves-win.wav",
+    "samples": 6264,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "duo",
+    "category": "lose",
+    "source": "gba-game/assets/audio/character-fx/leaves-lose.raw",
+    "source_sha256": "d3973acbfaac9c1eb0cc770840db4267f0ad724a0e66fd1d599f2141d6c86ab9",
+    "file": "leaves-lose.wav",
+    "samples": 4358,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "kani",
+    "category": "select",
+    "source": "gba-game/assets/audio/character-fx/kani-select.raw",
+    "source_sha256": "ee66608a80a7fed7390c86db244c33788d97ec3789dda42bced14f4d0a9d8cf2",
+    "file": "kani-select.wav",
+    "samples": 4358,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "kani",
+    "category": "attack",
+    "source": "gba-game/assets/audio/character-fx/kani-attack.raw",
+    "source_sha256": "5beea0e549aef7cd01fb02890412323e75f013b124651a9d1833896e487ad77f",
+    "file": "kani-attack.wav",
+    "samples": 3132,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "kani",
+    "category": "skill",
+    "source": "gba-game/assets/audio/character-fx/kani-skill.raw",
+    "source_sha256": "677dc34ca1659bb8122690db2ed28f277375be80460e456acedbf52eee2cdc05",
+    "file": "kani-skill.wav",
+    "samples": 5447,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "kani",
+    "category": "huntcutin",
+    "source": "gba-game/assets/audio/character-fx/kani-super.raw",
+    "source_sha256": "35b4af74afa5273761cada6bc1728c71132c36373beda0f0c287282d336a4582",
+    "file": "kani-super.wav",
+    "samples": 7490,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "kani",
+    "category": "hit",
+    "source": "gba-game/assets/audio/character-fx/kani-hit.raw",
+    "source_sha256": "427e1a9eaae363e77c9fd131230b173ecd1e04aeb045e40bf7697f72d087163b",
+    "file": "kani-hit.wav",
+    "samples": 2724,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "kani",
+    "category": "win",
+    "source": "gba-game/assets/audio/character-fx/kani-win.raw",
+    "source_sha256": "d1395dbf691f6738dde4c9e713700709806d612e7ee134b3a92eda86a1befda0",
+    "file": "kani-win.wav",
+    "samples": 6264,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "kani",
+    "category": "lose",
+    "source": "gba-game/assets/audio/character-fx/kani-lose.raw",
+    "source_sha256": "b936a384b30adee84283efa6f81dec4bba3583bcf369ba537ac5c2e3bd435ecb",
+    "file": "kani-lose.wav",
+    "samples": 4358,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "armor",
+    "category": "select",
+    "source": "gba-game/assets/audio/character-fx/armor-select.raw",
+    "source_sha256": "7e302f9cc8908c6b307b0c22cfd3b6abf21844a1d17e58a1920b2b3f34c702e9",
+    "file": "armor-select.wav",
+    "samples": 4358,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "armor",
+    "category": "attack",
+    "source": "gba-game/assets/audio/character-fx/armor-attack.raw",
+    "source_sha256": "701680b5df89dd0bc21c0844e5446e9fb60f983c78901571efa4f30d89445684",
+    "file": "armor-attack.wav",
+    "samples": 3132,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "armor",
+    "category": "skill",
+    "source": "gba-game/assets/audio/character-fx/armor-skill.raw",
+    "source_sha256": "c91e9b70e36f862faf6b78a17f5b0027d3d1b0cb86d793127c8a80fffa18e6d5",
+    "file": "armor-skill.wav",
+    "samples": 5447,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "armor",
+    "category": "huntcutin",
+    "source": "gba-game/assets/audio/character-fx/armor-super.raw",
+    "source_sha256": "914c05d9c8e1da7ef144eab2c75344cc710418f69c375e167dbe97f1f2ba3646",
+    "file": "armor-super.wav",
+    "samples": 7490,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "armor",
+    "category": "hit",
+    "source": "gba-game/assets/audio/character-fx/armor-hit.raw",
+    "source_sha256": "b5fbbe16f99fde41a40cb198490976758e3d5abc500bd55df97b3777170a44e0",
+    "file": "armor-hit.wav",
+    "samples": 2724,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "armor",
+    "category": "win",
+    "source": "gba-game/assets/audio/character-fx/armor-win.raw",
+    "source_sha256": "119c061a667e34a6facdd6a70a49d28b6fd7bf82999006deef936f286625cd27",
+    "file": "armor-win.wav",
+    "samples": 6264,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "armor",
+    "category": "lose",
+    "source": "gba-game/assets/audio/character-fx/armor-lose.raw",
+    "source_sha256": "b2e573aed77a8364eb8f6dbe3422a633bb8395b93fd535c44af133e9e5c1a791",
+    "file": "armor-lose.wav",
+    "samples": 4358,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "siren",
+    "category": "select",
+    "source": "gba-game/assets/audio/character-fx/siren-select.raw",
+    "source_sha256": "128e35233d670662e64d7c8de3a173caaf09f2e5560c931f598347098b3734d8",
+    "file": "siren-select.wav",
+    "samples": 4358,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "siren",
+    "category": "attack",
+    "source": "gba-game/assets/audio/character-fx/siren-attack.raw",
+    "source_sha256": "e946d41050fb13050632fdc33a2d4c50b9f60a67ae8034754833caedaec30181",
+    "file": "siren-attack.wav",
+    "samples": 3132,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "siren",
+    "category": "skill",
+    "source": "gba-game/assets/audio/character-fx/siren-skill.raw",
+    "source_sha256": "5c872ca2854391769bae0970a39c3eea02e48e0c915d67537fb6027f3d2483a1",
+    "file": "siren-skill.wav",
+    "samples": 5447,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "siren",
+    "category": "huntcutin",
+    "source": "gba-game/assets/audio/character-fx/siren-super.raw",
+    "source_sha256": "0bc7a6181be21a8effab233bd5e8fae0c1c47d0c1e7537250eb73066f57b4d73",
+    "file": "siren-super.wav",
+    "samples": 7490,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "siren",
+    "category": "hit",
+    "source": "gba-game/assets/audio/character-fx/siren-hit.raw",
+    "source_sha256": "4621394e4c944f26a8f624c2ba4ded75a791aafd753b7306edc7b5ac713b6adf",
+    "file": "siren-hit.wav",
+    "samples": 2724,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "siren",
+    "category": "win",
+    "source": "gba-game/assets/audio/character-fx/siren-win.raw",
+    "source_sha256": "9201d6e8409a3fb5f1f3d257051d03a86d1c58f78bf42a68fbe0a89bd514e292",
+    "file": "siren-win.wav",
+    "samples": 6264,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  },
+  {
+    "character": "siren",
+    "category": "lose",
+    "source": "gba-game/assets/audio/character-fx/siren-lose.raw",
+    "source_sha256": "9bf75e50790059ef149551a01167c595f006a041124b9899e1edaca8042558c7",
+    "file": "siren-lose.wav",
+    "samples": 4358,
+    "sample_rate": 13618,
+    "kind": "GBA synthesized non-vocal character effect"
+  }
+]

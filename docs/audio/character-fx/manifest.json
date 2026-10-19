@@ -1,0 +1,163 @@
+{
+  "roach": {
+    "select": [
+      "audio/character-fx/insect-select.wav"
+    ],
+    "attack": [
+      "audio/character-fx/insect-attack.wav"
+    ],
+    "skill": [
+      "audio/character-fx/insect-skill.wav"
+    ],
+    "huntcutin": [
+      "audio/character-fx/insect-super.wav"
+    ],
+    "hit": [
+      "audio/character-fx/insect-hit.wav"
+    ],
+    "win": [
+      "audio/character-fx/insect-win.wav"
+    ],
+    "lose": [
+      "audio/character-fx/insect-lose.wav"
+    ]
+  },
+  "boss": {
+    "select": [
+      "audio/character-fx/dekatsuyo-select.wav"
+    ],
+    "attack": [
+      "audio/character-fx/dekatsuyo-attack.wav"
+    ],
+    "skill": [
+      "audio/character-fx/dekatsuyo-skill.wav"
+    ],
+    "huntcutin": [
+      "audio/character-fx/dekatsuyo-super.wav"
+    ],
+    "hit": [
+      "audio/character-fx/dekatsuyo-hit.wav"
+    ],
+    "win": [
+      "audio/character-fx/dekatsuyo-win.wav"
+    ],
+    "lose": [
+      "audio/character-fx/dekatsuyo-lose.wav"
+    ]
+  },
+  "pajamas": {
+    "select": [
+      "audio/character-fx/pajamas-select.wav"
+    ],
+    "attack": [
+      "audio/character-fx/pajamas-attack.wav"
+    ],
+    "skill": [
+      "audio/character-fx/pajamas-skill.wav"
+    ],
+    "huntcutin": [
+      "audio/character-fx/pajamas-super.wav"
+    ],
+    "hit": [
+      "audio/character-fx/pajamas-hit.wav"
+    ],
+    "win": [
+      "audio/character-fx/pajamas-win.wav"
+    ],
+    "lose": [
+      "audio/character-fx/pajamas-lose.wav"
+    ]
+  },
+  "duo": {
+    "select": [
+      "audio/character-fx/leaves-select.wav"
+    ],
+    "attack": [
+      "audio/character-fx/leaves-attack.wav"
+    ],
+    "skill": [
+      "audio/character-fx/leaves-skill.wav"
+    ],
+    "huntcutin": [
+      "audio/character-fx/leaves-super.wav"
+    ],
+    "hit": [
+      "audio/character-fx/leaves-hit.wav"
+    ],
+    "win": [
+      "audio/character-fx/leaves-win.wav"
+    ],
+    "lose": [
+      "audio/character-fx/leaves-lose.wav"
+    ]
+  },
+  "kani": {
+    "select": [
+      "audio/character-fx/kani-select.wav"
+    ],
+    "attack": [
+      "audio/character-fx/kani-attack.wav"
+    ],
+    "skill": [
+      "audio/character-fx/kani-skill.wav"
+    ],
+    "huntcutin": [
+      "audio/character-fx/kani-super.wav"
+    ],
+    "hit": [
+      "audio/character-fx/kani-hit.wav"
+    ],
+    "win": [
+      "audio/character-fx/kani-win.wav"
+    ],
+    "lose": [
+      "audio/character-fx/kani-lose.wav"
+    ]
+  },
+  "armor": {
+    "select": [
+      "audio/character-fx/armor-select.wav"
+    ],
+    "attack": [
+      "audio/character-fx/armor-attack.wav"
+    ],
+    "skill": [
+      "audio/character-fx/armor-skill.wav"
+    ],
+    "huntcutin": [
+      "audio/character-fx/armor-super.wav"
+    ],
+    "hit": [
+      "audio/character-fx/armor-hit.wav"
+    ],
+    "win": [
+      "audio/character-fx/armor-win.wav"
+    ],
+    "lose": [
+      "audio/character-fx/armor-lose.wav"
+    ]
+  },
+  "siren": {
+    "select": [
+      "audio/character-fx/siren-select.wav"
+    ],
+    "attack": [
+      "audio/character-fx/siren-attack.wav"
+    ],
+    "skill": [
+      "audio/character-fx/siren-skill.wav"
+    ],
+    "huntcutin": [
+      "audio/character-fx/siren-super.wav"
+    ],
+    "hit": [
+      "audio/character-fx/siren-hit.wav"
+    ],
+    "win": [
+      "audio/character-fx/siren-win.wav"
+    ],
+    "lose": [
+      "audio/character-fx/siren-lose.wav"
+    ]
+  }
+}

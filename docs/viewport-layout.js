@@ -1,8 +1,12 @@
 // Keep desktop selection controls beside the artwork, without scaling the UI.
 export function installViewportLayout(){
- const fine=matchMedia('(any-pointer:fine) and (orientation:landscape)'),main=document.querySelector('#game-main'),panel=document.querySelector('#selection');
+ const fine=matchMedia('(orientation:landscape)'),main=document.querySelector('#game-main'),panel=document.querySelector('#selection');
+ const touch=matchMedia('(any-pointer:coarse)');
+ const classify=()=>document.body.classList.toggle('touch-device',navigator.maxTouchPoints>0||touch.matches);
+ touch.addEventListener('change',classify);classify();
  const sidebar=document.createElement('div');sidebar.className='selection-sidebar';
  const settings=document.createElement('div');settings.className='selection-settings-side';
+ const settingsCopy=document.createElement('div');settingsCopy.className='selection-settings-copy';settings.append(settingsCopy);
  main.prepend(sidebar);panel.append(settings);
  const moves=[];
  function relocate(selector,target){
@@ -10,7 +14,8 @@ export function installViewportLayout(){
   node.before(anchor);moves.push({node,anchor,target});
  }
  for(const selector of ['.game-header','#game-nav','#achievements','#controls-help','#live','#game-main>footer'])relocate(selector,sidebar);
- for(const selector of ['#stage-picker','#selection-note','.selection-keys','.match-settings'])relocate(selector,settings);
+ for(const selector of ['#stage-picker','#selection-note','.selection-keys'])relocate(selector,settingsCopy);
+ relocate('.match-settings',settings);
  function arrange(){
   for(const {node,anchor,target} of moves){if(fine.matches)target.append(node);else anchor.after(node)}
   sidebar.hidden=!fine.matches;settings.hidden=!fine.matches;
