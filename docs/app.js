@@ -1,5 +1,5 @@
-import {EncounterGate} from './encounter-gate.js?v=0.45';
-import {installStoryDialog} from './story-encounters.js?v=0.45';
+import {EncounterGate} from './encounter-gate.js?v=0.46';
+import {installStoryDialog} from './story-encounters.js?v=0.46';
 import {AttractLoop} from './attract-loop.js?v=0.42';
 import {installViewportLayout} from './viewport-layout.js?v=0.40';
 installViewportLayout();
@@ -8,7 +8,7 @@ import {installTouchControls} from './touch-controls.js?v=0.23';
 import {createCombatAudio,combatEvents} from './combat-audio.js?v=0.20';
 import {installScoreNameFit} from './score-name-fit.js?v=0.20';
 import {TEST_BUILD} from './build-config.mjs?v=0.38';
-import {installLanguageUI,translate} from './i18n.js?v=0.45';
+import {installLanguageUI,translate} from './i18n.js?v=0.46';
 import {drawNet} from './net-art.js?v=0.20';
 import {createBallRenderer} from './ball-effects.js?v=0.20';
 import {updateChargeMeter,chargeTone} from './charge-meter.js?v=0.20';
