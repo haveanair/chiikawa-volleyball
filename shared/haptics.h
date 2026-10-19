@@ -7,15 +7,19 @@
 typedef struct VolleyHapticPattern { uint16_t ms[3]; uint8_t count; } VolleyHapticPattern;
 static inline VolleyHapticPattern volley_haptic_pattern(uint32_t events) {
  VolleyHapticPattern p={{0,0,0},0};
- if(events&1024u){p.ms[0]=85;p.ms[1]=45;p.ms[2]=110;p.count=3;}
- else if(events&256u){p.ms[0]=35;p.ms[1]=30;p.ms[2]=75;p.count=3;}
- else if(events&512u){p.ms[0]=45;p.ms[1]=25;p.ms[2]=90;p.count=3;}
- else if(events&(2048u|4096u|8192u|16384u)){p.ms[0]=65;p.count=1;}
- else if(events&(32u|64u)){p.ms[0]=25;p.ms[1]=35;p.ms[2]=25;p.count=3;}
- else if(events&8u){p.ms[0]=22;p.count=1;}
- else if(events&16u){p.ms[0]=12;p.count=1;}
+ if(events&(512u|32u)){p.ms[0]=1000;p.count=1;}
+ else if(events&(1024u|256u|2048u|4096u|8192u|16384u|8u)){p.ms[0]=133;p.count=1;}
+ else if(events&(64u|(1u<<21)|(1u<<22))){p.ms[0]=267;p.count=1;}
+ else if(events&(1u<<20)){p.ms[0]=67;p.count=1;}
  return p;
 }
+/* Use this variant for the final ground collision (impact_beat >= 6). */
+static inline VolleyHapticPattern volley_haptic_pattern_context(uint32_t events,unsigned impact_beat) {
+ VolleyHapticPattern p=volley_haptic_pattern(events);
+ if((events&4096u)&&impact_beat>=6){p.ms[0]=267;p.count=1;}
+ return p;
+}
+/* UI events: cursor 1<<20, confirm 1<<21, full gauge 1<<22. */
 /* Adapter callback: on=1 starts motor, on=0 stops it. Call tick with ~17ms
    each GBA VBlank. Bind set_motor to the existing Hamo Ayo rumble driver. */
 typedef struct VolleyHapticDriver {
@@ -30,6 +34,12 @@ static inline void volley_haptic_stop(VolleyHapticDriver *d) {
 }
 static inline void volley_haptic_event(VolleyHapticDriver *d,uint32_t events) {
  VolleyHapticPattern p=volley_haptic_pattern(events);
+ if(!p.count)return;
+ d->pattern=p;d->index=0;d->remaining_ms=p.ms[0];
+ if(d->set_motor)d->set_motor(1);
+}
+static inline void volley_haptic_event_context(VolleyHapticDriver *d,uint32_t events,unsigned impact_beat) {
+ VolleyHapticPattern p=volley_haptic_pattern_context(events,impact_beat);
  if(!p.count)return;
  d->pattern=p;d->index=0;d->remaining_ms=p.ms[0];
  if(d->set_motor)d->set_motor(1);

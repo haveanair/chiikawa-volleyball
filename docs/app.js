@@ -1,4 +1,4 @@
-import {createHaptics} from './haptics.js?v=0.29';
+import {createHaptics,HAPTIC_CURSOR,HAPTIC_CONFIRM,HAPTIC_MAX} from './haptics.js?v=0.30';
 import {installTouchControls} from './touch-controls.js?v=0.23';
 import {createCombatAudio,combatEvents} from './combat-audio.js?v=0.20';
 import {installScoreNameFit} from './score-name-fit.js?v=0.20';
@@ -17,6 +17,8 @@ import {PeerMatch} from './peer.js?v=0.20';
 import {roster,stages,fresh,goals,unlocked,recordWin,loadProgress} from './progress.mjs?v=0.28';
 import {actor,background} from './art.js?v=0.20';
 const haptics=createHaptics();
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(b&&!b.disabled&&!b.closest('#touch')&&b.id!=='vibration-toggle'&&b.getAttribute('aria-disabled')!=='true')haptics.play(HAPTIC_CONFIRM)},true);
+document.addEventListener('change',e=>{if(e.target instanceof HTMLSelectElement)haptics.play(HAPTIC_CURSOR)});
 const vibrationButton=document.querySelector('#vibration-toggle');
 function showVibration(){vibrationButton.textContent=haptics.supported?(haptics.enabled?'진동 켜짐':'진동 꺼짐'):'진동 미지원';vibrationButton.disabled=!haptics.supported}
 vibrationButton.onclick=()=>{haptics.setEnabled(!haptics.enabled);showVibration();if(haptics.enabled)haptics.play(8)};showVibration();
@@ -31,7 +33,7 @@ let core;
 let soundContext;const combatAudio=createCombatAudio();
 const ballRenderer=createBallRenderer();let chargeSeen=[0,0];
 document.addEventListener('pointerdown',()=>{try{soundContext??=new AudioContext();soundContext.resume().catch(()=>{})}catch{}});
-function effects(events){haptics.play(events);if(!events||muted)return;try{soundContext??=new AudioContext();if(soundContext.state!=='running')return;combatAudio.play(soundContext,events).catch(console.error);if(combatEvents(events).length)return;const osc=soundContext.createOscillator(),gain=soundContext.createGain(),now=soundContext.currentTime;osc.type=(events&8)?'triangle':'sine';osc.frequency.setValueAtTime((events&8)?740:(events&16)?130:430,now);osc.frequency.exponentialRampToValueAtTime((events&8)?180:220,now+.09);gain.gain.setValueAtTime(.035,now);gain.gain.exponentialRampToValueAtTime(.001,now+.11);osc.connect(gain);gain.connect(soundContext.destination);osc.start(now);osc.stop(now+.12)}catch{}}
+function effects(events){haptics.play(events,{impactBeat:get(27)});if(!events||muted)return;try{soundContext??=new AudioContext();if(soundContext.state!=='running')return;combatAudio.play(soundContext,events).catch(console.error);if(combatEvents(events).length)return;const osc=soundContext.createOscillator(),gain=soundContext.createGain(),now=soundContext.currentTime;osc.type=(events&8)?'triangle':'sine';osc.frequency.setValueAtTime((events&8)?740:(events&16)?130:430,now);osc.frequency.exponentialRampToValueAtTime((events&8)?180:220,now+.09);gain.gain.setValueAtTime(.035,now);gain.gain.exponentialRampToValueAtTime(.001,now+.11);osc.connect(gain);gain.connect(soundContext.destination);osc.start(now);osc.stop(now+.12)}catch{}}
 try{const response=await fetch('./public/game.wasm?v=0.20',{cache:'no-store'});if(!response.ok)throw Error('game.wasm HTTP '+response.status);core=(await WebAssembly.instantiate(await response.arrayBuffer())).instance.exports}catch(e){$('select-title').textContent='경기 코어를 불러오지 못했습니다. 실행하기.cmd로 실행해 주세요.';console.error(e);throw e}
 const get=(f,s=0)=>(net?.connected&&!net.host&&netState)?netState[f*2+(s&1)]:core.get(f,s),keys=new Set(),edges=new Set(),touchKeys=new Set();
 function save(){try{localStorage.setItem('chiivolley.progress.v1',JSON.stringify(p))}catch{$('save-note').textContent='저장 공간을 사용할 수 없어 이번 실행에서만 기록됩니다.'}}
@@ -44,11 +46,12 @@ function portraits(preview=chosen[selectSide]){
  $('versus-context').textContent=mode===1?'친구와 2인 대전':`${stage+1} STAGE\n${stages[stage][0]}`;
  $('selection').dataset.turn=String(selectSide+1);
 }
+let cursorCharacter=null;
 function cards(){const grid=$('roster');grid.replaceChildren();$('select-title').textContent=mode===1?`${selectSide+1}P · 캐릭터를 선택하세요`:`${stage+1}스테이지 · 캐릭터를 선택하세요`;
  for(const r of roster){const open=unlocked(p,r.id),b=document.createElement('button');b.className='character'+(chosen[selectSide]===r.id?' selected':'');b.dataset.id=r.id;b.style.setProperty('--wash',r.wash);b.setAttribute('aria-pressed',String(chosen[selectSide]===r.id));b.setAttribute('aria-disabled',String(!open));b.setAttribute('aria-label',r.name+(open?' 선택':' · '+(goals.find(g=>g.id===r.id)?.text||'')));
  const pic=document.createElement('canvas');pic.width=180;pic.height=150;actor(pic.getContext('2d'),r.id,90,r.id==='armor'?80:r.id==='siren'?72:r.id==='pajamas'?78:90,r.id==='armor'?1.85:r.id==='siren'?1.8:1.5,0,0,{portrait:true,selection:true,upperBody:r.id==='armor'});if(!open)pic.style.opacity='.35';const label=document.createElement('b');label.textContent=r.name;const sub=document.createElement('small');sub.textContent=open?'선택 가능':goals.find(g=>g.id===r.id)?.text||'';b.append(pic,label,sub);
  const flags=[];if(chosen[0]===r.id)flags.push('1P');if(mode===1&&chosen[1]===r.id)flags.push('2P');if(!open||flags.length){const flag=document.createElement('span');flag.className='cursor-tag';flag.textContent=open?flags.join(' / '):'🔒';b.append(flag)}
- const inspect=()=>{portraits(r.id);$('selection-note').textContent=open?`${selectSide+1}P · ${r.name} — 선택 후 결정 버튼을 눌러주세요.`:`${r.name} 해금 조건: ${sub.textContent}`};b.onpointerenter=inspect;b.onfocus=inspect;b.onclick=()=>{if(!open){inspect();return}chosen[selectSide]=r.id;voices.play(r.id,'select',selectSide);cards();$('start').focus({preventScroll:true});$('selection-note').textContent=`${selectSide+1}P · ${r.name} 선택`};grid.append(b)}
+ const inspect=()=>{if(cursorCharacter!==r.id){cursorCharacter=r.id;haptics.play(HAPTIC_CURSOR)}portraits(r.id);$('selection-note').textContent=open?`${selectSide+1}P · ${r.name} — 선택 후 결정 버튼을 눌러주세요.`:`${r.name} 해금 조건: ${sub.textContent}`};b.onpointerenter=inspect;b.onfocus=inspect;b.onclick=()=>{if(!open){inspect();return}chosen[selectSide]=r.id;voices.play(r.id,'select',selectSide);cards();$('start').focus({preventScroll:true});$('selection-note').textContent=`${selectSide+1}P · ${r.name} 선택`};grid.append(b)}
  $('start').textContent=mode===1&&selectSide===0?'1P 결정 · 2P 선택 →':'선택 결정 · 경기 시작 →';$('stage-picker').hidden=mode===1;portraits();$('selection-note').textContent=TEST_BUILD?'테스트판 · 모든 캐릭터와 5개 스테이지를 자유롭게 선택할 수 있어요.':'처음에는 치이카와 · 하치와레 · 우사기를 선택할 수 있어요.';
 }
 function showTitle(){if(net){const old=net;net=null;old.close()}stop();document.body.classList.add('title-open');$('title-screen').hidden=false;drawTitle($('title-art'));$('title-start').disabled=false;play(1);$('title-start').focus()}
@@ -66,7 +69,7 @@ function tick(){if(net?.connected&&!net.host){net.send({type:'input',bits:bits(0
 function render(){c.setTransform(2,0,0,2,0,0);t=get(32);c.fillStyle='#32434b';c.fillRect(0,0,432,304);c.save();const shake=cameraOffset(get);c.translate(...shake);background(c,stage,t);for(let side=0;side<2;side++)drawPlayer(c,get,characterIds(),side);
  drawNet(c);
  ballRenderer.draw(c,get);drawSuper(c,get,characterIds(),[$('name1').textContent,$('name2').textContent]);c.restore();
- $('points').textContent=`${get(5,0)} : ${get(5,1)}`;for(let side=0;side<2;side++){const charge=get(7,side);updateChargeMeter($('meter'+(side+1)),charge,get(8,side),side);if(charge>chargeSeen[side]&&!muted)chargeTone(soundContext,charge===10);chargeSeen[side]=charge;}
+ $('points').textContent=`${get(5,0)} : ${get(5,1)}`;for(let side=0;side<2;side++){const charge=get(7,side);updateChargeMeter($('meter'+(side+1)),charge,get(8,side),side);if(charge===10&&chargeSeen[side]<10)haptics.play(HAPTIC_MAX);if(charge>chargeSeen[side]&&!muted)chargeTone(soundContext,charge===10);chargeSeen[side]=charge;}
 
  let msg=paused?'일시정지':get(6)===4?'READY?':get(6)===2?'다음 서브!':get(17)===8?'':performance.now()<toastUntil?toastText:'';if(msg){c.font='bold 20px "PocketKO"';c.textAlign='center';c.lineWidth=5;c.strokeStyle='#fffdf1';c.strokeText(translate(msg),216,110);c.fillStyle='#405c54';c.fillText(translate(msg),216,110)}}
 const titleMotion=matchMedia('(prefers-reduced-motion: reduce)');let titleFrameAt=0,endingFrameAt=0;
