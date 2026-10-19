@@ -1,5 +1,5 @@
-import {EncounterGate} from './encounter-gate.js?v=0.46';
-import {installStoryDialog} from './story-encounters.js?v=0.46';
+import {EncounterGate} from './encounter-gate.js?v=0.47';
+import {installStoryDialog} from './story-encounters.js?v=0.47';
 import {AttractLoop} from './attract-loop.js?v=0.42';
 import {installViewportLayout} from './viewport-layout.js?v=0.40';
 installViewportLayout();
@@ -8,7 +8,7 @@ import {installTouchControls} from './touch-controls.js?v=0.23';
 import {createCombatAudio,combatEvents} from './combat-audio.js?v=0.20';
 import {installScoreNameFit} from './score-name-fit.js?v=0.20';
 import {TEST_BUILD} from './build-config.mjs?v=0.38';
-import {installLanguageUI,translate} from './i18n.js?v=0.46';
+import {installLanguageUI,translate} from './i18n.js?v=0.47';
 import {drawNet} from './net-art.js?v=0.20';
 import {createBallRenderer} from './ball-effects.js?v=0.20';
 import {updateChargeMeter,chargeTone} from './charge-meter.js?v=0.20';
@@ -78,8 +78,8 @@ function record(){if(mode!==0)return;const before=goals.filter(g=>unlocked(p,g.i
 let toastUntil=0,toastText='';function toast(s){toastText=s;toastUntil=performance.now()+4000;$('live').textContent=s}
 function finish(){if(handled)return;handled=true;record();const win=get(10)===0,before=roster.filter(r=>unlocked(p,r.id)).map(r=>r.id);if(mode===0){recordWin(p,stage,get(5,0),get(5,1));save();}const names=roster.filter(r=>!before.includes(r.id)&&unlocked(p,r.id)).map(r=>r.name);$('result-title').textContent=mode===1?(localCPU()?(win?'승리!':'컴퓨터 승리!'):`${get(10)+1}P 승리!`):win?'승리! 다음 코트로 가볼까요?':'아쉬워요! 다시 도전해 봐요.';$('result-detail').textContent=`${get(5,0)} : ${get(5,1)}`+(names.length?` · 새 친구: ${names.join(', ')}`:'');$('next').textContent=mode===0&&win?(stage===4?'엔딩 보기 →':'다음 스테이지 선택 →'):'다시 캐릭터 선택 →';$('result').hidden=false;drawGoals();}
 function bits(side){const m=side?['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Enter']:['KeyA','KeyD','KeyW','KeyS','KeyF'];let b=0;for(let i=0;i<4;i++)if(keys.has(m[i])||touchKeys.has(m[i]))b|=1<<i;for(let i=4;i<5;i++)if(edges.has(m[i]))b|=1<<i;return b}
-const demoHeroes=['chiikawa','hachiware','usagi','rakko','momonga'];
-function characterIds(){return attract?.showingDemo?[demoHeroes[attract.stage],stages[attract.stage][2]]:[chosen[0],mode===1?chosen[1]:stages[stage][2]]}
+const demoPairs=[['chiikawa','usagi'],['chiikawa','hachiware'],['hachiware','usagi'],['chiikawa','duo'],['duo','siren']];
+function characterIds(){return attract?.showingDemo?demoPairs[attract.stage]:[chosen[0],mode===1?chosen[1]:stages[stage][2]]}
 function observeVoices(){const ids=characterIds();for(let side=0;side<2;side++){const serial=get(24,side);if(serial!==voiceSeen[side]){voiceSeen[side]=serial;const cue=get(25,side),category=cue===4?'hit':cueCategory[cue];if(category)voices.play(ids[side],category,side)}}}
 function sendGuestInput(){if(!running||paused||!net?.connected||net.host)return;if(net.send({type:'input',bits:bits(0)}))edges.delete('KeyF')}
 function tick(){if(net?.connected&&!net.host){sendGuestInput();edges.clear();return}core.step(bits(0),net?.connected?remoteBits:bits(1));remoteBits&=15;edges.clear();if(net?.connected){const state=[];for(let f=0;f<STATE_FIELDS;f++)for(let s=0;s<2;s++)state.push(core.get(f,s));net.send({type:'state',state})}record();observeVoices();const events=core.sounds();effects(events);if(net?.connected&&events)net.send({type:'sfx',events});if(get(6)===3)finish();t++;}
@@ -90,15 +90,15 @@ function render(){c.setTransform(2,0,0,2,0,0);t=get(32);c.fillStyle='#32434b';c.
 
  let msg=paused?'일시정지':get(6)===4?'READY?':get(6)===2?'다음 서브!':get(17)===8?'':performance.now()<toastUntil?toastText:'';if(msg){c.font='bold 20px "PocketKO"';c.textAlign='center';c.lineWidth=5;c.strokeStyle='#fffdf1';c.strokeText(translate(msg),216,110);c.fillStyle='#405c54';c.fillText(translate(msg),216,110)}}
 const titleMotion=matchMedia('(prefers-reduced-motion: reduce)');let titleFrameAt=0,endingFrameAt=0;
-function frame(now){attract?.update(now,!document.hidden);if(!$('ending').hidden&&!document.hidden&&now-endingFrameAt>=40){drawEnding($('ending-art').getContext('2d'),titleMotion.matches?0:now/120);endingFrameAt=now;}if(document.body.classList.contains('title-open')&&!document.hidden&&now-titleFrameAt>=40){drawTitle($('title-art'),titleMotion.matches?0:now);titleFrameAt=now}if(running){acc+=Math.min(now-last,150);if(!paused){let count=0;while(acc>=1000/25&&count++<5){tick();acc-=1000/25}}else acc=0;render()}if(attract?.showingDemo){acc+=Math.min(now-last,150);let steps=0;while(acc>=1000/25&&steps++<5){demoCore.step(0,0);observeVoices();effects(demoCore.sounds());acc-=1000/25}render()}last=now;requestAnimationFrame(frame)}
+function frame(now){attract?.update(now,!document.hidden);if(!$('ending').hidden&&!document.hidden&&now-endingFrameAt>=40){drawEnding($('ending-art').getContext('2d'),titleMotion.matches?0:now/120);endingFrameAt=now;}if(document.body.classList.contains('title-open')&&!document.hidden&&now-titleFrameAt>=40){drawTitle($('title-art'),titleMotion.matches?0:now);titleFrameAt=now}if(running){acc+=Math.min(now-last,150);if(!paused){let count=0;while(acc>=1000/25&&count++<5){tick();acc-=1000/25}}else acc=0;render()}if(attract?.showingDemo&&!storyFlow.previewing){acc+=Math.min(now-last,150);let steps=0;while(acc>=1000/25&&steps++<5){demoCore.step(0,0);observeVoices();effects(demoCore.sounds());acc-=1000/25}render()}last=now;requestAnimationFrame(frame)}
 function beginDemo(level){
  stop();document.body.classList.remove('title-open');document.body.classList.add('demo-open');
  for(const id of ['title-screen','selection','network','ending','result'])$(id).hidden=true;
  $('arena').hidden=false;$('arena').dataset.demoStage=String(level+1);$('demo-title').hidden=false;
  demoCore.init(2,level+1,15);configureTeams(demoCore,characterIds());
- const ids=characterIds();$('name1').textContent=roster.find(r=>r.id===ids[0]).name;$('name2').textContent=stages[level][1];
+ const ids=characterIds();$('name1').textContent=roster.find(r=>r.id===ids[0]).name;$('name2').textContent=roster.find(r=>r.id===ids[1]).name;
  $('stage-label').textContent=`DEMO · ${level+1} / 5 · ${stages[level][0]}`;
- voiceSeen=[0,0];chargeSeen=[0,0];ballRenderer.reset();acc=0;last=performance.now();play(stages[level][3]);render();
+ voiceSeen=[0,0];chargeSeen=[0,0];ballRenderer.reset();acc=0;last=performance.now();play(stages[level][3]);render();storyFlow.show({demo:true,stage:level,hero:ids[0],opponent:ids[1]});
 }
 attract=new AttractLoop({onTitle:()=>showTitle(false),onDemo:beginDemo});
 let demoExitUntil=0;
@@ -127,7 +127,7 @@ const fullscreenButtons=['mobile-fullscreen','title-fullscreen','selection-fulls
 for(const button of fullscreenButtons){button.hidden=!document.fullscreenEnabled;button.onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch(error){console.warn('Fullscreen unavailable',error)}}}
 document.addEventListener('fullscreenchange',()=>{for(const button of fullscreenButtons)button.textContent=document.fullscreenElement?'전체 화면 해제':'전체 화면';updateMobileView()});
 const touchScreen=matchMedia('(any-pointer:coarse)');function updateMobileView(){const dual=mode===1&&!net&&!localCPU()&&!attract?.showingDemo;document.body.classList.toggle('local-versus',dual);document.documentElement.style.setProperty('--play-height',(window.visualViewport?.height||innerHeight)+'px');document.documentElement.style.setProperty('--play-width',(window.visualViewport?.width||innerWidth)+'px');document.body.classList.toggle('mobile-match',(navigator.maxTouchPoints>0||touchScreen.matches)&&!$('arena').hidden);if($('arena').hidden)touchControls.reset();}touchScreen.addEventListener('change',updateMobileView);window.addEventListener('resize',updateMobileView);window.addEventListener('orientationchange',()=>{touchControls.reset();updateMobileView();});window.visualViewport?.addEventListener('resize',updateMobileView);new MutationObserver(updateMobileView).observe($('arena'),{attributes:true,attributeFilter:['hidden']});updateMobileView();
-const storyFlow=installStoryDialog({stage:()=>stage,hero:()=>chosen[0],opponent:()=>characterIds()[1],versus:()=>mode===1,onBeforeStart:()=>{if(netIntro){netIntro.finishLocal();return false}return true},onSpeak:(id,side)=>{voices.stop();voices.play(id,'select',side)},onSilence:()=>voices.stop(),expressionFor:(id,side)=>{const audio=voices.active.get(side);return id==='kurimanju'&&audio&&!audio.paused&&!audio.ended?'kya':undefined},onStart:()=>{keys.clear();edges.clear();touchControls.reset();startMatch()}});
+const storyFlow=installStoryDialog({stage:()=>stage,hero:()=>chosen[0],opponent:()=>characterIds()[1],versus:()=>mode===1,onBeforeStart:()=>{if(netIntro){netIntro.finishLocal();return false}return true},onSpeak:(id,side)=>{voices.stop();voices.play(id,'select',side)},onSilence:()=>voices.stop(),expressionFor:(id,side)=>{const audio=voices.active.get(side);return id==='kurimanju'&&audio&&!audio.paused&&!audio.ended?'kya':undefined},onStart:(demo)=>{keys.clear();edges.clear();touchControls.reset();if(demo){acc=0;last=performance.now();return}startMatch()}});
 for(const [id,fn] of Object.entries({story:()=>{mode=0;selection(true)},versus:()=>{mode=1;selection()},home:()=>selection(),start, pause:()=>{paused=!paused;touchControls.reset();$('pause').textContent=paused?'계속하기':'일시정지';keys.clear();edges.clear()},sound:()=>{muted=!muted;music.muted=muted;$('sound').textContent=muted?'♫ 음악 꺼짐':'♫ 음악 켜짐';if(!muted)music.play().catch(()=>{})},next:()=>{if(net){$('online').click();return}if(mode===0&&get(10)===0){if(stage===4){p.ending=true;save();drawGoals();drawEnding($('ending-art').getContext('2d'));stop();$('arena').hidden=true;$('ending').hidden=false;play(6);return}stage++}selection()},again:()=>{mode=0;selection(true)}}))$(id).onclick=fn;
 $('versus-opponent').onchange=()=>{$('cpu-level-label').hidden=!localCPU();cards();updateMobileView()};
 function startNetworkMatch(){storyFlow.cancel();netIntro?.cancel();netIntro=null;$('network').hidden=true;startMatch()}
