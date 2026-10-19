@@ -49,6 +49,14 @@ function portraits(preview=chosen[selectSide]){
  $('selection').dataset.turn=String(selectSide+1);
 }
 let cursorCharacter=null;
+function restoreChosenPreview(){
+ cursorCharacter=null;
+ portraits();
+ const selected=roster.find(r=>r.id===chosen[selectSide]);
+ $('selection-note').textContent=`${selectSide+1}P · ${selected.name} 선택`;
+}
+$('roster').addEventListener('pointerleave',restoreChosenPreview);
+$('roster').addEventListener('focusout',event=>{if(!$('roster').contains(event.relatedTarget))restoreChosenPreview()});
 function cards(){const grid=$('roster');grid.replaceChildren();$('select-title').textContent=mode===1?`${selectSide+1}P · 캐릭터를 선택하세요`:`${stage+1}스테이지 · 캐릭터를 선택하세요`;
  for(const r of roster){const open=unlocked(p,r.id),b=document.createElement('button');b.className='character'+(chosen[selectSide]===r.id?' selected':'');b.dataset.id=r.id;b.style.setProperty('--wash',r.wash);b.setAttribute('aria-pressed',String(chosen[selectSide]===r.id));b.setAttribute('aria-disabled',String(!open));b.setAttribute('aria-label',r.name+(open?' 선택':' · '+(goals.find(g=>g.id===r.id)?.text||'')));
  const pic=document.createElement('canvas');pic.width=180;pic.height=150;actor(pic.getContext('2d'),r.id,90,r.id==='armor'?80:r.id==='siren'?72:r.id==='pajamas'?78:90,r.id==='armor'?1.85:r.id==='siren'?1.8:1.5,0,0,{portrait:true,selection:true,upperBody:r.id==='armor'});if(!open)pic.style.opacity='.35';const label=document.createElement('b');label.textContent=r.name;const sub=document.createElement('small');sub.textContent=open?'선택 가능':goals.find(g=>g.id===r.id)?.text||'';b.append(pic,label,sub);
