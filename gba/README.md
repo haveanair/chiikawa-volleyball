@@ -1,6 +1,6 @@
 # 치이카와 배구 GBA · Chiikawa Volleyball GBA
 
-**v0.5 개발 테스트판 · 한국어 / English · 잠금판과 전체 해금판**
+**v0.5.1 개발 테스트판 · 한국어 / English · 잠금판과 전체 해금판**
 
 제작 **파워덕질 2026** · © 나가노 · 치이카와 · 비영리 2차 창작 팬게임
 
@@ -8,14 +8,14 @@
 
 ## 다운로드 / Downloads
 
-**[전체 패키지 ZIP 받기](https://github.com/haveanair/chiikawa-volleyball/releases/download/gba-v0.5/chiikawa-volleyball-gba-v0.5.zip)** — 두 ROM, 실행 바로가기, 설명서, 실제 실행 화면과 검증 기록이 포함되어 있습니다.
+**[전체 패키지 ZIP 받기](https://github.com/haveanair/chiikawa-volleyball/releases/download/gba-v0.5.1/chiikawa-volleyball-gba-v0.5.1.zip)** — 두 ROM, 실행 바로가기, 설명서, 실제 실행 화면과 검증 기록이 포함되어 있습니다.
 
 | 버전 / Build | 내용 / Availability | 다운로드 / Download |
 | --- | --- | --- |
-| 잠금판 / Locked | 치이카와·하치와레·우사기로 시작, 도전과제로 추가 해금 / Start with the main trio; unlock the rest through achievements | [32 MiB ROM](https://github.com/haveanair/chiikawa-volleyball/releases/download/gba-v0.5/chiikawa-volleyball-v0.5-locked.gba) |
-| 전체 해금판 / All unlocked | 14개 캐릭터 슬롯 모두 선택 / All 14 roster slots available | [32 MiB ROM](https://github.com/haveanair/chiikawa-volleyball/releases/download/gba-v0.5/chiikawa-volleyball-v0.5-unlocked.gba) |
+| 잠금판 / Locked | 치이카와·하치와레·우사기로 시작, 도전과제로 추가 해금 / Start with the main trio; unlock the rest through achievements | [32 MiB ROM](https://github.com/haveanair/chiikawa-volleyball/releases/download/gba-v0.5.1/chiikawa-volleyball-v0.5.1-locked.gba) |
+| 전체 해금판 / All unlocked | 14개 캐릭터 슬롯 모두 선택 / All 14 roster slots available | [32 MiB ROM](https://github.com/haveanair/chiikawa-volleyball/releases/download/gba-v0.5.1/chiikawa-volleyball-v0.5.1-unlocked.gba) |
 
-[한국어 설명서 / Detailed guide](https://github.com/haveanair/chiikawa-volleyball/releases/download/gba-v0.5/README.ko.md) · [파일 해시 / SHA256 checksums](https://github.com/haveanair/chiikawa-volleyball/releases/download/gba-v0.5/SHA256SUMS.txt) · [웹 버전 플레이 / Play web version](https://haveanair.github.io/chiikawa-volleyball/)
+[한국어 설명서 / Detailed guide](https://github.com/haveanair/chiikawa-volleyball/releases/download/gba-v0.5.1/README.ko.md) · [파일 해시 / SHA256 checksums](https://github.com/haveanair/chiikawa-volleyball/releases/download/gba-v0.5.1/SHA256SUMS.txt) · [웹 버전 플레이 / Play web version](https://haveanair.github.io/chiikawa-volleyball/)
 
 **GitHub가 자동으로 제공하는 Source code ZIP은 실행용 ROM이 아닙니다. 위 패키지 또는 아래 Assets의 `.gba` 파일을 받으세요.**
 
@@ -42,13 +42,19 @@ GBA 에뮬레이터에서 `.gba` 파일을 여세요. Windows용 ZIP의 실행 �
 
 - 한국어·영어 타이틀, 메뉴, 캐릭터 이름, 안내, 도전과제, 경기 결과와 컷인 문구. 타이틀 L/R로 변경하며 언어 설정은 저장됩니다.
 - 스토리와 CPU 자유 대전의 난이도 3단계. 캐릭터 선택에서 승리 점수 10·15·20점 선택.
-- 최종 해상도에서 직접 그리는 UI 글꼴·점수, 원본에서 한 번 축소하는 캐릭터 변환과 가장자리 보정.
+- v0.4의 부드러운 글꼴·점수 표현 복귀. 타이틀·선택 화면 전용 고밀도 원본 변환과 전용 팔레트, 18캐릭터 3줄 애니메이션 엔딩.
+- 잠금 캐릭터는 목록과 미리보기에서 어두운 회색으로 표시하고, 해금하면 원래 색으로 복원.
+- 무입력 시 타이틀 20초와 CPU 데모 20초를 번갈아 표시. 데모는 1~5스테이지 반복, 중앙 상단 로고 점멸, 버튼 입력으로 타이틀 복귀. 데모 결과는 진행 기록에 합산하지 않습니다.
 - 5개 스테이지, 캐릭터별 목소리 또는 전용 효과음, MAX 게이지·완료음·진동, 파란 공 잔상, 초필살기 컷인·불꽃·화면 떨림.
 - 한잎이·두잎이는 한 슬롯에서 함께 등장하고 득점 후 역할을 교대합니다.
 
 ![GBA 타이틀 실제 실행](https://github.com/haveanair/chiikawa-volleyball/raw/main/gba/images/title-animation.gif)
 
 ![GBA 초필살기 실제 실행](https://github.com/haveanair/chiikawa-volleyball/raw/main/gba/images/super-sequence.gif)
+
+![잠금 캐릭터 회색 표시](https://github.com/haveanair/chiikawa-volleyball/raw/main/gba/images/locked-roster.png)
+
+![18캐릭터 엔딩 실제 실행](https://github.com/haveanair/chiikawa-volleyball/raw/main/gba/images/ending-animation.gif)
 
 ## 잠금판 해금 조건
 
@@ -72,20 +78,22 @@ CPU 자유 대전은 스토리 해금 실적에 합산하지 않습니다.
 
 현재는 **완성판이 아닌 개발 테스트판**입니다. mGBA에서 14종 경기 실행, 두 판의 언어 전환·저장, 잠금 조건과 전체 선택, 난이도, 음성·음악, 배경 재진입, 점수·게이지·필살기 연출을 검사했습니다. 일부 검사는 격리된 RAM 상태로 해금 조건·득점·공 접촉을 재현했으며 전체 스토리를 수동 완주했다는 의미는 아닙니다.
 
-실제 GBA 두 대의 케이블 통신, 플래시카트 진동 및 실기 오디오는 미검증입니다. **최종 18인 3줄 엔딩과 스크롤 스탭롤은 후속 작업**입니다. GBA의 240×160 해상도에 따른 세부 표현 한계도 있습니다. ZIP의 `verification` 폴더에서 해당 ROM 해시가 적힌 검증 기록을 확인할 수 있습니다.
+실제 GBA 두 대의 케이블 통신, 플래시카트 진동 및 실기 오디오는 미검증입니다. 18인 3줄 애니메이션 엔딩은 적용했으며, **최종 스크롤 스탭롤은 후속 작업**입니다. GBA의 240×160 해상도에 따른 세부 표현 한계도 있습니다. ZIP의 `verification` 폴더에서 해당 ROM 해시가 적힌 검증 기록을 확인할 수 있습니다.
 
 ## English
 
-**Chiikawa Volleyball GBA v0.5 is a non-commercial fan-game development build.** Download the package ZIP for both ROMs and documentation, or choose a standalone 32 MiB `.gba` file above.
+**Chiikawa Volleyball GBA v0.5.1 is a non-commercial fan-game development build.** Download the package ZIP for both ROMs and documentation, or choose a standalone 32 MiB `.gba` file above.
 
 - **Locked:** Start with Chiikawa, Hachiware and Usagi; unlock additional characters through achievements.
 - **All unlocked:** Select all 14 roster slots immediately. Story stages still open in order. The two ROM filenames keep saves separate in typical emulators.
+- **Attract mode:** After 20 seconds of title-screen inactivity, a 20-second CPU demo begins. Title and demo alternate, cycling through stages 1–5. Press a button to return to the title. Demo results do not change saved progress.
+- **Presentation:** Locked characters appear in dark grayscale; the v0.4 soft font style returns, alongside dedicated UI character art and an animated 18-character ending.
 - **Language:** Press L/R on the title screen to switch Korean / English. The setting is saved. Original character voices and music remain unchanged.
 - **Controls:** Left/right move, up jumps, A attacks, up+A performs an upper spike. After 10 ball hits fill MAX, an upper spike triggers a super shot. START pauses/continues; B while paused returns to character selection.
 - **Settings:** L/R changes the winning score (10/15/20) on character selection, or difficulty (Easy/Normal/Hard) on the story map / CPU stage screen.
 - **Emulator:** Open the `.gba` in a GBA emulator. Bundled Windows shortcuts expect RetroArch with mGBA at `C:\RetroArch-Win64`; otherwise open the ROM manually.
 
-The build has been tested in mGBA, including both language modes and character-availability variants. Physical two-console link play, cartridge rumble and real-hardware audio are unverified. The final full-cast ending and scrolling credits are unfinished. GitHub's automatic **Source code** archives are not playable ROM downloads.
+The build has been tested in mGBA, including both language modes and character-availability variants. Physical two-console link play, cartridge rumble and real-hardware audio are unverified. The animated 18-character ending is included; final scrolling credits remain unfinished. GitHub's automatic **Source code** archives are not playable ROM downloads.
 
 ## 제작 및 원작 / Credits
 
