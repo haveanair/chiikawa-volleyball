@@ -154,3 +154,11 @@ body.local-versus.mobile-match #touch .touch-local-attack{grid-column:1/3;grid-r
  body.touch-device .selection-settings-side>.selection-settings-copy{flex:1;min-height:0;overflow:auto;gap:9px}
  body.touch-device #selection .match-settings{flex:none;margin-top:0;gap:6px}
 }
+/* Solo landscape controls have thumb-sized square targets. Portrait and dual pads keep their layout. */
+@media(orientation:landscape){
+ body.touch-device.mobile-match:not(.local-versus) #arena{grid-template-columns:148px minmax(0,1fr) 100px}
+ body.touch-device.mobile-match:not(.local-versus) #touch .touch-left{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:68px 68px;gap:8px}
+ body.touch-device.mobile-match:not(.local-versus) #touch .touch-left button{width:68px;height:68px;min-height:68px;justify-self:center;padding:6px;font-size:28px;border-radius:22px}
+ body.touch-device.mobile-match:not(.local-versus) #touch .touch-jump{width:68px}
+ body.touch-device.mobile-match:not(.local-versus) #touch .touch-spike{width:88px;height:88px;min-height:88px;font-size:25px}
+}
