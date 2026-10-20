@@ -1,0 +1,31 @@
+{
+  "tag": "switch-v0.7.6",
+  "files": [
+    {
+      "name": "chiikawa-volleyball-switch-v0.7.6.zip",
+      "bytes": 381970819,
+      "sha256": "f3140cc624e7eec2e659a57ddb3766d9efe89543b2547a747404db25da3dd118"
+    },
+    {
+      "name": "chiikawa-volley-switch-v0.7.6-locked.nsp",
+      "bytes": 143374552,
+      "sha256": "2468f3273208831e9bc6f8532919999cb34f11f6f21eddcf6d0c20949706c6ae"
+    },
+    {
+      "name": "chiikawa-volley-switch-v0.7.6-unlocked.nsp",
+      "bytes": 143292632,
+      "sha256": "90442a527f16ffd068f67cd453b94221ead05fc647a8be1a93c06ef5dbdd99bb"
+    },
+    {
+      "name": "chiikawa-volley-switch-v0.7.6-unlocked.nro",
+      "bytes": 142124426,
+      "sha256": "0469bf4b557817f569ae3755d40733225d49b453825aa29fb7853146c17f6d6a"
+    },
+    {
+      "name": "README.ko.md",
+      "bytes": 3859,
+      "sha256": "cc2a8be13be402880c6687a15064079b8b474617872f91f93adda4bc2c1c4ade"
+    }
+  ],
+  "keyFilesIncluded": false
+}

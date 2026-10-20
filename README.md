@@ -1,121 +1,86 @@
-# 치이카와 배구 (Chiikawa Volley) · 무료 웹 배구 게임
+﻿# 치이카와 배구 · Chiikawa Volley
 
-**[치이카와 배구 / Play Chiikawa Volley — 웹에서 바로 플레이](https://haveanair.github.io/chiikawa-volleyball/)**
+**작은 친구들의 큰 승부!** 치이카와 친구들과 함께 즐기는 비영리 배구 팬게임입니다.
 
-PC·모바일 브라우저에서 무료로 즐기는 치이카와 배구 팬게임입니다. / A free Chiikawa Volley fan game for desktop and mobile browsers.
+**[웹에서 바로 플레이](https://haveanair.github.io/chiikawa-volleyball/) · [GBA 다운로드](https://github.com/haveanair/chiikawa-volleyball/releases/tag/gba-v0.5.7) · [Switch 다운로드](https://github.com/haveanair/chiikawa-volleyball/releases/tag/switch-v0.7.6)**
 
-**작은 친구들의 큰 승부! 치이카와 친구들과 함께하는 비영리 2차 창작 배구 팬게임입니다.**
+<a href="https://haveanair.github.io/chiikawa-volleyball/"><img src="docs/promo/chiikawa-volley-promo-v54.png" alt="치이카와 배구 — 스토리 5스테이지, 폰 하나로 2인 대전, 온라인 친구 대전. QR 찍고 바로 플레이!" width="500"></a>
 
-치이카와, 하치와레, 우사기를 비롯한 다양한 캐릭터를 골라 배구 대결을 즐겨 보세요. 하모 아요 배구 GBA와 피카츄배구의 경쾌한 게임성을 바탕으로, 캐릭터별 연출과 초필살기, 스토리 모드를 더했습니다.
+## 현재 배포 버전
 
-- **스토리 모드:** 하치와레의 집에서 세이렌의 동굴까지 이어지는 5개 스테이지
-- **다양한 캐릭터:** 주인공 친구들부터 파자마파티즈, 한잎이·두잎이, 곤충몬스터, 데카츠요, 세이렌까지
-- **대전:** 친구와 로컬 2인 대전, 자유롭게 상대를 고르는 컴퓨터 대전, 숫자 4자리 방 번호로 연결하는 온라인 친구 대전
-- **초필살기:** 공을 10번 튕겨 게이지를 채운 뒤 상단 스파이크를 맞히면 발동
-- **모바일 조작:** 스토리·온라인은 왼쪽 이동·점프와 오른쪽 공격. 로컬 2인 대전은 양쪽에 각각 이동·점프·공격 패드 제공
-- **경기 전 대화:** 선택한 주인공과 상대가 코트에 등장하고 하단에서 대화를 주고받습니다. 마지막 대사 뒤 준비 연출을 거쳐 경기가 시작되며 스킵·Esc도 지원합니다. 원작의 관계·말투에 기반한 게임용 각색입니다.
-- **타이틀 데모:** 타이틀 20초와 CPU 자동 경기 20초가 번갈아 재생되고, 1~5스테이지를 순환
-- **한국어 / 영어:** 타이틀 화면에서 언어 변경
-
-현재 개발 중인 **웹 버전**이며 처음에는 치이카와·하치와레·우사기를 선택할 수 있습니다. 나머지 캐릭터는 도전과제로 해금됩니다. 웹과 GBA는 C 언어 경기 코어를 공유합니다. **[GBA v0.5.5 다운로드 / 배포 안내](https://github.com/haveanair/chiikawa-volleyball/tree/main/gba)**에서 잠금판과 전체 해금판을 받을 수 있습니다.
-
-**[GBA판 다운로드 / GBA downloads](https://github.com/haveanair/chiikawa-volleyball/releases/tag/gba-v0.5.5) · [GBA 전용 안내 / GBA guide](https://github.com/haveanair/chiikawa-volleyball/tree/main/gba)**
-
-### 플레이 및 조작
-
-웹 주소: https://haveanair.github.io/chiikawa-volleyball/
-
-온라인 대전은 한 명이 방을 만들고, 친구가 같은 4자리 방 번호를 입력해 참가한 뒤 방장이 시작합니다.
-
-| 조작 | 1P | 2P | 스마트폰 |
+| 플랫폼 | 버전 | 실행 방법 | 대전 |
 |---|---|---|---|
-| 좌우 이동 | A / D | ← / → | 왼쪽 ◀ / ▶ |
-| 점프 | W | ↑ | 왼쪽 ▲ |
+| 웹 | v0.54 | PC·모바일 브라우저에서 설치 없이 실행 | 같은 기기 2인 / CPU / 온라인 친구 대전 |
+| GBA | v0.5.7 | GBA 에뮬레이터 또는 호환 환경에서 ROM 실행 | CPU / 케이블 통신 기능은 실기 미검증 |
+| Switch 홈브류 | v0.7.6 | 홈브류 실행 환경에서 NRO 또는 NSP 사용 | 같은 기기 2인 / CPU, 온라인 미지원 |
+
+GBA와 Switch는 **도전과제로 캐릭터를 해금하는 일반판**과 **14개 선택 캐릭터를 처음부터 사용할 수 있는 해금판**을 제공합니다. Switch 설치 이름은 일반판 **치이카와 배구**, 해금판 **치이카와 배구 · 해금버전**입니다. 타이틀 ID와 저장 파일이 달라 함께 설치할 수 있습니다.
+
+## 게임 소개
+
+- **5개 스토리 코트:** 하치와레의 집, 숲속, 마을, 인어섬, 세이렌의 동굴을 따라 대결합니다.
+- **캐릭터별 상호작용:** 경기 전 대화와 짧은 음성, 표정·몸짓으로 친구들의 관계를 표현합니다. 원작을 참고한 게임용 각색이며 [장면별 자료](docs/story-sources.md)를 정리했습니다.
+- **초필살기:** 공을 10번 튕겨 게이지를 채운 뒤 상단 스파이크를 맞히면 발동합니다.
+- **개별 난이도:** 스토리와 CPU 대전 난이도를 각각 설정합니다.
+- **오프닝과 데모:** 좌우 문구와 내려오는 로고, 캐릭터 대화와 CPU 랠리가 이어집니다.
+- **한국어·영어:** 타이틀에서 변경합니다. 제작자 표기는 한국어 **2026 파워덕질**, 영어 **2026 PowerOtaking**입니다.
+
+웹판은 치이카와·하치와레·우사기로 시작하고 도전과제로 친구를 해금합니다. 기록은 현재 브라우저에 저장되며 도전과제 메뉴의 **기록 백업 저장**으로 보관할 수 있습니다.
+
+## 웹판 조작
+
+| 동작 | 1P | 2P | 터치 |
+|---|---|---|---|
+| 좌우 이동 | A / D | ← / → | ◀ / ▶ |
+| 점프 | W | ↑ | ▲ |
 | 공격 | F | Enter | 공격 |
 | 상단 스파이크 | W + F | ↑ + Enter | ▲ + 공격 |
 
-스마트폰 한 대로 둘이 하려면 **게임 시작 → 2인 대전 → 1P 결정 → 2P 결정** 순서로 진행하세요. 가로로 놓으면 1P는 화면 왼쪽, 2P는 오른쪽의 패드로 각각 이동·점프·공격할 수 있습니다. 양쪽 패드는 위에서부터 **공격 → 점프(▲) → 좌우(◀ ▶)** 순서입니다. 공격과 점프를 동시에 눌러 상단 스파이크를 사용할 수 있습니다. 두 패드는 여러 손가락 입력을 독립적으로 처리합니다. 전체 화면은 선택 사항입니다. 2인 대전에서는 5개 배경을 자유롭게 고를 수 있습니다.
+**폰 하나로 2인 대전:** 게임 시작 → 2인 대전 → 두 캐릭터 선택. 가로 화면에서 왼쪽은 1P, 오른쪽은 2P 패드로 이동·점프·공격합니다. 여러 손가락 입력을 독립적으로 처리하며 전체 화면도 지원합니다.
 
-온라인에서는 **각자 자신의 기기에서 1P 조작(A/D/W/F 또는 1인용 터치 패드)**을 사용합니다. 한 명이 방 만들기, 다른 한 명이 4자리 번호로 참가한 뒤 방장이 대전 시작을 누르세요. 로컬 PC의 2P Enter 조작과 구별됩니다. 서로 같은 최신 버전으로 새로고침해 주세요.
+**CPU 대전:** 2인 대전에서 상대를 컴퓨터로 바꾸고 난이도·코트·캐릭터를 선택합니다. 컴퓨터가 2P를 조작합니다.
 
-온라인 입력은 변경 즉시 보내며, 전송이 밀릴 때 경기 상태는 최신 한 장만 남겨 오래된 화면이 계속 쌓이지 않도록 했습니다. 서버 중계·통신망 왕복 시간 자체는 남으므로 먼 거리나 불안정한 연결에서 모든 지연이 사라지는 것은 아닙니다. 가능하면 안정적인 Wi-Fi를 사용하고, 같은 장소라면 한 기기의 로컬 2인 대전으로 즐길 수 있습니다.
+**온라인 친구 대전은 웹판에서 지원합니다.** 한 명이 방을 만들고 다른 사람이 숫자 4자리 방 번호로 참가한 뒤 방장이 시작합니다. 각자 자기 기기에서 1P 조작을 사용하세요. 두 사람 모두 최신 페이지를 사용해야 하며 통신망에 따른 지연은 발생할 수 있습니다.
 
-도전과제는 현재 브라우저에 저장됩니다. **도전과제·친구 해금 → 기록 백업 저장**으로 기록을 파일에 보관할 수 있습니다. **도전과제 초기화**는 확인 창에서 승인한 경우에만 기록과 캐릭터 해금을 지우며, 취소하면 유지합니다. 기기·브라우저를 바꾸면 자동으로 이전되지 않습니다.
+## 이번 배포의 주요 변경
 
-타이틀 데모는 **타이틀 → 1스테이지 → 타이틀 → 2스테이지 → … → 5스테이지 → 타이틀 → 1스테이지** 순서입니다. 각 구간은 20초이며 데모 상단 중앙에 게임 로고가 깜빡입니다. 각 20초 데모는 앞부분의 **캐릭터 대화 자동 진행 → 준비 연출 → CPU 랠리**로 이어집니다. 긴 대화는 미리보기의 핵심 반응 4개로 줄이며, 실제 플레이에서는 전체 대화를 보여 줍니다. 코트 순서대로 치이카와/우사기, 치이카와/하치와레, 하치와레/우사기, 치이카와/한잎이·두잎이, 한잎이·두잎이/세이렌이 등장합니다. 대화 중에도 상단 중앙 로고가 깜빡이고, 기존 음성 설정을 따릅니다. 대사 장면의 캐릭터는 화면 확대·잘림과 대사창 높이를 함께 계산해 전신이 보이도록 배치하며, 데모와 실제 경기 전 대사에 같은 보정을 적용합니다. 화면을 누르거나 키를 입력하면 대화·경기 어디서든 타이틀로 돌아갑니다. 데모는 도전과제 기록에 반영되지 않습니다. 데모 리시브는 상대 코트로 보내는 포물선을 사용해 양쪽이 번갈아 공을 주고받습니다.
+| 플랫폼 | 변경 내용 |
+|---|---|
+| 웹 v0.54 | 오프닝·타이틀 위치와 비율 통일, 타이틀 중앙 정렬, 제작자 영문 전환, 난이도 물음표 수정, 쿠리만쥬 대화 표정 크기 통일 |
+| GBA v0.5.7 | 오프닝 이식·반복 재생, 코트·네트 원근 정렬, 양 언어 점검, 문구 충돌 직후 점 노이즈 제거와 초기 화면 표시 보강 |
+| Switch v0.7.6 | 일반판·해금판 분리, 이름·아이콘·설치 버전 정비, 독립 난이도, 시작 음성·다음 서브 표시, 온라인 메뉴 제외 |
 
-경기 전 대화는 치이카와 포켓의 실제 장면·대사, 사용자가 제공한 위키 본문, 공식 소개를 참고해 원작의 관계와 말투를 유지한 **게임용 각색**입니다. 선택한 캐릭터에 따라 대사·외침·몸짓이 달라지며, 원작에서 실제로 배구 대화를 나눴다고 주장하지 않습니다. 원작에서 길게 말하지 않는 캐릭터에게 긴 대사를 붙이지 않고, 팬 추측을 확정 설정으로 쓰지 않습니다. [장면별 확인 자료](docs/story-sources.md)를 참고하세요.
+**검증 범위:** 웹은 실제 공개 페이지에서 언어 전환·오프닝·경기 진입을 확인했습니다. GBA는 두 ROM의 mGBA 기반 에뮬레이터 검증을 마쳤으며 실기·진동 카트리지·케이블 대전은 미확인입니다. Switch는 PC 동작과 NSP 내부 이름·아이콘·코드·해시를 검사했으며, 패드 연결 화면 호출과 장시간 경기·엔딩 안정성은 실기 재확인이 필요합니다.
 
-모든 14개 선택 캐릭터는 1~5스테이지마다 서로 다른 첫 반응과 마무리 대사를 가집니다. 기본 스테이지 대화는 4·5·6·7·8차례로 달라지고, 먼저 반응하는 쪽과 대화 순서도 바뀝니다. 쿠리만쥬는 자신의 음성이 실제 재생되는 동안 전용 「캬」 표정으로 바뀌며, 재생 종료·다음 화자·스킵에서는 기본 표정으로 돌아옵니다.
+## 다운로드와 공유
 
-포켓의 원작 클립을 대조한 **21개 전용 장면·10개 캐릭터 매칭**을 적용했습니다. 피자만두, 푸딩, 간질이기, 초밥과 와사비, 같은 무기, 라멘 주문 연습, 어묵, 파자마 외출, 첫 만남, 별똥별, 수상한 지팡이, 사타판빈, 도토리와 포셰트 등의 기억을 활용합니다. 주인공끼리는 같은 매칭도 선택 코트에 따라 다른 에피소드가 나옵니다. 회상 대사는 **원작 클립 · 자체 번역**, 배구로 이어지는 부분은 **게임용 각색**으로 구분합니다. 원작의 짧은 말과 컷 속 반응을 번역·요약한 것으로, 정식 한국어판 대사의 재현은 아닙니다. 인어섬의 세 조합은 직접적인 줄거리 설명 대신 치이카와의 망설임과 묻지 않는 선택, 두 친구가 손을 꼭 잡는 반응, 세이렌의 짧은 대답과 시선으로 구성했습니다. 실제 대전과 데모 양쪽에 적용됩니다.
+- [웹 v0.54 배포 안내](https://github.com/haveanair/chiikawa-volleyball/releases/tag/web-v0.54)
+- [GBA v0.5.7 전체 ZIP·ROM](https://github.com/haveanair/chiikawa-volleyball/releases/tag/gba-v0.5.7) · [GBA 조작 안내](gba/README.md)
+- [Switch v0.7.6 전체 ZIP·NSP·NRO](https://github.com/haveanair/chiikawa-volleyball/releases/tag/switch-v0.7.6) · [Switch 안내](switch/README.md)
+- [새 소개 이미지 PNG](docs/promo/chiikawa-volley-promo-v54.png) · [QR PNG](docs/promo/chiikawa-volley-qr.png) · [인쇄용 QR SVG](docs/promo/chiikawa-volley-qr.svg)
 
-경기 전 대사가 바뀔 때 현재 화자의 캐릭터 음성 클립을 재생합니다. 기존 음성이 없는 캐릭터는 GBA판의 캐릭터별 소리를 사용합니다. 문장 전체를 읽는 합성 더빙은 아닙니다. 다음 대사·준비 연출·스킵·Esc에서 이전 소리를 멈추며, 음성 켜짐/꺼짐 설정을 따릅니다.
+릴리스의 **Assets**에서 실행 파일이나 전체 ZIP을 받으세요. GitHub가 자동 생성하는 **Source code ZIP은 실행용 패키지가 아닙니다.** 각 릴리스의 `SHA256SUMS.txt`로 파일을 확인할 수 있습니다. Switch 키 파일은 포함하지 않습니다.
 
-**컴퓨터 대전:** 게임 시작 → 2인 대전 → 대전 상대를 **컴퓨터**로 변경 → 난이도 1~5와 배경 선택 → 내 캐릭터 결정 → 컴퓨터 캐릭터 결정 순서로 진행합니다. 컴퓨터는 2P를 자동 조작하고, 스마트폰에는 1인용 패드를 표시합니다. 친구로 되돌리면 양쪽 패드가 나타납니다. 자유 대전 기록은 스토리 도전과제에 반영되지 않습니다.
+소개 이미지의 QR은 웹게임으로 연결됩니다. 새 포스터는 기존 게임 이미지를 참고한 AI 편집 홍보 이미지이며 실제 게임 화면과 일부 표현이 다를 수 있습니다.
 
-스토리뿐 아니라 친구·컴퓨터·온라인 대전에서도 **실제 캐릭터 매칭에 따른 상호작용**을 재생합니다. 치이카와/하치와레의 라멘, 치이카와/우사기의 피자만두, 하치와레/우사기의 파자마 에피소드와 인어섬 관련 조합 등은 전용 장면을 사용합니다. 전용 장면의 길이는 기본 스테이지 패턴과 다를 수 있습니다. 온라인은 양쪽이 대화 또는 스킵을 끝낼 때까지 기다린 뒤 함께 시작합니다. 통신 규약이 변경되었으므로 두 사람 모두 최신 페이지로 새로고침해 주세요.
+## English
 
-### QR로 공유하기
+**A little match with a big heart!** A non-commercial Chiikawa volleyball fan game for web browsers, GBA, and Nintendo Switch homebrew.
 
-게임을 소개할 때 아래 이미지를 저장하거나 링크해 사용할 수 있습니다. QR은 위 게임 주소로 바로 연결되며 별도 설치가 필요 없습니다.
+Five story courts, 14 roster slots, character encounters, special shots, and independent story/CPU difficulty. The browser version supports **two players on one phone**, CPU matches, and online friend matches with four-digit room codes. Switch supports local two-player and CPU matches; online play is not implemented. GBA cable play and Switch stability still need real-device verification.
 
-[홍보 포스터 PNG · 1080×1600](docs/promo/chiikawa-volley-promo.png) · [QR 단독 PNG · 984×984](docs/promo/chiikawa-volley-qr.png) · [인쇄용 QR SVG](docs/promo/chiikawa-volley-qr.svg)
+Current releases: **Web v0.54 · GBA v0.5.7 · Switch v0.7.6**. GBA and Switch offer achievement-locked and all-unlocked variants. Select Korean or English on the title screen. Download playable files from release **Assets** and check them with `SHA256SUMS.txt`.
 
-<a href="https://haveanair.github.io/chiikawa-volleyball/"><img src="docs/promo/chiikawa-volley-promo.png" alt="치이카와 배구 Chiikawa Volley — QR을 찍고 바로 플레이" width="480"></a>
+## 제작 및 원작 · Credits
 
----
-
-**A little match with a big heart! A non-commercial, fan-made volleyball game featuring the world of Chiikawa.**
-
-Choose Chiikawa, Hachiware, Usagi, and more for lively volleyball matches. Inspired by Hamo Ayo Volleyball for GBA and Pikachu Volleyball, the game adds character animations, special shots, and a five-stage story mode.
-
-- **Story mode:** Five courts, from Hachiware’s home to Siren’s cave
-- **Character roster:** Familiar friends, Pajama Parties, Hitohā and Futabā, the insect monster, Dekatsuyo, Siren, and more
-- **Versus play:** Local friends, selectable CPU opponents with five difficulty levels, and online friend matches using a four-digit room code
-- **Special shots:** Fill the gauge with 10 ball hits, then land an upward spike to unleash a special move
-- **Mobile controls:** Solo/online: movement and jump on the left, attack on the right. Local versus: a complete independent pad for each player on one phone
-- **Pre-match encounters:** Your chosen hero and opponent appear on the court, exchanging dialogue in a lower panel before a ready sequence starts the match. These are game adaptations based on the original personalities, with Continue and Skip buttons.
-- **Attract loop:** 20-second title and CPU demo segments, cycling through stages 1–5 without changing saved progress
-- **Languages:** Korean and English, selectable on the title screen
-
-This is a **web build in active development**. Chiikawa, Hachiware, and Usagi are available initially; additional characters unlock through achievements. The web and GBA builds share a C gameplay core. **[GBA v0.5.5 downloads and guide](https://github.com/haveanair/chiikawa-volleyball/tree/main/gba)** include locked and all-unlocked development ROMs.
-
-### How to play
-
-Web address: https://haveanair.github.io/chiikawa-volleyball/
-
-For online play, create a room, share its four-digit code with a friend, and start the match after they join.
-
-| Action | Player 1 | Player 2 | Mobile |
-|---|---|---|---|
-| Move | A / D | Left / Right | Left-side ◀ / ▶ |
-| Jump | W | Up | Left-side ▲ |
-| Attack | F | Enter | Attack |
-| Upward spike | W + F | Up + Enter | ▲ + Attack |
-
-For local play on one phone, select Local Versus, confirm both characters, and use the full 1P/2P touch pads on the left/right. In online play, both players use the Player 1 controls on their own devices. Changed inputs are sent immediately; congested state snapshots are replaced by the latest state. Internet round-trip latency still applies.
-
-Achievements are stored in the current browser. Export a backup before resetting them; reset requires a confirmation dialog. The title demos never modify achievement progress. Use the shareable [promo poster](docs/promo/chiikawa-volley-promo.png), [QR PNG](docs/promo/chiikawa-volley-qr.png), or [printable QR SVG](docs/promo/chiikawa-volley-qr.svg) to bring friends directly to the game.
-
-For CPU play, open Local Versus, set Opponent to Computer, choose difficulty (1–5), court and both characters. The CPU controls Player 2; mobile uses the solo touch pad. Switch back to Friend for dual pads. Free versus matches do not change story achievements. Matchup-based encounters also play in local, CPU and online matches; online play waits until both players finish or skip their encounter. Both players should refresh to the latest version.
-
-### Credits / 제작 및 원작
-
-제작 / Created by: **2026 파워덕질**
+제작 / Created by: **2026 파워덕질 / 2026 PowerOtaking**
 
 캐릭터 원작 / Original characters: **나가노 · 치이카와 / Nagano · Chiikawa**
 
-게임 기반 및 참고 / Game foundations and references: **하모 아요 배구 GBA / Hamo Ayo Volleyball GBA · 피카츄배구 / Pikachu Volleyball · 치이카와 포켓 / Chiikawa Pocket**
+게임 기반 및 참고: **하모 아요 배구 GBA · 피카츄배구 · 치이카와 포켓**
 
-비영리 2차 창작 팬게임입니다. 공식 게임이 아니며, 캐릭터·이미지·음원의 권리는 각 권리자에게 있습니다.
+비영리 2차 창작 팬게임이며 공식 게임이 아닙니다. 캐릭터·이미지·음원의 권리는 각 권리자에게 있습니다. / This is an unofficial, non-commercial fan game. Characters, artwork, and audio belong to their respective rights holders.
 
-This is an unofficial, non-commercial fan game. Characters, artwork, and audio belong to their respective rights holders.
+하모 아요 코드의 MIT 고지는 [LICENSE-HAMO-MIT](docs/LICENSE-HAMO-MIT.txt)를 참고하세요.
 
-하모 아요 코드의 MIT 고지는 [LICENSE-HAMO-MIT](docs/LICENSE-HAMO-MIT.txt)를 참고하세요. / See the linked file for the MIT notice covering the Hamo Ayo source code.
-
-### Source layout
-
-- `docs/`: Web game deployment files
-- `shared/`: C gameplay core for the web build and planned GBA port
-- `server/supabase/`: Dedicated four-digit room service, hosted on the existing Supabase project
+저장소 구성: `docs/` 웹게임 · `shared/` 공통 C 경기 코어 · `gba/` GBA 안내 · `switch/` Switch 안내 · `server/` 웹 온라인 서비스 소스.

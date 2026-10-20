@@ -1,0 +1,6 @@
+f3140cc624e7eec2e659a57ddb3766d9efe89543b2547a747404db25da3dd118  chiikawa-volleyball-switch-v0.7.6.zip
+2468f3273208831e9bc6f8532919999cb34f11f6f21eddcf6d0c20949706c6ae  chiikawa-volley-switch-v0.7.6-locked.nsp
+90442a527f16ffd068f67cd453b94221ead05fc647a8be1a93c06ef5dbdd99bb  chiikawa-volley-switch-v0.7.6-unlocked.nsp
+0469bf4b557817f569ae3755d40733225d49b453825aa29fb7853146c17f6d6a  chiikawa-volley-switch-v0.7.6-unlocked.nro
+cc2a8be13be402880c6687a15064079b8b474617872f91f93adda4bc2c1c4ade  README.ko.md
+f0728cb6bbb8e77c848c1b82b326dbe8fd454f91f1d8b2d5419e3c388b2a7244  manifest.json
