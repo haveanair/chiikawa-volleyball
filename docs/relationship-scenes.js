@@ -1,4 +1,4 @@
-import {clipEncounter} from './clip-encounters.js?v=0.47';
+import {clipEncounter} from './clip-encounters.js?v=0.52';
 // Speaker identities are mapped to 1P/2P so reversing selections preserves roles.
 const say=(who,ko,en,memory=false,motion="idle")=>({who,text:[ko,en],memory,motion});
 export function relationshipScene(a,b,variant=0){

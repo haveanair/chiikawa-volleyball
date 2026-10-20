@@ -102,7 +102,7 @@ For CPU play, open Local Versus, set Opponent to Computer, choose difficulty (1�
 
 ### Credits / 제작 및 원작
 
-제작 / Created by: **파워덕질 2026**
+제작 / Created by: **2026 파워덕질**
 
 캐릭터 원작 / Original characters: **나가노 · 치이카와 / Nagano · Chiikawa**
 

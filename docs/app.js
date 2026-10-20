@@ -1,26 +1,29 @@
-import {EncounterGate} from './encounter-gate.js?v=0.49';
-import {installStoryDialog} from './story-encounters.js?v=0.49';
-import {AttractLoop} from './attract-loop.js?v=0.42';
-import {installViewportLayout} from './viewport-layout.js?v=0.40';
+import {installCreatorCredits} from './creator-credits.js?v=0.52';
+import {createTitleOpening} from './title-opening.js?v=0.52';
+import {serveCue} from './serve-cue.js?v=0.52';
+import {EncounterGate} from './encounter-gate.js?v=0.52';
+import {installStoryDialog} from './story-encounters.js?v=0.52';
+import {AttractLoop} from './attract-loop.js?v=0.52';
+import {installViewportLayout} from './viewport-layout.js?v=0.52';
 installViewportLayout();
-import {createHaptics,HAPTIC_CURSOR,HAPTIC_CONFIRM,HAPTIC_MAX} from './haptics.js?v=0.31';
-import {installTouchControls} from './touch-controls.js?v=0.23';
-import {createCombatAudio,combatEvents} from './combat-audio.js?v=0.20';
-import {installScoreNameFit} from './score-name-fit.js?v=0.20';
-import {TEST_BUILD} from './build-config.mjs?v=0.38';
-import {installLanguageUI,translate} from './i18n.js?v=0.49';
-import {drawNet} from './net-art.js?v=0.20';
-import {createBallRenderer} from './ball-effects.js?v=0.20';
-import {updateChargeMeter,chargeTone} from './charge-meter.js?v=0.20';
-import {drawTitle,drawSelectionPortrait} from './menu-art.js?v=0.20';
-import {configureTeams,teamLabel} from './teams.js?v=0.20';
-import {drawEnding} from './ending-art.js?v=0.20';
-import {drawPlayer} from './player-render.js?v=0.20';
-import {STATE_FIELDS,cueCategory,cameraOffset,drawGroggy,drawSuper} from './super-effects.js?v=0.20';
-import {CharacterVoices} from './voices.js?v=0.40';
-import {PeerMatch} from './peer.js?v=0.42';
-import {roster,stages,fresh,goals,unlocked,recordWin,loadProgress} from './progress.mjs?v=0.28';
-import {actor,background} from './art.js?v=0.20';
+import {createHaptics,HAPTIC_CURSOR,HAPTIC_CONFIRM,HAPTIC_MAX} from './haptics.js?v=0.52';
+import {installTouchControls} from './touch-controls.js?v=0.52';
+import {createCombatAudio,combatEvents} from './combat-audio.js?v=0.52';
+import {installScoreNameFit} from './score-name-fit.js?v=0.52';
+import {TEST_BUILD} from './build-config.mjs?v=0.52';
+import {installLanguageUI,translate} from './i18n.js?v=0.52';
+import {drawNet} from './net-art.js?v=0.52';
+import {createBallRenderer} from './ball-effects.js?v=0.52';
+import {updateChargeMeter,chargeTone} from './charge-meter.js?v=0.52';
+import {drawTitle,drawSelectionPortrait} from './menu-art.js?v=0.52';
+import {configureTeams,teamLabel} from './teams.js?v=0.52';
+import {drawEnding} from './ending-art.js?v=0.52';
+import {drawPlayer} from './player-render.js?v=0.52';
+import {STATE_FIELDS,cueCategory,cameraOffset,drawGroggy,drawSuper} from './super-effects.js?v=0.52';
+import {CharacterVoices} from './voices.js?v=0.52';
+import {PeerMatch} from './peer.js?v=0.52';
+import {roster,stages,fresh,goals,unlocked,recordWin,loadProgress} from './progress.mjs?v=0.52';
+import {actor,background} from './art.js?v=0.52';
 const haptics=createHaptics();
 document.addEventListener('click',e=>{const b=e.target.closest('button');if(b&&!b.disabled&&!b.closest('#touch')&&b.id!=='vibration-toggle'&&b.getAttribute('aria-disabled')!=='true')haptics.play(HAPTIC_CONFIRM)},true);
 document.addEventListener('change',e=>{if(e.target instanceof HTMLSelectElement)haptics.play(HAPTIC_CURSOR)});
@@ -28,7 +31,7 @@ const vibrationButton=document.querySelector('#vibration-toggle');
 function showVibration(){vibrationButton.textContent=haptics.supported?(haptics.enabled?'진동 켜짐':'진동 꺼짐'):'진동 미지원';vibrationButton.disabled=!haptics.supported}
 vibrationButton.onclick=()=>{haptics.setEnabled(!haptics.enabled);showVibration();if(haptics.enabled)haptics.play(8)};showVibration();
 window.addEventListener('blur',()=>haptics.stop());document.addEventListener('visibilitychange',()=>{if(document.hidden)haptics.stop()});
-installLanguageUI();
+installLanguageUI();installCreatorCredits();
 installScoreNameFit();
 if(TEST_BUILD){document.querySelector('#selection .section-title span').textContent='테스트판 · 모든 캐릭터 개방';document.querySelector('.selection-keys').textContent='방향키 / W A S D: 이동\nEnter: 결정';}
 const $=id=>document.getElementById(id),canvas=$('court'),c=canvas.getContext('2d'),music=$('music');
@@ -39,7 +42,7 @@ let soundContext;const combatAudio=createCombatAudio();
 const ballRenderer=createBallRenderer();let chargeSeen=[0,0];
 document.addEventListener('pointerdown',()=>{try{soundContext??=new AudioContext();soundContext.resume().catch(()=>{})}catch{}});
 function effects(events){if(!attract?.showingDemo)haptics.play(events,{impactBeat:get(27)});if(!events||muted)return;try{soundContext??=new AudioContext();if(soundContext.state!=='running')return;combatAudio.play(soundContext,events).catch(console.error);if(combatEvents(events).length)return;const osc=soundContext.createOscillator(),gain=soundContext.createGain(),now=soundContext.currentTime;osc.type=(events&8)?'triangle':'sine';osc.frequency.setValueAtTime((events&8)?740:(events&16)?130:430,now);osc.frequency.exponentialRampToValueAtTime((events&8)?180:220,now+.09);gain.gain.setValueAtTime(.035,now);gain.gain.exponentialRampToValueAtTime(.001,now+.11);osc.connect(gain);gain.connect(soundContext.destination);osc.start(now);osc.stop(now+.12)}catch{}}
-try{const response=await fetch('./public/game.wasm?v=0.43',{cache:'no-store'});if(!response.ok)throw Error('game.wasm HTTP '+response.status);const wasm=await WebAssembly.instantiate(await response.arrayBuffer());core=wasm.instance.exports;demoCore=new WebAssembly.Instance(wasm.module).exports}catch(e){$('select-title').textContent='경기 코어를 불러오지 못했습니다. 실행하기.cmd로 실행해 주세요.';console.error(e);throw e}
+try{const response=await fetch('./public/game.wasm?v=0.51',{cache:'no-store'});if(!response.ok)throw Error('game.wasm HTTP '+response.status);const wasm=await WebAssembly.instantiate(await response.arrayBuffer());core=wasm.instance.exports;demoCore=new WebAssembly.Instance(wasm.module).exports}catch(e){$('select-title').textContent='경기 코어를 불러오지 못했습니다. 실행하기.cmd로 실행해 주세요.';console.error(e);throw e}
 const get=(f,s=0)=>attract?.showingDemo?demoCore.get(f,s):(net?.connected&&!net.host&&netState)?netState[f*2+(s&1)]:core.get(f,s),keys=new Set(),edges=new Set(),touchKeys=new Set();
 function save(){try{localStorage.setItem('chiivolley.progress.v1',JSON.stringify(p))}catch{$('save-note').textContent='저장 공간을 사용할 수 없어 이번 실행에서만 기록됩니다.'}}
 function play(n){const url=new URL(`audio/${String(n).padStart(2,'0')}.mp3`,location.href).href;if(music.src!==url){music.src=url;music.currentTime=0}music.muted=muted;music.volume=.45;music.play().then(()=>{$('title-music').hidden=true}).catch(()=>{if(document.body.classList.contains('title-open'))$('title-music').hidden=false});}
@@ -61,18 +64,20 @@ function restoreChosenPreview(){
 $('roster').addEventListener('pointerleave',restoreChosenPreview);
 $('roster').addEventListener('focusout',event=>{if(!$('roster').contains(event.relatedTarget))restoreChosenPreview()});
 function localCPU(){return mode===1&&!net&&$('versus-opponent').value==='cpu'}
-function cards(){$('versus-options').hidden=mode!==1;const grid=$('roster');grid.replaceChildren();$('select-title').textContent=mode===1?(selectSide===1&&localCPU()?'컴퓨터 · 캐릭터를 선택하세요':`${selectSide+1}P · 캐릭터를 선택하세요`):`${stage+1}스테이지 · 캐릭터를 선택하세요`;
+function cards(){$('story-level-label').hidden=mode!==0;$('versus-options').hidden=mode!==1;const grid=$('roster');grid.replaceChildren();$('select-title').textContent=mode===1?(selectSide===1&&localCPU()?'컴퓨터 · 캐릭터를 선택하세요':`${selectSide+1}P · 캐릭터를 선택하세요`):`${stage+1}스테이지 · 캐릭터를 선택하세요`;
  for(const r of roster){const open=unlocked(p,r.id),b=document.createElement('button');b.className='character'+(chosen[selectSide]===r.id?' selected':'');b.dataset.id=r.id;b.style.setProperty('--wash',r.wash);b.setAttribute('aria-pressed',String(chosen[selectSide]===r.id));b.setAttribute('aria-disabled',String(!open));b.setAttribute('aria-label',r.name+(open?' 선택':' · '+(goals.find(g=>g.id===r.id)?.text||'')));
  const pic=document.createElement('canvas');pic.width=180;pic.height=150;actor(pic.getContext('2d'),r.id,90,r.id==='armor'?80:r.id==='siren'?72:r.id==='pajamas'?78:90,r.id==='armor'?1.85:r.id==='siren'?1.8:1.5,0,0,{portrait:true,selection:true,upperBody:r.id==='armor'});if(!open)pic.style.opacity='.35';const label=document.createElement('b');label.textContent=r.name;const sub=document.createElement('small');sub.textContent=open?'선택 가능':goals.find(g=>g.id===r.id)?.text||'';b.append(pic,label,sub);
  const flags=[];if(chosen[0]===r.id)flags.push('1P');if(mode===1&&chosen[1]===r.id)flags.push('2P');if(!open||flags.length){const flag=document.createElement('span');flag.className='cursor-tag';flag.textContent=open?flags.join(' / '):'🔒';b.append(flag)}
  const inspect=()=>{if(cursorCharacter!==r.id){cursorCharacter=r.id;haptics.play(HAPTIC_CURSOR)}portraits(r.id);$('selection-note').textContent=open?`${selectSide+1}P · ${r.name}\n선택 후 결정 버튼을 눌러주세요.`:`${r.name}\n해금 조건: ${sub.textContent}`};b.onpointerenter=inspect;b.onfocus=inspect;b.onclick=()=>{if(!open){inspect();return}chosen[selectSide]=r.id;voices.play(r.id,'select',selectSide);cards();$('start').focus({preventScroll:true});$('selection-note').textContent=`${selectSide+1}P · ${r.name}\n선택 후 결정 버튼을 눌러주세요.`};grid.append(b)}
  $('start').textContent=mode===1&&selectSide===0?(localCPU()?'1P 결정 · 상대 선택 →':'1P 결정 · 2P 선택 →'):'선택 결정 · 경기 시작 →';$('stage-picker').hidden=false;$('stage-picker-label').textContent=mode===1?'대전 배경':'다시 도전할 코트';portraits();$('selection-note').textContent=TEST_BUILD?'테스트판 · 모든 캐릭터와 5개 스테이지를 자유롭게 선택할 수 있어요.':'처음에는 치이카와 · 하치와레 · 우사기를 선택할 수 있어요.';
 }
-function showTitle(restartLoop=true){if(net){const old=net;net=null;old.close()}stop();document.body.classList.remove('demo-open');$('demo-title').hidden=true;$('arena').hidden=true;if(restartLoop)attract?.start(performance.now());document.body.classList.add('title-open');$('title-screen').hidden=false;drawTitle($('title-art'));$('title-start').disabled=false;play(1);$('title-start').focus()}
+function showTitleNow(restartLoop=true){$('ending').hidden=true;$('selection').hidden=true;if(net){const old=net;net=null;old.close()}stop();document.body.classList.remove('demo-open');$('demo-title').hidden=true;$('arena').hidden=true;if(restartLoop)attract?.start(performance.now());document.body.classList.add('title-open');$('title-screen').hidden=false;drawTitle($('title-art'));$('title-start').disabled=false;play(1);$('title-start').focus()}
+const titleOpening=createTitleOpening({impact:()=>haptics.play(HAPTIC_CONFIRM),land:()=>haptics.play(HAPTIC_CURSOR)});
+function showTitle(restartLoop=true){showTitleNow(restartLoop);titleOpening.play(()=>{attract?.rewind(performance.now());$('title-start').focus({preventScroll:true});});}
 function enterGame(){attract?.stop();document.body.classList.remove('demo-open');$('demo-title').hidden=true;document.body.classList.remove('title-open');$('title-screen').hidden=true;mode=0;selection(true);$('start').focus({preventScroll:true});voices.playStart()}
 function selection(reset=false){attract?.stop();document.body.classList.remove('demo-open');$('demo-title').hidden=true;chosen=chosen.map((id,i)=>unlocked(p,id)?id:i?'hachiware':'chiikawa');if(net){const old=net;net=null;old.close()}$('network').hidden=true;stop();$('arena').hidden=true;$('ending').hidden=true;$('selection').hidden=false;if(reset)stage=0;$('stage-select').value=String(stage);for(const option of $('stage-select').options)option.disabled=mode===0&&!TEST_BUILD&&Number(option.value)>0&&p.margins[Number(option.value)-1]===0;selectSide=0;$('score').disabled=false;cards();drawGoals();play(1)}
 function start(){if(mode===1&&selectSide===0){startMatch();return}play(stages[stage][3]);storyFlow.show()}
-function startMatch(){if(mode===1&&selectSide===0){selectSide=1;cards();return}if(!net&&(!unlocked(p,chosen[0])||!unlocked(p,chosen[1])))return;core.init(localCPU()?0:mode,localCPU()?Number($('cpu-level').value):stage+1,Number($('score').value));configureTeams(core,characterIds());tracked=[0,0,0];voiceSeen=[0,0];chargeSeen=[0,0];ballRenderer.reset();voices.stop();handled=false;running=true;paused=false;acc=0;last=performance.now();$('selection').hidden=true;$('arena').hidden=false;$('result').hidden=true;$('name1').textContent=(teamLabel(chosen[0])||roster.find(r=>r.id===chosen[0]).name);$('name2').textContent=mode===1?(teamLabel(chosen[1])||roster.find(r=>r.id===chosen[1]).name):stages[stage][1];$('stage-label').textContent=(net?'온라인 친구 대전 · ':mode===1?(localCPU()?'컴퓨터 대전 · ':'2인 대전 · '):`${stage+1} / 5 · `)+stages[stage][0];play(stages[stage][3]);canvas.focus();render()}
+function startMatch(){if(mode===1&&selectSide===0){selectSide=1;cards();return}if(!net&&(!unlocked(p,chosen[0])||!unlocked(p,chosen[1])))return;core.init(localCPU()?0:mode,localCPU()?Number($('cpu-level').value):mode===0?Number($('story-level').value):stage+1,Number($('score').value));configureTeams(core,characterIds());tracked=[0,0,0];voiceSeen=[0,0];chargeSeen=[0,0];ballRenderer.reset();voices.stop();handled=false;running=true;paused=false;acc=0;last=performance.now();$('selection').hidden=true;$('arena').hidden=false;$('result').hidden=true;$('name1').textContent=(teamLabel(chosen[0])||roster.find(r=>r.id===chosen[0]).name);$('name2').textContent=mode===1?(teamLabel(chosen[1])||roster.find(r=>r.id===chosen[1]).name):stages[stage][1];$('stage-label').textContent=(net?'온라인 친구 대전 · ':mode===1?(localCPU()?'컴퓨터 대전 · ':'2인 대전 · '):`${stage+1} / 5 · `)+stages[stage][0];play(stages[stage][3]);canvas.focus();render()}
 function drawGoals(){const box=$('goals');box.replaceChildren();for(const g of [...goals].sort((a,b)=>roster.findIndex(r=>r.id===a.id)-roster.findIndex(r=>r.id===b.id))){const done=g.value(p)>=g.target,item=document.createElement('div');item.className='goal'+(done?' complete':'');const title=document.createElement('b');title.textContent=(done?'✓ ':'○ ')+g.name;const text=document.createElement('p');text.textContent=`${roster.find(r=>r.id===g.id).name} · ${g.text}`;const meter=document.createElement('progress');meter.max=g.target;meter.value=Math.min(g.value(p),g.target);const count=document.createElement('small');count.textContent=done?'해금 완료':`${g.value(p)} / ${g.target}`;item.append(title,text,meter,count);box.append(item)}}
 function record(){if(mode!==0)return;const before=goals.filter(g=>unlocked(p,g.id)).map(g=>g.id);let changed=false;for(const [i,field,key] of [[0,14,'contacts'],[1,15,'upper'],[2,16,'supers']]){const n=get(field);if(n!==tracked[i])changed=true;p[key]+=n-tracked[i];tracked[i]=n}if(changed)save();const newNames=goals.filter(g=>!before.includes(g.id)&&unlocked(p,g.id)).map(g=>roster.find(r=>r.id===g.id).name);if(newNames.length)toast('새 친구 해금! '+newNames.join(' · '));}
 let toastUntil=0,toastText='';function toast(s){toastText=s;toastUntil=performance.now()+4000;$('live').textContent=s}
@@ -84,13 +89,16 @@ function observeVoices(){const ids=characterIds();for(let side=0;side<2;side++){
 function sendGuestInput(){if(!running||paused||!net?.connected||net.host)return;if(net.send({type:'input',bits:bits(0)}))edges.delete('KeyF')}
 function tick(){if(net?.connected&&!net.host){sendGuestInput();edges.clear();return}core.step(bits(0),net?.connected?remoteBits:bits(1));remoteBits&=15;edges.clear();if(net?.connected){const state=[];for(let f=0;f<STATE_FIELDS;f++)for(let s=0;s<2;s++)state.push(core.get(f,s));net.send({type:'state',state})}record();observeVoices();const events=core.sounds();effects(events);if(net?.connected&&events)net.send({type:'sfx',events});if(get(6)===3)finish();t++;}
 function render(){c.setTransform(2,0,0,2,0,0);t=get(32);c.fillStyle='#32434b';c.fillRect(0,0,432,304);c.save();const shake=cameraOffset(get);c.translate(...shake);background(c,attract?.showingDemo?attract.stage:stage,t);for(let side=0;side<2;side++)drawPlayer(c,get,characterIds(),side);
- drawNet(c);
+ drawNet(c,attract?.showingDemo?attract.stage:stage);
  ballRenderer.draw(c,get);drawSuper(c,get,characterIds(),[$('name1').textContent,$('name2').textContent]);c.restore();
  $('points').textContent=`${get(5,0)} : ${get(5,1)}`;for(let side=0;side<2;side++){const charge=get(7,side);updateChargeMeter($('meter'+(side+1)),charge,get(8,side),side);if(!attract?.showingDemo&&charge===10&&chargeSeen[side]<10)haptics.play(HAPTIC_MAX);if(!attract?.showingDemo&&charge>chargeSeen[side]&&!muted)chargeTone(soundContext,charge===10);chargeSeen[side]=charge;}
 
- let msg=paused?'일시정지':get(6)===4?'READY?':get(6)===2?'다음 서브!':get(17)===8?'':performance.now()<toastUntil?toastText:'';if(msg){c.font='bold 20px "PocketKO"';c.textAlign='center';c.lineWidth=5;c.strokeStyle='#fffdf1';c.strokeText(translate(msg),216,110);c.fillStyle='#405c54';c.fillText(translate(msg),216,110)}}
+ let msg=paused?'일시정지':get(6)===4?'READY?':get(17)===8?'':performance.now()<toastUntil?toastText:'';if(msg){c.font='bold 20px "PocketKO"';c.textAlign='center';c.lineWidth=5;c.strokeStyle='#fffdf1';c.strokeText(translate(msg),216,110);c.fillStyle='#405c54';c.fillText(translate(msg),216,110)}
+ if(!paused&&!attract?.showingDemo){const serve=serveCue(get,characterIds().map(id=>translate(roster.find(r=>r.id===id)?.name||id)));if(serve){c.textAlign='center';c.lineWidth=5;c.strokeStyle='#fffdf1';c.fillStyle='#405c54';c.font='18px PocketKO';const heading=translate(serve.heading);c.strokeText(heading,216,140);c.fillText(heading,216,140);const label=`${serve.side+1}P \u00b7 ${serve.name}`;let size=22;c.font=`${size}px PocketKO`;while(size>12&&c.measureText(label).width>380)c.font=`${--size}px PocketKO`;c.strokeText(label,216,170);c.fillText(label,216,170);}}
+}
+
 const titleMotion=matchMedia('(prefers-reduced-motion: reduce)');let titleFrameAt=0,endingFrameAt=0;
-function frame(now){attract?.update(now,!document.hidden);if(!$('ending').hidden&&!document.hidden&&now-endingFrameAt>=40){drawEnding($('ending-art').getContext('2d'),titleMotion.matches?0:now/120);endingFrameAt=now;}if(document.body.classList.contains('title-open')&&!document.hidden&&now-titleFrameAt>=40){drawTitle($('title-art'),titleMotion.matches?0:now);titleFrameAt=now}if(running){acc+=Math.min(now-last,150);if(!paused){let count=0;while(acc>=1000/25&&count++<5){tick();acc-=1000/25}}else acc=0;render()}if(attract?.showingDemo&&!storyFlow.previewing){acc+=Math.min(now-last,150);let steps=0;while(acc>=1000/25&&steps++<5){demoCore.step(0,0);observeVoices();effects(demoCore.sounds());acc-=1000/25}render()}last=now;requestAnimationFrame(frame)}
+function frame(now){if(titleOpening.active)attract?.rebase(now);else attract?.update(now,!document.hidden);if(!$('ending').hidden&&!document.hidden&&now-endingFrameAt>=40){drawEnding($('ending-art').getContext('2d'),titleMotion.matches?0:now/120);endingFrameAt=now;}if(document.body.classList.contains('title-open')&&!document.hidden&&now-titleFrameAt>=40){drawTitle($('title-art'),titleMotion.matches?0:now);titleFrameAt=now}if(running){acc+=Math.min(now-last,150);if(!paused){let count=0;while(acc>=1000/25&&count++<5){tick();acc-=1000/25}}else acc=0;render()}if(attract?.showingDemo&&!storyFlow.previewing){acc+=Math.min(now-last,150);let steps=0;while(acc>=1000/25&&steps++<5){demoCore.step(0,0);observeVoices();effects(demoCore.sounds());acc-=1000/25}render()}last=now;requestAnimationFrame(frame)}
 function beginDemo(level){
  stop();document.body.classList.remove('title-open');document.body.classList.add('demo-open');
  for(const id of ['title-screen','selection','network','ending','result'])$(id).hidden=true;
@@ -128,7 +136,7 @@ for(const button of fullscreenButtons){button.hidden=!document.fullscreenEnabled
 document.addEventListener('fullscreenchange',()=>{for(const button of fullscreenButtons)button.textContent=document.fullscreenElement?'전체 화면 해제':'전체 화면';updateMobileView()});
 const touchScreen=matchMedia('(any-pointer:coarse)');function updateMobileView(){const dual=mode===1&&!net&&!localCPU()&&!attract?.showingDemo;document.body.classList.toggle('local-versus',dual);document.documentElement.style.setProperty('--play-height',(window.visualViewport?.height||innerHeight)+'px');document.documentElement.style.setProperty('--play-width',(window.visualViewport?.width||innerWidth)+'px');document.body.classList.toggle('mobile-match',(navigator.maxTouchPoints>0||touchScreen.matches)&&!$('arena').hidden);if($('arena').hidden)touchControls.reset();}touchScreen.addEventListener('change',updateMobileView);window.addEventListener('resize',updateMobileView);window.addEventListener('orientationchange',()=>{touchControls.reset();updateMobileView();});window.visualViewport?.addEventListener('resize',updateMobileView);new MutationObserver(updateMobileView).observe($('arena'),{attributes:true,attributeFilter:['hidden']});updateMobileView();
 const storyFlow=installStoryDialog({stage:()=>stage,hero:()=>chosen[0],opponent:()=>characterIds()[1],versus:()=>mode===1,onBeforeStart:()=>{if(netIntro){netIntro.finishLocal();return false}return true},onSpeak:(id,side)=>{voices.stop();voices.play(id,'select',side)},onSilence:()=>voices.stop(),expressionFor:(id,side)=>{const audio=voices.active.get(side);return id==='kurimanju'&&audio&&!audio.paused&&!audio.ended?'kya':undefined},onStart:(demo)=>{keys.clear();edges.clear();touchControls.reset();if(demo){acc=0;last=performance.now();return}startMatch()}});
-for(const [id,fn] of Object.entries({story:()=>{mode=0;selection(true)},versus:()=>{mode=1;selection()},home:()=>selection(),start, pause:()=>{paused=!paused;touchControls.reset();$('pause').textContent=paused?'계속하기':'일시정지';keys.clear();edges.clear()},sound:()=>{muted=!muted;music.muted=muted;$('sound').textContent=muted?'♫ 음악 꺼짐':'♫ 음악 켜짐';if(!muted)music.play().catch(()=>{})},next:()=>{if(net){$('online').click();return}if(mode===0&&get(10)===0){if(stage===4){p.ending=true;save();drawGoals();drawEnding($('ending-art').getContext('2d'));stop();$('arena').hidden=true;$('ending').hidden=false;play(6);return}stage++}selection()},again:()=>{mode=0;selection(true)}}))$(id).onclick=fn;
+for(const [id,fn] of Object.entries({story:()=>{mode=0;selection(true)},versus:()=>{mode=1;selection()},home:()=>selection(),start, pause:()=>{paused=!paused;touchControls.reset();$('pause').textContent=paused?'계속하기':'일시정지';keys.clear();edges.clear()},sound:()=>{muted=!muted;music.muted=muted;$('sound').textContent=muted?'♫ 음악 꺼짐':'♫ 음악 켜짐';if(!muted)music.play().catch(()=>{})},next:()=>{if(net){$('online').click();return}if(mode===0&&get(10)===0){if(stage===4){p.ending=true;save();drawGoals();drawEnding($('ending-art').getContext('2d'));stop();$('arena').hidden=true;$('ending').hidden=false;play(6);return}stage++}selection()},again:()=>{mode=0;showTitle()}}))$(id).onclick=fn;
 $('versus-opponent').onchange=()=>{$('cpu-level-label').hidden=!localCPU();cards();updateMobileView()};
 function startNetworkMatch(){storyFlow.cancel();netIntro?.cancel();netIntro=null;$('network').hidden=true;startMatch()}
 let netState=null,remoteBits=0,remoteCharacter='hachiware';

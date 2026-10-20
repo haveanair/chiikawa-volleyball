@@ -1,4 +1,4 @@
-import {TEST_BUILD} from './build-config.mjs?v=0.26';
+import {TEST_BUILD} from './build-config.mjs';
 // Clear-based unlocks follow story progression; cumulative challenges precede the final boss.
 export const roster=[
  ['chiikawa','치이카와','#fffdf7','#f5e9df'],['hachiware','하치와레','#d8e8f5','#e8f2f5'],['usagi','우사기','#ffe4a1','#fff3cf'],

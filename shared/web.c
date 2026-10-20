@@ -39,6 +39,7 @@ int get(int f, int s) {
     case 37:return g.rescue_used[s]; case 38:return g.rescue_warning[s];
     case 39:return g.rescue_effect[s]; case 40:return g.rescue_x[s];
     case 41:return g.rescue_serial[s];
+    case 42:return g.server;
     default:return 0;
     }
 }

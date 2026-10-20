@@ -38,11 +38,26 @@ export const translations={
 '치이카와 배구 타이틀':'Chiikawa Volley Title','하치와레의 집 앞에 모인 친구들':'Friends gathered outside Hachiware’s house','캐릭터 선택':'Character Select','배구 경기':'Volleyball Match','8명의 친구와 배구 트로피':'Eight friends and a volleyball trophy','게임 버전이 다릅니다. 양쪽 화면을 새로고침해 주세요.':'Game versions differ. Refresh both screens.','연결이 끊겼습니다. 온라인 메뉴에서 다시 연결해 주세요.':'Disconnected. Reconnect from Online Versus.','온라인 연결이 끊겼습니다.':'Online connection lost.','연결 정보 준비 중…':'Preparing connection…','초대 코드를 참가자에게 전달해 주세요.':'Share the invitation code with the guest.','응답 코드를 방장에게 전달해 주세요.':'Send the reply code to the host.','먼저 방을 만들어 주세요.':'Create a room first.','연결 완료! 방장이 대전을 시작할 수 있습니다.':'Connected! The host can start the match.','연결 상태: ':'Connection: ','잘못된 수신 데이터를 무시했습니다.':'Invalid incoming data was ignored.','연결 정보 수집 시간 초과. 다시 시도해 주세요.':'Connection gathering timed out. Please try again.','초대 코드를 확인해 주세요.':'Check the invitation code.','응답 코드를 확인해 주세요.':'Check the reply code.',
 '그로기':'Dizzy','초 필 살 기 !':'SUPER MOVE!','완벽한 반격!':'Perfect Counter!','둘이 함께! 연계 강타':'Together! Combo Strike','파자마파티즈 총출동!':'Pajama Party, Assemble!','필살 배구 강타':'Super Volleyball Strike','내가 도울게!':'I’ll help!','함께 살렸어!':'Saved together!','한잎이 · 두잎이 · 구출 사용 완료':'Hitoha & Futaha · Save used','한잎이 · 두잎이 · 함께 출전':'Hitoha & Futaha · Together','구출 사용 완료':'Save used','파트너 구출 준비':'Partner save ready',' 교대 준비!':' Switching!',' 출전':' Playing','보라':'Purple','녹색':'Green','빨강':'Red','흰색':'White'
 };
+Object.assign(translations,{
+ '스토리 난이도':'Story Difficulty','쉬움':'Easy','보통':'Normal','어려움':'Hard',
+ '게임 모드':'Game Mode','숫자 4자리 방 번호':'Four-digit Room Number',
+ '전체 화면':'Full Screen','전체 화면 종료':'Exit Full Screen','진동 켜짐':'Vibration On','진동 꺼짐':'Vibration Off','진동 미지원':'Vibration Unavailable',
+ '친구가 만든 방의 숫자 4자리를 입력하면 연결됩니다.':'Enter the four-digit room number created by your friend.',
+ '방 만들기':'Create Room','또는':'or','방 번호':'Room Number','참가하기':'Join Room','친구에게 알려줄 방 번호':'Room number to share with your friend',
+ '같은 번호로 두 명이 함께 플레이합니다.':'Two players use the same room number to play together.','대전 시작':'Start Match',
+ '연결되면 방장이 시작합니다. 스마트폰은 가로 화면에서 양쪽 터치 버튼으로 조작하세요.':'Once connected, the host starts the match. On phones, use landscape mode and the touch controls on both sides.',
+ '공격':'Attack','휴대폰을 가로로 돌리면 양쪽 컨트롤러로 더 편하게 플레이할 수 있어요.':'Rotate your phone to landscape for more comfortable controls on both sides.',
+ '1스테이지 클리어':'Clear Stage 1','2스테이지 클리어':'Clear Stage 2',
+ '1P 공격':'1P Attack','2P 공격':'2P Attack','점프':'Jump','왼쪽 이동':'Move Left','오른쪽 이동':'Move Right','1P 점프':'1P Jump','2P 점프':'2P Jump',
+ '2P 왼쪽 이동':'2P Move Left','2P 오른쪽 이동':'2P Move Right','터치 조작':'Touch Controls','배구 경기':'Volleyball Match',
+ '세 줄로 모인 모든 캐릭터 18명의 움직이는 엔딩':'Animated ending with all 18 characters in three rows'
+});
 let language='ko';try{if(globalThis.localStorage?.getItem('chiivolley.language')==='en')language='en'}catch{}
 export const getLanguage=()=>language;
 const replacements=Object.entries(translations).sort((a,b)=>b[0].length-a[0].length);
 export function translate(text,lang=language){if(lang!=='en'||!text)return text;const trimmed=text.trim();if(translations[trimmed])return text.replace(trimmed,translations[trimmed]);if(translations[text])return translations[text];
  text=text.replace(/(\d)스테이지 (\d+)점 차 이상 승리( 후 엔딩)?/g,(_,s,n,end)=>`Win Stage ${s} by ${n}+ points${end?' and see the ending':''}`).replace(/(\d)스테이지/g,'Stage $1');
+ text=text.replace(/Stage (\d+) 클리어/g,'Clear Stage $1');
  // Single pass prevents translated words from being translated again.
  const pattern=new RegExp(replacements.map(([key])=>key.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|'),'g');return text.replace(pattern,key=>translations[key]);}
 export function setLanguage(value){language=value==='en'?'en':'ko';try{globalThis.localStorage?.setItem('chiivolley.language',language)}catch{}if(typeof document!=='undefined'){document.documentElement.lang=language;document.dispatchEvent(new CustomEvent('languagechange',{detail:language}))}}

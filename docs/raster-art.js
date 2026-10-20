@@ -1,6 +1,7 @@
-import {sourceFacing as resolveSourceFacing} from './source-facing.js?v=0.20';
+import {sourceFacing as resolveSourceFacing} from './source-facing.js?v=0.52';
+import {drawCourtBackground} from './court-projection.js?v=0.52';
 // Native Pocket drawings + reference-guided raster scenes. No procedural character/background fallback.
-import {motionPose} from './motion-poses.js?v=0.20';
+import {motionPose} from './motion-poses.js?v=0.52';
 const base='assets/original-style/',images=new Map();let meta=null;
 export async function loadArt(loader,manifest){
  if(manifest)meta=manifest;
@@ -12,7 +13,7 @@ export async function loadArt(loader,manifest){
 }
 export const ready=typeof Image==='undefined'?Promise.resolve():loadArt();
 if(typeof Image!=='undefined')await ready;
-export function background(c,stage){const im=images.get(base+`courts/stage-${stage+1}.png`);if(im)c.drawImage(im,0,0,432,304);}
+export function background(c,stage){const im=images.get(base+`courts/stage-${stage+1}.png`);if(im)drawCourtBackground(c,im,stage);}
 export function endingBackdrop(c){const im=images.get(base+'courts/stage-1.png');if(im){const h=im.height*210/304;c.drawImage(im,0,im.height-h,im.width,h,0,0,432,210)}}
 export function actor(c,id,x,y,size=1,state=0,t=0,pose={}){
  if(id==='pajamas'){

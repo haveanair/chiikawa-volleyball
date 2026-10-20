@@ -1,8 +1,8 @@
-import {placeEncounter} from './encounter-layout.js?v=0.49';
-import {translate} from './i18n.js?v=0.49';
-import {actor,background} from './art.js?v=0.20';
-import {roster,stages} from './progress.mjs?v=0.28';
-import {buildEncounter,buildVersus} from './encounter-dialogues.js?v=0.49';
+import {placeEncounter} from './encounter-layout.js?v=0.52';
+import {translate} from './i18n.js?v=0.52';
+import {actor,background} from './art.js?v=0.52';
+import {roster,stages} from './progress.mjs?v=0.52';
+import {buildEncounter,buildVersus} from './encounter-dialogues.js?v=0.52';
 export {buildEncounter,buildVersus};
 export function installStoryDialog({stage,hero,opponent=()=>stages[stage()][2],versus=()=>false,onBeforeStart=()=>true,onStart,onSpeak=()=>{},onSilence=()=>{},expressionFor=()=>undefined}){
  const dialog=document.createElement('dialog');dialog.id='story-dialog';dialog.className='story-dialog';dialog.setAttribute('aria-labelledby','story-heading');dialog.setAttribute('data-no-translate','');

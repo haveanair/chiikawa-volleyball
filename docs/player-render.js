@@ -1,8 +1,8 @@
-import {translate} from './i18n.js?v=0.20';
-import {actor} from './characters.js?v=0.20';
-import {attackExpression} from './attack-expression.js?v=0.20';
-import {drawGroggy} from './super-effects.js?v=0.20';
-import {activeMember,leafPartner,pajamaIds,pajamaNames} from './teams.js?v=0.20';
+import {translate} from './i18n.js?v=0.52';
+import {actor} from './characters.js?v=0.52';
+import {attackExpression} from './attack-expression.js?v=0.52';
+import {drawGroggy} from './super-effects.js?v=0.52';
+import {activeMember,leafPartner,pajamaIds,pajamaNames} from './teams.js?v=0.52';
 export function drawPlayer(c,get,ids,side){
  const x=get(0,side),y=get(1,side),state=get(2,side),phase=get(17),tick=get(32);
  const frozen=[1,2,3,5,6].includes(phase);

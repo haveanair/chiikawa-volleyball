@@ -1,4 +1,4 @@
-import {ONLINE_CONFIG} from './online-config.js?v=0.22';
+import {ONLINE_CONFIG} from './online-config.js?v=0.52';
 export class PeerMatch{
  constructor(host,onMessage,onStatus){this.host=host;this.onMessage=onMessage;this.status=onStatus;this.connected=false;this.closed=false;this.clientId=crypto.randomUUID();this.ref=1;this.lastInput=-1;this.lastInputAt=0;this.lastSeen=Date.now();}
  async roomRequest(action,code){const response=await fetch(ONLINE_CONFIG.url+'/functions/v1/chiivolley-room',{method:'POST',headers:{apikey:ONLINE_CONFIG.key,Authorization:'Bearer '+ONLINE_CONFIG.key,'Content-Type':'application/json'},body:JSON.stringify({action,code,clientId:this.clientId,token:this.room?.token}),signal:AbortSignal.timeout(20000)});const result=await response.json();if(!response.ok)throw Error(result.message||'방 연결에 실패했습니다. 잠시 후 다시 시도해 주세요.');return result;}
