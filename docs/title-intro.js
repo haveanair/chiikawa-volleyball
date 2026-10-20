@@ -1,4 +1,4 @@
-import {getLanguage} from './i18n.js?v=0.52';
+import {getLanguage} from './i18n.js?v=0.54';
 const translate=text=>getLanguage()==='ko'?text:({'\uc791\uc740 \uce5c\uad6c\ub4e4\uc758':'Little friends,','\ud070 \uc2b9\ubd80!!':'BIG MATCH!!','A / B \uac74\ub108\ub6f0\uae30':'Enter / Tap to skip'}[text]||text);
 export const INTRO_DURATION=4600;
 export const INTRO_IMPACT=950;

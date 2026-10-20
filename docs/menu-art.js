@@ -1,4 +1,4 @@
-import {actor,background} from './art.js?v=0.52';
+import {actor,background} from './art.js?v=0.54';
 export function drawTitle(canvas,time=0){
  const c=canvas.getContext('2d');c.setTransform(2,0,0,2,0,0);background(c,0);
  // Compose existing raster artwork; keep the game characters' original drawings.

@@ -1,7 +1,7 @@
-import {sourceFacing as resolveSourceFacing} from './source-facing.js?v=0.52';
-import {drawCourtBackground} from './court-projection.js?v=0.52';
+import {sourceFacing as resolveSourceFacing} from './source-facing.js?v=0.54';
+import {drawCourtBackground} from './court-projection.js?v=0.54';
 // Native Pocket drawings + reference-guided raster scenes. No procedural character/background fallback.
-import {motionPose} from './motion-poses.js?v=0.52';
+import {motionPose} from './motion-poses.js?v=0.54';
 const base='assets/original-style/',images=new Map();let meta=null;
 export async function loadArt(loader,manifest){
  if(manifest)meta=manifest;
@@ -32,7 +32,16 @@ export function actor(c,id,x,y,size=1,state=0,t=0,pose={}){
   const im=images.get(base+'characters/'+entry.file),b=entry.bounds;if(im&&b){const width=entry.logicalWidth||55,height=width*b.h/b.w;const bob=state===0&&pose.move?Math.abs(Math.sin(t*.8))*1.5:0;c.drawImage(im,b.x,b.y,b.w,b.h,-width/2,30-height-bob,width,height)}
  }else{
   const selected=pose.selection&&entry.selectionPortrait,portrait=pose.portrait&&images.get(base+'characters/'+(selected?entry.selectionPortrait:entry.portrait));
-  if(portrait){const b=selected?entry.selectionBounds:entry.portraitBounds;if(b){const cropHeight=pose.upperBody?Math.round(b.h*.60):b.h,width=pose.upperBody?65:selected?entry.selectionWidth||55:entry.portraitWidth||55,height=width*cropHeight/b.w;c.drawImage(portrait,b.x,b.y,b.w,cropHeight,-width/2,30-height,width,height)}else c.drawImage(portrait,-80,-110,160,160);}
+  const expression=pose.portrait&&entry.expressionPortraits?.[pose.expression];
+  if(expression){
+   // Expression crops share the neutral portrait's height and foot anchor.
+   const b=expression.bounds,reference=selected?entry.selectionBounds:entry.portraitBounds;
+   const referenceWidth=selected?entry.selectionWidth||55:entry.portraitWidth||55;
+   const height=referenceWidth*reference.h/reference.w,width=height*b.w/b.h;
+   const im=images.get(base+'characters/'+expression.file);
+   if(im)c.drawImage(im,b.x,b.y,b.w,b.h,-width/2,30-height,width,height);
+  }
+  else if(portrait){const b=selected?entry.selectionBounds:entry.portraitBounds;if(b){const cropHeight=pose.upperBody?Math.round(b.h*.60):b.h,width=pose.upperBody?65:selected?entry.selectionWidth||55:entry.portraitWidth||55,height=width*cropHeight/b.w;c.drawImage(portrait,b.x,b.y,b.w,cropHeight,-width/2,30-height,width,height)}else c.drawImage(portrait,-80,-110,160,160);}
   else {const im=images.get(base+'characters/'+(pose.expression==='kya'&&entry.kya?entry.kya:entry.file)),frame=state===0&&!pose.move?0:Math.floor(t/3)%8;if(im)c.drawImage(im,frame*320,Math.min(7,state)*320,320,320,-80,-110,160,160)}
  }
  c.restore();

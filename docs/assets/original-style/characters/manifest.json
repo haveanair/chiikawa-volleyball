@@ -527,6 +527,17 @@
             1
           ]
         ]
+      },
+      "expressionPortraits": {
+        "kya": {
+          "file": "kurimanju-kya.png",
+          "bounds": {
+            "x": 101,
+            "y": 152,
+            "w": 111,
+            "h": 128
+          }
+        }
       }
     },
     "momonga": {

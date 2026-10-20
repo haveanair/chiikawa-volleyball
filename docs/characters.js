@@ -1,1 +1,1 @@
-export {actor} from './raster-art.js?v=0.52';
+export {actor} from './raster-art.js?v=0.54';

@@ -1,5 +1,5 @@
-import {drawTitleIntro,INTRO_DURATION,INTRO_IMPACT,INTRO_LOGO_LAND} from './title-intro.js?v=0.53';
-import {getLanguage} from './i18n.js?v=0.52';
+import {drawTitleIntro,INTRO_DURATION,INTRO_IMPACT,INTRO_LOGO_LAND} from './title-intro.js?v=0.54';
+import {getLanguage} from './i18n.js?v=0.54';
 export function createTitleOpening({impact=()=>{},land=()=>{}}={}){
  const canvas=document.createElement('canvas');canvas.id='title-opening';canvas.width=1280;canvas.height=720;canvas.tabIndex=-1;canvas.hidden=true;
  canvas.setAttribute('aria-label','Opening · Enter / Space / Escape / Tap to skip');

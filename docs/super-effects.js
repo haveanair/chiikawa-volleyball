@@ -1,5 +1,5 @@
-import {translate} from './i18n.js?v=0.52';
-import {actor} from './art.js?v=0.52';
+import {translate} from './i18n.js?v=0.54';
+import {actor} from './art.js?v=0.54';
 export const STATE_FIELDS=43;
 export const cueCategory={2:'attack',3:'huntcutin',4:'lose',5:'win',6:'lose',7:'skill'};
 export function cameraOffset(get){const phase=get(17),timer=get(18);let power=phase===1?2:phase===3?4:phase===6?Math.max(1,7*(timer/34)):0;

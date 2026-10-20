@@ -1,6 +1,6 @@
-import {translate} from './i18n.js?v=0.52';
-import {actor,background} from './raster-art.js?v=0.52';
-import {endingFeet} from './ending-feet.js?v=0.52';
+import {translate} from './i18n.js?v=0.54';
+import {actor,background} from './raster-art.js?v=0.54';
+import {endingFeet} from './ending-feet.js?v=0.54';
 export const endingCast={front:['chiikawa','hachiware','usagi','rakko','momonga','kurimanju','shisa','kani'],middle:['pajama-purple','pajama-green','pajama-pink','pajama-white','armor','hitoha','futaha'],back:['boss','roach','siren']};
 export const endingLayout=[
  {id:'boss',x:84,ground:203,size:1.12,row:'back'},
