@@ -5,8 +5,8 @@ export const INTRO_IMPACT=950;
 export const INTRO_LOGO_LAND=3300;
 const clamp=x=>Math.max(0,Math.min(1,x));
 const ease=x=>1-Math.pow(1-clamp(x),3);
-export function drawTitleIntro(c,time,world,drawLogo){
- const t=Math.max(0,time);world();c.fillStyle=`rgba(255,246,230,${1-clamp((t-3200)/1400)})`;c.fillRect(0,0,1280,720);
+export function drawTitleIntro(c,time,world,drawLogo,{backgroundFade=true}={}){
+ const t=Math.max(0,time);world();if(backgroundFade){c.fillStyle=`rgba(255,246,230,${1-clamp((t-3200)/1400)})`;c.fillRect(0,0,1280,720);}
  if(t<2450){
   const p=ease(t/INTRO_IMPACT),hit=Math.max(0,1-(t-INTRO_IMPACT)/240),shake=t>=INTRO_IMPACT&&hit>0?Math.sin(t*.09)*hit*5:0;
   c.save();c.globalAlpha=1-clamp((t-2100)/350);c.translate(640+shake,350);const bump=t>=INTRO_IMPACT?1+Math.sin(clamp((t-INTRO_IMPACT)/240)*Math.PI)*.035:1;c.scale(bump,bump);

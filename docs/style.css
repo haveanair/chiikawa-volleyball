@@ -272,3 +272,8 @@ body:has(.info-dialog[open]){overflow:hidden}
 .info-dialog-content .save-actions button{font-size:14px;padding:9px 14px}
 .info-dialog-content .reset-progress{color:#9b453f;border-color:#d9aaa3;background:#fff5ef}
 .info-dialog-content #save-note{font-size:12px;line-height:1.6}
+
+/* The title and its opening share one centered composition. */
+body.title-open{min-height:var(--play-height,100dvh);display:grid;place-items:center}
+body.title-open #title-screen{margin:0 auto}
+body.opening-active #title-screen .title-copy{visibility:hidden}

@@ -1,5 +1,5 @@
 import {installCreatorCredits} from './creator-credits.js?v=0.52';
-import {createTitleOpening} from './title-opening.js?v=0.52';
+import {createTitleOpening} from './title-opening.js?v=0.53';
 import {serveCue} from './serve-cue.js?v=0.52';
 import {EncounterGate} from './encounter-gate.js?v=0.52';
 import {installStoryDialog} from './story-encounters.js?v=0.52';
