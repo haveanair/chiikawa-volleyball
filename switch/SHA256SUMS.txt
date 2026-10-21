@@ -1,6 +1,4 @@
-44359d6fc4294de66ecd178b440ff49584ee988ac7a8cc681b8d117c3efbaa05  chiikawa-volleyball-switch-v0.7.9.zip
 35a16bfd8e92d8a25d211b399d331a18954acf8a68f8d738ff8d5783ab990f5a  chiikawa-volley-switch-v0.7.9-locked.nsp
-9c5e3f83117f1bab1559c94d14f5af4791445409e1c2ef9507851eb6696ba9af  chiikawa-volley-switch-v0.7.9-unlocked.nsp
 ea29e435aa9cf3ecf9b1ce8aedc4908aa1184cf76d0fdc4032db70b6b8c0049a  chiikawa-volley-switch-v0.7.9-unlocked.nro
-9effc823ded2bfbad16e1d91d8ca3677731df878f7e4b34d0a18606894feeadd  README.ko.md
-44f81b40922822bb0c93baba92b64d1d3cc7cb191994903e0d85d7a3c2712119  manifest.json
+9c5e3f83117f1bab1559c94d14f5af4791445409e1c2ef9507851eb6696ba9af  chiikawa-volley-switch-v0.7.9-unlocked.nsp
+869801e02f5a1261c1f6959402257c86b65027a7b8e4897259a32d760e8525db  chiikawa-volleyball-switch-v0.7.9.zip
