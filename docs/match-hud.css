@@ -1,0 +1,9 @@
+/* Larger Switch-style score and short, thick inward-filling super meters. */
+#game-main #arena .court-stage{container-type:inline-size}
+#game-main #arena .court-stage .scoreboard{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr) minmax(0,1fr);align-items:start;gap:clamp(5px,1cqw,12px);padding:clamp(5px,1cqw,12px) clamp(8px,1.7cqw,20px) 12px}
+#game-main #arena .scoreboard>div{width:auto;min-width:0}
+#game-main #arena .scoreboard>#points{font-size:clamp(46px,11.1cqw,112px);line-height:1.05;padding:0;letter-spacing:0;white-space:nowrap;align-self:start;text-align:center;font-variant-numeric:tabular-nums;-webkit-text-stroke:clamp(1px,.2cqw,2px) #805a4e}
+#game-main #arena .scoreboard .charge-meter{width:min(100%,22cqw);max-width:100%;min-height:0;padding:0}
+#game-main #arena .scoreboard>div:last-child .charge-meter{margin-left:auto}
+#game-main #arena .scoreboard .charge-track{height:clamp(18px,3.25cqw,32px);margin-top:4px;border-radius:4px}
+#game-main #arena .scoreboard .charge-caption{letter-spacing:0;gap:3px}
