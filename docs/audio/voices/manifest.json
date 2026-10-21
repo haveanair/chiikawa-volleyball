@@ -20,10 +20,6 @@
       "audio/voices/vo_ch1001_lose_001.wav",
       "audio/voices/vo_ch1001_lose_002.wav",
       "audio/voices/vo_ch1001_lose_003.wav"
-    ],
-    "titlecall": [
-      "audio/voices/vo_ch1001_titlecall_001.wav",
-      "audio/voices/vo_ch1001_titlecall_002.wav"
     ]
   },
   "hachiware": {
@@ -51,10 +47,6 @@
       "audio/voices/vo_ch1002_lose_001.wav",
       "audio/voices/vo_ch1002_lose_002.wav",
       "audio/voices/vo_ch1002_lose_003.wav"
-    ],
-    "titlecall": [
-      "audio/voices/vo_ch1002_titlecall_001.wav",
-      "audio/voices/vo_ch1002_titlecall_002.wav"
     ]
   },
   "usagi": {
@@ -82,10 +74,6 @@
       "audio/voices/vo_ch1003_lose_001.wav",
       "audio/voices/vo_ch1003_lose_002.wav",
       "audio/voices/vo_ch1003_lose_003.wav"
-    ],
-    "titlecall": [
-      "audio/voices/vo_ch1003_titlecall_001.wav",
-      "audio/voices/vo_ch1003_titlecall_002.wav"
     ]
   },
   "kurimanju": {
@@ -109,10 +97,6 @@
     "lose": [
       "audio/voices/vo_ch1004_lose_001.wav",
       "audio/voices/vo_ch1004_lose_002.wav"
-    ],
-    "titlecall": [
-      "audio/voices/vo_ch1004_titlecall_001.wav",
-      "audio/voices/vo_ch1004_titlecall_002.wav"
     ]
   },
   "momonga": {
@@ -140,10 +124,6 @@
       "audio/voices/vo_ch1005_lose_001.wav",
       "audio/voices/vo_ch1005_lose_002.wav",
       "audio/voices/vo_ch1005_lose_003.wav"
-    ],
-    "titlecall": [
-      "audio/voices/vo_ch1005_titlecall_001.wav",
-      "audio/voices/vo_ch1005_titlecall_002.wav"
     ]
   },
   "rakko": {
@@ -169,10 +149,6 @@
       "audio/voices/vo_ch1006_lose_001.wav",
       "audio/voices/vo_ch1006_lose_002.wav",
       "audio/voices/vo_ch1006_lose_003.wav"
-    ],
-    "titlecall": [
-      "audio/voices/vo_ch1006_titlecall_001.wav",
-      "audio/voices/vo_ch1006_titlecall_002.wav"
     ]
   },
   "shisa": {
@@ -197,21 +173,6 @@
     "lose": [
       "audio/voices/vo_ch1007_lose_001.wav",
       "audio/voices/vo_ch1007_lose_002.wav"
-    ],
-    "titlecall": [
-      "audio/voices/vo_ch1007_titlecall_001.wav",
-      "audio/voices/vo_ch1007_titlecall_002.wav"
     ]
-  },
-  "_unavailable": [
-    "kani",
-    "pajamas",
-    "armor",
-    "hitoha",
-    "futaha",
-    "siren",
-    "roach",
-    "boss",
-    "duo"
-  ]
+  }
 }
