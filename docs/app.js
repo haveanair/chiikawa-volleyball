@@ -42,7 +42,7 @@ let soundContext;const combatAudio=createCombatAudio();
 const ballRenderer=createBallRenderer();let chargeSeen=[0,0];
 document.addEventListener('pointerdown',()=>{try{soundContext??=new AudioContext();soundContext.resume().catch(()=>{})}catch{}});
 function effects(events){if(!attract?.showingDemo)haptics.play(events,{impactBeat:get(27)});if(!events||muted)return;try{soundContext??=new AudioContext();if(soundContext.state!=='running')return;combatAudio.play(soundContext,events).catch(console.error);if(combatEvents(events).length)return;const osc=soundContext.createOscillator(),gain=soundContext.createGain(),now=soundContext.currentTime;osc.type=(events&8)?'triangle':'sine';osc.frequency.setValueAtTime((events&8)?740:(events&16)?130:430,now);osc.frequency.exponentialRampToValueAtTime((events&8)?180:220,now+.09);gain.gain.setValueAtTime(.035,now);gain.gain.exponentialRampToValueAtTime(.001,now+.11);osc.connect(gain);gain.connect(soundContext.destination);osc.start(now);osc.stop(now+.12)}catch{}}
-try{const response=await fetch('./public/game.wasm?v=0.51',{cache:'no-store'});if(!response.ok)throw Error('game.wasm HTTP '+response.status);const wasm=await WebAssembly.instantiate(await response.arrayBuffer());core=wasm.instance.exports;demoCore=new WebAssembly.Instance(wasm.module).exports}catch(e){$('select-title').textContent='경기 코어를 불러오지 못했습니다. 실행하기.cmd로 실행해 주세요.';console.error(e);throw e}
+try{const response=await fetch('./public/game.wasm?v=0.51',{cache:'no-store'});if(!response.ok)throw Error('game.wasm HTTP '+response.status);const wasm=await WebAssembly.instantiate(await response.arrayBuffer());core=wasm.instance.exports;demoCore=new WebAssembly.Instance(wasm.module).exports;window.gameBoot?.advance(.93)}catch(e){$('select-title').textContent='경기 코어를 불러오지 못했습니다. 실행하기.cmd로 실행해 주세요.';console.error(e);throw e}
 const get=(f,s=0)=>attract?.showingDemo?demoCore.get(f,s):(net?.connected&&!net.host&&netState)?netState[f*2+(s&1)]:core.get(f,s),keys=new Set(),edges=new Set(),touchKeys=new Set();
 function save(){try{localStorage.setItem('chiivolley.progress.v1',JSON.stringify(p))}catch{$('save-note').textContent='저장 공간을 사용할 수 없어 이번 실행에서만 기록됩니다.'}}
 function play(n){const url=new URL(`audio/${String(n).padStart(2,'0')}.mp3`,location.href).href;if(music.src!==url){music.src=url;music.currentTime=0}music.muted=muted;music.volume=.45;music.play().then(()=>{$('title-music').hidden=true}).catch(()=>{if(document.body.classList.contains('title-open'))$('title-music').hidden=false});}
@@ -174,7 +174,7 @@ $('reset-progress').onclick=()=>{
  p=clean;tracked=[0,0,0];selection(true);
  $('save-note').textContent='도전과제를 초기화했습니다.';
 };
-$('title-music').onclick=()=>play(1);document.addEventListener('pointerdown',()=>{if(document.body.classList.contains('title-open'))play(1)});document.addEventListener('keydown',()=>{if(document.body.classList.contains('title-open'))play(1)});$('title-start').onclick=enterGame;$('title-home').onclick=()=>showTitle();core.init(0,1,15);drawGoals();showTitle();requestAnimationFrame(frame);
+$('title-music').onclick=()=>play(1);document.addEventListener('pointerdown',()=>{if(document.body.classList.contains('title-open'))play(1)});document.addEventListener('keydown',()=>{if(document.body.classList.contains('title-open'))play(1)});$('title-start').onclick=enterGame;$('title-home').onclick=()=>showTitle();core.init(0,1,15);drawGoals();await window.gameBoot?.complete();showTitle();requestAnimationFrame(frame);
 
 
 

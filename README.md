@@ -10,7 +10,7 @@
 
 | 플랫폼 | 버전 | 실행 방법 | 대전 |
 |---|---|---|---|
-| 웹 | v0.55 | PC·모바일 브라우저에서 설치 없이 실행 | 같은 기기 2인 / CPU / 온라인 친구 대전 |
+| 웹 | v0.56 | PC·모바일 브라우저에서 설치 없이 실행 | 같은 기기 2인 / CPU / 온라인 친구 대전 |
 | GBA | v0.5.7 | GBA 에뮬레이터 또는 호환 환경에서 ROM 실행 | CPU / 케이블 통신 기능은 실기 미검증 |
 | Switch 홈브류 | v0.7.9 | 홈브류 실행 환경에서 NRO 또는 NSP 사용 | 같은 기기 2인 / CPU, 온라인 미지원 |
 
@@ -28,6 +28,8 @@ GBA와 Switch는 **도전과제로 캐릭터를 해금하는 일반판**과 **14
 웹판은 치이카와·하치와레·우사기로 시작하고 도전과제로 친구를 해금합니다. 기록은 현재 브라우저에 저장되며 도전과제 메뉴의 **기록 백업 저장**으로 보관할 수 있습니다.
 
 웹 경기 화면은 스위치 버전을 참고해 점수를 크게 표시하고, 필살 게이지를 짧고 굵게 배치했습니다. PC와 모바일 화면 크기에 맞춰 조절되며, 게이지는 양쪽 바깥에서 중앙 방향으로 채워집니다.
+
+웹판은 실행할 때 스위치와 같은 세 친구·로고·분홍색 진행 막대의 로딩 화면을 보여줍니다. 게임 자료 준비를 마치면 오프닝과 타이틀로 이어지며, 불러오기에 실패하면 다시 불러오기 버튼을 표시합니다.
 
 ## 웹판 조작
 
@@ -50,7 +52,7 @@ GBA와 Switch는 **도전과제로 캐릭터를 해금하는 일반판**과 **14
 
 | 플랫폼 | 변경 내용 |
 |---|---|
-| 웹 v0.55 | 오프닝·타이틀 위치와 비율 통일, 타이틀 중앙 정렬, 제작자 영문 전환, 난이도 물음표 수정, 쿠리만쥬 대화 표정 크기 통일, 스위치처럼 큰 점수와 짧고 굵은 필살 게이지 |
+| 웹 v0.56 | 오프닝·타이틀 위치와 비율 통일, 타이틀 중앙 정렬, 제작자 영문 전환, 난이도 물음표 수정, 쿠리만쥬 대화 표정 크기 통일, 스위치처럼 큰 점수와 짧고 굵은 필살 게이지, 스위치와 같은 세 친구 로딩 화면 |
 | GBA v0.5.7 | 오프닝 이식·반복 재생, 코트·네트 원근 정렬, 양 언어 점검, 문구 충돌 직후 점 노이즈 제거와 초기 화면 표시 보강 |
 | Switch v0.7.9 | 일반판·해금판 분리, 이름·아이콘·설치 버전 정비, 독립 난이도, 시작 음성·다음 서브 표시, 온라인 메뉴 제외, 테스트판 고정 문구 제거, 해금 안내, 바깥에서 중앙으로 차는 게이지 |
 
@@ -73,7 +75,7 @@ GBA와 Switch는 **도전과제로 캐릭터를 해금하는 일반판**과 **14
 
 Five story courts, 14 roster slots, character encounters, special shots, and independent story/CPU difficulty. The browser version supports **two players on one phone**, CPU matches, and online friend matches with four-digit room codes. Switch supports local two-player and CPU matches; online play is not implemented. GBA cable play and Switch stability still need real-device verification.
 
-Current releases: **Web v0.55 · GBA v0.5.7 · Switch v0.7.9**. GBA and Switch offer achievement-locked and all-unlocked variants. Select Korean or English on the title screen. Download playable files from release **Assets** and check them with `SHA256SUMS.txt`.
+Current releases: **Web v0.56 · GBA v0.5.7 · Switch v0.7.9**. GBA and Switch offer achievement-locked and all-unlocked variants. Select Korean or English on the title screen. Download playable files from release **Assets** and check them with `SHA256SUMS.txt`.
 
 ## 제작 및 원작 · Credits
 
