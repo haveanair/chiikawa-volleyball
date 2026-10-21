@@ -2,7 +2,7 @@
 
 **작은 친구들의 큰 승부!** 치이카와 친구들과 함께 즐기는 비영리 배구 팬게임입니다.
 
-**[웹에서 바로 플레이](https://haveanair.github.io/chiikawa-volleyball/) · [GBA 다운로드](https://github.com/haveanair/chiikawa-volleyball/releases/tag/gba-v0.5.7) · [Switch 다운로드](https://github.com/haveanair/chiikawa-volleyball/releases/tag/switch-v0.7.6)**
+**[웹에서 바로 플레이](https://haveanair.github.io/chiikawa-volleyball/) · [GBA 다운로드](https://github.com/haveanair/chiikawa-volleyball/releases/tag/gba-v0.5.7) · [Switch 다운로드](https://github.com/haveanair/chiikawa-volleyball/releases/tag/switch-v0.7.9)**
 
 <a href="https://haveanair.github.io/chiikawa-volleyball/"><img src="docs/promo/chiikawa-volley-promo-v54.png" alt="치이카와 배구 — 스토리 5스테이지, 폰 하나로 2인 대전, 온라인 친구 대전. QR 찍고 바로 플레이!" width="500"></a>
 
@@ -12,7 +12,7 @@
 |---|---|---|---|
 | 웹 | v0.54 | PC·모바일 브라우저에서 설치 없이 실행 | 같은 기기 2인 / CPU / 온라인 친구 대전 |
 | GBA | v0.5.7 | GBA 에뮬레이터 또는 호환 환경에서 ROM 실행 | CPU / 케이블 통신 기능은 실기 미검증 |
-| Switch 홈브류 | v0.7.6 | 홈브류 실행 환경에서 NRO 또는 NSP 사용 | 같은 기기 2인 / CPU, 온라인 미지원 |
+| Switch 홈브류 | v0.7.9 | 홈브류 실행 환경에서 NRO 또는 NSP 사용 | 같은 기기 2인 / CPU, 온라인 미지원 |
 
 GBA와 Switch는 **도전과제로 캐릭터를 해금하는 일반판**과 **14개 선택 캐릭터를 처음부터 사용할 수 있는 해금판**을 제공합니다. Switch 설치 이름은 일반판 **치이카와 배구**, 해금판 **치이카와 배구 · 해금버전**입니다. 타이틀 ID와 저장 파일이 달라 함께 설치할 수 있습니다.
 
@@ -50,7 +50,7 @@ GBA와 Switch는 **도전과제로 캐릭터를 해금하는 일반판**과 **14
 |---|---|
 | 웹 v0.54 | 오프닝·타이틀 위치와 비율 통일, 타이틀 중앙 정렬, 제작자 영문 전환, 난이도 물음표 수정, 쿠리만쥬 대화 표정 크기 통일 |
 | GBA v0.5.7 | 오프닝 이식·반복 재생, 코트·네트 원근 정렬, 양 언어 점검, 문구 충돌 직후 점 노이즈 제거와 초기 화면 표시 보강 |
-| Switch v0.7.6 | 일반판·해금판 분리, 이름·아이콘·설치 버전 정비, 독립 난이도, 시작 음성·다음 서브 표시, 온라인 메뉴 제외 |
+| Switch v0.7.9 | 일반판·해금판 분리, 이름·아이콘·설치 버전 정비, 독립 난이도, 시작 음성·다음 서브 표시, 온라인 메뉴 제외, 테스트판 고정 문구 제거, 해금 안내, 바깥에서 중앙으로 차는 게이지 |
 
 **검증 범위:** 웹은 실제 공개 페이지에서 언어 전환·오프닝·경기 진입을 확인했습니다. GBA는 두 ROM의 mGBA 기반 에뮬레이터 검증을 마쳤으며 실기·진동 카트리지·케이블 대전은 미확인입니다. Switch는 PC 동작과 NSP 내부 이름·아이콘·코드·해시를 검사했으며, 패드 연결 화면 호출과 장시간 경기·엔딩 안정성은 실기 재확인이 필요합니다.
 
@@ -58,7 +58,7 @@ GBA와 Switch는 **도전과제로 캐릭터를 해금하는 일반판**과 **14
 
 - [웹 v0.54 배포 안내](https://github.com/haveanair/chiikawa-volleyball/releases/tag/web-v0.54)
 - [GBA v0.5.7 전체 ZIP·ROM](https://github.com/haveanair/chiikawa-volleyball/releases/tag/gba-v0.5.7) · [GBA 조작 안내](gba/README.md)
-- [Switch v0.7.6 전체 ZIP·NSP·NRO](https://github.com/haveanair/chiikawa-volleyball/releases/tag/switch-v0.7.6) · [Switch 안내](switch/README.md)
+- [Switch v0.7.9 전체 ZIP·NSP·NRO](https://github.com/haveanair/chiikawa-volleyball/releases/tag/switch-v0.7.9) · [Switch 안내](switch/README.md)
 - [새 소개 이미지 PNG](docs/promo/chiikawa-volley-promo-v54.png) · [QR PNG](docs/promo/chiikawa-volley-qr.png) · [인쇄용 QR SVG](docs/promo/chiikawa-volley-qr.svg)
 
 릴리스의 **Assets**에서 실행 파일이나 전체 ZIP을 받으세요. GitHub가 자동 생성하는 **Source code ZIP은 실행용 패키지가 아닙니다.** 각 릴리스의 `SHA256SUMS.txt`로 파일을 확인할 수 있습니다. Switch 키 파일은 포함하지 않습니다.
@@ -71,7 +71,7 @@ GBA와 Switch는 **도전과제로 캐릭터를 해금하는 일반판**과 **14
 
 Five story courts, 14 roster slots, character encounters, special shots, and independent story/CPU difficulty. The browser version supports **two players on one phone**, CPU matches, and online friend matches with four-digit room codes. Switch supports local two-player and CPU matches; online play is not implemented. GBA cable play and Switch stability still need real-device verification.
 
-Current releases: **Web v0.54 · GBA v0.5.7 · Switch v0.7.6**. GBA and Switch offer achievement-locked and all-unlocked variants. Select Korean or English on the title screen. Download playable files from release **Assets** and check them with `SHA256SUMS.txt`.
+Current releases: **Web v0.54 · GBA v0.5.7 · Switch v0.7.9**. GBA and Switch offer achievement-locked and all-unlocked variants. Select Korean or English on the title screen. Download playable files from release **Assets** and check them with `SHA256SUMS.txt`.
 
 ## 제작 및 원작 · Credits
 
